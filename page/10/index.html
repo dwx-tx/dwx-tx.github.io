@@ -1,0 +1,1823 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title> dwx-tx的小天地</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"
+      />
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+       
+ 
+<script>
+var _hmt = _hmt || [];
+(function() {
+	var hm = document.createElement("script");
+	hm.src = "https://hm.baidu.com/hm.js?57bee4bd4703d5af3f9154ce72c6f85f";
+	var s = document.getElementsByTagName("script")[0]; 
+	s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    <link rel="alternate" href="/atom.xml" title="dwx-tx的小天地" type="application/atom+xml">
+</head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      
+<section class="cover">
+    
+      
+      <a class="forkMe" href="https://github.com/Shen-Yu/hexo-theme-ayer"
+        target="_blank"><img width="149" height="149" src="/images/forkme.png"
+          class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+    
+  <div class="cover-frame">
+    <div class="bg-box">
+      <img src="/images/cover1.jpg" alt="image frame" />
+    </div>
+    <div class="cover-inner text-center text-white">
+      <h1><a href="/">dwx-tx的小天地</a></h1>
+      <div id="subtitle-box">
+        
+        <span id="subtitle"></span>
+        
+      </div>
+      <div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="cover-learn-more">
+    <a href="javascript:void(0)" class="anchor"><i class="ri-arrow-down-line"></i></a>
+  </div>
+</section>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script>
+
+
+<!-- Subtitle -->
+
+  <script>
+    try {
+      var typed = new Typed("#subtitle", {
+        strings: ['面朝大海，春暖花开', '愿你一生努力，一生被爱', '想要的都拥有，得不到的都释怀'],
+        startDelay: 0,
+        typeSpeed: 200,
+        loop: true,
+        backSpeed: 100,
+        showCursor: true
+      });
+    } catch (err) {
+      console.log(err)
+    }
+  </script>
+  
+<div id="main">
+  <section class="outer">
+  
+  
+  
+
+<div class="notice" style="margin-top:50px">
+    <i class="ri-heart-fill"></i>
+    <div class="notice-content" id="broad"></div>
+</div>
+<script type="text/javascript">
+    fetch('https://v1.hitokoto.cn')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("broad").innerHTML = data.hitokoto;
+        })
+        .catch(console.error)
+</script>
+
+<style>
+    .notice {
+        padding: 20px;
+        border: 1px dashed #e6e6e6;
+        color: #969696;
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        background: #fbfbfb50;
+        border-radius: 10px;
+    }
+
+    .notice i {
+        float: left;
+        color: #999;
+        font-size: 16px;
+        padding-right: 10px;
+        vertical-align: middle;
+        margin-top: -2px;
+    }
+
+    .notice-content {
+        display: initial;
+        vertical-align: middle;
+    }
+</style>
+  
+  <article class="articles">
+    
+    
+    
+    
+    <article
+  id="post-PythonTurtle函数库"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/PythonTurtle%E5%87%BD%E6%95%B0%E5%BA%93/" class="article-date">
+  <time datetime="2021-12-16T15:00:16.851Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="turtle库语法元素分析"><a href="#turtle库语法元素分析" class="headerlink" title="turtle库语法元素分析"></a>turtle库语法元素分析</h1><h2 id="绘图坐标体系"><a href="#绘图坐标体系" class="headerlink" title="绘图坐标体系"></a>绘图坐标体系</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">turtle.setup(<span class="number">650</span>,<span class="number">350</span>,<span class="number">200</span>,<span class="number">200</span>)</span><br></pre></td></tr></table></figure>
+
+<p>其对应的数据分别为：</p>
+<p>turtle.setup(width, height, startx, stary)</p>
+<p>参考数据：</p>
+<p>width：窗口的宽度，如果值是整数，表示像素值；如果值为小数，表示窗口宽度与屏幕的比例</p>
+<p>height：窗口的高度，如果值是整数，表示像素值；如果值是小数，表示窗口高度和屏幕的比例</p>
+<p>startx：窗口左侧与屏幕左侧的像素距离，如果值是None，窗口位于屏幕水平中央</p>
+<p>starty：窗口顶部与屏幕顶部的像素距离，如果值是None，窗口位于屏幕垂直中央</p>
+<p><img src="/dwx-tx.github.io/2021/12/16/PythonTurtle%E5%87%BD%E6%95%B0%E5%BA%93/截屏\setup函数.png" alt="setup函数"></p>
+<h2 id="画笔控制函数"><a href="#画笔控制函数" class="headerlink" title="画笔控制函数"></a>画笔控制函数</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">turtle.penup()</span><br><span class="line">turtle.pendown()</span><br></pre></td></tr></table></figure>
+
+<h3 id="turtle-penup（）"><a href="#turtle-penup（）" class="headerlink" title="turtle.penup（）"></a>turtle.penup（）</h3><p>turtle.penup（）其他形式turtle.penpu(), turtle.up()</p>
+<p>作用：抬起画笔，之后移动画笔不绘制形状</p>
+<p>参数：无</p>
+<h3 id="turtle-pendown（）"><a href="#turtle-pendown（）" class="headerlink" title="turtle.pendown（）"></a>turtle.pendown（）</h3><p>turtle.pendown() 其他形式turtle.pd（），turtle.down（）</p>
+<p>作用：落下画笔，之后移动画笔将绘制形状</p>
+<p>参数：无</p>
+<h3 id="turtle-pensize（）"><a href="#turtle-pensize（）" class="headerlink" title="turtle.pensize（）"></a>turtle.pensize（）</h3><p>turtle.pensize(width)其他形式turtle.width</p>
+<p>作用：设置画笔宽度，当无参数输入时，返回当前画笔宽度</p>
+<p>参数如下：</p>
+<p>width：设置的画笔线条宽度，如果为None或者为空，则函数返回当前画笔宽度</p>
+<h3 id="turtle-pencolor（）"><a href="#turtle-pencolor（）" class="headerlink" title="turtle.pencolor（）"></a>turtle.pencolor（）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">turtle.pencolor(colorstring)</span><br><span class="line">turtle.pencolor(r,g,b)</span><br></pre></td></tr></table></figure>
+
+<p>作用：设置画笔颜色，当无参数输入时，返回当前画笔颜色</p>
+<p>参数如下：</p>
+<p>colorstring：表示颜色的字符串，比如，“purple”、“red”、“blue”等</p>
+<p>（r，g，b）：颜色对应的RGB数值，例如，（51,204,140）</p>
+<p><strong>很多RGB颜色都有固定的英语名字，这些英文名字可以作为colorstring输入到turtle.pencolor（）函数中，也可以采用（r,g,b）形式直接输入颜色值</strong></p>
+<table>
+<thead>
+<tr>
+<th>英文名称</th>
+<th>RGB</th>
+<th>十六进制</th>
+<th>中文名称</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>white</td>
+<td>255 255 255</td>
+<td>#FFFFFF</td>
+<td>白色</td>
+</tr>
+<tr>
+<td>black</td>
+<td>0 0 0</td>
+<td>#000000</td>
+<td>黑色</td>
+</tr>
+<tr>
+<td>grey</td>
+<td>190 190 190</td>
+<td>#BEBEBE</td>
+<td>灰色</td>
+</tr>
+<tr>
+<td>darkgreen</td>
+<td>0 100 0</td>
+<td>#006400</td>
+<td>深绿色</td>
+</tr>
+<tr>
+<td>gold</td>
+<td>255 215 0</td>
+<td>#FFD700</td>
+<td>金色</td>
+</tr>
+<tr>
+<td>violet</td>
+<td>238 130 238</td>
+<td>#EE82EE</td>
+<td>紫罗兰</td>
+</tr>
+<tr>
+<td>purple</td>
+<td>160 32 240</td>
+<td>#A020F0</td>
+<td>紫色</td>
+</tr>
+</tbody></table>
+<h4 id="RGB颜色"><a href="#RGB颜色" class="headerlink" title="RGB颜色"></a>RGB颜色</h4><p><strong>拓展</strong>：RGB颜色是计算机系统最常用的颜色体系之一，它采用R（红色）、G（绿色）、B（蓝色）3种基本颜色及它们的叠加组成的各种各样的颜色</p>
+<h2 id="形状绘制函数"><a href="#形状绘制函数" class="headerlink" title="形状绘制函数"></a>形状绘制函数</h2><h3 id="turtle-fd（）"><a href="#turtle-fd（）" class="headerlink" title="turtle.fd（）"></a>turtle.fd（）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">turtle.fd（<span class="number">252</span>）</span><br></pre></td></tr></table></figure>
+
+<p>turtle.fd（distance）其他形式turtle.forward（distance）</p>
+<p>作用：向小海龟当前行进方向前进distance距离</p>
+<p>参数：</p>
+<p>distance：行进距离的像素值，当值为负数时，表示向相反方向前进</p>
+<h3 id="turtle-seth"><a href="#turtle-seth" class="headerlink" title="turtle.seth"></a>turtle.seth</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">turtle.seth(-<span class="number">40</span>)</span><br></pre></td></tr></table></figure>
+
+<p>turtle.seth(to_angle) 其他形式turtle.setheading(to_angle)</p>
+<p>作用：设置小海龟当前行进方向为to_angle,该角度是绝对方向角度值</p>
+<p>**turtle库的角度坐标体系以正东方向为绝对0度，正西方向为绝对180度</p>
+<h3 id="turtle-circle（）"><a href="#turtle-circle（）" class="headerlink" title="turtle.circle（）"></a>turtle.circle（）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">turtle.circle(radius, estent=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>参数：</strong>radius：弧形半径，当值为正数时，半径在小海龟的左侧，当值为负数时，半径在小海龟的右侧</p>
+<p>​            extent：绘制弧形的角度，当不设置参数或参数设置为None时，绘制整个圆形</p>
+<p>​       </p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-python用python写的好玩的东西"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/python%E7%94%A8python%E5%86%99%E7%9A%84%E5%A5%BD%E7%8E%A9%E7%9A%84%E4%B8%9C%E8%A5%BF/" class="article-date">
+  <time datetime="2021-12-16T15:00:16.851Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="表白用"><a href="#表白用" class="headerlink" title="表白用"></a>表白用</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">import turtle</span><br><span class="line">import time</span><br><span class="line"># 爱心的顶部</span><br><span class="line">def LittleHeart():</span><br><span class="line">    for i in range(200):</span><br><span class="line">        turtle.right(1)</span><br><span class="line">        turtle.forward(2)</span><br><span class="line">#输入表白语句</span><br><span class="line">love = input(&#x27;输入表白语句，默认I Love You：&#x27;)</span><br><span class="line">me = input(&quot;输入署名或者赠给谁，没有不执行：&quot;)</span><br><span class="line">if love ==&quot; &quot;:</span><br><span class="line">    love = &quot;I Love You&quot;</span><br><span class="line">#窗口大小</span><br><span class="line">turtle.setup(width=900,height=500)</span><br><span class="line">turtle.color(&quot;red&quot;,&quot;pink&quot;)</span><br><span class="line">turtle.pensize(3)</span><br><span class="line">turtle.speed(1)</span><br><span class="line">turtle.up()</span><br><span class="line">turtle.hideturtle()</span><br><span class="line">turtle.goto(0,-180)</span><br><span class="line">turtle.showturtle()</span><br><span class="line">turtle.down()</span><br><span class="line">turtle.speed(1)</span><br><span class="line">turtle.begin_fill()</span><br><span class="line">turtle.left(140)</span><br><span class="line">turtle.forward(224)</span><br><span class="line">LittleHeart()</span><br><span class="line">turtle.left(120)</span><br><span class="line">LittleHeart()</span><br><span class="line">turtle.forward(224)</span><br><span class="line">turtle.end_fill()</span><br><span class="line">turtle.pensize(5)</span><br><span class="line">turtle.up()</span><br><span class="line">turtle.hideturtle()</span><br><span class="line">turtle.goto(0,0)</span><br><span class="line">turtle.showturtle()</span><br><span class="line">turtle.color(&#x27;#CD5C5C&#x27;,&#x27;pink&#x27;)</span><br><span class="line">turtle.write(love,font=(&#x27;gungsuh&#x27;,30),align=&quot;center&quot;)</span><br><span class="line">turtle.up()</span><br><span class="line">turtle.hideturtle()</span><br><span class="line">time.sleep(2)</span><br><span class="line">turtle.goto(0,0)</span><br><span class="line">turtle.showturtle()</span><br><span class="line">turtle.color(&#x27;red&#x27;,&#x27;pink&#x27;)</span><br><span class="line">turtle.write(love,font=(&#x27;gungsuh&#x27;,30),align=&quot;center&quot;)</span><br><span class="line">turtle.up()</span><br><span class="line">turtle.hideturtle()</span><br><span class="line">if me != &#x27; &#x27;:</span><br><span class="line">    turtle.color(&#x27;black&#x27;,&#x27;pink&#x27;)</span><br><span class="line">    time.sleep(2)</span><br><span class="line">    turtle.goto(180,180)</span><br><span class="line">    turtle.showturtle()</span><br><span class="line">    turtle.write(me,font=(20,),align=&quot;center&quot;,move=True)</span><br><span class="line">window = turtle.Screen()</span><br><span class="line">window.exitonclick()</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure> 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-pythonmath库函数"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/pythonmath%E5%BA%93%E5%87%BD%E6%95%B0/" class="article-date">
+  <time datetime="2021-12-16T15:00:16.841Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="python-math库函数"><a href="#python-math库函数" class="headerlink" title="python math库函数"></a>python math库函数</h1><h2 id="math库概括"><a href="#math库概括" class="headerlink" title="math库概括"></a>math库概括</h2><p><strong>模块编程</strong>：需要用import调用库的编程方式</p>
+<p> <strong>简洁</strong>：math库是python提供的内置数学类函数库，因为复数类型常用于科学计算，一般计算并不常用，因此math函数不支持复数类型，仅支持整数和浮点数运算。</p>
+<p>math函数一共提供了4个数学常数和44个函数。44个函数分为4类，包括16个数值表示函数，8个幂对数函数，16个三角对数函数和4个高等特殊函数。</p>
+<h2 id="math库解析"><a href="#math库解析" class="headerlink" title="math库解析"></a>math库解析</h2><h3 id="math库的数学常数（共4个）"><a href="#math库的数学常数（共4个）" class="headerlink" title="math库的数学常数（共4个）"></a>math库的数学常数（共4个）</h3><table>
+<thead>
+<tr>
+<th>常数</th>
+<th>数学表示</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>math.pi</td>
+<td>π</td>
+<td>圆周率，值为3.141592656589793</td>
+</tr>
+<tr>
+<td>math.e</td>
+<td>e</td>
+<td>自然对数，值为2.718281828459045</td>
+</tr>
+<tr>
+<td>math.inf</td>
+<td>00</td>
+<td>正无穷大，负无穷大为-math.inf</td>
+</tr>
+<tr>
+<td>math.nan</td>
+<td></td>
+<td>非浮点数标记，NaN（not  a number）</td>
+</tr>
+</tbody></table>
+<p><img src="/dwx-tx.github.io/2021/12/16/pythonmath%E5%BA%93%E5%87%BD%E6%95%B0/截屏\math库的数学常数.png"></p>
+<h3 id="math库的数值表示函数（共16个）"><a href="#math库的数值表示函数（共16个）" class="headerlink" title="math库的数值表示函数（共16个）"></a>math库的数值表示函数（共16个）</h3><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>数学表示</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>math.fabs(x)</td>
+<td>|x|</td>
+<td>返回x的绝对值</td>
+</tr>
+<tr>
+<td>math.fmod(x,y)</td>
+<td>x&amp;y</td>
+<td>返回x与y的模</td>
+</tr>
+<tr>
+<td>math.fsum([x,y,…])</td>
+<td>x+y+….</td>
+<td>浮点数精确求和</td>
+</tr>
+<tr>
+<td>math.ceil(x)</td>
+<td></td>
+<td>向上取整，返回不小于x的最小整数</td>
+</tr>
+<tr>
+<td>math.floor(x)</td>
+<td></td>
+<td>向下取整，返回不大于x的最大整数</td>
+</tr>
+<tr>
+<td>math.factorial(x)</td>
+<td>x!</td>
+<td>返回x的阶乘，如果x是小数或负数，返回ValueError</td>
+</tr>
+<tr>
+<td>math.gcd(a,b)</td>
+<td></td>
+<td>返回a与b的最大公约数</td>
+</tr>
+<tr>
+<td>math.frexp(x)</td>
+<td>x = m * 2 ^ e</td>
+<td>返回（m，e），当x = 0，返回（0.0,0）</td>
+</tr>
+<tr>
+<td>math.ldexp(x,i)</td>
+<td>x * 2^i</td>
+<td>返回x*2^i运算值，mathfrexp（x）的反运算</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>数学表示</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>math.modf(x)</td>
+<td></td>
+<td>返回x的小数和整数部分</td>
+</tr>
+<tr>
+<td>math.trunc(x)</td>
+<td></td>
+<td>返回x的整数部分</td>
+</tr>
+<tr>
+<td>math.copysign(x,y)</td>
+<td>|x| * |y|/y</td>
+<td>用数值y的正负号代替x的正负号</td>
+</tr>
+<tr>
+<td>math.isclose(a,b)</td>
+<td></td>
+<td>比较a和b的相似性，返回True或False</td>
+</tr>
+<tr>
+<td>math.isfinite(x)</td>
+<td></td>
+<td>当x不是无穷大或NaN,返回True；否则，返回False</td>
+</tr>
+<tr>
+<td>math.isinf(x)</td>
+<td></td>
+<td>当x为正负无穷大，返回True；否则，返回False</td>
+</tr>
+<tr>
+<td>math.innan(x)</td>
+<td></td>
+<td>当x是NaN，返回Ture，否则返回False</td>
+</tr>
+</tbody></table>
+<h3 id="math库的幂对数函数（共8个）"><a href="#math库的幂对数函数（共8个）" class="headerlink" title="math库的幂对数函数（共8个）"></a>math库的幂对数函数（共8个）</h3><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>数学表示</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>math.pow（x，y）</td>
+<td>x^y</td>
+<td>返回x的y次幂</td>
+</tr>
+<tr>
+<td>math.exp(x)</td>
+<td>e^x</td>
+<td>返回e的x次幂，e是自然对数</td>
+</tr>
+<tr>
+<td>math.expml(x)</td>
+<td>e^x-1</td>
+<td>返回e的x次幂减1</td>
+</tr>
+<tr>
+<td>math.sqrt(x)</td>
+<td>x^1/2</td>
+<td>返回x的平方根</td>
+</tr>
+<tr>
+<td>math.log(x[,base])</td>
+<td>logbasex</td>
+<td>返回x的对数值，只输入x时，返回自然对数</td>
+</tr>
+<tr>
+<td>math.loglp(x)</td>
+<td>ln(x+1)</td>
+<td>返回1+x的自然对数</td>
+</tr>
+<tr>
+<td>math.log2(x)</td>
+<td>log2x</td>
+<td>返回x的2对数值</td>
+</tr>
+<tr>
+<td>math.log10(x)</td>
+<td>log10x</td>
+<td>返回x的10对数值</td>
+</tr>
+</tbody></table>
+<h3 id="math库的三角运算函数"><a href="#math库的三角运算函数" class="headerlink" title="math库的三角运算函数"></a>math库的三角运算函数</h3><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>数学表示</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>math.degrees(x)</td>
+<td></td>
+<td>角度x的弧度值转角度值</td>
+</tr>
+<tr>
+<td>math.radians(x)</td>
+<td></td>
+<td>角度x的角度值转弧度值</td>
+</tr>
+<tr>
+<td>math.hypot(x,y)</td>
+<td></td>
+<td>返回（x，y）坐标到原点（0,0）的距离</td>
+</tr>
+<tr>
+<td>math.sin(x)</td>
+<td>sin x</td>
+<td>返回x的正弦值，x为弧度值</td>
+</tr>
+<tr>
+<td>math.cos(x)</td>
+<td>cos x</td>
+<td>返回x的余弦值，x为弧度值</td>
+</tr>
+<tr>
+<td>math.tan(x)</td>
+<td>tan x</td>
+<td>返回x的正切值，x为弧度值</td>
+</tr>
+<tr>
+<td>math.asin(x)</td>
+<td>arcsin x</td>
+<td>返回x的反正弦值，x为弧度值</td>
+</tr>
+<tr>
+<td>math.acos(x)</td>
+<td>arccos x</td>
+<td>返回x的反余弦值，x为弧度值</td>
+</tr>
+<tr>
+<td>math.atan(x)</td>
+<td>arctan x</td>
+<td>返回x的反正切值，x为弧度值</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>数学表示</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>math.atan2(y,x)</td>
+<td>arctan y/x</td>
+<td>返回y/x的反正切值，x为弧度值</td>
+</tr>
+<tr>
+<td>math.sinh(x)</td>
+<td>sinh x</td>
+<td>返回x的双曲正弦函数值</td>
+</tr>
+<tr>
+<td>math.cosh(x)</td>
+<td>cosh x</td>
+<td>返回x的双曲余弦函数值</td>
+</tr>
+<tr>
+<td>math.tanh(x)</td>
+<td>tanh x</td>
+<td>返回x的双曲正切函数值</td>
+</tr>
+<tr>
+<td>math.asinh(x)</td>
+<td>arcsinh x</td>
+<td>返回x的双曲反正弦函数值</td>
+</tr>
+<tr>
+<td>math.acosh(x)</td>
+<td>arccosh x</td>
+<td>返回x的双曲反余弦函数值</td>
+</tr>
+<tr>
+<td>math.atanh(x)</td>
+<td>arctanh x</td>
+<td>返回x的双曲反正切函数值</td>
+</tr>
+</tbody></table>
+<h3 id="math库的高等特殊函数（共4个）"><a href="#math库的高等特殊函数（共4个）" class="headerlink" title="math库的高等特殊函数（共4个）"></a>math库的高等特殊函数（共4个）</h3><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>数学表达</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>math.erf(x)</td>
+<td></td>
+<td>高斯误差函数，应用于概率论，统计学等领域</td>
+</tr>
+<tr>
+<td>math.erfc(x)</td>
+<td></td>
+<td>余补高斯误差函数，math.erfc(x) = 1 - math.erf(x)</td>
+</tr>
+<tr>
+<td>math.gamma(x)</td>
+<td></td>
+<td>伽玛函数，欧拉第二积分函数</td>
+</tr>
+<tr>
+<td>math.lgamma(x)</td>
+<td>ln（gamma（x））</td>
+<td>伽玛函数的自然对数</td>
+</tr>
+</tbody></table>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-python数字类型"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/python%E6%95%B0%E5%AD%97%E7%B1%BB%E5%9E%8B/" class="article-date">
+  <time datetime="2021-12-16T15:00:16.841Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="python数字类型"><a href="#python数字类型" class="headerlink" title="python数字类型"></a>python数字类型</h1><h2 id="整数类型"><a href="#整数类型" class="headerlink" title="整数类型"></a>整数类型</h2><p>eg：1010,99，-217,0x9a，-0x89</p>
+<p><strong>整数类型共有四大类</strong>：十进制，八进制，二进制，十六进制</p>
+<p>二进制是以0b为索引，八进制是以0o为索引，十六进制是以0x为索引，大小写均可使用</p>
+<table>
+<thead>
+<tr>
+<th>进制种类</th>
+<th>索引符号</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>十进制</td>
+<td>无</td>
+<td>默认情况，例如，1010，-425</td>
+</tr>
+<tr>
+<td>二进制</td>
+<td>0b</td>
+<td>由字符0和1组成，例如，0b101</td>
+</tr>
+<tr>
+<td>八进制</td>
+<td>0o</td>
+<td>由字符0到7组成，例如，0o711</td>
+</tr>
+<tr>
+<td>十六进制</td>
+<td>0x</td>
+<td>由字符0到9，a到f，A到F组成，例如0xABC</td>
+</tr>
+</tbody></table>
+<p>  整数理论上是没有限制的，实际情况受限于运行python程序的计算机内存的大小</p>
+<h2 id="浮点数类型"><a href="#浮点数类型" class="headerlink" title="浮点数类型"></a>浮点数类型</h2><p>eg：0.0，-77.0，-2.17,3.1415926,96e4</p>
+<p><strong>科学计数法使用字母e或E作为幂的符号，以10为基数，含义为：&lt; a &gt;e&lt; b &gt; = a * 10^b</strong></p>
+<p>浮点数类型的取值范围在[2^-1023,2^1023]之间，运算精确度极高</p>
+<h2 id="复数类型"><a href="#复数类型" class="headerlink" title="复数类型"></a>复数类型</h2><p><strong>Python语言中，复数的虚数部分用后缀“J”或”j“来表示</strong></p>
+<p>eg：12.3+4j    -5.6+7j      12.3e-4+5.67e+89j</p>
+<p><strong>复数类型中实数部分和虚数部分的数值都是浮点数类型</strong>，对于复数Z,可以用z.real和z.imag分别获取它的实部和虚部</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;(<span class="number">1.23e-4</span>+<span class="number">5.67e+89j</span>).real</span><br><span class="line">&gt;&gt;&gt;(<span class="number">1.23e-4</span>+<span class="number">5.67e+89j</span>).imagr</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-python数字类型的操作"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/python%E6%95%B0%E5%AD%97%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%93%8D%E4%BD%9C/" class="article-date">
+  <time datetime="2021-12-16T15:00:16.841Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="python数字类型的操作"><a href="#python数字类型的操作" class="headerlink" title="python数字类型的操作"></a>python数字类型的操作</h1><h2 id="内置的数值运算操作符"><a href="#内置的数值运算操作符" class="headerlink" title="内置的数值运算操作符"></a>内置的数值运算操作符</h2><table>
+<thead>
+<tr>
+<th>操作符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>x+y</td>
+<td>x与y之和</td>
+</tr>
+<tr>
+<td>x-y</td>
+<td>x与y之差</td>
+</tr>
+<tr>
+<td>x*y</td>
+<td>x与y之积</td>
+</tr>
+<tr>
+<td>x/y</td>
+<td>x与y之商</td>
+</tr>
+<tr>
+<td>x//y</td>
+<td>x与y的整数商，即不大于x与y商的最大整数</td>
+</tr>
+<tr>
+<td>x%y</td>
+<td>x与y之商的余数，也称为模运算</td>
+</tr>
+<tr>
+<td>-x</td>
+<td>x的负值，即x*（-1）</td>
+</tr>
+<tr>
+<td>+x</td>
+<td>x本身</td>
+</tr>
+<tr>
+<td>x**y</td>
+<td>x的y次幂，即x^y</td>
+</tr>
+</tbody></table>
+<p>三种数字类型之间的逐渐拓展关系</p>
+<p>整数——&gt;浮点数——&gt;复数</p>
+<p>python数字类型转换的基本规则：</p>
+<ul>
+<li>整数之间运算，如果数学意义上的结果是小数，结果为浮点数</li>
+<li>整数之间运算，如果数学意义上的结果是整数，结果是整数</li>
+<li>整数与浮点数混合运算，输出的结果是浮点数</li>
+<li>整数或浮点数与复数运算，输出的结果是复数</li>
+</ul>
+<h2 id="增强赋值操作符"><a href="#增强赋值操作符" class="headerlink" title="增强赋值操作符"></a>增强赋值操作符</h2><p>所有的二元数学操作符（+，-，*，/，//，%，**）都有与之对应的增强赋值运算符（+=，-=，=，/=，//=，%=，=）</p>
+<p>设操作符为op</p>
+<p>x op= y&lt;=&gt;x = x op y</p>
+<h2 id="内置的数值运算函数"><a href="#内置的数值运算函数" class="headerlink" title="内置的数值运算函数"></a>内置的数值运算函数</h2><h3 id="内置的数值运算函数-1"><a href="#内置的数值运算函数-1" class="headerlink" title="内置的数值运算函数"></a>内置的数值运算函数</h3><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>abs(x)</td>
+<td>x的绝对值</td>
+</tr>
+<tr>
+<td>divmod(x,y)</td>
+<td>(x//y,x%y)，输出为二元组形式（也称为元组类型）</td>
+</tr>
+<tr>
+<td>pow(x,y[,z])</td>
+<td>（x**y）%z,[…]表示该参数可以忽略，即pow（x，y）</td>
+</tr>
+<tr>
+<td>round(x[,ndigits])</td>
+<td>对x进行四舍五入，保留ndigits位小数。round（x）返回四舍五入后的整数的值</td>
+</tr>
+<tr>
+<td>max(x1,x2,x3,…,xn)</td>
+<td>x1,x2,x3,…,xn的最大值</td>
+</tr>
+<tr>
+<td>min(x1,x2,x3,…,xn)</td>
+<td>x1,x2,x3,…,xn的最小值</td>
+</tr>
+</tbody></table>
+<h2 id="内置的数字类型转换函数"><a href="#内置的数字类型转换函数" class="headerlink" title="内置的数字类型转换函数"></a>内置的数字类型转换函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>int(x)</td>
+<td>将x转换为整数，x可以是浮点数或字符串</td>
+</tr>
+<tr>
+<td>float(x)</td>
+<td>返回浮点数x或者字符串x所对应的整数类型</td>
+</tr>
+<tr>
+<td>complex(re[,im])</td>
+<td>生成一个复数，实部为re，虚部为im，re可以是整数、浮点数或字符串，im可以是整数或浮点数但不能为字符串</td>
+</tr>
+</tbody></table>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-python字符串类型及其操作"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/12/16/python%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B%E5%8F%8A%E5%85%B6%E6%93%8D%E4%BD%9C/"
+    >python字符串类型及其操作</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/python%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B%E5%8F%8A%E5%85%B6%E6%93%8D%E4%BD%9C/" class="article-date">
+  <time datetime="2021-12-16T15:00:16.831Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="python字符串类型及其操作"><a href="#python字符串类型及其操作" class="headerlink" title="python字符串类型及其操作"></a>python字符串类型及其操作</h1><h2 id="字符串类型的表示"><a href="#字符串类型的表示" class="headerlink" title="字符串类型的表示"></a>字符串类型的表示</h2><p>python语言中字符串是字符的序列表示，可以由一对单引号（‘）,双引号（“），或三引号（”‘）构成</p>
+<ul>
+<li>单引号字符串：’单引号表示，可以使用“双引号”作为字符串的一部分‘</li>
+<li>双引号字符串：“双引号表示，可以使用’单引号‘作为字符串的一部分”</li>
+<li>三引号字符串：“’三引号表示可以使用”双引号“‘单引号’亦可以换行”‘</li>
+</ul>
+<p><img src="/dwx-tx.github.io/2021/12/16/python%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B%E5%8F%8A%E5%85%B6%E6%93%8D%E4%BD%9C/截屏\字符串中引号的使用.png" alt="字符串中引号的使用"></p>
+<p><strong>字符串中input和print函数的使用</strong></p>
+<ul>
+<li>input（）函数将用户输入的内容当作一个字符串类型，是获得用户输入的常用方式</li>
+<li>print（）函数可以直接打印字符串，这是输出字符串的常用方式</li>
+</ul>
+<h3 id="字符串的两种序号体系"><a href="#字符串的两种序号体系" class="headerlink" title="字符串的两种序号体系"></a>字符串的两种序号体系</h3><p>python语言的字符串有两种序号体系：</p>
+<p>正向递增序号：以最左侧字符序号为0，向右依次递增，最右侧的字符序号为L-1<br>反向递减序号：以最右侧字符序号为-1，向左依次递减最左侧的字符序号为-L<br>反向递减序号</p>
+<p>&lt;——————————————————</p>
+<p>-11-10 -9 -8 -7 -6 -5 -4 -3 -2 -1</p>
+<p>[H] [e] [l] [l] [o] [ ] [W] [o] [r] [l] [d]</p>
+<p>0 1 2 3 4 5 6 7 8 9 10</p>
+<p>——————————————————&gt;</p>
+<p>正向递增序号<br>————————————————<br>版权声明：本文为CSDN博主「省级干饭王」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_55016379/article/details/114675213">https://blog.csdn.net/qq_55016379/article/details/114675213</a></p>
+<p>（省级干饭王就是我自己）</p>
+<h3 id="python访问字符串的方法"><a href="#python访问字符串的方法" class="headerlink" title="python访问字符串的方法"></a>python访问字符串的方法</h3><p>python字符串也提供区间访问方式，采用**[N:M]**格式，表示字符串中从N到M（不包含M）的子字符串</p>
+<p>N和M为字符串的索引序号，<strong>可以混合使用</strong>正向递增序号和反向递减序号</p>
+<p><strong>如果表示中的M或者N索引缺失，则表示字符串把开始或结束索引值设为默认值。</strong></p>
+<h3 id="格式化控制符"><a href="#格式化控制符" class="headerlink" title="格式化控制符"></a>格式化控制符</h3><table>
+<thead>
+<tr>
+<th>控制符</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\a</td>
+<td>蜂鸣，响铃</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>回退，向后退一格</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>换页</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>换行，光标移动到下一行首行</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>回车，光标移动到本行首行</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>水平制表</td>
+</tr>
+<tr>
+<td>\v</td>
+<td>垂直制表</td>
+</tr>
+<tr>
+<td>\0</td>
+<td>NULL，什么都不做</td>
+</tr>
+</tbody></table>
+<h2 id="基本的字符串操作符"><a href="#基本的字符串操作符" class="headerlink" title="基本的字符串操作符"></a>基本的字符串操作符</h2><p>五个基本的字符串操作符</p>
+<table>
+<thead>
+<tr>
+<th>操作符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>x + y</td>
+<td>连接两个字符串x与y</td>
+</tr>
+<tr>
+<td>x * n 或 n * x</td>
+<td>复制n次字符串x</td>
+</tr>
+<tr>
+<td>x in s</td>
+<td>如果x是s的子串，返回True，否则返回False</td>
+</tr>
+<tr>
+<td>str[i]</td>
+<td>索引，返回第i个字符</td>
+</tr>
+<tr>
+<td>str[N：M]</td>
+<td>切片，返回索引第N到第M的子串，其中不包含M</td>
+</tr>
+</tbody></table>
+<p><img src="/dwx-tx.github.io/2021/12/16/python%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B%E5%8F%8A%E5%85%B6%E6%93%8D%E4%BD%9C/截屏\字符串操作.png" alt="字符串操作"></p>
+<p><strong>使用字符串作为查找表的缺点是，所剪切的子字符串长度必须相同</strong></p>
+<h2 id="内置的字符串处理函数"><a href="#内置的字符串处理函数" class="headerlink" title="内置的字符串处理函数"></a>内置的字符串处理函数</h2><p>python解释器中提供以一些内置函数，其中6个函数和字符串有关</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>len(x)</td>
+<td>返回字符串x的长度，也可返回其他组合数据类型元素个数</td>
+</tr>
+<tr>
+<td>str(x)</td>
+<td>返回任意类型x所对应的字符串形式</td>
+</tr>
+<tr>
+<td>chr(x)</td>
+<td>返回Unicode编码x对应的单字符</td>
+</tr>
+<tr>
+<td>ord(x)</td>
+<td>返回单字符表示的Unicode编码</td>
+</tr>
+<tr>
+<td>hex(x)</td>
+<td>返回整数x对应十六进制的小写形式的字符串</td>
+</tr>
+<tr>
+<td>oct(x)</td>
+<td>返回整数x对应的八进制小写形式字符串</td>
+</tr>
+</tbody></table>
+<p><strong>ASCLL和Unicode区别</strong></p>
+<p>目前计算机系统使用的编码是ASCLL，在C语言和JAVA语言中使用的都是ASCLL，ASCLL局限性在于，它只能表示英语字符，是为英语字符设计的，并没有包含其他的语言。所以它的覆盖面比较小</p>
+<p>而Unicode几乎支持所有书写语言的字符。</p>
+<h2 id="内置的字符串处理方法"><a href="#内置的字符串处理方法" class="headerlink" title="内置的字符串处理方法"></a>内置的字符串处理方法</h2><p>字符串类型共包含43个内置方法。但这里只介绍常用的16种方法</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>str.lower()</td>
+<td>返回字符串str的副本，全部小写</td>
+</tr>
+<tr>
+<td>str.upper()</td>
+<td>返回字符串str的副本，全部大写</td>
+</tr>
+<tr>
+<td>str.islower()</td>
+<td>当str的所有字符都是小写时，返回True，否则返回False</td>
+</tr>
+<tr>
+<td>str.isprintable()</td>
+<td>当str的所有字符都是可打印的，返回True，否则返回False</td>
+</tr>
+<tr>
+<td>str.isnumeric()</td>
+<td>当str的所有字符都是数字时，返回True，否则返回False</td>
+</tr>
+<tr>
+<td>str.isspace()</td>
+<td>当str所有的字符都是空格时，返回True，否则返回False</td>
+</tr>
+<tr>
+<td>str.endswith(suffix[,start,[,end]])</td>
+<td>str[start:end]以suffix结尾返回True，否则返回False</td>
+</tr>
+<tr>
+<td>str.starwith(prefix[,start,[,end]])</td>
+<td>str[start:end]以prefix开始返回True，否则返回False</td>
+</tr>
+<tr>
+<td>str.split(sep=None,maxsplit=-1)</td>
+<td>返回一个列表，由str根据sep被分割的部分构成</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>str.count（sub[,strat[,end]]）</td>
+<td>返回str[start:end]中sub子串出现的次数</td>
+</tr>
+<tr>
+<td>str.replace(old,new[,count])</td>
+<td>返回字符串str的副本，所有old子串全被new替换，如count给出，只替换前count相</td>
+</tr>
+<tr>
+<td>str.center(width[,fillchar])</td>
+<td>字符串居中函数</td>
+</tr>
+<tr>
+<td>str.strip([chars])</td>
+<td>返回字符串str的副本在其左侧和右侧去除chars给出的字符</td>
+</tr>
+<tr>
+<td>str.zfill(width)</td>
+<td>返回str的副本，长度为width不够在左侧填0</td>
+</tr>
+<tr>
+<td>str.format()</td>
+<td>返回字符串的一种排版格式</td>
+</tr>
+<tr>
+<td>str.join(iterable)</td>
+<td>返回一个新的字符串，由字符串iterable变量的每个元素组成，元素间隔用str隔开</td>
+</tr>
+</tbody></table>
+<ul>
+<li>str.split(sep=None,maxsplit=-1)返回一个列表，可以储存多个数据类型</li>
+<li>str.center(width[,fillchar])：返回长度为width的字符串，不够用fillchar补充，超了返回str</li>
+<li>str.zfill(width)  ：返回str的副本，长度为width不够在左侧填0,超了返回str</li>
+</ul>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-python字符串类型的格式化"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/12/16/python%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%A0%BC%E5%BC%8F%E5%8C%96/"
+    >字符串类型的格式化</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/python%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%A0%BC%E5%BC%8F%E5%8C%96/" class="article-date">
+  <time datetime="2021-12-16T15:00:16.831Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="字符串类型的格式化"><a href="#字符串类型的格式化" class="headerlink" title="字符串类型的格式化"></a>字符串类型的格式化</h1><p>python语言提供两种字符串格式化方法，一种类似C语言中printf（）函数的格式化方法；另一种是采用专门的str.format（）格式化方法</p>
+<h2 id="format（）方法的基本使用"><a href="#format（）方法的基本使用" class="headerlink" title="format（）方法的基本使用"></a>format（）方法的基本使用</h2><p>格式：&lt;模板字符串&gt;.format(&lt;逗号分隔的参数&gt;)</p>
+<p>模板字符串由一系列槽组成，用来控制修改字符串中嵌入值出现的位置，其基本思想是将format（）方法中<strong>逗号分隔的参数</strong>按照序号关系<strong>替换到模板字符串的槽</strong>中。</p>
+<p><strong>槽用大括号（{}）表示，如果大括号中没有序号，则按照出现顺序替换</strong></p>
+<h2 id="format（）方法的格式控制"><a href="#format（）方法的格式控制" class="headerlink" title="format（）方法的格式控制"></a>format（）方法的格式控制</h2><p>format（）方法格式为：{&lt;参数序号&gt;:&lt;格式控制标记&gt;}</p>
+<p>格式控制符</p>
+<table>
+<thead>
+<tr>
+<th>形式</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>:</td>
+<td>引号符号</td>
+</tr>
+<tr>
+<td>&lt;填充&gt;</td>
+<td>用于填充的单个字符</td>
+</tr>
+<tr>
+<td>&lt;对齐&gt;</td>
+<td>&lt;左对齐;&gt;右对齐;^居中对齐</td>
+</tr>
+<tr>
+<td>&lt;宽度&gt;</td>
+<td>槽的输出格式设定输出宽度</td>
+</tr>
+<tr>
+<td>&lt;,&gt;</td>
+<td>数字的千位分隔符适用于整数和浮点数</td>
+</tr>
+<tr>
+<td>&lt;.精度&gt;</td>
+<td>浮点数小数的部分的精度或是字符串的最大输出长度</td>
+</tr>
+<tr>
+<td>&lt;类型&gt;</td>
+<td>整数类型（b,c,o,x,X）浮点数类型(e,E,%,f)</td>
+</tr>
+</tbody></table>
+<p>**&lt;对齐&gt;**指的是分别使用&lt;,&gt;,^三种对齐方式，&lt;填充&gt;指的是除参数外，通过其他方式进行填充</p>
+<p><img src="/dwx-tx.github.io/2021/12/16/python%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%A0%BC%E5%BC%8F%E5%8C%96/截屏\format()函数使用.png"></p>
+<p><img src="/dwx-tx.github.io/2021/12/16/python%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%A0%BC%E5%BC%8F%E5%8C%96/截屏\format()函数使用2.png"></p>
+<h3 id="lt-类型-gt-的几种形式"><a href="#lt-类型-gt-的几种形式" class="headerlink" title="&lt;类型&gt;的几种形式"></a>&lt;类型&gt;的几种形式</h3><table>
+<thead>
+<tr>
+<th>形式</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>b</td>
+<td>输出整数的二进制方式</td>
+</tr>
+<tr>
+<td>c</td>
+<td>输出整数对应的Unicode</td>
+</tr>
+<tr>
+<td>d</td>
+<td>输出整数的十进制方式</td>
+</tr>
+<tr>
+<td>o</td>
+<td>输出整数的八进制方式</td>
+</tr>
+<tr>
+<td>x</td>
+<td>输出整数的小写十六进制方式</td>
+</tr>
+<tr>
+<td>X</td>
+<td>输出整数的大写十六进制方式</td>
+</tr>
+</tbody></table>
+<p><img src="/dwx-tx.github.io/2021/12/16/python%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%A0%BC%E5%BC%8F%E5%8C%96/截屏\format类型.png"></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-python文本进度条"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/python%E6%96%87%E6%9C%AC%E8%BF%9B%E5%BA%A6%E6%9D%A1/" class="article-date">
+  <time datetime="2021-12-16T15:00:16.831Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="文本进度条"><a href="#文本进度条" class="headerlink" title="文本进度条"></a>文本进度条</h1><p><strong>这是一个利用格式化输出和时间延迟实现控制台风格式文本进度条</strong></p>
+<h2 id="简单的开始"><a href="#简单的开始" class="headerlink" title="简单的开始"></a>简单的开始</h2><p><strong>print()函数在输出结尾处会自动生成一个‘\n’,即换行符，从而让光标移动到下一行行首</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time                    <span class="comment">#引入time函数库</span></span><br><span class="line">scale = <span class="number">10</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;------执行开始------&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(scale+<span class="number">1</span>):</span><br><span class="line">    a, b = <span class="string">&#x27;**&#x27;</span> * i,<span class="string">&#x27;..&#x27;</span> * (scale - i)</span><br><span class="line">    c = (i/scale)*<span class="number">100</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;%&#123;:^3.0f&#125;[&#123;&#125;-&gt;&#123;&#125;]&quot;</span>.<span class="built_in">format</span>(c, a, b))</span><br><span class="line">    time.sleep(<span class="number">0.1</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;------执行结束------&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src="/dwx-tx.github.io/2021/12/16/python%E6%96%87%E6%9C%AC%E8%BF%9B%E5%BA%A6%E6%9D%A1/截屏\简单的开始.png"></p>
+<h2 id="单行动态刷新"><a href="#单行动态刷新" class="headerlink" title="单行动态刷新"></a>单行动态刷新</h2><p><strong>单行动态刷新</strong>：每一次进度条的输出都固定在同一行，并不断地用新生成的字符串覆盖之前的输出</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">101</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;\r&#123;:3&#125;%&quot;</span>.<span class="built_in">format</span>(i), end = <span class="string">&#x27; &#x27;</span>)</span><br><span class="line">    time.sleep(<span class="number">0.05</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="带刷新的文本进度条"><a href="#带刷新的文本进度条" class="headerlink" title="带刷新的文本进度条"></a>带刷新的文本进度条</h2><p>这种方式是采用time库中的time.clock()函数。</p>
+<p><strong>第一次调用时计时开始，同一程序中第二次及后续调用时返回与第一次计时之间的时间差，单位为秒</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">scale = <span class="number">50</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;执行开始&quot;</span>.center(scale//<span class="number">2</span>,<span class="string">&#x27;-&#x27;</span>))</span><br><span class="line">t = time.clock()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(scale+<span class="number">1</span>):</span><br><span class="line">    a = <span class="string">&#x27;*&#x27;</span> * i</span><br><span class="line">    b = <span class="string">&#x27;.&#x27;</span> * (scale - i)</span><br><span class="line">    c = (i/scale)*<span class="number">100</span></span><br><span class="line">    t -= time.clock()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;\r&#123;:^3.0f&#125;%[&#123;&#125;-&gt;&#123;&#125;]&#123;:.2f&#125;s&quot;</span>.<span class="built_in">format</span>(c,a,b,-t),\</span><br><span class="line">          end=<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">    time.sleep(<span class="number">0.05</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\n&quot;</span>+<span class="string">&quot;执行结束&quot;</span>.center(scale//<span class="number">2</span>,<span class="string">&#x27;-&#x27;</span>))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h2><ul>
+<li>用户可以容忍最初的慢速增长</li>
+<li>用户难以忍受在在进程快要结束时进度条突然停滞不前</li>
+</ul>
+<p>上述研究实际上建议在设计进度条时，可以适当降低开始阶段的进展速度，然后适当加快末尾阶段的发展速度，这样的调整可以使用户感到更加舒适</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-pythonrandom函数库"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/pythonrandom%E5%87%BD%E6%95%B0%E5%BA%93/" class="article-date">
+  <time datetime="2021-12-16T15:00:16.821Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="python——-gt-random库"><a href="#python——-gt-random库" class="headerlink" title="python——&gt;random库"></a>python——&gt;random库</h1><h2 id="random库的概述"><a href="#random库的概述" class="headerlink" title="random库的概述"></a>random库的概述</h2><p>使用random库的主要目的是生成随机数</p>
+<p>函数库提供了很多函数，不过都是基于最基本random.random（）函数扩展得到的</p>
+<h2 id="random库解析"><a href="#random库解析" class="headerlink" title="random库解析"></a>random库解析</h2><p>random常用的9个函数</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>seed(a=None)</td>
+<td>初始化随机数种子，默认值为当前系统时间</td>
+</tr>
+<tr>
+<td>random()</td>
+<td>生成一个[0.0,1.0]之间的小数</td>
+</tr>
+<tr>
+<td>randint(a,b)</td>
+<td>生成一个[a,b]之间的整数</td>
+</tr>
+<tr>
+<td>getrandbits(k)</td>
+<td>生成一个k比特长度的随机整数</td>
+</tr>
+<tr>
+<td>randrange(start,stop[,step])</td>
+<td>生成一个[strat,stop)之间以step为步数的随机整数</td>
+</tr>
+<tr>
+<td>uniform(a,b)</td>
+<td>生成一个[a,b]之间的随机小数</td>
+</tr>
+<tr>
+<td>choice(seq)</td>
+<td>从序列类型，例如列表中随机返回一个元素</td>
+</tr>
+<tr>
+<td>shuffle(seq)</td>
+<td>将序列类型中的元素随机排序，返回打乱后的序列</td>
+</tr>
+<tr>
+<td>sample(pop,k)</td>
+<td>从pop类型中随机选取k个元素，以列表类型返回</td>
+</tr>
+</tbody></table>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-python程序的异常处理"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/python%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" class="article-date">
+  <time datetime="2021-12-16T15:00:16.821Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="python程序的异常处理"><a href="#python程序的异常处理" class="headerlink" title="python程序的异常处理"></a>python程序的异常处理</h1><h2 id="异常处理：try—except语句"><a href="#异常处理：try—except语句" class="headerlink" title="异常处理：try—except语句"></a>异常处理：try—except语句</h2><p>当用户输入的数据类型了python要求执行的类型不同时，python解释器会报错</p>
+<p><img src="/dwx-tx.github.io/2021/12/16/python%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/截屏\python异常1.png"></p>
+<p><strong>NameError</strong>就是此时的异常类型，数据类型出错</p>
+<p>Python使用try-except语句格式为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    &lt;语句块<span class="number">1</span>&gt;</span><br><span class="line"><span class="keyword">except</span>&lt;异常类型&gt;:</span><br><span class="line">    &lt;语句块<span class="number">2</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="异常的高级用法"><a href="#异常的高级用法" class="headerlink" title="异常的高级用法"></a>异常的高级用法</h2><p>try和except还可以与else和finally保留字配合使用</p>
+<p>格式如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    &lt;语句块<span class="number">1</span>&gt;</span><br><span class="line"><span class="keyword">except</span> &lt;异常类型<span class="number">1</span>&gt;:</span><br><span class="line">    &lt;语句块<span class="number">2</span>&gt;</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    &lt;语句块<span class="number">3</span>&gt;</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    &lt;语句块<span class="number">4</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<p>此处的else语句与for循环和while循环中的else一样，当try中的语句块1正常执行结束且没有发生异常时，else中的语句块3执行，看作是对try语句块正常执行后的一种追加处理。finally语句块则不同，无论try中的语句块1是否发生异常，finally下的语句块4都会执行。</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+  </article>
+  
+
+  
+  <nav class="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/9/">上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/11/">下一页</a>
+  </nav>
+  
+</section>
+</div>
+
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2022
+        <i class="ri-heart-fill heart_icon"></i> dwx
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="dwx-tx的小天地"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>mybatis日志工厂 |  dwx-tx的小天地</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"
+      />
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+       
+ 
+<script>
+var _hmt = _hmt || [];
+(function() {
+	var hm = document.createElement("script");
+	hm.src = "https://hm.baidu.com/hm.js?57bee4bd4703d5af3f9154ce72c6f85f";
+	var s = document.getElementsByTagName("script")[0]; 
+	s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    <link rel="alternate" href="/atom.xml" title="dwx-tx的小天地" type="application/atom+xml">
+</head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-mybatis日志工厂"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  mybatis日志工厂
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/01/11/mybatis%E6%97%A5%E5%BF%97%E5%B7%A5%E5%8E%82/" class="article-date">
+  <time datetime="2022-01-11T13:02:29.150Z" itemprop="datePublished">2022-01-11</time>
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">1.9k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">10 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="mybatis日志工厂"><a href="#mybatis日志工厂" class="headerlink" title="mybatis日志工厂"></a>mybatis日志工厂</h1><p>如果一个数据库操作出现了一个异常，我们需要进行排除。日志就是最好的助手。</p>
+<p>在以前，我们在程序拍错时使用的是<code>sout</code>获得<code>debug</code></p>
+<p>现在，我们就能够使用日志来进行排错了</p>
+<p> <a target="_blank" rel="noopener" href="https://mybatis.net.cn/logging.html">日志_MyBatis中文网</a> </p>
+<p>日志我们只需要了解两种：<code>STDOUT_LOGGING</code>和 <code>LOG4J</code></p>
+<h2 id="STDOUT-LOGGING的使用"><a href="#STDOUT-LOGGING的使用" class="headerlink" title="STDOUT_LOGGING的使用"></a>STDOUT_LOGGING的使用</h2><p> STDOUT_LOGGING 的使用十分方便 只需要在核心配置文件（mybatis-config.xml）中配置settings就行</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">settings</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">&quot;logImpl&quot;</span> <span class="attr">value</span>=<span class="string">&quot;STDOUT_LOGGING&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>配置完就可以直接进行测试</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">Logging initialized using <span class="string">&#x27;class org.apache.ibatis.logging.stdout.StdOutImpl&#x27;</span> adapter.</span><br><span class="line">Class not found: org.jboss.vfs.VFS</span><br><span class="line">JBoss <span class="number">6</span> VFS API is not available in <span class="keyword">this</span> environment.</span><br><span class="line">Class not found: org.jboss.vfs.VirtualFile</span><br><span class="line">VFS implementation org.apache.ibatis.io.JBoss6VFS is not valid in <span class="keyword">this</span> environment.</span><br><span class="line">Using VFS adapter org.apache.ibatis.io.DefaultVFS</span><br><span class="line">Find JAR URL: file:/E:/java/MyBatisStudy/Mybatis03/target/classes/com/dwx/pojo</span><br><span class="line">Not a JAR: file:/E:/java/MyBatisStudy/Mybatis03/target/classes/com/dwx/pojo</span><br><span class="line">Reader entry: student.class</span><br><span class="line">Listing file:/E:/java/MyBatisStudy/Mybatis03/target/classes/com/dwx/pojo</span><br><span class="line">Find JAR URL: file:/E:/java/MyBatisStudy/Mybatis03/target/classes/com/dwx/pojo/student.class</span><br><span class="line">Not a JAR: file:/E:/java/MyBatisStudy/Mybatis03/target/classes/com/dwx/pojo/student.class</span><br><span class="line">Reader entry: ����   &lt; :</span><br><span class="line">Checking to see <span class="keyword">if</span> <span class="class"><span class="keyword">class</span> <span class="title">com</span>.<span class="title">dwx</span>.<span class="title">pojo</span>.<span class="title">student</span> <span class="title">matches</span> <span class="title">criteria</span> [<span class="title">is</span> <span class="title">assignable</span> <span class="title">to</span> <span class="title">Object</span>]</span></span><br><span class="line"><span class="class"><span class="title">PooledDataSource</span> <span class="title">forcefully</span> <span class="title">closed</span>/<span class="title">removed</span> <span class="title">all</span> <span class="title">connections</span>.</span></span><br><span class="line"><span class="class"><span class="title">PooledDataSource</span> <span class="title">forcefully</span> <span class="title">closed</span>/<span class="title">removed</span> <span class="title">all</span> <span class="title">connections</span>.</span></span><br><span class="line"><span class="class"><span class="title">PooledDataSource</span> <span class="title">forcefully</span> <span class="title">closed</span>/<span class="title">removed</span> <span class="title">all</span> <span class="title">connections</span>.</span></span><br><span class="line"><span class="class"><span class="title">PooledDataSource</span> <span class="title">forcefully</span> <span class="title">closed</span>/<span class="title">removed</span> <span class="title">all</span> <span class="title">connections</span>.</span></span><br><span class="line"><span class="class"><span class="title">Find</span> <span class="title">JAR</span> <span class="title">URL</span>: <span class="title">file</span>:/<span class="title">E</span>:/<span class="title">java</span>/<span class="title">MyBatisStudy</span>/<span class="title">Mybatis03</span>/<span class="title">target</span>/<span class="title">test</span>-<span class="title">classes</span>/<span class="title">com</span>/<span class="title">dwx</span>/<span class="title">mapper</span></span></span><br><span class="line"><span class="class"><span class="title">Not</span> <span class="title">a</span> <span class="title">JAR</span>: <span class="title">file</span>:/<span class="title">E</span>:/<span class="title">java</span>/<span class="title">MyBatisStudy</span>/<span class="title">Mybatis03</span>/<span class="title">target</span>/<span class="title">test</span>-<span class="title">classes</span>/<span class="title">com</span>/<span class="title">dwx</span>/<span class="title">mapper</span></span></span><br><span class="line"><span class="class"><span class="title">Reader</span> <span class="title">entry</span>: <span class="title">test</span>.<span class="title">class</span></span></span><br><span class="line"><span class="class"><span class="title">Listing</span> <span class="title">file</span>:/<span class="title">E</span>:/<span class="title">java</span>/<span class="title">MyBatisStudy</span>/<span class="title">Mybatis03</span>/<span class="title">target</span>/<span class="title">test</span>-<span class="title">classes</span>/<span class="title">com</span>/<span class="title">dwx</span>/<span class="title">mapper</span></span></span><br><span class="line"><span class="class"><span class="title">Find</span> <span class="title">JAR</span> <span class="title">URL</span>: <span class="title">file</span>:/<span class="title">E</span>:/<span class="title">java</span>/<span class="title">MyBatisStudy</span>/<span class="title">Mybatis03</span>/<span class="title">target</span>/<span class="title">test</span>-<span class="title">classes</span>/<span class="title">com</span>/<span class="title">dwx</span>/<span class="title">mapper</span>/<span class="title">test</span>.<span class="title">class</span></span></span><br><span class="line"><span class="class"><span class="title">Not</span> <span class="title">a</span> <span class="title">JAR</span>: <span class="title">file</span>:/<span class="title">E</span>:/<span class="title">java</span>/<span class="title">MyBatisStudy</span>/<span class="title">Mybatis03</span>/<span class="title">target</span>/<span class="title">test</span>-<span class="title">classes</span>/<span class="title">com</span>/<span class="title">dwx</span>/<span class="title">mapper</span>/<span class="title">test</span>.<span class="title">class</span></span></span><br><span class="line"><span class="class"><span class="title">Reader</span> <span class="title">entry</span>: ����   &lt; <span class="title">U</span></span></span><br><span class="line"><span class="class"><span class="title">Find</span> <span class="title">JAR</span> <span class="title">URL</span>: <span class="title">file</span>:/<span class="title">E</span>:/<span class="title">java</span>/<span class="title">MyBatisStudy</span>/<span class="title">Mybatis03</span>/<span class="title">target</span>/<span class="title">classes</span>/<span class="title">com</span>/<span class="title">dwx</span>/<span class="title">mapper</span></span></span><br><span class="line"><span class="class"><span class="title">Not</span> <span class="title">a</span> <span class="title">JAR</span>: <span class="title">file</span>:/<span class="title">E</span>:/<span class="title">java</span>/<span class="title">MyBatisStudy</span>/<span class="title">Mybatis03</span>/<span class="title">target</span>/<span class="title">classes</span>/<span class="title">com</span>/<span class="title">dwx</span>/<span class="title">mapper</span></span></span><br><span class="line"><span class="class"><span class="title">Reader</span> <span class="title">entry</span>: <span class="title">StudentMapper</span>.<span class="title">class</span></span></span><br><span class="line"><span class="class"><span class="title">Reader</span> <span class="title">entry</span>: <span class="title">StudentMapper</span>.<span class="title">xml</span></span></span><br><span class="line"><span class="class"><span class="title">Listing</span> <span class="title">file</span>:/<span class="title">E</span>:/<span class="title">java</span>/<span class="title">MyBatisStudy</span>/<span class="title">Mybatis03</span>/<span class="title">target</span>/<span class="title">classes</span>/<span class="title">com</span>/<span class="title">dwx</span>/<span class="title">mapper</span></span></span><br><span class="line"><span class="class"><span class="title">Find</span> <span class="title">JAR</span> <span class="title">URL</span>: <span class="title">file</span>:/<span class="title">E</span>:/<span class="title">java</span>/<span class="title">MyBatisStudy</span>/<span class="title">Mybatis03</span>/<span class="title">target</span>/<span class="title">classes</span>/<span class="title">com</span>/<span class="title">dwx</span>/<span class="title">mapper</span>/<span class="title">StudentMapper</span>.<span class="title">class</span></span></span><br><span class="line"><span class="class"><span class="title">Not</span> <span class="title">a</span> <span class="title">JAR</span>: <span class="title">file</span>:/<span class="title">E</span>:/<span class="title">java</span>/<span class="title">MyBatisStudy</span>/<span class="title">Mybatis03</span>/<span class="title">target</span>/<span class="title">classes</span>/<span class="title">com</span>/<span class="title">dwx</span>/<span class="title">mapper</span>/<span class="title">StudentMapper</span>.<span class="title">class</span></span></span><br><span class="line"><span class="class"><span class="title">Reader</span> <span class="title">entry</span>: ����   &lt;   <span class="title">com</span>/<span class="title">dwx</span>/<span class="title">mapper</span>/<span class="title">StudentMapper</span>  <span class="title">java</span>/<span class="title">lang</span>/<span class="title">Object</span> <span class="title">getStudentList</span> ()<span class="title">Ljava</span>/<span class="title">util</span>/<span class="title">List</span></span>; 	Signature *()Ljava/util/List&lt;Lcom/dwx/pojo/student;&gt;; </span><br><span class="line">Find JAR URL: file:/E:/java/MyBatisStudy/Mybatis03/target/classes/com/dwx/mapper/StudentMapper.xml</span><br><span class="line">Not a JAR: file:/E:/java/MyBatisStudy/Mybatis03/target/classes/com/dwx/mapper/StudentMapper.xml</span><br><span class="line">Reader entry: &lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span> ?&gt;</span><br><span class="line">Checking to see <span class="keyword">if</span> <span class="class"><span class="keyword">class</span> <span class="title">com</span>.<span class="title">dwx</span>.<span class="title">mapper</span>.<span class="title">test</span> <span class="title">matches</span> <span class="title">criteria</span> [<span class="title">is</span> <span class="title">assignable</span> <span class="title">to</span> <span class="title">Object</span>]</span></span><br><span class="line"><span class="class"><span class="title">Checking</span> <span class="title">to</span> <span class="title">see</span> <span class="title">if</span> <span class="title">class</span> <span class="title">com</span>.<span class="title">dwx</span>.<span class="title">mapper</span>.<span class="title">StudentMapper</span> <span class="title">matches</span> <span class="title">criteria</span> [<span class="title">is</span> <span class="title">assignable</span> <span class="title">to</span> <span class="title">Object</span>]</span></span><br><span class="line"><span class="class"><span class="title">Opening</span> <span class="title">JDBC</span> <span class="title">Connection</span></span></span><br><span class="line"><span class="class"><span class="title">Created</span> <span class="title">connection</span> 473153915.</span></span><br><span class="line"><span class="class"><span class="title">Setting</span> <span class="title">autocommit</span> <span class="title">to</span> <span class="title">false</span> <span class="title">on</span> <span class="title">JDBC</span> <span class="title">Connection</span> [<span class="title">com</span>.<span class="title">mysql</span>.<span class="title">cj</span>.<span class="title">jdbc</span>.<span class="title">ConnectionImpl</span>@1<span class="title">c33c17b</span>]</span></span><br><span class="line"><span class="class"></span>==&gt;  Preparing: select * from mybatis.student</span><br><span class="line">==&gt; Parameters: </span><br><span class="line">&lt;==    Columns: id, name, password</span><br><span class="line">&lt;==        Row: <span class="number">1</span>, 张三, welcome</span><br><span class="line">&lt;==        Row: <span class="number">2</span>, 李四, welcome</span><br><span class="line">&lt;==        Row: <span class="number">4</span>, 王五, <span class="number">123456</span></span><br><span class="line">&lt;==        Row: <span class="number">17</span>, dwx, welcome</span><br><span class="line">&lt;==        Row: <span class="number">100</span>, 李一百, welcome</span><br><span class="line">&lt;==      Total: <span class="number">5</span></span><br><span class="line">student&#123;id=<span class="number">1</span>, name=<span class="string">&#x27;张三&#x27;</span>, pwd=<span class="string">&#x27;welcome&#x27;</span>&#125;</span><br><span class="line">student&#123;id=<span class="number">2</span>, name=<span class="string">&#x27;李四&#x27;</span>, pwd=<span class="string">&#x27;welcome&#x27;</span>&#125;</span><br><span class="line">student&#123;id=<span class="number">4</span>, name=<span class="string">&#x27;王五&#x27;</span>, pwd=<span class="string">&#x27;123456&#x27;</span>&#125;</span><br><span class="line">student&#123;id=<span class="number">17</span>, name=<span class="string">&#x27;dwx&#x27;</span>, pwd=<span class="string">&#x27;welcome&#x27;</span>&#125;</span><br><span class="line">student&#123;id=<span class="number">100</span>, name=<span class="string">&#x27;李一百&#x27;</span>, pwd=<span class="string">&#x27;welcome&#x27;</span>&#125;</span><br><span class="line"></span><br><span class="line">Process finished with exit code <span class="number">0</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>这种日志的特点在于：</p>
+<ul>
+<li>使用简单 能实现基本功能</li>
+<li>只在控制台输出 不可以DIy 不可以控制输出格式</li>
+</ul>
+<h2 id="LOG4J的使用"><a href="#LOG4J的使用" class="headerlink" title="LOG4J的使用"></a>LOG4J的使用</h2><p>LOG4J应该是使用更加广泛地，但是他的使用需要进行配置，使用起来有点麻烦</p>
+<p><strong>LOG4J的使用步骤：</strong></p>
+<ul>
+<li>导入LOG4J的依赖</li>
+<li>在resource文件下新增一个配置文件(log4j.properties)</li>
+<li>编写log4j配置文件（网上搜 不用记）（会在博客中写的）</li>
+<li>设置log4j为日志的实现</li>
+<li>使用log4j</li>
+</ul>
+<h3 id="导入LOG4J的依赖"><a href="#导入LOG4J的依赖" class="headerlink" title="导入LOG4J的依赖"></a>导入LOG4J的依赖</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">       <span class="comment">&lt;!-- https://mvnrepository.com/artifact/log4j/log4j --&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.17<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>在子程序的pom.xml文件中配置</p>
+<h3 id="在resource文件下新增一个配置文件-log4j-properties"><a href="#在resource文件下新增一个配置文件-log4j-properties" class="headerlink" title="在resource文件下新增一个配置文件(log4j.properties)"></a>在resource文件下新增一个配置文件(log4j.properties)</h3><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># priority  :debug&lt;info&lt;warn&lt;error</span></span><br><span class="line"><span class="comment">#you cannot specify every priority with different file for log4j</span></span><br><span class="line"><span class="meta">log4j.rootLogger</span>=<span class="string">debug,stdout,info,debug,warn,error </span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">#console</span></span><br><span class="line"><span class="meta">log4j.appender.stdout</span>=<span class="string">org.apache.log4j.ConsoleAppender </span></span><br><span class="line"><span class="meta">log4j.appender.stdout.layout</span>=<span class="string">org.apache.log4j.PatternLayout </span></span><br><span class="line"><span class="meta">log4j.appender.stdout.layout.ConversionPattern</span>= <span class="string">[%d&#123;yyyy-MM-dd HH:mm:ss a&#125;]:%p %l%m%n</span></span><br><span class="line"><span class="comment">#info log</span></span><br><span class="line"><span class="meta">log4j.logger.info</span>=<span class="string">info</span></span><br><span class="line"><span class="meta">log4j.appender.info</span>=<span class="string">org.apache.log4j.DailyRollingFileAppender </span></span><br><span class="line"><span class="meta">log4j.appender.info.DatePattern</span>=<span class="string">&#x27;_&#x27;yyyy-MM-dd&#x27;.log&#x27;</span></span><br><span class="line"><span class="meta">log4j.appender.info.File</span>=<span class="string">./logs/log.log</span></span><br><span class="line"><span class="meta">log4j.appender.info.Append</span>=<span class="string">true</span></span><br><span class="line"><span class="meta">log4j.appender.info.Threshold</span>=<span class="string">INFO</span></span><br><span class="line"><span class="meta">log4j.appender.info.layout</span>=<span class="string">org.apache.log4j.PatternLayout </span></span><br><span class="line"><span class="meta">log4j.appender.info.layout.ConversionPattern</span>=<span class="string">%d&#123;yyyy-MM-dd HH:mm:ss a&#125; [Thread: %t][ Class:%c &gt;&gt; Method: %l ]%n%p:%m%n</span></span><br><span class="line"><span class="comment">#debug log</span></span><br><span class="line"><span class="meta">log4j.logger.debug</span>=<span class="string">debug</span></span><br><span class="line"><span class="meta">log4j.appender.debug</span>=<span class="string">org.apache.log4j.DailyRollingFileAppender </span></span><br><span class="line"><span class="meta">log4j.appender.debug.DatePattern</span>=<span class="string">&#x27;_&#x27;yyyy-MM-dd&#x27;.log&#x27;</span></span><br><span class="line"><span class="meta">log4j.appender.debug.File</span>=<span class="string">./logs/log.log</span></span><br><span class="line"><span class="meta">log4j.appender.debug.Append</span>=<span class="string">true</span></span><br><span class="line"><span class="meta">log4j.appender.debug.Threshold</span>=<span class="string">DEBUG</span></span><br><span class="line"><span class="meta">log4j.appender.debug.layout</span>=<span class="string">org.apache.log4j.PatternLayout </span></span><br><span class="line"><span class="meta">log4j.appender.debug.layout.ConversionPattern</span>=<span class="string">%d&#123;yyyy-MM-dd HH:mm:ss a&#125; [Thread: %t][ Class:%c &gt;&gt; Method: %l ]%n%p:%m%n</span></span><br><span class="line"><span class="comment">#warn log</span></span><br><span class="line"><span class="meta">log4j.logger.warn</span>=<span class="string">warn</span></span><br><span class="line"><span class="meta">log4j.appender.warn</span>=<span class="string">org.apache.log4j.DailyRollingFileAppender </span></span><br><span class="line"><span class="meta">log4j.appender.warn.DatePattern</span>=<span class="string">&#x27;_&#x27;yyyy-MM-dd&#x27;.log&#x27;</span></span><br><span class="line"><span class="meta">log4j.appender.warn.File</span>=<span class="string">./logs/log.log</span></span><br><span class="line"><span class="meta">log4j.appender.warn.Append</span>=<span class="string">true</span></span><br><span class="line"><span class="meta">log4j.appender.warn.Threshold</span>=<span class="string">WARN</span></span><br><span class="line"><span class="meta">log4j.appender.warn.layout</span>=<span class="string">org.apache.log4j.PatternLayout </span></span><br><span class="line"><span class="meta">log4j.appender.warn.layout.ConversionPattern</span>=<span class="string">%d&#123;yyyy-MM-dd HH:mm:ss a&#125; [Thread: %t][ Class:%c &gt;&gt; Method: %l ]%n%p:%m%n</span></span><br><span class="line"><span class="comment">#error</span></span><br><span class="line"><span class="meta">log4j.logger.error</span>=<span class="string">error</span></span><br><span class="line"><span class="meta">log4j.appender.error</span> = <span class="string">org.apache.log4j.DailyRollingFileAppender</span></span><br><span class="line"><span class="meta">log4j.appender.error.DatePattern</span>=<span class="string">&#x27;_&#x27;yyyy-MM-dd&#x27;.log&#x27;</span></span><br><span class="line"><span class="meta">log4j.appender.error.File</span> =<span class="string">./logs/log.log</span></span><br><span class="line"><span class="meta">log4j.appender.error.Append</span> = <span class="string">true</span></span><br><span class="line"><span class="meta">log4j.appender.error.Threshold</span> = <span class="string">ERROR </span></span><br><span class="line"><span class="meta">log4j.appender.error.layout</span> = <span class="string">org.apache.log4j.PatternLayout</span></span><br><span class="line"><span class="meta">log4j.appender.error.layout.ConversionPattern</span> = <span class="string">%d&#123;yyyy-MM-dd HH:mm:ss a&#125; [Thread: %t][ Class:%c &gt;&gt; Method: %l ]%n%p:%m%n</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="设置log4j为日志的实现"><a href="#设置log4j为日志的实现" class="headerlink" title="设置log4j为日志的实现"></a>设置log4j为日志的实现</h3><p>在核心配置文件中写</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">settings</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">&quot;logImpl&quot;</span> <span class="attr">value</span>=<span class="string">&quot;LOG4J&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="使用log4j"><a href="#使用log4j" class="headerlink" title="使用log4j"></a>使用log4j</h3><p>使用log4j有两种使用办法：</p>
+<ul>
+<li>直接使用</li>
+<li>编写使用方法</li>
+</ul>
+<h4 id="直接使用"><a href="#直接使用" class="headerlink" title="直接使用"></a>直接使用</h4><p>在进行过以上的操作时，直接在操作类中写<code>Logger logger = Logger.getLogger(&quot;测试方法类.class&quot;)</code></p>
+<p>直接使用即可</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.dwx.mapper;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.dwx.pojo.student;</span><br><span class="line"><span class="keyword">import</span> com.dwx.untils.MyBatisUtils;</span><br><span class="line"><span class="keyword">import</span> org.apache.ibatis.session.SqlSession;</span><br><span class="line"><span class="keyword">import</span> org.apache.log4j.Logger;</span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">test</span> </span>&#123;</span><br><span class="line">    <span class="comment">//注意 此处导包要导Apache的包</span></span><br><span class="line">    Logger logger = Logger.getLogger(test.class);</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getStudentListTest</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">//首先需要获取到 mapper</span></span><br><span class="line">        <span class="comment">//以下的操作都是固定的 不需要进行任何改变</span></span><br><span class="line">        MyBatisUtils myBatisUtils = <span class="keyword">new</span> MyBatisUtils();</span><br><span class="line">        SqlSession sqlSession = myBatisUtils.getSqlSession();</span><br><span class="line">        StudentMapper mapper = sqlSession.getMapper(StudentMapper.class);</span><br><span class="line">        List&lt;student&gt; studentList = mapper.getStudentList();</span><br><span class="line">        <span class="keyword">for</span> (student student : studentList) &#123;</span><br><span class="line">            System.out.println(student.toString());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>注意：创建Logger 导包是一定要导Apache log4j的包</p>
+<p>在运行后，会产生一个logs文件，里边有log日志</p>
+<p> <img src="https://s3.bmp.ovh/imgs/2022/01/a298a57348da1abc.jpg" alt="文件的产生"> </p>
+<p>文件中的内容和在控制台中输出的内容一致</p>
+<p> <img src="https://s3.bmp.ovh/imgs/2022/01/fdf07f460ed94621.jpg" alt="文件中的内容"> </p>
+<h3 id="使用测试方法"><a href="#使用测试方法" class="headerlink" title="使用测试方法"></a>使用测试方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.dwx.mapper;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.dwx.pojo.student;</span><br><span class="line"><span class="keyword">import</span> com.dwx.untils.MyBatisUtils;</span><br><span class="line"><span class="keyword">import</span> org.apache.ibatis.session.SqlSession;</span><br><span class="line"><span class="keyword">import</span> org.apache.log4j.Logger;</span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">test</span> </span>&#123;</span><br><span class="line">    <span class="comment">//注意 此处导包要导Apache的包</span></span><br><span class="line">    Logger logger = Logger.getLogger(test.class);</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">log4jTest</span><span class="params">()</span></span>&#123;</span><br><span class="line">        logger.info(<span class="string">&quot;###################infor#################&quot;</span>);</span><br><span class="line">        logger.debug(<span class="string">&quot;##################debug#################&quot;</span>);</span><br><span class="line">        logger.error(<span class="string">&quot;##################error##################&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>这样使用的好处是，在log文件中只会出现我们设置的这几个数据</p>
+<p><strong>控制台中的输出</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">com.dwx.mapper.test,log4jTest</span><br><span class="line">[2022-01-11 21:01:04 下午]:INFO com.dwx.mapper.test.log4jTest(test.java:30)###################infor#################</span><br><span class="line">[2022-01-11 21:01:04 下午]:DEBUG com.dwx.mapper.test.log4jTest(test.java:31)##################debug#################</span><br><span class="line">[2022-01-11 21:01:04 下午]:ERROR com.dwx.mapper.test.log4jTest(test.java:32)##################error##################</span><br></pre></td></tr></table></figure>
+
+<p><strong>log.log中的输出</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">2022-01-11 21:01:04 下午 [Thread: main][ Class:com.dwx.mapper.test &gt;&gt; Method: com.dwx.mapper.test.log4jTest(test.java:30) ]</span><br><span class="line">INFO:###################infor#################</span><br><span class="line">2022-01-11 21:01:04 下午 [Thread: main][ Class:com.dwx.mapper.test &gt;&gt; Method: com.dwx.mapper.test.log4jTest(test.java:30) ]</span><br><span class="line">INFO:###################infor#################</span><br><span class="line">2022-01-11 21:01:04 下午 [Thread: main][ Class:com.dwx.mapper.test &gt;&gt; Method: com.dwx.mapper.test.log4jTest(test.java:31) ]</span><br><span class="line">DEBUG:##################debug#################</span><br><span class="line">2022-01-11 21:01:04 下午 [Thread: main][ Class:com.dwx.mapper.test &gt;&gt; Method: com.dwx.mapper.test.log4jTest(test.java:32) ]</span><br><span class="line">ERROR:##################error##################</span><br><span class="line">2022-01-11 21:01:04 下午 [Thread: main][ Class:com.dwx.mapper.test &gt;&gt; Method: com.dwx.mapper.test.log4jTest(test.java:32) ]</span><br><span class="line">ERROR:##################error##################</span><br><span class="line">2022-01-11 21:01:04 下午 [Thread: main][ Class:com.dwx.mapper.test &gt;&gt; Method: com.dwx.mapper.test.log4jTest(test.java:32) ]</span><br><span class="line">ERROR:##################error##################</span><br><span class="line">2022-01-11 21:01:04 下午 [Thread: main][ Class:com.dwx.mapper.test &gt;&gt; Method: com.dwx.mapper.test.log4jTest(test.java:32) ]</span><br><span class="line">ERROR:##################error##################</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          Donate
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://dwx-tx/dwx-tx.github.io/2022/01/11/mybatis%E6%97%A5%E5%BF%97%E5%B7%A5%E5%8E%82/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2022/01/12/mybatis%E5%AE%9E%E7%8E%B0%E5%88%86%E9%A1%B5/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            mybatis实现分页
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2022/01/11/mybatis%E7%BB%93%E6%9E%9C%E9%9B%86%E6%98%A0%E5%B0%84/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">mybatis结果集映射</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2022
+        <i class="ri-heart-fill heart_icon"></i> dwx
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="dwx-tx的小天地"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>

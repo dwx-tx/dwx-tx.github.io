@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title> dwx-tx的小天地</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"
+      />
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+       
+ 
+<script>
+var _hmt = _hmt || [];
+(function() {
+	var hm = document.createElement("script");
+	hm.src = "https://hm.baidu.com/hm.js?57bee4bd4703d5af3f9154ce72c6f85f";
+	var s = document.getElementsByTagName("script")[0]; 
+	s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    <link rel="alternate" href="/atom.xml" title="dwx-tx的小天地" type="application/atom+xml">
+</head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      
+<section class="cover">
+    
+      
+      <a class="forkMe" href="https://github.com/Shen-Yu/hexo-theme-ayer"
+        target="_blank"><img width="149" height="149" src="/images/forkme.png"
+          class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+    
+  <div class="cover-frame">
+    <div class="bg-box">
+      <img src="/images/cover1.jpg" alt="image frame" />
+    </div>
+    <div class="cover-inner text-center text-white">
+      <h1><a href="/">dwx-tx的小天地</a></h1>
+      <div id="subtitle-box">
+        
+        <span id="subtitle"></span>
+        
+      </div>
+      <div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="cover-learn-more">
+    <a href="javascript:void(0)" class="anchor"><i class="ri-arrow-down-line"></i></a>
+  </div>
+</section>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script>
+
+
+<!-- Subtitle -->
+
+  <script>
+    try {
+      var typed = new Typed("#subtitle", {
+        strings: ['面朝大海，春暖花开', '愿你一生努力，一生被爱', '想要的都拥有，得不到的都释怀'],
+        startDelay: 0,
+        typeSpeed: 200,
+        loop: true,
+        backSpeed: 100,
+        showCursor: true
+      });
+    } catch (err) {
+      console.log(err)
+    }
+  </script>
+  
+<div id="main">
+  <section class="outer">
+  
+  
+  
+
+<div class="notice" style="margin-top:50px">
+    <i class="ri-heart-fill"></i>
+    <div class="notice-content" id="broad"></div>
+</div>
+<script type="text/javascript">
+    fetch('https://v1.hitokoto.cn')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("broad").innerHTML = data.hitokoto;
+        })
+        .catch(console.error)
+</script>
+
+<style>
+    .notice {
+        padding: 20px;
+        border: 1px dashed #e6e6e6;
+        color: #969696;
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        background: #fbfbfb50;
+        border-radius: 10px;
+    }
+
+    .notice i {
+        float: left;
+        color: #999;
+        font-size: 16px;
+        padding-right: 10px;
+        vertical-align: middle;
+        margin-top: -2px;
+    }
+
+    .notice-content {
+        display: initial;
+        vertical-align: middle;
+    }
+</style>
+  
+  <article class="articles">
+    
+    
+    
+    
+    <article
+  id="post-动态规划问题总结加例题"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/03/26/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%E5%8A%A0%E4%BE%8B%E9%A2%98/"
+    >对动态规划的浅薄理解</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/03/26/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%E5%8A%A0%E4%BE%8B%E9%A2%98/" class="article-date">
+  <time datetime="2022-03-26T07:02:06.612Z" itemprop="datePublished">2022-03-26</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><p>动态规划对于一个算法初学整来说并不好懂，但是通过做题和画图推理，是能够发现动态规划问题的共性的。</p>
+<h2 id="最大k乘积问题"><a href="#最大k乘积问题" class="headerlink" title="最大k乘积问题"></a>最大k乘积问题</h2><p> <img src="https://s3.bmp.ovh/imgs/2022/03/34086b37dc34dac1.jpg"> </p>
+<p><strong>问题分析</strong></p>
+<p> <img src="https://s3.bmp.ovh/imgs/2022/03/f89bfc5b00fca813.jpg"> </p>
+<p><strong>手推过程</strong></p>
+<p> <img src="https://s3.bmp.ovh/imgs/2022/03/1cf3f2e609cb8483.jpg"> </p>
+<p><strong>算法实现</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.dwx.passage3;</span><br><span class="line"></span><br><span class="line"><span class="comment">//十进制数最大k累积</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">demo3_1</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> k; <span class="comment">//表示子序列分隔的位置</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> i;<span class="comment">//表示数组开始的位置</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> j;<span class="comment">//表示数组结束的位置</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> m;<span class="comment">//表示执行几次划分</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[][] dp;<span class="comment">//存储数据的数组</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] l;<span class="comment">//存放我们十进制数的整数数组</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getK</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> k;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setK</span><span class="params">(<span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.k = k;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getI</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> i;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setI</span><span class="params">(<span class="keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.i = i;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getJ</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> j;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setJ</span><span class="params">(<span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.j = j;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[][] getDp() &#123;</span><br><span class="line">        <span class="keyword">return</span> dp;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setDp</span><span class="params">(<span class="keyword">int</span>[][] dp)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.dp = dp;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] getL() &#123;</span><br><span class="line">        <span class="keyword">return</span> l;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setL</span><span class="params">(<span class="keyword">int</span>[] l)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.l = l;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getM</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> m;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setM</span><span class="params">(<span class="keyword">int</span> m)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.m = m;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//这个问题的动态规划方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">demo</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">//先对我们获得的数组进行初始化</span></span><br><span class="line">        <span class="comment">//一般第一列和第一行我们都跳过不进行初始化 为了方便理解将数字中的i与我们计算机中的第i列相对应</span></span><br><span class="line">        <span class="keyword">int</span> a,b,c,d;</span><br><span class="line">        <span class="keyword">for</span> (a = i;a &lt;= j; a++)&#123;</span><br><span class="line">            dp[a][<span class="number">1</span>] = getNumber(i,a);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//对除了第一行以外的其他的元素进行操作</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//对第二列进行操作</span></span><br><span class="line">        <span class="keyword">for</span> (b=<span class="number">2</span>;b&lt;=m;b++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (c = <span class="number">2</span>;c&lt;=(j-i)+<span class="number">1</span>;c++)&#123;</span><br><span class="line">                <span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">for</span> (k=c-<span class="number">1</span>;k&gt;=<span class="number">1</span>;k--)&#123;</span><br><span class="line">                    <span class="keyword">if</span> (dp[k][b-<span class="number">1</span>]*getNumber(k+<span class="number">1</span>,c)&gt;max)</span><br><span class="line">                        max = dp[k][b-<span class="number">1</span>]*getNumber(k+<span class="number">1</span>,c);</span><br><span class="line">                &#125;</span><br><span class="line">                dp[c][b] = max;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">//先编写一个获取数值的方法</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getNumber</span><span class="params">(<span class="keyword">int</span> i,<span class="keyword">int</span> j)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> number = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> x = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> k = j;k&gt;=i;k--)&#123;</span><br><span class="line">            number = number + l[k]*x;</span><br><span class="line">            x = x * <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> number;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>验证</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.dwx.passage3.demo3_1;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">demo3_1Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> j = <span class="number">4</span>;</span><br><span class="line">        <span class="keyword">int</span> m = <span class="number">4</span>;</span><br><span class="line">        <span class="keyword">int</span> dp[][] = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>][<span class="number">5</span>];</span><br><span class="line">        <span class="keyword">int</span>[] l = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;;</span><br><span class="line">        demo3_1 demo3_1 = <span class="keyword">new</span> demo3_1();</span><br><span class="line">        demo3_1.setDp(dp);</span><br><span class="line">        demo3_1.setI(i);</span><br><span class="line">        demo3_1.setJ(j);</span><br><span class="line">        demo3_1.setL(l);</span><br><span class="line">        demo3_1.setM(m);</span><br><span class="line">        demo3_1.demo();</span><br><span class="line">        <span class="keyword">int</span>[][] dp1 = demo3_1.getDp();</span><br><span class="line">        <span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;=j;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> x=<span class="number">1</span>;x&lt;=j;x++)&#123;</span><br><span class="line">                System.out.print(dp1[i][x]+<span class="string">&quot;\t&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>输出</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	</span><br><span class="line"><span class="number">12</span>	<span class="number">2</span>	<span class="number">0</span>	<span class="number">0</span>	</span><br><span class="line"><span class="number">123</span>	<span class="number">36</span>	<span class="number">6</span>	<span class="number">0</span>	</span><br><span class="line"><span class="number">1234</span>	<span class="number">492</span>	<span class="number">144</span>	<span class="number">24</span>	</span><br></pre></td></tr></table></figure>
+
+<p>我们可以看到，我们的输出和我们手推的结果一样，因此这个算法程序是正确的。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>从上边的的几个案例我们可以看到，动态规划就是一个空间换时间的算法思路。动态规划求一个问题的最优解也是把整个问题的所有情况全部遍历了一边，但是比起一般的遍历，动态规划因为使用了dp矩阵，因此之前计算过的情况全部存放在dp矩阵里，减少了计算的次数，因此有人说动态规划是一种带记忆的遍历。</p>
+<p>动态规划的解题思路是：</p>
+<ul>
+<li>找到递推公式</li>
+<li>确定dp矩阵的行向量和列向量的含义</li>
+<li>自底而上一步步求解一步步动态规划</li>
+<li>就得到了一个东西的所有情况</li>
+</ul>
+<p>动态规划并没有一个固定的算法，不能和之前在数据结构中学习到的算法混为一谈。</p>
+<p>在我看来动态规划只是一种思路，这种思路需要逻辑性。</p>
+<p>最快学会学清除动态规划的方法就是，自己把一个动态规划题目的dp矩阵手推出来</p>
+<p>就能理解程序的处理过程了。</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-石子合并问题"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/03/24/%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6%E9%97%AE%E9%A2%98/"
+    >石子合并问题</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/03/24/%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6%E9%97%AE%E9%A2%98/" class="article-date">
+  <time datetime="2022-03-24T03:15:23.452Z" itemprop="datePublished">2022-03-24</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="石子合并问题"><a href="#石子合并问题" class="headerlink" title="石子合并问题"></a>石子合并问题</h1><h2 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h2><p> <a target="_blank" rel="noopener" href="https://blog.csdn.net/sunhengzhi_212/article/details/81199293?ops_request_misc=&request_id=&biz_id=102&utm_term=%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6%E9%97%AE%E9%A2%98&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-0-81199293.142%5Ev3%5Epc_search_result_control_group,143%5Ev4%5Econtrol&spm=1018.2226.3001.4187">(105条消息) dp算法 - 石子合并问题_lost_tower的博客-CSDN博客_石子合并</a> </p>
+<p>他的这个收算法解释的，但是我们保证我写的是我自己思考出来的。</p>
+<p>这里我只是借用他的写出来的问题</p>
+<h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><p> <img src="https://s3.bmp.ovh/imgs/2022/03/aa8c24a83eb5c406.jpg"> </p>
+<p>这个是思考这个题时候的笔记，有手推过程，以及递推公式</p>
+<hr>
+<p><strong>手推过程</strong></p>
+<p> <img src="https://s3.bmp.ovh/imgs/2022/03/ca4a7c3a96bbb6b6.jpg"> </p>
+<h2 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.dwx.passage3;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">demo3__3</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> m[];<span class="comment">//m数组说是用来存放石头的</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> dp[][];<span class="comment">//用来存放合并后的石头堆</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> i;<span class="comment">//起始地址</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> j;<span class="comment">//终止地址</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> inf = <span class="number">9999</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] getM() &#123;</span><br><span class="line">        <span class="keyword">return</span> m;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setM</span><span class="params">(<span class="keyword">int</span>[] m)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.m = m;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[][] getDp() &#123;</span><br><span class="line">        <span class="keyword">return</span> dp;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setDp</span><span class="params">(<span class="keyword">int</span>[][] dp)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.dp = dp;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getI</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> i;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setI</span><span class="params">(<span class="keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.i = i;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getJ</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> j;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setJ</span><span class="params">(<span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.j = j;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">//这个是动态规划方法的主体</span></span><br><span class="line">    <span class="comment">//这个递归程序用来求最小代价</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">demoMin</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">//对程序进行初始化</span></span><br><span class="line">        <span class="comment">//计算石头的数量</span></span><br><span class="line">        <span class="keyword">int</span> n = m.length;</span><br><span class="line">        <span class="comment">//不需要任何的初始化</span></span><br><span class="line">        <span class="comment">//初始化 都化为0</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> d = <span class="number">1</span>;d&lt;n;d++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> e=<span class="number">1</span>;e&lt;n;e++)&#123;</span><br><span class="line">                dp[d][e] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//对除了对角线以外的数据进行操作</span></span><br><span class="line">        <span class="comment">//这里 我们设a为列，b为行,c为间断点</span></span><br><span class="line">        <span class="comment">//因此 我们的思想是 从a合并到b，以c为间断点</span></span><br><span class="line">        <span class="keyword">int</span> a,b,c;</span><br><span class="line">        <span class="keyword">int</span> min;</span><br><span class="line">        <span class="keyword">for</span> (b=<span class="number">2</span>;b&lt;m.length;b++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (a=b-<span class="number">1</span>;a&gt;=<span class="number">1</span>;a--)&#123;</span><br><span class="line">                min = inf;</span><br><span class="line">                <span class="comment">//设置间断点</span></span><br><span class="line">                <span class="keyword">for</span> (c=b-<span class="number">1</span>;c&gt;=a;c--)&#123;</span><br><span class="line">                    <span class="keyword">if</span> (dp[a][c]+dp[c+<span class="number">1</span>][b]+getNumber(a,b) &lt; min)&#123;</span><br><span class="line">                           min = dp[a][c]+dp[c+<span class="number">1</span>][b]+getNumber(a,b);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                dp[a][b] = min;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//这个程序用来求最大代价</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">demoMax</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">//对程序进行初始化</span></span><br><span class="line">        <span class="comment">//计算石头的数量</span></span><br><span class="line">        <span class="keyword">int</span> n = m.length;</span><br><span class="line">        <span class="comment">//不需要任何的初始化</span></span><br><span class="line">        <span class="comment">//初始化</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> d = <span class="number">1</span>;d&lt;n;d++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> e = <span class="number">1</span>; e &lt; n; e++) dp[d][e] = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        &#125;        <span class="comment">//对除了对角线以外的数据进行操作</span></span><br><span class="line">        <span class="comment">//这里 我们设a为列，b为行,c为间断点</span></span><br><span class="line">        <span class="comment">//因此 我们的思想是 从a合并到b，以c为间断点</span></span><br><span class="line">        <span class="keyword">int</span> a,b,c;</span><br><span class="line">        <span class="keyword">int</span> max;</span><br><span class="line">        <span class="keyword">for</span> (b=<span class="number">2</span>;b&lt;m.length;b++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (a=b-<span class="number">1</span>;a&gt;=<span class="number">1</span>;a--)&#123;</span><br><span class="line">                max = <span class="number">0</span>;</span><br><span class="line">                <span class="comment">//设置间断点</span></span><br><span class="line">                <span class="keyword">for</span> (c=b-<span class="number">1</span>;c&gt;=a;c--)&#123;</span><br><span class="line">                    <span class="keyword">if</span> (dp[a][c]+dp[c+<span class="number">1</span>][b]+getNumber(a,b) &gt; max)&#123;</span><br><span class="line">                        max = dp[a][c]+dp[c+<span class="number">1</span>][b]+getNumber(a,b);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                dp[a][b] = max;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//这个是获得合并后石头数量的方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getNumber</span><span class="params">(<span class="keyword">int</span> i,<span class="keyword">int</span> j)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> number = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> k=i;k&lt;=j;k++)&#123;</span><br><span class="line">            number = number+m[k];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> number;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>检验</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.dwx.passage3.demo3__3;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">demo3_3Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//设置数组</span></span><br><span class="line">        <span class="keyword">int</span>[] m = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">0</span>,<span class="number">5</span>,<span class="number">8</span>,<span class="number">2</span>,<span class="number">9</span>,<span class="number">3</span>,<span class="number">6</span>,<span class="number">4</span>&#125;;</span><br><span class="line">        <span class="comment">//设置dp数组</span></span><br><span class="line">        <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[m.length][m.length];</span><br><span class="line">        <span class="comment">// 设置起始位置和终止位置</span></span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">        demo3__3 demo3__3 = <span class="keyword">new</span> demo3__3();</span><br><span class="line">        demo3__3.setDp(dp);</span><br><span class="line">        demo3__3.setI(i);</span><br><span class="line">        demo3__3.setJ(j);</span><br><span class="line">        demo3__3.setM(m);</span><br><span class="line">        <span class="comment">//执行找最小代价程序</span></span><br><span class="line">        demo3__3.demoMin();</span><br><span class="line">        <span class="keyword">int</span>[][] dp1 = demo3__3.getDp();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span>[] ints : dp1) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> anInt : ints) &#123;</span><br><span class="line">                System.out.print(anInt+<span class="string">&quot;\t&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;==============================&quot;</span>);</span><br><span class="line">        <span class="comment">//执行找最大代价的程序</span></span><br><span class="line">        demo3__3.demoMax();</span><br><span class="line">        <span class="keyword">int</span>[][] dp2 = demo3__3.getDp();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span>[] ints : dp2) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> anInt : ints) &#123;</span><br><span class="line">                System.out.print(anInt+<span class="string">&quot;\t&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>输出结果</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	</span><br><span class="line"><span class="number">0</span>	<span class="number">0</span>	<span class="number">13</span>	<span class="number">25</span>	<span class="number">48</span>	<span class="number">64</span>	<span class="number">85</span>	<span class="number">106</span>	</span><br><span class="line"><span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">10</span>	<span class="number">29</span>	<span class="number">44</span>	<span class="number">65</span>	<span class="number">83</span>	</span><br><span class="line"><span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">11</span>	<span class="number">25</span>	<span class="number">40</span>	<span class="number">57</span>	</span><br><span class="line"><span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">12</span>	<span class="number">27</span>	<span class="number">44</span>	</span><br><span class="line"><span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">9</span>	<span class="number">22</span>	</span><br><span class="line"><span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">10</span>	</span><br><span class="line"><span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	</span><br><span class="line">==============================</span><br><span class="line"><span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	</span><br><span class="line"><span class="number">0</span>	<span class="number">0</span>	<span class="number">13</span>	<span class="number">28</span>	<span class="number">54</span>	<span class="number">81</span>	<span class="number">114</span>	<span class="number">151</span>	</span><br><span class="line"><span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">10</span>	<span class="number">30</span>	<span class="number">52</span>	<span class="number">80</span>	<span class="number">112</span>	</span><br><span class="line"><span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">11</span>	<span class="number">26</span>	<span class="number">50</span>	<span class="number">76</span>	</span><br><span class="line"><span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">12</span>	<span class="number">30</span>	<span class="number">52</span>	</span><br><span class="line"><span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">9</span>	<span class="number">23</span>	</span><br><span class="line"><span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">10</span>	</span><br><span class="line"><span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	</span><br></pre></td></tr></table></figure>
+
+<p>可以看到这个结果和我们的手推的dp矩阵时一致的，因此是一个合适的答案</p>
+<h2 id="不足之处"><a href="#不足之处" class="headerlink" title="不足之处"></a>不足之处</h2><p>在编写动态规划问题的时候，思考最多的是地推公式，应该仔细分析，得到一个正确的递归公式。</p>
+<p>得到递归公式也不代表是解决了这个问题，要分析好这个三重for循环怎么写，算法实现怎么写。</p>
+<p><strong>一定要注意，动态规划自底而上的原则</strong></p>
+<p>在分析递推公式的时候一定要注意：</p>
+<p><strong>dp[i] [j]矩阵的i和j到底代表着什么</strong></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-矩阵连乘问题"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/03/22/%E7%9F%A9%E9%98%B5%E8%BF%9E%E4%B9%98%E9%97%AE%E9%A2%98/"
+    >矩阵连乘问题</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/03/22/%E7%9F%A9%E9%98%B5%E8%BF%9E%E4%B9%98%E9%97%AE%E9%A2%98/" class="article-date">
+  <time datetime="2022-03-22T12:11:15.754Z" itemprop="datePublished">2022-03-22</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="矩阵连乘"><a href="#矩阵连乘" class="headerlink" title="矩阵连乘"></a>矩阵连乘</h1><p>矩阵连乘是一个经典的动态规划问题</p>
+<p> <img src="https://s3.bmp.ovh/imgs/2022/03/91c8c4a07136ceda.jpg" alt="矩阵连乘的思想"> </p>
+<h2 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.dwx.passage3;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MatrixChain</span> </span>&#123;</span><br><span class="line">    <span class="comment">//整数矩阵连乘</span></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    * p[]: 输入参数</span></span><br><span class="line"><span class="comment">    * m[]:最优值数组</span></span><br><span class="line"><span class="comment">    * s[]:最优断开位置数组</span></span><br><span class="line"><span class="comment">    * r:子链长度</span></span><br><span class="line"><span class="comment">    * n:我们要求的链的长度*/</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] p;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[][] m;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[][] s;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> r;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> n;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] getP() &#123;</span><br><span class="line">        <span class="keyword">return</span> p;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setP</span><span class="params">(<span class="keyword">int</span>[] p)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.p = p;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[][] getM() &#123;</span><br><span class="line">        <span class="keyword">return</span> m;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setM</span><span class="params">(<span class="keyword">int</span>[][] m)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.m = m;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[][] getS() &#123;</span><br><span class="line">        <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setS</span><span class="params">(<span class="keyword">int</span>[][] s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.s = s;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getR</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> r;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setR</span><span class="params">(<span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.r = r;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getN</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> n;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setN</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.n = n;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//算法核心</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">matriChain</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">//对矩阵进行初始化 将m[][]的对角线全部设置为0</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) &#123;</span><br><span class="line">            m[i][i] = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//对网格图m[][]填写数据</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> r = <span class="number">2</span>;r&lt;=n;r++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n-r+<span class="number">1</span>;i++) &#123;</span><br><span class="line">                <span class="keyword">int</span> j = i + r - <span class="number">1</span>;</span><br><span class="line">                m[i][j] = m[i + <span class="number">1</span>][j] + p[i - <span class="number">1</span>] * p[i] * p[j];</span><br><span class="line">                s[i][j] = i;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> k = i + <span class="number">1</span>;k&lt;j;k++)&#123;</span><br><span class="line">                    <span class="keyword">int</span> t = m[i][k] + m[k+<span class="number">1</span>][j] + p[i-<span class="number">1</span>]*p[k]*p[j];</span><br><span class="line">                    <span class="keyword">if</span> (t&lt;m[i][j])&#123;</span><br><span class="line">                        m[i][j] = t;</span><br><span class="line">                        s[i][j] = k;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//回溯查找动态规划</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">traceBack</span><span class="params">(<span class="keyword">int</span> i,<span class="keyword">int</span> j)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (i==j)</span><br><span class="line">            System.out.print(<span class="string">&quot;A&quot;</span>+i);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (i+<span class="number">1</span> == j)</span><br><span class="line">            System.out.print(<span class="string">&quot; (A&quot;</span>+i+<span class="string">&quot;*&quot;</span>+<span class="string">&quot; A&quot;</span>+j+<span class="string">&quot;) &quot;</span>);</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.print(<span class="string">&quot; (&quot;</span>);</span><br><span class="line">            traceBack(i,s[i][j]);</span><br><span class="line">            traceBack(s[i][j]+<span class="number">1</span>,j);</span><br><span class="line">            System.out.print(<span class="string">&quot;) &quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>其中traceBack方法是用来回溯找到最优解的。</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-0-1背包问题"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/03/22/0-1%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/"
+    >0-1背包问题</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/03/22/0-1%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" class="article-date">
+  <time datetime="2022-03-22T11:37:24.188Z" itemprop="datePublished">2022-03-22</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="0-1背包问题"><a href="#0-1背包问题" class="headerlink" title="0-1背包问题"></a>0-1背包问题</h1><p>0-1背包问题是一个典型的动态规划问题</p>
+<p><strong>问题背景：</strong>用有限的背包容量去装价值最多的物品的组合，物品有质量和价值。</p>
+<p>0-1背包问题是最简单的背包问题，对于一个物品，只有两种选择——装或者不装。因此这个程序不能使用贪心算法来解，使用动态规划来解。</p>
+<p>因为背包问题是一个动态规划问题，它可能满足动态规划的三要素。</p>
+<p><strong>三要素：</strong></p>
+<p>最优子程序、最优值，最优解</p>
+<p> <img src="https://s3.bmp.ovh/imgs/2022/03/c8ee0e9c7035a08a.jpg" alt="背包问题的算法"> </p>
+<p>当我们有了这些算法逻辑上的准备后，就可以着手实现算法了。</p>
+<h2 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h2><p>对于0-1背包问题，我们逻辑上是从上到下进行添值的，但是在算法实现的过程中，我们是使用从低往上添值的。</p>
+<h3 id="自上而下的算法实现"><a href="#自上而下的算法实现" class="headerlink" title="自上而下的算法实现"></a>自上而下的算法实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.dwx.passage3;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Knapsack</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    * n : 定义物品的数量</span></span><br><span class="line"><span class="comment">    * c: 定义背包的容量</span></span><br><span class="line"><span class="comment">    * w[]:定义我拼的重量</span></span><br><span class="line"><span class="comment">    * v[]:定义每个物品的价值</span></span><br><span class="line"><span class="comment">    * m[][]：定义记录表格*/</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> n;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> c;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] w;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] v;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[][] m;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//我们写的是用来调用的方法，使用get/set方法体现我们方法的封装</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getN</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> n;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setN</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.n = n;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getC</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> c;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setC</span><span class="params">(<span class="keyword">int</span> c)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.c = c;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] getW() &#123;</span><br><span class="line">        <span class="keyword">return</span> w;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setW</span><span class="params">(<span class="keyword">int</span>[] w)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.w = w;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] getV() &#123;</span><br><span class="line">        <span class="keyword">return</span> v;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setV</span><span class="params">(<span class="keyword">int</span>[] v)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.v = v;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[][] getM() &#123;</span><br><span class="line">        <span class="keyword">return</span> m;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setM</span><span class="params">(<span class="keyword">int</span>[][] m)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.m = m;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//算法的主体</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">knapsack</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">//对我们的m矩阵机型初始化</span></span><br><span class="line">        <span class="keyword">int</span> j,k,l;</span><br><span class="line">        <span class="comment">//对于m[][]</span></span><br><span class="line">        <span class="comment">//i表示是第几个物品，j表示容量为j的子背包</span></span><br><span class="line">        <span class="keyword">for</span> (j=<span class="number">0</span>;j&lt;=c;j++)&#123;</span><br><span class="line">            <span class="comment">//如果能够 对于子背包能够装下就装</span></span><br><span class="line">            <span class="keyword">if</span> (j+<span class="number">1</span> &gt;= w[n])&#123;</span><br><span class="line">                m[n][j] = v[n];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//不能装就跳过</span></span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                m[n][j] = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//操作除了最后一行的其他行</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = n-<span class="number">1</span>;i&gt;=<span class="number">1</span>;i--)&#123;</span><br><span class="line">            <span class="keyword">for</span> (j=<span class="number">0</span>;j&lt;=c;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span> (j&gt;=w[i])&#123;</span><br><span class="line">                    m[i][j] = m[i+<span class="number">1</span>][j]&gt;m[i+<span class="number">1</span>][j-w[i]]+v[i] ?  m[i+<span class="number">1</span>][j]:m[i+<span class="number">1</span>][j-w[i]]+v[i];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>测试:</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.dwx.passage3.Knapsack;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">KnapsackTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Knapsack knapsack = <span class="keyword">new</span> Knapsack();</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">         * n : 定义物品的数量</span></span><br><span class="line"><span class="comment">         * c: 定义背包的容量</span></span><br><span class="line"><span class="comment">         * w[]:定义我拼的重量</span></span><br><span class="line"><span class="comment">         * v[]:定义每个物品的价值</span></span><br><span class="line"><span class="comment">         * m[][]：定义记录表格*/</span></span><br><span class="line">        <span class="keyword">int</span> c = <span class="number">4</span>;</span><br><span class="line">        <span class="keyword">int</span> n = <span class="number">3</span>;</span><br><span class="line">        <span class="keyword">int</span> w[] = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">4</span>,<span class="number">3</span>,<span class="number">1</span>&#125;;</span><br><span class="line">        <span class="keyword">int</span> v[] = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">3000</span>,<span class="number">2000</span>,<span class="number">1500</span>&#125;;</span><br><span class="line">        <span class="keyword">int</span> m[][] = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>][<span class="number">4</span>];</span><br><span class="line">        knapsack.setC(c-<span class="number">1</span>);</span><br><span class="line">        knapsack.setM(m);</span><br><span class="line">        knapsack.setV(v);</span><br><span class="line">        knapsack.setW(w);</span><br><span class="line">        knapsack.setN(n-<span class="number">1</span>);</span><br><span class="line">        <span class="comment">//执行方法</span></span><br><span class="line">        knapsack.knapsack();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//获得执行后的m表格</span></span><br><span class="line">        <span class="comment">//因为我们是从上到下填写的</span></span><br><span class="line">        <span class="keyword">int</span>[][] m1 = knapsack.getM();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span>[] ints : m1) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> anInt : ints) &#123;</span><br><span class="line">                System.out.print(anInt+<span class="string">&quot;\t&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>输出:</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	</span><br><span class="line"><span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">3500</span>	</span><br><span class="line"><span class="number">1500</span>	<span class="number">1500</span>	<span class="number">1500</span>	<span class="number">1500</span></span><br></pre></td></tr></table></figure>
+
+<p> <img src="https://s3.bmp.ovh/imgs/2022/03/2a35a55392b06182.jpg"> </p>
+<h3 id="自上而下的编写方式"><a href="#自上而下的编写方式" class="headerlink" title="自上而下的编写方式"></a>自上而下的编写方式</h3> 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-选址问题"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/03/20/%E9%80%89%E5%9D%80%E9%97%AE%E9%A2%98/"
+    >选址问题</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/03/20/%E9%80%89%E5%9D%80%E9%97%AE%E9%A2%98/" class="article-date">
+  <time datetime="2022-03-20T02:46:16.656Z" itemprop="datePublished">2022-03-20</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="选址问题"><a href="#选址问题" class="headerlink" title="选址问题"></a>选址问题</h1><p>选址问题是指为一个或者几个服务设置在一定区域内选定他的位置，是的某一指标达到最优值。选址问题根据这些设置需要的指标的要求可以大致分为两类：</p>
+<ul>
+<li>中心问题</li>
+<li>重心问题</li>
+</ul>
+<h2 id="中心问题"><a href="#中心问题" class="headerlink" title="中心问题"></a>中心问题</h2><p>中心问题指的是一些紧急公共设施如医院、消防站的选址，要求网路中最远的被服务对象离服务站的距离尽可能小。‘因此我们可以使用Floyd算法求得每组两点之间的最短距离。在选择某一行最大值的与其他行进行比较。选择最大值的最小值。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.dwx.passage2.Floyd;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">zhongxinwenrti</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//我们这边使用的是无向图</span></span><br><span class="line">        Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">int</span> inf = <span class="number">99999999</span>;</span><br><span class="line">        <span class="comment">//m 表示点数 n表示边数</span></span><br><span class="line">        <span class="keyword">int</span> m = scanner.nextInt();</span><br><span class="line">        <span class="keyword">int</span> n = scanner.nextInt();</span><br><span class="line">        <span class="keyword">int</span> x, y;</span><br><span class="line">        <span class="keyword">double</span> l;</span><br><span class="line">        <span class="comment">//创建数组</span></span><br><span class="line">        <span class="keyword">double</span>[][] a = <span class="keyword">new</span> <span class="keyword">double</span>[m][m];</span><br><span class="line">        <span class="comment">//对数组初始化</span></span><br><span class="line">        <span class="keyword">int</span> i, j;</span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; m; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (i == j) &#123;</span><br><span class="line">                    a[i][j] = <span class="number">0</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    a[i][j] = inf;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//导入边数据</span></span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            <span class="comment">//x表示横坐标 y表示纵坐标 l表示长度</span></span><br><span class="line">            x = scanner.nextInt();</span><br><span class="line">            y = scanner.nextInt();</span><br><span class="line">            l = scanner.nextDouble();</span><br><span class="line">            <span class="comment">//这里我们使用的是无向图</span></span><br><span class="line">            a[x][y] = l;</span><br><span class="line">            a[y][x] = l;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">double</span>[] ints : a) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">double</span> anInt : ints) &#123;</span><br><span class="line">                <span class="keyword">if</span> (anInt == inf) &#123;</span><br><span class="line">                    System.out.print(<span class="string">&quot;inf&quot;</span> + <span class="string">&quot;\t&quot;</span>);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    System.out.print(anInt + <span class="string">&quot;    &quot;</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;=====================&quot;</span>);</span><br><span class="line">            <span class="comment">//调用Floyd算法求得 两两点之间的最短路径</span></span><br><span class="line">            Floyd floyd = <span class="keyword">new</span> Floyd();</span><br><span class="line">            floyd.setE(a);</span><br><span class="line">            floyd.floyd();</span><br><span class="line">            <span class="keyword">double</span>[][] e = floyd.getE();</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">double</span>[] ints1 : e) &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">double</span> anInt : ints1) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (anInt == inf) &#123;</span><br><span class="line">                        System.out.print(<span class="string">&quot;inf&quot;</span> + <span class="string">&quot;\t&quot;</span>);</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        System.out.print(anInt + <span class="string">&quot;    &quot;</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                System.out.println();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>程序输出:</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0.0</span>    <span class="number">3.0</span>    <span class="number">5.0</span>    <span class="number">10.0</span>    <span class="number">7.0</span>    <span class="number">5.5</span>    <span class="number">7.0</span>    </span><br><span class="line"><span class="number">3.0</span>    <span class="number">0.0</span>    <span class="number">2.0</span>    <span class="number">7.0</span>    <span class="number">4.0</span>    <span class="number">2.5</span>    <span class="number">4.0</span>    </span><br><span class="line"><span class="number">5.0</span>    <span class="number">2.0</span>    <span class="number">0.0</span>    <span class="number">5.0</span>    <span class="number">2.0</span>    <span class="number">4.5</span>    <span class="number">6.0</span>    </span><br><span class="line"><span class="number">10.0</span>    <span class="number">7.0</span>    <span class="number">5.0</span>    <span class="number">0.0</span>    <span class="number">3.0</span>    <span class="number">7.0</span>    <span class="number">8.5</span>    </span><br><span class="line"><span class="number">7.0</span>    <span class="number">4.0</span>    <span class="number">2.0</span>    <span class="number">3.0</span>    <span class="number">0.0</span>    <span class="number">4.0</span>    <span class="number">5.5</span>    </span><br><span class="line"><span class="number">5.5</span>    <span class="number">2.5</span>    <span class="number">4.5</span>    <span class="number">7.0</span>    <span class="number">4.0</span>    <span class="number">0.0</span>    <span class="number">1.5</span>    </span><br><span class="line"><span class="number">7.0</span>    <span class="number">4.0</span>    <span class="number">6.0</span>    <span class="number">8.5</span>    <span class="number">5.5</span>    <span class="number">1.5</span>    <span class="number">0.0</span>    </span><br></pre></td></tr></table></figure>
+
+<p>可以看到 我们的最短路径矩阵，每一行的最大值中的最小值是在第3行 因此建设在V3点</p>
+<h2 id="重心问题"><a href="#重心问题" class="headerlink" title="重心问题"></a>重心问题</h2><p>某些设备如工厂，学校，邮局等不是紧急单位，但是和民生息息相关的公共设置，需要选择要求到每个点的距离中的最短，才能保证有条件的公平与便利。</p>
+<p><strong>解题思路：</strong>利用弗洛伊德算法，求得两点之间最短距离的矩阵，获得矩阵的各行的参数的相加。找到最小的。</p>
+<p><strong>程序实现：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.dwx.passage2.Floyd;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Zhongxinwenti</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">int</span> inf = <span class="number">99999999</span>;</span><br><span class="line">        <span class="comment">//创建矩阵</span></span><br><span class="line">        <span class="keyword">int</span> m = scanner.nextInt();</span><br><span class="line">        <span class="keyword">int</span> n = scanner.nextInt();</span><br><span class="line">        <span class="keyword">double</span>[][] a = <span class="keyword">new</span> <span class="keyword">double</span>[m][m];</span><br><span class="line">        <span class="comment">//矩阵初始化</span></span><br><span class="line">        <span class="keyword">int</span> i,j,k,x,y;</span><br><span class="line">        <span class="keyword">double</span> l;</span><br><span class="line">        <span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;m;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (j=<span class="number">0</span>;j&lt;m;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span> (i==j)&#123;</span><br><span class="line">                    a[i][j] = <span class="number">0</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                    a[i][j] = inf;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//读入数据</span></span><br><span class="line">        <span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">            x = scanner.nextInt();</span><br><span class="line">            y = scanner.nextInt();</span><br><span class="line">            l = scanner.nextDouble();</span><br><span class="line">            a[x][y] = l;</span><br><span class="line">            a[y][x] = l;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//调用弗洛伊德算法求解</span></span><br><span class="line">        Floyd floyd = <span class="keyword">new</span> Floyd();</span><br><span class="line">        floyd.setE(a);</span><br><span class="line">        floyd.floyd();</span><br><span class="line">        <span class="keyword">double</span>[][] e = floyd.getE();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">double</span>[] doubles : e) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">double</span> aDouble : doubles) &#123;</span><br><span class="line">                System.out.print(aDouble+<span class="string">&quot;\t&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;=========================================&quot;</span>);</span><br><span class="line">        <span class="keyword">double</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">double</span>[] doubles : e) &#123;</span><br><span class="line">            sum = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">double</span> aDouble : doubles) &#123;</span><br><span class="line">                sum = sum + aDouble;</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(sum);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>输出：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0.0</span>	<span class="number">3.0</span>	<span class="number">5.0</span>	<span class="number">8.0</span>	<span class="number">7.0</span>	<span class="number">7.0</span>	<span class="number">8.5</span>	</span><br><span class="line"><span class="number">3.0</span>	<span class="number">0.0</span>	<span class="number">2.0</span>	<span class="number">5.0</span>	<span class="number">4.0</span>	<span class="number">4.0</span>	<span class="number">5.5</span>	</span><br><span class="line"><span class="number">5.0</span>	<span class="number">2.0</span>	<span class="number">0.0</span>	<span class="number">3.0</span>	<span class="number">2.0</span>	<span class="number">6.0</span>	<span class="number">7.5</span>	</span><br><span class="line"><span class="number">8.0</span>	<span class="number">5.0</span>	<span class="number">3.0</span>	<span class="number">0.0</span>	<span class="number">1.0</span>	<span class="number">5.0</span>	<span class="number">6.5</span>	</span><br><span class="line"><span class="number">7.0</span>	<span class="number">4.0</span>	<span class="number">2.0</span>	<span class="number">1.0</span>	<span class="number">0.0</span>	<span class="number">4.0</span>	<span class="number">5.5</span>	</span><br><span class="line"><span class="number">7.0</span>	<span class="number">4.0</span>	<span class="number">6.0</span>	<span class="number">5.0</span>	<span class="number">4.0</span>	<span class="number">0.0</span>	<span class="number">1.5</span>	</span><br><span class="line"><span class="number">8.5</span>	<span class="number">5.5</span>	<span class="number">7.5</span>	<span class="number">6.5</span>	<span class="number">5.5</span>	<span class="number">1.5</span>	<span class="number">0.0</span>	</span><br><span class="line">=========================================</span><br><span class="line"><span class="number">38.5</span></span><br><span class="line"><span class="number">23.5</span></span><br><span class="line"><span class="number">25.5</span></span><br><span class="line"><span class="number">28.5</span></span><br><span class="line"><span class="number">23.5</span></span><br><span class="line"><span class="number">27.5</span></span><br><span class="line"><span class="number">35.0</span></span><br><span class="line"></span><br><span class="line">Process finished with exit code <span class="number">0</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>由此可知 建在v2或者v5都可以</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-编写的第二阶段"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/03/17/%E7%BC%96%E5%86%99%E7%9A%84%E7%AC%AC%E4%BA%8C%E9%98%B6%E6%AE%B5/"
+    >监审网站的第二个编程阶段</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/03/17/%E7%BC%96%E5%86%99%E7%9A%84%E7%AC%AC%E4%BA%8C%E9%98%B6%E6%AE%B5/" class="article-date">
+  <time datetime="2022-03-17T12:28:01.115Z" itemprop="datePublished">2022-03-17</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="了解了添加的原理-百年希尔过程"><a href="#了解了添加的原理-百年希尔过程" class="headerlink" title="了解了添加的原理 百年希尔过程"></a>了解了添加的原理 百年希尔过程</h1><h2 id="2022-3-3"><a href="#2022-3-3" class="headerlink" title="2022/3/3"></a>2022/3/3</h2><p>获得了后端接口和数据库 需要写一个注册功能</p>
+<h2 id="2022-3-5"><a href="#2022-3-5" class="headerlink" title="2022/3/5"></a>2022/3/5</h2><p>编写完了登录和注册功能 还实现了信息的验证消息（虽然是我拿同学写好的）</p>
+<h2 id="2022-3-6"><a href="#2022-3-6" class="headerlink" title="2022/3/6"></a>2022/3/6</h2><p>后端实现了对公办封面的信息收取和展示（数据库插入和查询）</p>
+<p>信息的收取已经和前端进行了交互</p>
+<h2 id="2022-3-9"><a href="#2022-3-9" class="headerlink" title="2022/3/9"></a>2022/3/9</h2><p>前后端交互 使用JSONarray</p>
+<h2 id="2022-3-17"><a href="#2022-3-17" class="headerlink" title="2022/3/17"></a>2022/3/17</h2><p>简单来说 添加程序已经写完了，后续是跟前端交互。</p>
+<p>本身计划我就写添加，但是情况有变，现在我还要写数据查询</p>
+<p>数据的查询时对于我来说十分简单的，但是对于前端 会有点痛苦</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-十万个数找到前十个问题"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/03/17/%E5%8D%81%E4%B8%87%E4%B8%AA%E6%95%B0%E6%89%BE%E5%88%B0%E5%89%8D%E5%8D%81%E4%B8%AA%E9%97%AE%E9%A2%98/"
+    >十万个数找到前十个</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/03/17/%E5%8D%81%E4%B8%87%E4%B8%AA%E6%95%B0%E6%89%BE%E5%88%B0%E5%89%8D%E5%8D%81%E4%B8%AA%E9%97%AE%E9%A2%98/" class="article-date">
+  <time datetime="2022-03-17T03:04:01.670Z" itemprop="datePublished">2022-03-17</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="十万个数找到前十个"><a href="#十万个数找到前十个" class="headerlink" title="十万个数找到前十个"></a>十万个数找到前十个</h1><p>这是考研题中能够数据结构中的一道题，要求时间复杂度尽可能的小，因此我们使用简单排序或者是快速排序进行完全排序后输出前几个是完全不可以的，时间复杂的会很高，这里我选择使用线性选择的方式。</p>
+<h2 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h2><p>使用线性选择 ，选择到第十个数据，因为线性选择是以快排为基础的，因此当我们找到了这第十个数据。那么我们此时生成的数组第十个数据前边的比他小，前十个就是在这个乱序中.</p>
+<ul>
+<li>先使用线性选择选择到第十个数据</li>
+<li>将这个数组的前十个数据进行排序（随意，可以使用简单排序）</li>
+<li>输出结果</li>
+</ul>
+<p><strong>验证</strong>，因为我们的数组是随机生成的 无法保证找到的数据是正确的（可能某个程序错误将数组更改），因此我们需要在生成数组的时候将数组存储到文件中，然后使用全排序对齐进行排序，之后输出前十个来验证是否和我们使用线性选择找到的数据相同。</p>
+<h2 id="程序实践"><a href="#程序实践" class="headerlink" title="程序实践"></a>程序实践</h2><p>这里我们开一个文件把我们的随机生成的数组储存起来，以方便以后的验证使用，此时就需要用的文件的读取知识</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.dwx.passage2.RandomizedSelect;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.BufferedWriter;</span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.io.FileWriter;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">fisrtTen</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        <span class="comment">//成功一个有十万个数据的数组 用随机数产生</span></span><br><span class="line">        <span class="keyword">int</span>[] a = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">100000</span>];</span><br><span class="line">        <span class="keyword">int</span> length = a.length;</span><br><span class="line">        <span class="keyword">int</span> i,j,k;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;length;i++)&#123;</span><br><span class="line">            <span class="comment">//产生10万个随机数</span></span><br><span class="line">            a[i] = (<span class="keyword">int</span>)(Math.random()*<span class="number">1000000</span>)+<span class="number">10000</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//我们可以将这个数组先存放到file中 到其他的程序进行测试</span></span><br><span class="line">        String fileName = <span class="string">&quot;shiwan.txt&quot;</span>;</span><br><span class="line">        File file = <span class="keyword">new</span> File(fileName);</span><br><span class="line">        FileWriter fileWriter = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            fileWriter = <span class="keyword">new</span> FileWriter(file);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        BufferedWriter writer = <span class="keyword">new</span> BufferedWriter(fileWriter);</span><br><span class="line">        writer.write(Integer.toString(a.length));</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i1 : a) &#123;</span><br><span class="line">            writer.newLine();</span><br><span class="line">            writer.write(Integer.toString(i1));</span><br><span class="line">        &#125;</span><br><span class="line">        writer.flush();</span><br><span class="line">        writer.close();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//选择前十个</span></span><br><span class="line">        <span class="comment">//调用线性选择程序</span></span><br><span class="line">        RandomizedSelect select = <span class="keyword">new</span> RandomizedSelect();</span><br><span class="line">        select.setList(a);</span><br><span class="line">        <span class="keyword">int</span> i1 = select.RandomizedSelect(<span class="number">0</span>, a.length - <span class="number">1</span>, <span class="number">10</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;第十个数据是:&quot;</span>+i1);</span><br><span class="line">        <span class="keyword">int</span>[] list = select.getList();</span><br><span class="line">        <span class="comment">//对前十个数据进行排序</span></span><br><span class="line">        simpleSort(list,<span class="number">0</span>,<span class="number">9</span>);</span><br><span class="line">        <span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">            System.out.println(list[i]+<span class="string">&quot;\t&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//我们这里需要一个简单排序</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">simpleSort</span><span class="params">(<span class="keyword">int</span>[] e,<span class="keyword">int</span> start,<span class="keyword">int</span> end)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i;</span><br><span class="line">        <span class="keyword">int</span> j;</span><br><span class="line">        <span class="keyword">int</span> temp;</span><br><span class="line">        <span class="keyword">int</span> k;</span><br><span class="line">        i = start;</span><br><span class="line">        <span class="keyword">for</span> (i=start;i&lt;=end;i++)&#123;</span><br><span class="line">            temp = e[i];</span><br><span class="line">            k = i;</span><br><span class="line">            <span class="keyword">for</span> (j=i;j&lt;=end;j++)&#123;</span><br><span class="line">                <span class="comment">//寻找每次循环的最小值</span></span><br><span class="line">                <span class="keyword">if</span> (e[j]&lt;temp)&#123;</span><br><span class="line">                    temp = e[j];</span><br><span class="line">                    k = j;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//进行交换 把最小值放到合适的位置</span></span><br><span class="line">            e[k] = e[i];</span><br><span class="line">            e[i] = temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>线性的算则：这里我是用的是随机选择</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.dwx.passage2;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RandomizedSelect</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//正常来说 我们操作的都是整数数组</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> list[];</span><br><span class="line">    <span class="comment">//我们使用的是private私有对象 因此需要编写get/set方法来设置和获取值</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] getList() &#123;</span><br><span class="line">        <span class="keyword">return</span> list;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setList</span><span class="params">(<span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.list = list;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//快速排序的思路是将第一个作为端点 但是我们这里使用一个随机数来获得端点</span></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    参数表：</span></span><br><span class="line"><span class="comment">    start：列表要查询的开始</span></span><br><span class="line"><span class="comment">    end：列表查询的结束</span></span><br><span class="line"><span class="comment">    find：我们要查询的第几小</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">RandomizedSelect</span><span class="params">(<span class="keyword">int</span> start,<span class="keyword">int</span> end,<span class="keyword">int</span> find)</span></span>&#123;</span><br><span class="line">        <span class="comment">//编写程序结束程序</span></span><br><span class="line">        <span class="comment">//如果开始等于结束 我们没有什么课选的了 就选择到了合适的数据</span></span><br><span class="line">        <span class="keyword">if</span> (start==end)&#123;</span><br><span class="line">            <span class="comment">//这个就是我们找到的第几小的结果</span></span><br><span class="line">            <span class="keyword">return</span> list[start];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> i = RandomQuickSort(start,end);</span><br><span class="line">        <span class="comment">//比较我们得到的这个第几小和我们的目标小又什么区别</span></span><br><span class="line">        <span class="comment">//如果i大 则说明我们要找的find在划分后的后边</span></span><br><span class="line">        <span class="comment">//则将我们的起始地址设置为i+1,结束还是end，此时我们要找find-i小</span></span><br><span class="line">        <span class="comment">//注意 我们这里的j 因为 我们的start 不一定就是从零开始的 因此 我们选择后的第几小 就需要用find-j</span></span><br><span class="line">        <span class="keyword">int</span> j = i-start+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (find&lt;=j)&#123;</span><br><span class="line">            <span class="keyword">return</span> RandomizedSelect(start,i,find);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> RandomizedSelect(i+<span class="number">1</span>,end,find-j);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">//这个程序是对我们需要的list的一段进行一次快排 二我们快排的结果是随机的 通过random来获得我们的基准元素</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">RandomQuickSort</span><span class="params">(<span class="keyword">int</span> start,<span class="keyword">int</span> end)</span></span>&#123;</span><br><span class="line">        <span class="comment">//我们这里只需要一个开始和一个结束</span></span><br><span class="line">        <span class="comment">//获得一个随机数 在start和end之间</span></span><br><span class="line">        <span class="comment">//我们这里的随机数要设置好</span></span><br><span class="line">        <span class="keyword">int</span> n = (<span class="keyword">int</span>)(Math.random()*<span class="number">100</span>)%(end-start)+start;</span><br><span class="line">        System.out.println(<span class="string">&quot;这里我们将第&quot;</span>+n+<span class="string">&quot;个元素作为基准元素&quot;</span>);</span><br><span class="line">        <span class="comment">//将我们的基准元素存储起来</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> t = list[n];</span><br><span class="line">        list[n] = list[start];</span><br><span class="line">        list[start] = t;</span><br><span class="line">        <span class="keyword">int</span> i,j;</span><br><span class="line">        <span class="comment">//我们准备进行快排</span></span><br><span class="line">        i = start;</span><br><span class="line">        j = end;</span><br><span class="line">        <span class="comment">//快速排序的思想就是把比基准元素小的都放在左边</span></span><br><span class="line">        <span class="comment">//把比基准元素大的都放在右边 然后把基准元素归位</span></span><br><span class="line">        <span class="keyword">while</span> (i != j)&#123;</span><br><span class="line">            <span class="comment">//先让右哨兵动 找到合适数据后才停止</span></span><br><span class="line">            <span class="keyword">while</span> (list[j]&gt;=t &amp;&amp; j&gt;i)&#123;</span><br><span class="line">                j--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//说明右哨兵已经选择好了 使左哨兵开始动</span></span><br><span class="line">            <span class="keyword">while</span> (list[i]&lt;=t &amp;&amp; i&lt;j)&#123;</span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//两个哨兵都找到了 交换数据</span></span><br><span class="line">            <span class="keyword">if</span> (i&lt;j) &#123;</span><br><span class="line">                <span class="keyword">int</span> temp = list[i];</span><br><span class="line">                list[i] = list[j];</span><br><span class="line">                list[j] = temp;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//将我们的基准元素放到合适的地方</span></span><br><span class="line">        list[start] = list[i];</span><br><span class="line">        list[i] = t;</span><br><span class="line">        <span class="comment">//我们找到的i就是我们这一次找到的目的元素所在的位置(即第几小)</span></span><br><span class="line">        <span class="keyword">return</span> i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//交换数据函数</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Swap</span><span class="params">(<span class="keyword">int</span> i,<span class="keyword">int</span> j)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp = list[i];</span><br><span class="line">        list[i] = list[j];</span><br><span class="line">        list[j] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>检验得程序：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.dwx.file.MyFileReader;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">sortTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="comment">//这里我们对我们存储的数据进行最简单的排序</span></span><br><span class="line">        <span class="keyword">int</span>[] a = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">100000</span>];</span><br><span class="line">        <span class="keyword">int</span> i;</span><br><span class="line">        <span class="comment">//读取我们的数据</span></span><br><span class="line">        String fileName = <span class="string">&quot;shiwan.txt&quot;</span>;</span><br><span class="line">        File file = <span class="keyword">new</span> File(fileName);</span><br><span class="line">        MyFileReader reader = <span class="keyword">new</span> MyFileReader();</span><br><span class="line">        List&lt;Object&gt; objects = reader.MyFilerReader(file);</span><br><span class="line">        <span class="comment">//第一个数据表示个数 可以不读</span></span><br><span class="line">        <span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;a.length;i++)&#123;</span><br><span class="line">            a[i] = Integer.parseInt((String) objects.get(i+<span class="number">1</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//对数组进行排序</span></span><br><span class="line">        simpleSort(a,<span class="number">0</span>,a.length-<span class="number">1</span>);</span><br><span class="line">        <span class="comment">//输出前十个</span></span><br><span class="line">        <span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">            System.out.println((i+<span class="number">1</span>)+<span class="string">&quot;================》&quot;</span>+a[i]);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">simpleSort</span><span class="params">(<span class="keyword">int</span>[] e,<span class="keyword">int</span> start,<span class="keyword">int</span> end)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i;</span><br><span class="line">        <span class="keyword">int</span> j;</span><br><span class="line">        <span class="keyword">int</span> temp;</span><br><span class="line">        <span class="keyword">int</span> k;</span><br><span class="line">        i = start;</span><br><span class="line">        <span class="keyword">for</span> (i=start;i&lt;=end;i++)&#123;</span><br><span class="line">            temp = e[i];</span><br><span class="line">            k = i;</span><br><span class="line">            <span class="keyword">for</span> (j=i;j&lt;=end;j++)&#123;</span><br><span class="line">                <span class="comment">//寻找每次循环的最小值</span></span><br><span class="line">                <span class="keyword">if</span> (e[j]&lt;temp)&#123;</span><br><span class="line">                    temp = e[j];</span><br><span class="line">                    k = j;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//进行交换 把最小值放到合适的位置</span></span><br><span class="line">            e[k] = e[i];</span><br><span class="line">            e[i] = temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>经过检验，我们可以发现我们的程序是正确的</p>
+<p>而且要比使用简单排序的全排列块的多。</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-最短路的应用——设备更新问题"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/03/17/%E6%9C%80%E7%9F%AD%E8%B7%AF%E7%9A%84%E5%BA%94%E7%94%A8%E2%80%94%E2%80%94%E8%AE%BE%E5%A4%87%E6%9B%B4%E6%96%B0%E9%97%AE%E9%A2%98/"
+    >动态规划——设备更新问题</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/03/17/%E6%9C%80%E7%9F%AD%E8%B7%AF%E7%9A%84%E5%BA%94%E7%94%A8%E2%80%94%E2%80%94%E8%AE%BE%E5%A4%87%E6%9B%B4%E6%96%B0%E9%97%AE%E9%A2%98/" class="article-date">
+  <time datetime="2022-03-17T02:06:55.922Z" itemprop="datePublished">2022-03-17</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="动态规划——设备更新问题"><a href="#动态规划——设备更新问题" class="headerlink" title="动态规划——设备更新问题"></a>动态规划——设备更新问题</h1><p>这里的设备更新问题是一个书上的问题，具体的问题可以参照课本p93，作为动态规划的一个例子，我们现在解释一下动态规划的阶梯思路</p>
+<h2 id="可化为最短路径问题的多阶段决策问题"><a href="#可化为最短路径问题的多阶段决策问题" class="headerlink" title="可化为最短路径问题的多阶段决策问题"></a>可化为最短路径问题的多阶段决策问题</h2><p>最优化这个问题往往可以按照动态规划来处理，其特点是，可以将一个大问题划分成若干个阶段，逐个处理每一个小问题就得到了大问题。</p>
+<p><strong>解题思路：</strong></p>
+<ul>
+<li>可以通过构造适当的图，将它转化成最短路径问题。从而使问题变得清晰、直观；</li>
+<li>一旦转化成功，剩下的就是利用迪杰斯特拉算法将最短路径求出来 就是最优的路径</li>
+</ul>
+<h2 id="算法的实现"><a href="#算法的实现" class="headerlink" title="算法的实现"></a>算法的实现</h2><p>因为利用的是迪杰斯特拉算法，不熟悉的可以参考我这篇博文（java语言） <a target="_blank" rel="noopener" href="https://dwx-tx.github.io/2022/03/13/%E8%BF%AA%E6%9D%B0%E6%96%AF%E7%89%B9%E6%8B%89%E7%AE%97%E6%B3%95/">迪杰斯特拉算法 | dwx-tx的小天地</a> </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.dwx.passage2;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">shebeigengxinwenti</span> </span>&#123;</span><br><span class="line">    <span class="comment">//这是数学建模中地设备更新问题</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//我计划 先将这些点和边存储进一个邻接矩阵里 在利用迪杰斯特拉算法就得解</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//一共有11个点 需要存储在一个20x20的整数二维数组中</span></span><br><span class="line">        <span class="keyword">int</span>[][] a = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">20</span>][<span class="number">20</span>];</span><br><span class="line">        <span class="comment">//先对这个数组进行初始化</span></span><br><span class="line">        <span class="comment">//即 行坐标和列坐标相等就标为0</span></span><br><span class="line">        <span class="comment">//否则标为inf(9999)</span></span><br><span class="line">        <span class="keyword">int</span> inf = <span class="number">9999</span>;</span><br><span class="line">        <span class="keyword">int</span> i,j;</span><br><span class="line">        <span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;<span class="number">20</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (j=<span class="number">0</span>;j&lt;<span class="number">20</span>;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span> (i==j)&#123;</span><br><span class="line">                    a[i][j] = <span class="number">0</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                    a[i][j] = inf;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;=========================================================================================&quot;</span>);</span><br><span class="line">        <span class="comment">//打印一下我们的初始化后的数组</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span>[] ints : a) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> anInt : ints) &#123;</span><br><span class="line">                <span class="keyword">if</span> (anInt==inf)&#123;</span><br><span class="line">                    System.out.print(<span class="string">&quot;inf&quot;</span>+<span class="string">&quot;\t&quot;</span>);</span><br><span class="line">                &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                    System.out.print(anInt+<span class="string">&quot;\t&quot;</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;=========================================================================================&quot;</span>);</span><br><span class="line">        <span class="comment">//导入边关系</span></span><br><span class="line">        <span class="comment">//下边我会去数有几条边 然后并记录边的权值</span></span><br><span class="line">        Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">int</span> m;</span><br><span class="line">        <span class="keyword">int</span> x,y,l;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        * 参数x:边的起始点</span></span><br><span class="line"><span class="comment">        * 参数y:边的终止点</span></span><br><span class="line"><span class="comment">        * 参数l:边的长度</span></span><br><span class="line"><span class="comment">        * 参数m:边的总个数</span></span><br><span class="line"><span class="comment">        * */</span></span><br><span class="line">        System.out.print(<span class="string">&quot;请输入边数:&quot;</span>);</span><br><span class="line">        m = scanner.nextInt();</span><br><span class="line">        <span class="keyword">for</span> ( j = <span class="number">1</span>;j&lt;=m;j++)&#123;</span><br><span class="line">            System.out.print(<span class="string">&quot;请输入起始点:&quot;</span>);</span><br><span class="line">            x = scanner.nextInt();</span><br><span class="line">            System.out.print(<span class="string">&quot;请输入终止点:&quot;</span>);</span><br><span class="line">            y = scanner.nextInt();</span><br><span class="line">            System.out.print(<span class="string">&quot;请输入边长度:&quot;</span>);</span><br><span class="line">            l = scanner.nextInt();</span><br><span class="line"></span><br><span class="line">            a[x][y] = l;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;================录入数据====================&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span>[] ints : a) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> anInt : ints) &#123;</span><br><span class="line">                <span class="keyword">if</span> (anInt==inf)&#123;</span><br><span class="line">                    System.out.print(<span class="string">&quot;inf&quot;</span>+<span class="string">&quot;\t&quot;</span>);</span><br><span class="line">                &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                    System.out.print(anInt+<span class="string">&quot;\t&quot;</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//启动迪杰斯特拉算法 求0点到其他点的最短距离</span></span><br><span class="line">        <span class="comment">//一个dis数组用来存储第一行数据</span></span><br><span class="line">        <span class="keyword">int</span>[] dis = <span class="keyword">new</span> <span class="keyword">int</span> [<span class="number">20</span>];</span><br><span class="line">        <span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;<span class="number">20</span>;i++)&#123;</span><br><span class="line">            dis[i] = a[<span class="number">0</span>][i];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//一个book[]数组 用来存储我们加入最短路径后的数</span></span><br><span class="line">        <span class="keyword">int</span>[] book = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">20</span>];</span><br><span class="line">        <span class="comment">//初始化我们的book数组</span></span><br><span class="line">        <span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;<span class="number">20</span>;i++)&#123;</span><br><span class="line">            book[i] = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//将第一个源点读入数组</span></span><br><span class="line">        book[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> min;</span><br><span class="line">        <span class="keyword">int</span> u = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> v = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">//迪杰斯特拉算法的核心</span></span><br><span class="line">        <span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;<span class="number">20</span>;i++)&#123;</span><br><span class="line">            min = inf;</span><br><span class="line">            <span class="comment">//寻找距离源点最近的点</span></span><br><span class="line">            <span class="keyword">for</span> (j=<span class="number">0</span>;j&lt;<span class="number">20</span>;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span> (book[j]==<span class="number">0</span> &amp;&amp; dis[j] &lt; inf)&#123;</span><br><span class="line">                    <span class="comment">//则把这个数读入book</span></span><br><span class="line">                    min = dis[j];</span><br><span class="line">                    u = j;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//将这个点读入book数组</span></span><br><span class="line">            book[u] = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">for</span> (v=<span class="number">0</span>;v&lt;<span class="number">20</span>;v++)&#123;</span><br><span class="line">                <span class="comment">//收缩调整最短路径</span></span><br><span class="line">                <span class="keyword">if</span> (a[u][v] &lt; inf)&#123;</span><br><span class="line">                    <span class="keyword">if</span> (dis[v]&gt;dis[u]+a[u][v])&#123;</span><br><span class="line">                        dis[v] = dis[u]+a[u][v];</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;==================&quot;</span>+<span class="string">&quot;处理后的最短路径&quot;</span>+<span class="string">&quot;====================&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> di : dis) &#123;</span><br><span class="line">            System.out.print(di+<span class="string">&quot;\t&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>数据</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">25</span><br><span class="line">0 1 16</span><br><span class="line">1 2 16</span><br><span class="line">2 3 16</span><br><span class="line">3 4 16</span><br><span class="line">0 5 16</span><br><span class="line">1 6 16</span><br><span class="line">2 7 16</span><br><span class="line">3 8 16</span><br><span class="line">4 9 16</span><br><span class="line">5 10 6</span><br><span class="line">6 11 6</span><br><span class="line">7 12 6</span><br><span class="line">8 13 6</span><br><span class="line">10 14 8</span><br><span class="line">11 15 8</span><br><span class="line">12 16 8</span><br><span class="line">14 17 11</span><br><span class="line">15 18 11</span><br><span class="line">17 19 18</span><br><span class="line">5 2 6</span><br><span class="line">6 3 6</span><br><span class="line">7 4 6</span><br><span class="line">10 3 8</span><br><span class="line">11 4 8</span><br><span class="line">14 4 11</span><br></pre></td></tr></table></figure>
+
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-弗洛伊德算法"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/03/16/%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7%E7%AE%97%E6%B3%95/"
+    >弗洛伊德算法</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/03/16/%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7%E7%AE%97%E6%B3%95/" class="article-date">
+  <time datetime="2022-03-16T03:40:42.060Z" itemprop="datePublished">2022-03-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="弗洛伊德算法"><a href="#弗洛伊德算法" class="headerlink" title="弗洛伊德算法"></a>弗洛伊德算法</h1><h2 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h2><p>弗洛伊德算法比起迪杰斯特拉算法不一样，它比迪杰斯特拉多了一个循环。</p>
+<p>迪杰斯特拉算法是求一个固定起点到其他点的最短路径 弗洛伊德算法是求图中任何点的两点间的最短路径。</p>
+<p><strong>算法的核心：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (k=<span class="number">0</span>;k&lt;n;k++)&#123;</span><br><span class="line">           <span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">               <span class="keyword">for</span> (j=<span class="number">0</span>;j&lt;n;j++)&#123;</span><br><span class="line">                   <span class="comment">//弗洛伊德算法是为了改写长度</span></span><br><span class="line">                   <span class="keyword">if</span> (e[i][j]&gt;e[i][k]+e[k][j])&#123;</span><br><span class="line">                       <span class="comment">//改变长度</span></span><br><span class="line">                       e[i][j] = e[i][k]+e[k][j];</span><br><span class="line">                   &#125;</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.dwx.passage2;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Floyd</span> </span>&#123;</span><br><span class="line">    <span class="comment">//这里我们写一个弗洛伊德算法</span></span><br><span class="line">    <span class="comment">//弗洛伊德算法属于是比较好理解好学的算法了</span></span><br><span class="line">    <span class="comment">//这里我们用e数组来存放一个二维图</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> e[][];</span><br><span class="line">    <span class="keyword">int</span> inf = <span class="number">99999999</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[][] getE() &#123;</span><br><span class="line">        <span class="keyword">return</span> e;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setE</span><span class="params">(<span class="keyword">int</span>[][] e)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.e = e;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//编写弗洛伊德算法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">floyd</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//n指的是点的个数</span></span><br><span class="line">        <span class="keyword">int</span> n = e.length;</span><br><span class="line">        <span class="comment">//弗洛伊德算法的核心</span></span><br><span class="line">        <span class="comment">//弗洛伊德算法的核心是三重循环</span></span><br><span class="line">        <span class="keyword">int</span> i,j,k;</span><br><span class="line">        <span class="keyword">for</span> (k=<span class="number">0</span>;k&lt;n;k++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">                <span class="keyword">for</span> (j=<span class="number">0</span>;j&lt;n;j++)&#123;</span><br><span class="line">                    <span class="comment">//弗洛伊德算法是为了改写长度</span></span><br><span class="line">                    <span class="keyword">if</span> (e[i][j]&gt;e[i][k]+e[k][j])&#123;</span><br><span class="line">                        <span class="comment">//改变长度</span></span><br><span class="line">                        e[i][j] = e[i][k]+e[k][j];</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>算法实现</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.dwx.passage2.Floyd;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">floydTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        System.out.print(<span class="string">&quot;请输入有几个点:&quot;</span>);</span><br><span class="line">        <span class="keyword">int</span> n = scanner.nextInt();</span><br><span class="line">        <span class="keyword">int</span>[][] a = <span class="keyword">new</span> <span class="keyword">int</span>[n][n];</span><br><span class="line">        <span class="comment">//我们已经是彻底改变为0的初始化了</span></span><br><span class="line">        <span class="comment">//下边我们读入边的关系 我们写一个有向图的吧</span></span><br><span class="line">        System.out.print(<span class="string">&quot;请输入边数:&quot;</span>);</span><br><span class="line">        <span class="keyword">int</span> m =scanner.nextInt();</span><br><span class="line">        <span class="keyword">int</span> inf = <span class="number">99999999</span>;</span><br><span class="line">        <span class="comment">//先对其进行初始化 要求i=j为0 其余为无穷</span></span><br><span class="line">        <span class="keyword">int</span> z ,h;</span><br><span class="line">        <span class="keyword">for</span> (z=<span class="number">0</span>;z&lt;n;z++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (h=<span class="number">0</span>;h&lt;n;h++)&#123;</span><br><span class="line">                <span class="keyword">if</span> (z==h)&#123;</span><br><span class="line">                    a[z][h] = <span class="number">0</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                    a[z][h] = inf;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= m;i++)&#123;</span><br><span class="line">            System.out.print(<span class="string">&quot;输入点a:&quot;</span>);</span><br><span class="line">            <span class="keyword">int</span> x = scanner.nextInt();</span><br><span class="line">            System.out.print(<span class="string">&quot;输入b:&quot;</span>);</span><br><span class="line">            <span class="keyword">int</span> y = scanner.nextInt();</span><br><span class="line">            System.out.print(<span class="string">&quot;输入边长&quot;</span>);</span><br><span class="line">            <span class="keyword">int</span> l = scanner.nextInt();</span><br><span class="line">            a[x-<span class="number">1</span>][y-<span class="number">1</span>] = l;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span>[] ints : a) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> anInt : ints) &#123;</span><br><span class="line">                <span class="keyword">if</span> (anInt!=inf)</span><br><span class="line">                    System.out.print(anInt+<span class="string">&quot;\t&quot;</span>);</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    System.out.print(<span class="string">&quot;inf&quot;</span>+<span class="string">&quot;\t&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;===============================&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//调用弗洛伊德算法进行处理</span></span><br><span class="line">        Floyd floyd = <span class="keyword">new</span> Floyd();</span><br><span class="line">        floyd.setE(a);</span><br><span class="line">        floyd.floyd();</span><br><span class="line">        <span class="keyword">int</span>[][] e = floyd.getE();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span>[] ints : e) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> anInt : ints) &#123;</span><br><span class="line">                <span class="keyword">if</span> (anInt!=inf)</span><br><span class="line">                    System.out.print(anInt+<span class="string">&quot;\t&quot;</span>);</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    System.out.print(<span class="string">&quot;inf&quot;</span>+<span class="string">&quot;\t&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-回归分析"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/03/16/%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90/"
+    >MATLAB统计工具箱中的回归分析命令</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/03/16/%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90/" class="article-date">
+  <time datetime="2022-03-16T00:05:47.205Z" itemprop="datePublished">2022-03-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="MATLAB统计工具箱中的回归分析命令"><a href="#MATLAB统计工具箱中的回归分析命令" class="headerlink" title="MATLAB统计工具箱中的回归分析命令"></a>MATLAB统计工具箱中的回归分析命令</h1><h2 id="多元线性回归"><a href="#多元线性回归" class="headerlink" title="多元线性回归"></a>多元线性回归</h2><p><strong>多元线性回归的命令是regress，此命令也可以用于一元线性回归，其格式如下：</strong></p>
+<ul>
+<li><p>确定回归系数的点估计值，用命令b = regress(Y,X)</p>
+</li>
+<li><p>求回归系数的点估计和区域估计，并检验回归模型，用命令</p>
+<p>[b, bint, r, rint, stats] = regress(Y,X,alpha)</p>
+</li>
+<li><p>画出残差及其置信区间，用命令rcoplot(r,rint)</p>
+</li>
+</ul>
+<h2 id="多项式回归"><a href="#多项式回归" class="headerlink" title="多项式回归"></a>多项式回归</h2><p><strong>一元多项式回归</strong></p>
+<p>一元多项式回归可用命令：polyfit,ployval,ployconf来实现</p>
+<p>步奏：</p>
+<ol>
+<li><p>回归</p>
+<ul>
+<li><p>确定多项式系数的命令：[p ,S] = polyfit(x,y,m)</p>
+<p>其中x = (x1,x2,x3,..,xn),y = (y1,y2,y3,…,yn),p = (a1,a2,…,am+1)是多项式对的系数，S是一个矩阵，用于估计预测误差</p>
+</li>
+<li><p>一元多项式回归命令:ploytool(x,y,m)</p>
+<p>此命令产生一个交互画面</p>
+</li>
+</ul>
+</li>
+<li><p>预测和预测误差估计</p>
+<ul>
+<li>Y = polyval(p,x)，求polyfit所得的回归多项式在x处的预测值Y;</li>
+<li>[Y,DELTA] = polyconf(p,x,S,alpha)，求ployfit所得的回归多项式在x处的预测值Y及预测值得置信水平为1-alpha的置信区间[Y-DELTA,Y+DELTA];alpha的缺省值为0.05</li>
+</ul>
+</li>
+</ol>
+<p><strong>多元二项式回归</strong></p>
+<p>多远二项式回归用命令rstool(x,y,’model’,alpha)其中输入数据x,y分别为nxm矩阵和n维列向量；alpha为显著性水平(缺省值为0.05)；model在下列4的模式中选一个</p>
+<ul>
+<li>linear(线性)</li>
+<li>purequadratic(纯二次)</li>
+<li>interaction(交叉)</li>
+<li>quadratic(完全二次)</li>
+</ul>
+<p><strong>非线性回归</strong></p>
+<p>非线性回归可用命令 nlinfit,nlintool,nlpredci来实现</p>
+<ol>
+<li><p>回归</p>
+<ol>
+<li><p>确定回归系数的命令:</p>
+<p>[beta,r,J] = nlinfit(x,y,’model’,beta0)</p>
+<p>其中，数据x,y分别是nxm矩阵和n维列向量，对一元非线性回归，x为n维列向量，model是事先用M文件定义的非线性函数；beta0是回归系数的初值，beta是估计出的回归系数，r(残差)和J(Jacobian)矩阵是估计预测误差需要的数据 </p>
+</li>
+<li><p>非线性回归命令：</p>
+<p>alpha为显著性水平，缺省值为0.05</p>
+</li>
+</ol>
+</li>
+<li><p>预测和预测误差估计</p>
+<p>[Y, DELTA] = nlpredci(‘model’,x,beta,r,J)</p>
+</li>
+</ol>
+<p><strong>逐步回归</strong></p>
+<p>逐步回归的命令是stepwise，它提供一个交互画面</p>
+<p>命令为：stepwise(x,y)</p>
+<p>x是nxm矩阵，y是nx1矩阵</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+  </article>
+  
+
+  
+  <nav class="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/">上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/3/">下一页</a>
+  </nav>
+  
+</section>
+</div>
+
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2022
+        <i class="ri-heart-fill heart_icon"></i> dwx
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="dwx-tx的小天地"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>
