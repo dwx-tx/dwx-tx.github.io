@@ -707,6 +707,71 @@ var _hmt = _hmt || [];
 
     
     <article
+  id="post-C语言文件拓展"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/C%E8%AF%AD%E8%A8%80%E6%96%87%E4%BB%B6%E6%8B%93%E5%B1%95/" class="article-date">
+  <time datetime="2021-12-16T15:10:56.991Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="文件内容拓展"><a href="#文件内容拓展" class="headerlink" title="文件内容拓展"></a>文件内容拓展</h1><h2 id="文件的随机读写"><a href="#文件的随机读写" class="headerlink" title="文件的随机读写"></a>文件的随机读写</h2><p><strong>顺序文件处理</strong>：在顺序文件处理过程中，数据项是一个接着一个进行读取或者读写。</p>
+<p><strong>随机访问</strong>：允许在文件中随机定位，并在文件的任何位置直接读写数据</p>
+<p><strong>方法</strong>：为了实现文件的定位，在每一次打开的文件中，都有一个<strong>文件位置指针</strong>也称<strong>文件位置标记</strong>，用来指向当前读写文件的位置，它保存了文件中的位置信息。</p>
+<p>eg 这里给出两个函数来定义的文件位置指针。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fseek</span><span class="params">(FILE *fp, <span class="keyword">long</span> offset, <span class="keyword">int</span> fromwhere)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">rewind</span><span class="params">(FILE *fp)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="fseek-函数"><a href="#fseek-函数" class="headerlink" title="fseek()函数"></a>fseek()函数</h3><p><strong>功能</strong>：函数fseek（）的功能是将fp的文件位置指针从fromwhere开始移到offset个字节，指示下一个要读取数据的位置</p>
+<p><strong>参数的意义</strong>：<strong>offset</strong>是一个偏移量，它告诉文件位置指针要跳多少个字节。offect为正时，向后移动，为负时，向前移动。AXSI C要求位移量<strong>offset</strong>是长整型数据（常量后加L）。<strong>fromwhere</strong>用于确定偏移量计算的起始位置，它的情况可能有三种：</p>
+<ul>
+<li>SEEK_SET或0，表示文件开始处</li>
+<li>SEEK_CUR或1，代表文件当前的位置</li>
+<li>SEEK_END或2，代表文件结尾处</li>
+</ul>
+<h3 id="rewind（）函数"><a href="#rewind（）函数" class="headerlink" title="rewind（）函数"></a>rewind（）函数</h3><p><strong>功能</strong>：将文件位置指针指向文件首字节，即重置位置指针到文件首部</p>
+<p><strong>如果函数fseek（）调用成功，则返回0值，否则返回非0值</strong></p>
+<h3 id="ftell（）函数"><a href="#ftell（）函数" class="headerlink" title="ftell（）函数"></a>ftell（）函数</h3><p><strong>功能</strong>：用于读取当前文件位置指针的函数，用于相对于文件起始位置的字节偏移量来表示返回的当前文件位置指针</p>
+<p><strong>原型</strong>：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">long</span> <span class="title">ftell</span><span class="params">(FILE *fp)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="fflush（）函数"><a href="#fflush（）函数" class="headerlink" title="fflush（）函数"></a>fflush（）函数</h3><p><strong>功能</strong>：fflush（）函数的功能是无条件地把缓冲区中的所有数据写入物理设备</p>
+<p><strong>通过下列的这个程序实例，可以实现对文件中的数据的搜索</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">date</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> year;</span><br><span class="line">    <span class="keyword">int</span> month;</span><br><span class="line">    <span class="keyword">int</span> day;</span><br><span class="line">&#125;DATE;</span><br><span class="line"><span class="keyword">typedef</span>  <span class="class"><span class="keyword">struct</span>  <span class="title">student</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">long</span> studentID;</span><br><span class="line">    <span class="keyword">char</span> studentName[<span class="number">10</span>];</span><br><span class="line">    <span class="keyword">char</span> studentSex;</span><br><span class="line">    DATE birthday;</span><br><span class="line">    <span class="keyword">int</span> score[<span class="number">4</span>];</span><br><span class="line">    <span class="keyword">float</span> aver;</span><br><span class="line">&#125;STUDENT;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SearchinFile</span><span class="params">(<span class="keyword">char</span> fileName[],<span class="keyword">long</span> k)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">long</span> k;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Input the searching record number:&quot;</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%ld&quot;</span>,&amp;k);</span><br><span class="line">    SearchinFile(<span class="string">&quot;D:\\student.txt&quot;</span>,k);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SearchinFile</span><span class="params">(<span class="keyword">char</span> fileName[],<span class="keyword">long</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    FILE *fp;</span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    STUDENT stu;</span><br><span class="line">    <span class="keyword">if</span>((fp = fopen(fileName,<span class="string">&quot;r&quot;</span>)) == <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Faliure to open %s!\n&quot;</span>,fileName);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    fseek(fp,(k<span class="number">-1</span>)* <span class="keyword">sizeof</span> (STUDENT), SEEK_SET);</span><br><span class="line">    fread(&amp;stu, <span class="keyword">sizeof</span>(STUDENT),<span class="number">1</span>,fp);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%10ld%8s%3c%6d/%02d/%02d&quot;</span>,stu.studentID,stu.studentName,stu.studentSex,</span><br><span class="line">           stu.birthday.year,stu.birthday.month,stu.birthday.day);</span><br><span class="line">    <span class="keyword">for</span>(j = <span class="number">0</span>; j &lt; <span class="number">4</span>; j++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%4d&quot;</span>,stu.score[j]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%6.1f\n&quot;</span>,stu.aver);</span><br><span class="line">    fclose(fp);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
   id="post-C语言数组"
   class="article article-type-post"
   itemscope
@@ -763,71 +828,6 @@ var _hmt = _hmt || [];
 <h3 id="按值传递"><a href="#按值传递" class="headerlink" title="按值传递"></a>按值传递</h3><p>由于<strong>数组名代表数组第一个元素的地址</strong>，因此<strong>用数组名作函数实参实际上是将数组的首地址传给被调函数</strong></p>
 <p><strong>注意：数组作为函数形参时，数组的长度可以不出现在数组名后面的方括号内，通常用另一个整型形参来指定数组的长度</strong></p>
 <h2 id="向函数传递二维数组"><a href="#向函数传递二维数组" class="headerlink" title="向函数传递二维数组"></a>向函数传递二维数组</h2><p><strong>当形参被声明为二维数组时，可以省略数组的第一维长度声明，但不能忽略数组的第二维的长度声明</strong></p>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-    
- 
-    
-</article>
-
-    
-    <article
-  id="post-C语言文件拓展"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-     
-    <div class="article-meta">
-      <a href="/2021/12/16/C%E8%AF%AD%E8%A8%80%E6%96%87%E4%BB%B6%E6%8B%93%E5%B1%95/" class="article-date">
-  <time datetime="2021-12-16T15:10:56.991Z" itemprop="datePublished">2021-12-16</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="文件内容拓展"><a href="#文件内容拓展" class="headerlink" title="文件内容拓展"></a>文件内容拓展</h1><h2 id="文件的随机读写"><a href="#文件的随机读写" class="headerlink" title="文件的随机读写"></a>文件的随机读写</h2><p><strong>顺序文件处理</strong>：在顺序文件处理过程中，数据项是一个接着一个进行读取或者读写。</p>
-<p><strong>随机访问</strong>：允许在文件中随机定位，并在文件的任何位置直接读写数据</p>
-<p><strong>方法</strong>：为了实现文件的定位，在每一次打开的文件中，都有一个<strong>文件位置指针</strong>也称<strong>文件位置标记</strong>，用来指向当前读写文件的位置，它保存了文件中的位置信息。</p>
-<p>eg 这里给出两个函数来定义的文件位置指针。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fseek</span><span class="params">(FILE *fp, <span class="keyword">long</span> offset, <span class="keyword">int</span> fromwhere)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">rewind</span><span class="params">(FILE *fp)</span></span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="fseek-函数"><a href="#fseek-函数" class="headerlink" title="fseek()函数"></a>fseek()函数</h3><p><strong>功能</strong>：函数fseek（）的功能是将fp的文件位置指针从fromwhere开始移到offset个字节，指示下一个要读取数据的位置</p>
-<p><strong>参数的意义</strong>：<strong>offset</strong>是一个偏移量，它告诉文件位置指针要跳多少个字节。offect为正时，向后移动，为负时，向前移动。AXSI C要求位移量<strong>offset</strong>是长整型数据（常量后加L）。<strong>fromwhere</strong>用于确定偏移量计算的起始位置，它的情况可能有三种：</p>
-<ul>
-<li>SEEK_SET或0，表示文件开始处</li>
-<li>SEEK_CUR或1，代表文件当前的位置</li>
-<li>SEEK_END或2，代表文件结尾处</li>
-</ul>
-<h3 id="rewind（）函数"><a href="#rewind（）函数" class="headerlink" title="rewind（）函数"></a>rewind（）函数</h3><p><strong>功能</strong>：将文件位置指针指向文件首字节，即重置位置指针到文件首部</p>
-<p><strong>如果函数fseek（）调用成功，则返回0值，否则返回非0值</strong></p>
-<h3 id="ftell（）函数"><a href="#ftell（）函数" class="headerlink" title="ftell（）函数"></a>ftell（）函数</h3><p><strong>功能</strong>：用于读取当前文件位置指针的函数，用于相对于文件起始位置的字节偏移量来表示返回的当前文件位置指针</p>
-<p><strong>原型</strong>：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">long</span> <span class="title">ftell</span><span class="params">(FILE *fp)</span></span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="fflush（）函数"><a href="#fflush（）函数" class="headerlink" title="fflush（）函数"></a>fflush（）函数</h3><p><strong>功能</strong>：fflush（）函数的功能是无条件地把缓冲区中的所有数据写入物理设备</p>
-<p><strong>通过下列的这个程序实例，可以实现对文件中的数据的搜索</strong></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">date</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> year;</span><br><span class="line">    <span class="keyword">int</span> month;</span><br><span class="line">    <span class="keyword">int</span> day;</span><br><span class="line">&#125;DATE;</span><br><span class="line"><span class="keyword">typedef</span>  <span class="class"><span class="keyword">struct</span>  <span class="title">student</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">long</span> studentID;</span><br><span class="line">    <span class="keyword">char</span> studentName[<span class="number">10</span>];</span><br><span class="line">    <span class="keyword">char</span> studentSex;</span><br><span class="line">    DATE birthday;</span><br><span class="line">    <span class="keyword">int</span> score[<span class="number">4</span>];</span><br><span class="line">    <span class="keyword">float</span> aver;</span><br><span class="line">&#125;STUDENT;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SearchinFile</span><span class="params">(<span class="keyword">char</span> fileName[],<span class="keyword">long</span> k)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">long</span> k;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Input the searching record number:&quot;</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%ld&quot;</span>,&amp;k);</span><br><span class="line">    SearchinFile(<span class="string">&quot;D:\\student.txt&quot;</span>,k);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SearchinFile</span><span class="params">(<span class="keyword">char</span> fileName[],<span class="keyword">long</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    FILE *fp;</span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    STUDENT stu;</span><br><span class="line">    <span class="keyword">if</span>((fp = fopen(fileName,<span class="string">&quot;r&quot;</span>)) == <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Faliure to open %s!\n&quot;</span>,fileName);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    fseek(fp,(k<span class="number">-1</span>)* <span class="keyword">sizeof</span> (STUDENT), SEEK_SET);</span><br><span class="line">    fread(&amp;stu, <span class="keyword">sizeof</span>(STUDENT),<span class="number">1</span>,fp);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%10ld%8s%3c%6d/%02d/%02d&quot;</span>,stu.studentID,stu.studentName,stu.studentSex,</span><br><span class="line">           stu.birthday.year,stu.birthday.month,stu.birthday.day);</span><br><span class="line">    <span class="keyword">for</span>(j = <span class="number">0</span>; j &lt; <span class="number">4</span>; j++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%4d&quot;</span>,stu.score[j]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%6.1f\n&quot;</span>,stu.aver);</span><br><span class="line">    fclose(fp);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
  
       <!-- reward -->
       
@@ -941,7 +941,7 @@ var _hmt = _hmt || [];
 
     
     <article
-  id="post-C语言数据类型"
+  id="post-C语言排序和查找"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -950,252 +950,37 @@ var _hmt = _hmt || [];
   <div class="article-inner">
      
     <div class="article-meta">
-      <a href="/2021/12/16/C%E8%AF%AD%E8%A8%80%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="article-date">
+      <a href="/2021/12/16/C%E8%AF%AD%E8%A8%80%E6%8E%92%E5%BA%8F%E5%92%8C%E6%9F%A5%E6%89%BE/" class="article-date">
   <time datetime="2021-12-16T15:10:56.981Z" itemprop="datePublished">2021-12-16</time>
 </a>    
     </div>
       
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="C语言数据类型"><a href="#C语言数据类型" class="headerlink" title="C语言数据类型"></a>C语言数据类型</h1><p><em><strong>C语言程序处理的数据类型有常量（Constant）和变量（Variable）两种形式</strong></em></p>
-<h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h2><hr>
-<table>
-<thead>
-<tr>
-<th>常量类型</th>
-<th>实例</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>整型常量</td>
-<td>10，-30,0</td>
-<td>包括正整数，负整数和零在内的所有整数</td>
-</tr>
-<tr>
-<td>实型常量</td>
-<td>3.14 -0.56</td>
-<td>由于计算机的实型数是以浮点类型表示，实型常量也可以称为浮点数</td>
-</tr>
-<tr>
-<td>字符常量</td>
-<td>‘x’，‘X’，‘0’</td>
-<td>用一对单引号括起来的任意字符</td>
-</tr>
-<tr>
-<td>字符串常量</td>
-<td>”Hello！“</td>
-<td>用一对双引号括起来的零个或多个字符</td>
-</tr>
-</tbody></table>
-<p><em>补充</em></p>
-<ul>
-<li>整数(有符号) ——&gt;int</li>
-<li>无符号整数常量——&gt;int + 整数 + U或u</li>
-<li>长整型 ——&gt;int + 整数 + L或l</li>
-<li>无符号长整型——&gt;int + 整数 + Lu</li>
-<li>十进制小数——&gt;必须带小数点</li>
-<li>指数形式——&gt;eg：1e-10 用e或E代表以10位底的指数</li>
-<li>单精度（float）——&gt;常数值后加F或f</li>
-<li>双精度（double）——&gt;实型常量没有明确表明类型都是双精度</li>
-<li>长双精度（long double）——&gt;12.5L 常数值后跟L或l来表示</li>
-</ul>
-<h4 id="字符常量"><a href="#字符常量" class="headerlink" title="字符常量"></a>字符常量</h4><p>字符常量有两种：普通字符和转义字符</p>
-<p>常见的以“\”开头的特殊字符</p>
-<table>
-<thead>
-<tr>
-<th>转义字符</th>
-<th>字符值</th>
-<th>输出结果</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>\ ‘</td>
-<td>一个单撇号（‘）</td>
-<td>输出单撇号字符’</td>
-</tr>
-<tr>
-<td>\ ‘’</td>
-<td>一个双撇号（“）</td>
-<td>输出双撇号字符”</td>
-</tr>
-<tr>
-<td>\ ?</td>
-<td>一个问号（？）</td>
-<td>输出问号字符？</td>
-</tr>
-<tr>
-<td>\ \</td>
-<td>一个反斜线（\）</td>
-<td>输出反斜线字符\</td>
-</tr>
-<tr>
-<td>\ a</td>
-<td>警告（alert）</td>
-<td>产生声音或视觉信号</td>
-</tr>
-<tr>
-<td>\ b</td>
-<td>退格（backspace）</td>
-<td>将光标当前位置后退一个字符</td>
-</tr>
-<tr>
-<td>\ f</td>
-<td>换页（form feed）</td>
-<td>将光标当前位置移到下一页的开头</td>
-</tr>
-<tr>
-<td>\ n</td>
-<td>换行</td>
-<td>将光标当前位置移到下一行的开头</td>
-</tr>
-<tr>
-<td>\ r</td>
-<td>回车（carriage return）</td>
-<td>将光标当前位置移到本行的开头</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th>\t</th>
-<th>水平制表符</th>
-<th>将光标当前位置移到下一个Tab位置</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>\ v</td>
-<td>垂直制表符</td>
-<td>将光标当前位置移到下一个垂直制表对齐点</td>
-</tr>
-<tr>
-<td>\ 0,\00或\000其中o代表一个八进制数字</td>
-<td>与该八进制码对应的ASCLL字符</td>
-<td>与该八进制码对应的字符</td>
-</tr>
-<tr>
-<td>\xh[h…]其中h代表一个十六进制数字</td>
-<td>与该十六进制码对应的ASCLL字符</td>
-<td>与该十六进制码对应的字符</td>
-</tr>
-</tbody></table>
-<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><h3 id="变量名的命名规则"><a href="#变量名的命名规则" class="headerlink" title="变量名的命名规则"></a>变量名的命名规则</h3><hr>
-<p><strong>变量的名字就是标识符</strong></p>
-<ul>
-<li>标识符只能由英文字母，数字和下划线_组成</li>
-<li>标识符必须以字母或下划线开头</li>
-<li>不允许使用C关键字作为标识符命名</li>
-<li>标识符可以包含任意多个字符，但一般会有最大限制</li>
-</ul>
-<p><em><strong>标识符是区分大小写的即大小写敏感的</strong></em></p>
-<ol>
-<li>标准C规定所有的变量必须在第一条执行语句之前定义</li>
-<li>在为变量赋值时，等号两边的空格不是必须的，增加程序的可读性</li>
-<li>C语言允许在定义变量时对变量进行初始化（为其赋值）</li>
-</ol>
-<h3 id="整型变量的符号属性"><a href="#整型变量的符号属性" class="headerlink" title="整型变量的符号属性"></a>整型变量的符号属性</h3><table>
-<thead>
-<tr>
-<th>类型</th>
-<th>字节数</th>
-<th>取值范围</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>int</td>
-<td>4</td>
-<td>-2 147 483 648~2 147 483 647</td>
-</tr>
-<tr>
-<td>unsigned int</td>
-<td>4</td>
-<td>0 ~ 4 294 967 295</td>
-</tr>
-<tr>
-<td>short</td>
-<td>2</td>
-<td>-32 768 ~ 32 767</td>
-</tr>
-<tr>
-<td>unsigned short</td>
-<td>2</td>
-<td>0 ~ 65 535</td>
-</tr>
-<tr>
-<td>long</td>
-<td>4</td>
-<td>-2 147 483 648 ~ 2 147 483 647</td>
-</tr>
-<tr>
-<td>unsigned long</td>
-<td>4</td>
-<td>0 ~ 4 294 967 295</td>
-</tr>
-<tr>
-<td>long long</td>
-<td>8</td>
-<td>-9 223 372 036 854 775 808 ~ 9 223 372 036 854 775 807</td>
-</tr>
-<tr>
-<td>unsigned long long</td>
-<td>8</td>
-<td>0 ~ 18 446 744 073 709 551 615</td>
-</tr>
-</tbody></table>
-<h3 id="字符变量"><a href="#字符变量" class="headerlink" title="字符变量"></a>字符变量</h3><table>
-<thead>
-<tr>
-<th>类型</th>
-<th>字节数</th>
-<th>取值范围</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>signed char</td>
-<td>1</td>
-<td>-128~127</td>
-</tr>
-<tr>
-<td>unsigned char</td>
-<td>1</td>
-<td>0~255</td>
-</tr>
-</tbody></table>
-<h3 id="实型变量"><a href="#实型变量" class="headerlink" title="实型变量"></a>实型变量</h3><table>
-<thead>
-<tr>
-<th>类型</th>
-<th>字节数</th>
-<th>有效数字</th>
-<th>数值范围（绝对值）</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>float</td>
-<td>4</td>
-<td>6</td>
-<td>0以及1.2*10^-38 ~ 3.4 *  10^38</td>
-</tr>
-<tr>
-<td>double</td>
-<td>8</td>
-<td>15</td>
-<td>0以及2.3*10^-308 ~ 1.7 * 10^308</td>
-</tr>
-<tr>
-<td>long double</td>
-<td>8</td>
-<td>15</td>
-<td>0以及2.3*10^-308 ~ 1.7 * 10^308</td>
-</tr>
-<tr>
-<td>long double</td>
-<td>16</td>
-<td>19</td>
-<td>0以及3.4 * 10^-4932 ~ 1.1 * 10^4982</td>
-</tr>
-</tbody></table>
+  <h1 id="排序和查找"><a href="#排序和查找" class="headerlink" title="排序和查找"></a>排序和查找</h1><h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><p><strong>排序</strong>：是把一系列无序的数据按照特定的顺序重新排列为有序序列的过程</p>
+<h3 id="交换法排序"><a href="#交换法排序" class="headerlink" title="交换法排序"></a>交换法排序</h3><p><strong>特点</strong>：性能比较低，但是易于理解，是选择法的基础</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; n<span class="number">-1</span>; i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(j = i+<span class="number">1</span>; j &lt; n; j++)</span><br><span class="line">    &#123;</span><br><span class="line">        若score[j] &gt; score[i]</span><br><span class="line">        则交换 score[j] 和 score[i] 的值    </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="选择排序法"><a href="#选择排序法" class="headerlink" title="选择排序法"></a>选择排序法</h3><p><strong>特点</strong>：执行次数少，不过较难理解</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">void DateSort(int score[], int n)</span><br><span class="line">&#123;</span><br><span class="line">    int i, j, k, temp;</span><br><span class="line">    for(i = 0; i &lt; n-1; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        k = i;</span><br><span class="line">        for(j = i + 1; j &lt; n; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            if(score[j] &gt; score[k])</span><br><span class="line">            &#123;</span><br><span class="line">                k = j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if(k != i)</span><br><span class="line">        &#123;</span><br><span class="line">            temp = score[k];</span><br><span class="line">            score[k] = score[i];</span><br><span class="line">            score[i] = temp;</span><br><span class="line">        &#125;</span><br><span class="line">                </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>对信息进行排序时，通常只使用信息的一个子项作为<strong>键值（Key Value）</strong>，由键值决定信息的全部子项的排列顺序</p>
+<h2 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h2><p><strong>查找</strong>：在数组中搜索一个特定元素的处理过程</p>
+<h3 id="线性查找（Linear-Search）"><a href="#线性查找（Linear-Search）" class="headerlink" title="线性查找（Linear Search）"></a>线性查找（Linear Search）</h3><p><strong>特点</strong>：算法简单直观，但效率较低</p>
+<p><strong>查找键</strong>：查找的基本过程是利用循环顺序扫描整个数组，依次将每个元素与待查找值进行比较；若找到就停止循环</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i;</span><br><span class="line"><span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(number == X)</span><br><span class="line">        <span class="keyword">return</span> i;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="折半查找（Binary-Search）"><a href="#折半查找（Binary-Search）" class="headerlink" title="折半查找（Binary Search）"></a>折半查找（Binary Search）</h3><p><strong>特点</strong>：稍微复杂，但效率很高</p>
+<p><strong>注意</strong>：折半查找只能在已经排好序的数值中查找</p>
+<p><strong>折半查找基本思想</strong>：首先选取位于数组中间的元素，将其与查找键进行比较。如果它们的值相等，则查找建以被找到，返回数组中间元素的下标。否则，将查找的区间缩小为原来区间的一半，即在一半的数组元素中查找</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> low = <span class="number">0</span>, high = n<span class="number">-1</span>,mid;</span><br><span class="line"><span class="keyword">while</span>(low &lt;= high)</span><br><span class="line">&#123;</span><br><span class="line">    mid = (high + low) / <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span>(x &gt; num[mid])</span><br><span class="line">        low = mid + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (x &lt; num[mid])</span><br><span class="line">        high = mid + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> mid;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
  
       <!-- reward -->
       

@@ -428,6 +428,141 @@ var _hmt = _hmt || [];
 
     
     <article
+  id="post-分组数据"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/%E5%88%86%E7%BB%84%E6%95%B0%E6%8D%AE/" class="article-date">
+  <time datetime="2021-12-16T14:54:34.319Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="分组数据"><a href="#分组数据" class="headerlink" title="分组数据"></a>分组数据</h1><h2 id="数据分组"><a href="#数据分组" class="headerlink" title="数据分组"></a>数据分组</h2><p>我们使用汇总数据可以实现对行的计数、计算求和、求平均值、获得最小值或最大值。</p>
+<p><strong>分组允许我们把数据分为多个逻辑组，以便对每个分组进行聚类运算</strong></p>
+<h2 id="创建分组"><a href="#创建分组" class="headerlink" title="创建分组"></a>创建分组</h2><p>分组是通过SELECT语句中的<strong>GROUP BY</strong>子句实现的</p>
+<p><strong>语法结构</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT 列表名 COUNT(*) AS XX</span><br><span class="line">FROM 表格</span><br><span class="line">GROUP BY 列表名;</span><br></pre></td></tr></table></figure>
+
+<p>这样的语法可以实现对列表的分组进行计数汇总</p>
+<p><strong>使用GROUP BY子句须知</strong>：</p>
+<ul>
+<li>GROUP BY子句可以包含任意数目的列。这使得能够对分组进行嵌套，为数据分组提供更细致的控制。</li>
+<li>如果在GROUP BY子句中嵌套了分组，数据将在最后规定的分组上进行汇总。换句话说，在建立分组时，指定的所有列都一起计算（所以不能从个别列取回数据）</li>
+<li>GROUP BY子句中列出的每个列都必须是检索列或有效的表达式（但不能是聚类函数）。如果SELECT中使用表达式，则必须在GROUP BY子句中使用相同的表达式。<strong>不能使用别名</strong></li>
+<li>除聚类计算语句外，<strong>SELECT语句中的每个列都必须在GROUP BY子句中给出</strong></li>
+<li>如果分组列中具有NULL值，则NULL将作为一个分组返回。如果列中有多行NULL值，则他们会被分为一组</li>
+<li>GROUP BY子句必须在WHERE子句之后，ORDER BY子句之前。</li>
+</ul>
+<p><strong>对于GROUP BY子句，其还有一个ROLLUP关键字</strong>：使用WHERE ROLLIP关键字，可以得到每个分组以及每个分组汇总级别的值</p>
+<h2 id="过滤分组"><a href="#过滤分组" class="headerlink" title="过滤分组"></a>过滤分组</h2><p>有时我们使用ORDER BY语句也能实现视觉上对数据库中某一列的数据进行了分组（将值相同的分到一起）</p>
+<p>通过使用WHERE语句似乎也能对数据进行过滤（但这种过滤不是针对组的，而是针对列的）</p>
+<p>可这种分组和过滤只是视觉上的，我们并不能对其进行过滤等的操作</p>
+<p>真正实现对数据的分组需要用到GROUP BY，真正实现过滤需要用到HAVING</p>
+<p><strong>HAVING支持所有的WHERE操作符</strong></p>
+<p><strong>语法结构</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT 列名 COUNT(*) AS XX</span><br><span class="line">FROM 表格名</span><br><span class="line">GROUP BY 列名</span><br><span class="line">HAVING 条件;</span><br></pre></td></tr></table></figure>
+
+<p>上边的语法就实现的列出符合条件的组的组名以及组值</p>
+<p><strong>HAVING与WHERE的区别</strong></p>
+<p>由两者语法结构的不同可以看出：</p>
+<ul>
+<li>HAVING是对分组过得数据进行过滤</li>
+<li>WHERE是对分组前的数据进行过滤</li>
+</ul>
+<h2 id="分组和排序"><a href="#分组和排序" class="headerlink" title="分组和排序"></a>分组和排序</h2><p><strong>总的来说排序可以实现虚假的分组</strong></p>
+<p><strong>ORDER与GROUP BY的区别</strong></p>
+<table>
+<thead>
+<tr>
+<th>ORDER BY</th>
+<th>GROUP BY</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>排序产生的输出</td>
+<td>分组行，但输出的可能不是分组的顺序</td>
+</tr>
+<tr>
+<td>任意列都可以使用（甚至非排序列都可以使用）</td>
+<td>只可能使用选择列或表达式列。而且必须使用每个选择列表达式</td>
+</tr>
+<tr>
+<td>不一定需要</td>
+<td>如果与聚类函数一起使用列（或表达式），则必须使用</td>
+</tr>
+</tbody></table>
+<p>由于GROUP BY输出的可能不是分组的顺序，<strong>所以我们要使用ORDER BY</strong>，来实现输出的是正确的排序。</p>
+<h2 id="SELECT子句排序"><a href="#SELECT子句排序" class="headerlink" title="SELECT子句排序"></a>SELECT子句排序</h2><table>
+<thead>
+<tr>
+<th>子句</th>
+<th>说明</th>
+<th>是否必须使用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SELECT</td>
+<td>要返回的列或表达式</td>
+<td>是</td>
+</tr>
+<tr>
+<td>FROM</td>
+<td>从中检索数据的表</td>
+<td>仅在从表选择数据时使用</td>
+</tr>
+<tr>
+<td>WHERE</td>
+<td>行级过滤</td>
+<td>否</td>
+</tr>
+<tr>
+<td>GROUP BY</td>
+<td>分组说明</td>
+<td>仅在按组计算聚集时使用</td>
+</tr>
+<tr>
+<td>HAVING</td>
+<td>组级过滤</td>
+<td>否</td>
+</tr>
+<tr>
+<td>ORDER BY</td>
+<td>输出排序顺序</td>
+<td>否</td>
+</tr>
+<tr>
+<td>LIMIT</td>
+<td>要检索的行数</td>
+<td>否</td>
+</tr>
+</tbody></table>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
   id="post-使用数据处理函数"
   class="article article-type-post"
   itemscope
@@ -653,141 +788,6 @@ var _hmt = _hmt || [];
 <tr>
 <td>Tan()</td>
 <td>返回一个角度的正切</td>
-</tr>
-</tbody></table>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-    
- 
-    
-</article>
-
-    
-    <article
-  id="post-分组数据"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-     
-    <div class="article-meta">
-      <a href="/2021/12/16/%E5%88%86%E7%BB%84%E6%95%B0%E6%8D%AE/" class="article-date">
-  <time datetime="2021-12-16T14:54:34.319Z" itemprop="datePublished">2021-12-16</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="分组数据"><a href="#分组数据" class="headerlink" title="分组数据"></a>分组数据</h1><h2 id="数据分组"><a href="#数据分组" class="headerlink" title="数据分组"></a>数据分组</h2><p>我们使用汇总数据可以实现对行的计数、计算求和、求平均值、获得最小值或最大值。</p>
-<p><strong>分组允许我们把数据分为多个逻辑组，以便对每个分组进行聚类运算</strong></p>
-<h2 id="创建分组"><a href="#创建分组" class="headerlink" title="创建分组"></a>创建分组</h2><p>分组是通过SELECT语句中的<strong>GROUP BY</strong>子句实现的</p>
-<p><strong>语法结构</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT 列表名 COUNT(*) AS XX</span><br><span class="line">FROM 表格</span><br><span class="line">GROUP BY 列表名;</span><br></pre></td></tr></table></figure>
-
-<p>这样的语法可以实现对列表的分组进行计数汇总</p>
-<p><strong>使用GROUP BY子句须知</strong>：</p>
-<ul>
-<li>GROUP BY子句可以包含任意数目的列。这使得能够对分组进行嵌套，为数据分组提供更细致的控制。</li>
-<li>如果在GROUP BY子句中嵌套了分组，数据将在最后规定的分组上进行汇总。换句话说，在建立分组时，指定的所有列都一起计算（所以不能从个别列取回数据）</li>
-<li>GROUP BY子句中列出的每个列都必须是检索列或有效的表达式（但不能是聚类函数）。如果SELECT中使用表达式，则必须在GROUP BY子句中使用相同的表达式。<strong>不能使用别名</strong></li>
-<li>除聚类计算语句外，<strong>SELECT语句中的每个列都必须在GROUP BY子句中给出</strong></li>
-<li>如果分组列中具有NULL值，则NULL将作为一个分组返回。如果列中有多行NULL值，则他们会被分为一组</li>
-<li>GROUP BY子句必须在WHERE子句之后，ORDER BY子句之前。</li>
-</ul>
-<p><strong>对于GROUP BY子句，其还有一个ROLLUP关键字</strong>：使用WHERE ROLLIP关键字，可以得到每个分组以及每个分组汇总级别的值</p>
-<h2 id="过滤分组"><a href="#过滤分组" class="headerlink" title="过滤分组"></a>过滤分组</h2><p>有时我们使用ORDER BY语句也能实现视觉上对数据库中某一列的数据进行了分组（将值相同的分到一起）</p>
-<p>通过使用WHERE语句似乎也能对数据进行过滤（但这种过滤不是针对组的，而是针对列的）</p>
-<p>可这种分组和过滤只是视觉上的，我们并不能对其进行过滤等的操作</p>
-<p>真正实现对数据的分组需要用到GROUP BY，真正实现过滤需要用到HAVING</p>
-<p><strong>HAVING支持所有的WHERE操作符</strong></p>
-<p><strong>语法结构</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT 列名 COUNT(*) AS XX</span><br><span class="line">FROM 表格名</span><br><span class="line">GROUP BY 列名</span><br><span class="line">HAVING 条件;</span><br></pre></td></tr></table></figure>
-
-<p>上边的语法就实现的列出符合条件的组的组名以及组值</p>
-<p><strong>HAVING与WHERE的区别</strong></p>
-<p>由两者语法结构的不同可以看出：</p>
-<ul>
-<li>HAVING是对分组过得数据进行过滤</li>
-<li>WHERE是对分组前的数据进行过滤</li>
-</ul>
-<h2 id="分组和排序"><a href="#分组和排序" class="headerlink" title="分组和排序"></a>分组和排序</h2><p><strong>总的来说排序可以实现虚假的分组</strong></p>
-<p><strong>ORDER与GROUP BY的区别</strong></p>
-<table>
-<thead>
-<tr>
-<th>ORDER BY</th>
-<th>GROUP BY</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>排序产生的输出</td>
-<td>分组行，但输出的可能不是分组的顺序</td>
-</tr>
-<tr>
-<td>任意列都可以使用（甚至非排序列都可以使用）</td>
-<td>只可能使用选择列或表达式列。而且必须使用每个选择列表达式</td>
-</tr>
-<tr>
-<td>不一定需要</td>
-<td>如果与聚类函数一起使用列（或表达式），则必须使用</td>
-</tr>
-</tbody></table>
-<p>由于GROUP BY输出的可能不是分组的顺序，<strong>所以我们要使用ORDER BY</strong>，来实现输出的是正确的排序。</p>
-<h2 id="SELECT子句排序"><a href="#SELECT子句排序" class="headerlink" title="SELECT子句排序"></a>SELECT子句排序</h2><table>
-<thead>
-<tr>
-<th>子句</th>
-<th>说明</th>
-<th>是否必须使用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>SELECT</td>
-<td>要返回的列或表达式</td>
-<td>是</td>
-</tr>
-<tr>
-<td>FROM</td>
-<td>从中检索数据的表</td>
-<td>仅在从表选择数据时使用</td>
-</tr>
-<tr>
-<td>WHERE</td>
-<td>行级过滤</td>
-<td>否</td>
-</tr>
-<tr>
-<td>GROUP BY</td>
-<td>分组说明</td>
-<td>仅在按组计算聚集时使用</td>
-</tr>
-<tr>
-<td>HAVING</td>
-<td>组级过滤</td>
-<td>否</td>
-</tr>
-<tr>
-<td>ORDER BY</td>
-<td>输出排序顺序</td>
-<td>否</td>
-</tr>
-<tr>
-<td>LIMIT</td>
-<td>要检索的行数</td>
-<td>否</td>
 </tr>
 </tbody></table>
  
