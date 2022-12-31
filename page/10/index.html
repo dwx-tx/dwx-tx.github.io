@@ -522,71 +522,6 @@ var _hmt = _hmt || [];
 
     
     <article
-  id="post-C语言文件拓展"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-     
-    <div class="article-meta">
-      <a href="/2021/12/16/C%E8%AF%AD%E8%A8%80%E6%96%87%E4%BB%B6%E6%8B%93%E5%B1%95/" class="article-date">
-  <time datetime="2021-12-16T15:10:56.991Z" itemprop="datePublished">2021-12-16</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="文件内容拓展"><a href="#文件内容拓展" class="headerlink" title="文件内容拓展"></a>文件内容拓展</h1><h2 id="文件的随机读写"><a href="#文件的随机读写" class="headerlink" title="文件的随机读写"></a>文件的随机读写</h2><p><strong>顺序文件处理</strong>：在顺序文件处理过程中，数据项是一个接着一个进行读取或者读写。</p>
-<p><strong>随机访问</strong>：允许在文件中随机定位，并在文件的任何位置直接读写数据</p>
-<p><strong>方法</strong>：为了实现文件的定位，在每一次打开的文件中，都有一个<strong>文件位置指针</strong>也称<strong>文件位置标记</strong>，用来指向当前读写文件的位置，它保存了文件中的位置信息。</p>
-<p>eg 这里给出两个函数来定义的文件位置指针。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fseek</span><span class="params">(FILE *fp, <span class="keyword">long</span> offset, <span class="keyword">int</span> fromwhere)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">rewind</span><span class="params">(FILE *fp)</span></span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="fseek-函数"><a href="#fseek-函数" class="headerlink" title="fseek()函数"></a>fseek()函数</h3><p><strong>功能</strong>：函数fseek（）的功能是将fp的文件位置指针从fromwhere开始移到offset个字节，指示下一个要读取数据的位置</p>
-<p><strong>参数的意义</strong>：<strong>offset</strong>是一个偏移量，它告诉文件位置指针要跳多少个字节。offect为正时，向后移动，为负时，向前移动。AXSI C要求位移量<strong>offset</strong>是长整型数据（常量后加L）。<strong>fromwhere</strong>用于确定偏移量计算的起始位置，它的情况可能有三种：</p>
-<ul>
-<li>SEEK_SET或0，表示文件开始处</li>
-<li>SEEK_CUR或1，代表文件当前的位置</li>
-<li>SEEK_END或2，代表文件结尾处</li>
-</ul>
-<h3 id="rewind（）函数"><a href="#rewind（）函数" class="headerlink" title="rewind（）函数"></a>rewind（）函数</h3><p><strong>功能</strong>：将文件位置指针指向文件首字节，即重置位置指针到文件首部</p>
-<p><strong>如果函数fseek（）调用成功，则返回0值，否则返回非0值</strong></p>
-<h3 id="ftell（）函数"><a href="#ftell（）函数" class="headerlink" title="ftell（）函数"></a>ftell（）函数</h3><p><strong>功能</strong>：用于读取当前文件位置指针的函数，用于相对于文件起始位置的字节偏移量来表示返回的当前文件位置指针</p>
-<p><strong>原型</strong>：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">long</span> <span class="title">ftell</span><span class="params">(FILE *fp)</span></span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="fflush（）函数"><a href="#fflush（）函数" class="headerlink" title="fflush（）函数"></a>fflush（）函数</h3><p><strong>功能</strong>：fflush（）函数的功能是无条件地把缓冲区中的所有数据写入物理设备</p>
-<p><strong>通过下列的这个程序实例，可以实现对文件中的数据的搜索</strong></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">date</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> year;</span><br><span class="line">    <span class="keyword">int</span> month;</span><br><span class="line">    <span class="keyword">int</span> day;</span><br><span class="line">&#125;DATE;</span><br><span class="line"><span class="keyword">typedef</span>  <span class="class"><span class="keyword">struct</span>  <span class="title">student</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">long</span> studentID;</span><br><span class="line">    <span class="keyword">char</span> studentName[<span class="number">10</span>];</span><br><span class="line">    <span class="keyword">char</span> studentSex;</span><br><span class="line">    DATE birthday;</span><br><span class="line">    <span class="keyword">int</span> score[<span class="number">4</span>];</span><br><span class="line">    <span class="keyword">float</span> aver;</span><br><span class="line">&#125;STUDENT;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SearchinFile</span><span class="params">(<span class="keyword">char</span> fileName[],<span class="keyword">long</span> k)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">long</span> k;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Input the searching record number:&quot;</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%ld&quot;</span>,&amp;k);</span><br><span class="line">    SearchinFile(<span class="string">&quot;D:\\student.txt&quot;</span>,k);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SearchinFile</span><span class="params">(<span class="keyword">char</span> fileName[],<span class="keyword">long</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    FILE *fp;</span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    STUDENT stu;</span><br><span class="line">    <span class="keyword">if</span>((fp = fopen(fileName,<span class="string">&quot;r&quot;</span>)) == <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Faliure to open %s!\n&quot;</span>,fileName);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    fseek(fp,(k<span class="number">-1</span>)* <span class="keyword">sizeof</span> (STUDENT), SEEK_SET);</span><br><span class="line">    fread(&amp;stu, <span class="keyword">sizeof</span>(STUDENT),<span class="number">1</span>,fp);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%10ld%8s%3c%6d/%02d/%02d&quot;</span>,stu.studentID,stu.studentName,stu.studentSex,</span><br><span class="line">           stu.birthday.year,stu.birthday.month,stu.birthday.day);</span><br><span class="line">    <span class="keyword">for</span>(j = <span class="number">0</span>; j &lt; <span class="number">4</span>; j++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%4d&quot;</span>,stu.score[j]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%6.1f\n&quot;</span>,stu.aver);</span><br><span class="line">    fclose(fp);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-    
- 
-    
-</article>
-
-    
-    <article
   id="post-C语言文件操作"
   class="article article-type-post"
   itemscope
@@ -660,6 +595,71 @@ var _hmt = _hmt || [];
 
 <p>函数fclose（）返回一个整型数。当文件关闭成功时，返回0值，否则返回一个非0值。</p>
 <p>因此可以根据函数的返回值判断文件是否关闭成功。</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-C语言文件拓展"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/C%E8%AF%AD%E8%A8%80%E6%96%87%E4%BB%B6%E6%8B%93%E5%B1%95/" class="article-date">
+  <time datetime="2021-12-16T15:10:56.991Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="文件内容拓展"><a href="#文件内容拓展" class="headerlink" title="文件内容拓展"></a>文件内容拓展</h1><h2 id="文件的随机读写"><a href="#文件的随机读写" class="headerlink" title="文件的随机读写"></a>文件的随机读写</h2><p><strong>顺序文件处理</strong>：在顺序文件处理过程中，数据项是一个接着一个进行读取或者读写。</p>
+<p><strong>随机访问</strong>：允许在文件中随机定位，并在文件的任何位置直接读写数据</p>
+<p><strong>方法</strong>：为了实现文件的定位，在每一次打开的文件中，都有一个<strong>文件位置指针</strong>也称<strong>文件位置标记</strong>，用来指向当前读写文件的位置，它保存了文件中的位置信息。</p>
+<p>eg 这里给出两个函数来定义的文件位置指针。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fseek</span><span class="params">(FILE *fp, <span class="keyword">long</span> offset, <span class="keyword">int</span> fromwhere)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">rewind</span><span class="params">(FILE *fp)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="fseek-函数"><a href="#fseek-函数" class="headerlink" title="fseek()函数"></a>fseek()函数</h3><p><strong>功能</strong>：函数fseek（）的功能是将fp的文件位置指针从fromwhere开始移到offset个字节，指示下一个要读取数据的位置</p>
+<p><strong>参数的意义</strong>：<strong>offset</strong>是一个偏移量，它告诉文件位置指针要跳多少个字节。offect为正时，向后移动，为负时，向前移动。AXSI C要求位移量<strong>offset</strong>是长整型数据（常量后加L）。<strong>fromwhere</strong>用于确定偏移量计算的起始位置，它的情况可能有三种：</p>
+<ul>
+<li>SEEK_SET或0，表示文件开始处</li>
+<li>SEEK_CUR或1，代表文件当前的位置</li>
+<li>SEEK_END或2，代表文件结尾处</li>
+</ul>
+<h3 id="rewind（）函数"><a href="#rewind（）函数" class="headerlink" title="rewind（）函数"></a>rewind（）函数</h3><p><strong>功能</strong>：将文件位置指针指向文件首字节，即重置位置指针到文件首部</p>
+<p><strong>如果函数fseek（）调用成功，则返回0值，否则返回非0值</strong></p>
+<h3 id="ftell（）函数"><a href="#ftell（）函数" class="headerlink" title="ftell（）函数"></a>ftell（）函数</h3><p><strong>功能</strong>：用于读取当前文件位置指针的函数，用于相对于文件起始位置的字节偏移量来表示返回的当前文件位置指针</p>
+<p><strong>原型</strong>：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">long</span> <span class="title">ftell</span><span class="params">(FILE *fp)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="fflush（）函数"><a href="#fflush（）函数" class="headerlink" title="fflush（）函数"></a>fflush（）函数</h3><p><strong>功能</strong>：fflush（）函数的功能是无条件地把缓冲区中的所有数据写入物理设备</p>
+<p><strong>通过下列的这个程序实例，可以实现对文件中的数据的搜索</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">date</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> year;</span><br><span class="line">    <span class="keyword">int</span> month;</span><br><span class="line">    <span class="keyword">int</span> day;</span><br><span class="line">&#125;DATE;</span><br><span class="line"><span class="keyword">typedef</span>  <span class="class"><span class="keyword">struct</span>  <span class="title">student</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">long</span> studentID;</span><br><span class="line">    <span class="keyword">char</span> studentName[<span class="number">10</span>];</span><br><span class="line">    <span class="keyword">char</span> studentSex;</span><br><span class="line">    DATE birthday;</span><br><span class="line">    <span class="keyword">int</span> score[<span class="number">4</span>];</span><br><span class="line">    <span class="keyword">float</span> aver;</span><br><span class="line">&#125;STUDENT;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SearchinFile</span><span class="params">(<span class="keyword">char</span> fileName[],<span class="keyword">long</span> k)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">long</span> k;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Input the searching record number:&quot;</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%ld&quot;</span>,&amp;k);</span><br><span class="line">    SearchinFile(<span class="string">&quot;D:\\student.txt&quot;</span>,k);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SearchinFile</span><span class="params">(<span class="keyword">char</span> fileName[],<span class="keyword">long</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    FILE *fp;</span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    STUDENT stu;</span><br><span class="line">    <span class="keyword">if</span>((fp = fopen(fileName,<span class="string">&quot;r&quot;</span>)) == <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Faliure to open %s!\n&quot;</span>,fileName);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    fseek(fp,(k<span class="number">-1</span>)* <span class="keyword">sizeof</span> (STUDENT), SEEK_SET);</span><br><span class="line">    fread(&amp;stu, <span class="keyword">sizeof</span>(STUDENT),<span class="number">1</span>,fp);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%10ld%8s%3c%6d/%02d/%02d&quot;</span>,stu.studentID,stu.studentName,stu.studentSex,</span><br><span class="line">           stu.birthday.year,stu.birthday.month,stu.birthday.day);</span><br><span class="line">    <span class="keyword">for</span>(j = <span class="number">0</span>; j &lt; <span class="number">4</span>; j++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%4d&quot;</span>,stu.score[j]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%6.1f\n&quot;</span>,stu.aver);</span><br><span class="line">    fclose(fp);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
  
       <!-- reward -->
       
