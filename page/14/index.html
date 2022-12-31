@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title> dwx-tx的小天地</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"
+      />
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+       
+ 
+<script>
+var _hmt = _hmt || [];
+(function() {
+	var hm = document.createElement("script");
+	hm.src = "https://hm.baidu.com/hm.js?57bee4bd4703d5af3f9154ce72c6f85f";
+	var s = document.getElementsByTagName("script")[0]; 
+	s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    <link rel="alternate" href="/atom.xml" title="dwx-tx的小天地" type="application/atom+xml">
+</head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      
+<section class="cover">
+    
+      
+      <a class="forkMe" href="https://github.com/Shen-Yu/hexo-theme-ayer"
+        target="_blank"><img width="149" height="149" src="/images/forkme.png"
+          class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+    
+  <div class="cover-frame">
+    <div class="bg-box">
+      <img src="/images/cover1.jpg" alt="image frame" />
+    </div>
+    <div class="cover-inner text-center text-white">
+      <h1><a href="/">dwx-tx的小天地</a></h1>
+      <div id="subtitle-box">
+        
+        <span id="subtitle"></span>
+        
+      </div>
+      <div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="cover-learn-more">
+    <a href="javascript:void(0)" class="anchor"><i class="ri-arrow-down-line"></i></a>
+  </div>
+</section>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script>
+
+
+<!-- Subtitle -->
+
+  <script>
+    try {
+      var typed = new Typed("#subtitle", {
+        strings: ['面朝大海，春暖花开', '愿你一生努力，一生被爱', '想要的都拥有，得不到的都释怀'],
+        startDelay: 0,
+        typeSpeed: 200,
+        loop: true,
+        backSpeed: 100,
+        showCursor: true
+      });
+    } catch (err) {
+      console.log(err)
+    }
+  </script>
+  
+<div id="main">
+  <section class="outer">
+  
+  
+  
+
+<div class="notice" style="margin-top:50px">
+    <i class="ri-heart-fill"></i>
+    <div class="notice-content" id="broad"></div>
+</div>
+<script type="text/javascript">
+    fetch('https://v1.hitokoto.cn')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("broad").innerHTML = data.hitokoto;
+        })
+        .catch(console.error)
+</script>
+
+<style>
+    .notice {
+        padding: 20px;
+        border: 1px dashed #e6e6e6;
+        color: #969696;
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        background: #fbfbfb50;
+        border-radius: 10px;
+    }
+
+    .notice i {
+        float: left;
+        color: #999;
+        font-size: 16px;
+        padding-right: 10px;
+        vertical-align: middle;
+        margin-top: -2px;
+    }
+
+    .notice-content {
+        display: initial;
+        vertical-align: middle;
+    }
+</style>
+  
+  <article class="articles">
+    
+    
+    
+    
+    <article
+  id="post-联结表"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/%E8%81%94%E7%BB%93%E8%A1%A8/" class="article-date">
+  <time datetime="2021-12-16T14:54:34.329Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="联结表"><a href="#联结表" class="headerlink" title="联结表"></a>联结表</h1><h2 id="联结"><a href="#联结" class="headerlink" title="联结"></a>联结</h2><p>SQL最强大的功能之一是联结。</p>
+<p>使用联结可以将不同表中的列联结在一起</p>
+<p>这里的联结只是一种表达形式，没有真正的形成物理意义上的联结后的数据库</p>
+<p><strong>为什么要使用联结库</strong></p>
+<p>因为一般情况下，数据库中会出现相同的数据。</p>
+<p><strong>外键</strong>：外键为某个表中的一列，它包含领一个表的主键值，定义了两个表之间的关系</p>
+<p>使用外键进行小数据库关联，而不是使用一个统一的大的数据库的好处</p>
+<ul>
+<li>数据不重复，不会浪费空间和时间</li>
+<li>更新数据时，只需要更改需要涉及的数据库中的数据</li>
+<li>数据没有重复的，处理数据更加简单</li>
+<li>关系数据库的可伸缩性远比非关系数据库要好</li>
+</ul>
+<p><strong>可伸缩性</strong>：能够适应不断增加的工作量而不失败。涉及良好的数据库或应用程序称之为可伸缩性好</p>
+<h2 id="为什么要使用联结"><a href="#为什么要使用联结" class="headerlink" title="为什么要使用联结"></a>为什么要使用联结</h2><p>联结是一种机制，用来在一条SELECT语句中关联表，因此称之为联结。可以联结多个表返回一组输出，联结在运行时关联表中正确的行。</p>
+<p><strong>重要的是</strong>：联结不是物理实体，联结有MySQL根据需要创建，它存在于子查询的执行当中。</p>
+<h2 id="创建联结"><a href="#创建联结" class="headerlink" title="创建联结"></a>创建联结</h2><p>创建联结十分容易（相对于使用嵌套子查询来说）</p>
+<p><strong>语法结构</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT 表格1中的列名,表格2中的列名,表格1中的列名,.....</span><br><span class="line">FROM 表格1,表格2</span><br><span class="line">SELECT 限制条件</span><br><span class="line">ORDER BY 列名(可以属于表格1，也可以属于表格2)</span><br></pre></td></tr></table></figure>
+
+<p>我们需要注意在限制条件需要用到列名时应该使用<strong>完全限定列名</strong>，因为可能不同表中有列名相同的，此时系统不知道到底是哪个。</p>
+<p><strong>完全限定列名</strong>：在引用的列可能出现二义性是，必须使用完全限定列名（用一个点分隔表名和列名）</p>
+<h2 id="WHERE子句的重要性"><a href="#WHERE子句的重要性" class="headerlink" title="WHERE子句的重要性"></a>WHERE子句的重要性</h2><p>在对两个表格进行联结时，必须要注意WHERE子句的使用。如果不适用WHERE子句对数据进行过滤，第一个表中的每一行将与第二个表中的每一行进行配对，不管他们逻辑上是否可以配在一起。</p>
+<p><strong>笛卡尔积</strong>：由没有联结条件的表关系返回的结果为笛卡尔积。检索出的行的数目将是第一个表中的行数乘以第二个表中的行数</p>
+<h2 id="内部联结"><a href="#内部联结" class="headerlink" title="内部联结"></a>内部联结</h2><p><strong>语法结构</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT 表格1中的列名,表格2中的列名,表格1中的列名,....</span><br><span class="line">FROM 表格名1 INNER JOIN 表格名2</span><br><span class="line">ON 限制条件;</span><br></pre></td></tr></table></figure>
+
+<p>在使用这种语法时，联结条件用特定的ON子句而不是WHERE子句给出。传递给ON的实际条件与传递给WHERE的相同。</p>
+<h2 id="联结多个表"><a href="#联结多个表" class="headerlink" title="联结多个表"></a>联结多个表</h2><p>SQL对于一条SELECT语句中可以联结的表的数目没有限制。</p>
+<p>有一点要注意，在SELECT中出现的列所属的表格名一定要在FROM子句中出现</p>
+<p><strong>性能考虑</strong>：联结的表越多，性能下降月厉害，因此在使用联结时要考虑性能。</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-使用数据处理函数"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/12/16/%E4%BD%BF%E7%94%A8%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0/"
+    >使用数据处理函数</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/%E4%BD%BF%E7%94%A8%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0/" class="article-date">
+  <time datetime="2021-12-16T14:54:34.319Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="使用数据处理函数"><a href="#使用数据处理函数" class="headerlink" title="使用数据处理函数"></a>使用数据处理函数</h1><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>与其他计算机语言一样，SQL支持利用函数来处理数据。</p>
+<h2 id="使用函数"><a href="#使用函数" class="headerlink" title="使用函数"></a>使用函数</h2><ul>
+<li>用于处理文本串（如删除或填充值，转换值为大写或小写）的文本函数</li>
+<li>用于在数值数据上进行算术操作（如返回绝对值，进行代数运算）的数值函数</li>
+<li>用于处理日期和时间值并从这些值中提取特点成分（例如，返回两个日期之差，检查日期有效性等）的日期和时间函数</li>
+<li>返回DBMS正使用的特殊信息（如返回用户登录信息，检查版本细节）的系统函数</li>
+</ul>
+<h2 id="文本处理函数"><a href="#文本处理函数" class="headerlink" title="文本处理函数"></a>文本处理函数</h2><p><strong>常见的文本处理函数</strong></p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Left()</td>
+<td>返回串左边的字符</td>
+</tr>
+<tr>
+<td>Length()</td>
+<td>返回串的长度</td>
+</tr>
+<tr>
+<td>Locate()</td>
+<td>找出串的一个子串</td>
+</tr>
+<tr>
+<td>Lower()</td>
+<td>将串转换为小写</td>
+</tr>
+<tr>
+<td>LTrim()</td>
+<td>去掉串左边的空格</td>
+</tr>
+<tr>
+<td>Right()</td>
+<td>返回串右边的字符</td>
+</tr>
+<tr>
+<td>RTrim()</td>
+<td>去掉串右边的空格</td>
+</tr>
+<tr>
+<td>Soundex()</td>
+<td>返回串的SOUNDEX值</td>
+</tr>
+<tr>
+<td>SubString()</td>
+<td>返回子串的字符</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Upper()</td>
+<td>将串转换为大写</td>
+</tr>
+</tbody></table>
+<p><strong>重点</strong>：我们这里要注意一个非常有去的函数<strong>Soundex</strong>函数</p>
+<p>**SOUNDEX( )**函数，可以返回发音相同的列值，（应该只限于英文文本）</p>
+<h2 id="日期和时间处理函数"><a href="#日期和时间处理函数" class="headerlink" title="日期和时间处理函数"></a>日期和时间处理函数</h2><p><strong>常用日期和时间处理函数</strong></p>
+<p>由于MySQL中的日期和时间是采用相应的数据类型和特殊的格式储存，所以，通过函数可以快速且方便地对时间数据进行处理</p>
+<p><strong>常用日期和时间处理函数</strong></p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AddDate()</td>
+<td>增加一个日期</td>
+</tr>
+<tr>
+<td>AddTime()</td>
+<td>增加一个时间</td>
+</tr>
+<tr>
+<td>CurDate()</td>
+<td>返回当前日期</td>
+</tr>
+<tr>
+<td>CurTime()</td>
+<td>返回当前时间</td>
+</tr>
+<tr>
+<td>Date()</td>
+<td>返回日期时间的日期部分</td>
+</tr>
+<tr>
+<td>DateDiff()</td>
+<td>计算两个日期之差</td>
+</tr>
+<tr>
+<td>Date_Add()</td>
+<td>高度灵活地日期运算函数</td>
+</tr>
+<tr>
+<td>Date_Format</td>
+<td>返回一个格式化的日期或时间串</td>
+</tr>
+<tr>
+<td>Day()</td>
+<td>返回一个日期的天数部分</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>DayOfweek()</td>
+<td>对于一个日期，返回对应的星期几</td>
+</tr>
+<tr>
+<td>Hour()</td>
+<td>返回一个时间的小时部分</td>
+</tr>
+<tr>
+<td>Minute()</td>
+<td>返回一个时间的分钟部分</td>
+</tr>
+<tr>
+<td>Month()</td>
+<td>返回一个日期的月份部分</td>
+</tr>
+<tr>
+<td>Now()</td>
+<td>返回当前日期和时间</td>
+</tr>
+<tr>
+<td>Second()</td>
+<td>返回一个时间的秒部分</td>
+</tr>
+<tr>
+<td>Time()</td>
+<td>返回一个日期时间的时间部分</td>
+</tr>
+<tr>
+<td>Year()</td>
+<td>返回一个日期的年份部分</td>
+</tr>
+</tbody></table>
+<p><strong>不管是插入或更新表值还是用WHERE子句进行过滤，日期必须为格式yyyy-mm-dd，这样的好处是可以排除多义性</strong></p>
+<h2 id="数值处理函数"><a href="#数值处理函数" class="headerlink" title="数值处理函数"></a>数值处理函数</h2><p>数值函数是最一致最统一的函数</p>
+<p><strong>常用数值处理函数</strong></p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Abs()</td>
+<td>返回一个数的绝对值</td>
+</tr>
+<tr>
+<td>Cos()</td>
+<td>返回一个角度的余弦</td>
+</tr>
+<tr>
+<td>Exp()</td>
+<td>返回一个数的指数值</td>
+</tr>
+<tr>
+<td>Mod()</td>
+<td>返回除操作的余数</td>
+</tr>
+<tr>
+<td>Pi()</td>
+<td>返回圆周率</td>
+</tr>
+<tr>
+<td>Rand()</td>
+<td>返回一个随机数</td>
+</tr>
+<tr>
+<td>Sin()</td>
+<td>返回一个角度的正弦</td>
+</tr>
+<tr>
+<td>Sqrt()</td>
+<td>返回一个数的平方根</td>
+</tr>
+<tr>
+<td>Tan()</td>
+<td>返回一个角度的正切</td>
+</tr>
+</tbody></table>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-分组数据"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/%E5%88%86%E7%BB%84%E6%95%B0%E6%8D%AE/" class="article-date">
+  <time datetime="2021-12-16T14:54:34.319Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="分组数据"><a href="#分组数据" class="headerlink" title="分组数据"></a>分组数据</h1><h2 id="数据分组"><a href="#数据分组" class="headerlink" title="数据分组"></a>数据分组</h2><p>我们使用汇总数据可以实现对行的计数、计算求和、求平均值、获得最小值或最大值。</p>
+<p><strong>分组允许我们把数据分为多个逻辑组，以便对每个分组进行聚类运算</strong></p>
+<h2 id="创建分组"><a href="#创建分组" class="headerlink" title="创建分组"></a>创建分组</h2><p>分组是通过SELECT语句中的<strong>GROUP BY</strong>子句实现的</p>
+<p><strong>语法结构</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT 列表名 COUNT(*) AS XX</span><br><span class="line">FROM 表格</span><br><span class="line">GROUP BY 列表名;</span><br></pre></td></tr></table></figure>
+
+<p>这样的语法可以实现对列表的分组进行计数汇总</p>
+<p><strong>使用GROUP BY子句须知</strong>：</p>
+<ul>
+<li>GROUP BY子句可以包含任意数目的列。这使得能够对分组进行嵌套，为数据分组提供更细致的控制。</li>
+<li>如果在GROUP BY子句中嵌套了分组，数据将在最后规定的分组上进行汇总。换句话说，在建立分组时，指定的所有列都一起计算（所以不能从个别列取回数据）</li>
+<li>GROUP BY子句中列出的每个列都必须是检索列或有效的表达式（但不能是聚类函数）。如果SELECT中使用表达式，则必须在GROUP BY子句中使用相同的表达式。<strong>不能使用别名</strong></li>
+<li>除聚类计算语句外，<strong>SELECT语句中的每个列都必须在GROUP BY子句中给出</strong></li>
+<li>如果分组列中具有NULL值，则NULL将作为一个分组返回。如果列中有多行NULL值，则他们会被分为一组</li>
+<li>GROUP BY子句必须在WHERE子句之后，ORDER BY子句之前。</li>
+</ul>
+<p><strong>对于GROUP BY子句，其还有一个ROLLUP关键字</strong>：使用WHERE ROLLIP关键字，可以得到每个分组以及每个分组汇总级别的值</p>
+<h2 id="过滤分组"><a href="#过滤分组" class="headerlink" title="过滤分组"></a>过滤分组</h2><p>有时我们使用ORDER BY语句也能实现视觉上对数据库中某一列的数据进行了分组（将值相同的分到一起）</p>
+<p>通过使用WHERE语句似乎也能对数据进行过滤（但这种过滤不是针对组的，而是针对列的）</p>
+<p>可这种分组和过滤只是视觉上的，我们并不能对其进行过滤等的操作</p>
+<p>真正实现对数据的分组需要用到GROUP BY，真正实现过滤需要用到HAVING</p>
+<p><strong>HAVING支持所有的WHERE操作符</strong></p>
+<p><strong>语法结构</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT 列名 COUNT(*) AS XX</span><br><span class="line">FROM 表格名</span><br><span class="line">GROUP BY 列名</span><br><span class="line">HAVING 条件;</span><br></pre></td></tr></table></figure>
+
+<p>上边的语法就实现的列出符合条件的组的组名以及组值</p>
+<p><strong>HAVING与WHERE的区别</strong></p>
+<p>由两者语法结构的不同可以看出：</p>
+<ul>
+<li>HAVING是对分组过得数据进行过滤</li>
+<li>WHERE是对分组前的数据进行过滤</li>
+</ul>
+<h2 id="分组和排序"><a href="#分组和排序" class="headerlink" title="分组和排序"></a>分组和排序</h2><p><strong>总的来说排序可以实现虚假的分组</strong></p>
+<p><strong>ORDER与GROUP BY的区别</strong></p>
+<table>
+<thead>
+<tr>
+<th>ORDER BY</th>
+<th>GROUP BY</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>排序产生的输出</td>
+<td>分组行，但输出的可能不是分组的顺序</td>
+</tr>
+<tr>
+<td>任意列都可以使用（甚至非排序列都可以使用）</td>
+<td>只可能使用选择列或表达式列。而且必须使用每个选择列表达式</td>
+</tr>
+<tr>
+<td>不一定需要</td>
+<td>如果与聚类函数一起使用列（或表达式），则必须使用</td>
+</tr>
+</tbody></table>
+<p>由于GROUP BY输出的可能不是分组的顺序，<strong>所以我们要使用ORDER BY</strong>，来实现输出的是正确的排序。</p>
+<h2 id="SELECT子句排序"><a href="#SELECT子句排序" class="headerlink" title="SELECT子句排序"></a>SELECT子句排序</h2><table>
+<thead>
+<tr>
+<th>子句</th>
+<th>说明</th>
+<th>是否必须使用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SELECT</td>
+<td>要返回的列或表达式</td>
+<td>是</td>
+</tr>
+<tr>
+<td>FROM</td>
+<td>从中检索数据的表</td>
+<td>仅在从表选择数据时使用</td>
+</tr>
+<tr>
+<td>WHERE</td>
+<td>行级过滤</td>
+<td>否</td>
+</tr>
+<tr>
+<td>GROUP BY</td>
+<td>分组说明</td>
+<td>仅在按组计算聚集时使用</td>
+</tr>
+<tr>
+<td>HAVING</td>
+<td>组级过滤</td>
+<td>否</td>
+</tr>
+<tr>
+<td>ORDER BY</td>
+<td>输出排序顺序</td>
+<td>否</td>
+</tr>
+<tr>
+<td>LIMIT</td>
+<td>要检索的行数</td>
+<td>否</td>
+</tr>
+</tbody></table>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-汇总数据"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/%E6%B1%87%E6%80%BB%E6%95%B0%E6%8D%AE/" class="article-date">
+  <time datetime="2021-12-16T14:54:34.319Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="汇总数据"><a href="#汇总数据" class="headerlink" title="汇总数据"></a>汇总数据</h1><h2 id="聚集函数"><a href="#聚集函数" class="headerlink" title="聚集函数"></a>聚集函数</h2><p><strong>用SELECT检索的例子</strong></p>
+<ul>
+<li>确定表中函数（或者满足某个条件或包含某个特定值得行数）</li>
+<li>获得表中行组的和</li>
+<li>找出表列（或所有行或某些特定的行）的最大值、最小值和平均值</li>
+</ul>
+<p><strong>聚集函数</strong>：运行在行组上，计算和返回单个值得函数</p>
+<p><strong>SQL聚集函数</strong></p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AVG()</td>
+<td>返回某列的平均值</td>
+</tr>
+<tr>
+<td>COUNT()</td>
+<td>返回某列的行数</td>
+</tr>
+<tr>
+<td>MAX()</td>
+<td>返回某列的最大值</td>
+</tr>
+<tr>
+<td>MIN()</td>
+<td>返回某列的最小值</td>
+</tr>
+<tr>
+<td>SUM()</td>
+<td>返回某列值之和</td>
+</tr>
+</tbody></table>
+<h2 id="聚集不同值"><a href="#聚集不同值" class="headerlink" title="聚集不同值"></a>聚集不同值</h2><ul>
+<li>对所有的行执行计算，指定ALL参数或不给阐述</li>
+<li>只包含不同的值，指定DISTINCT参数</li>
+</ul>
+<p>在聚类时，如果遇到行值相同就跳过，值聚类行值不同的</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-创建计算字段"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/%E5%88%9B%E5%BB%BA%E8%AE%A1%E7%AE%97%E5%AD%97%E6%AE%B5/" class="article-date">
+  <time datetime="2021-12-16T14:54:34.309Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="创建计算字符"><a href="#创建计算字符" class="headerlink" title="创建计算字符"></a>创建计算字符</h1><p><strong>字段</strong>：基本上与列的意思相同，经常互换使用，不过数据库列一般称为列，而术语字段通常用在计算字段的连接上</p>
+<h2 id="拼接字段"><a href="#拼接字段" class="headerlink" title="拼接字段"></a>拼接字段</h2><p><strong>拼接</strong>：将值联结到一起构成单个值</p>
+<p>在MySQL的SELECT语句中，可以1使用Concat()函数来拼接两个列。</p>
+<p><strong>语法结构</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT Concat(列名,&#x27; (&#x27;,列名,&#x27;)&#x27;)</span><br><span class="line">FROM 表格</span><br><span class="line">ORDER BY 列名;</span><br></pre></td></tr></table></figure>
+
+<p><strong>元素分析</strong>：Concat( )拼接串，即把多个串连接起来形成一个较长的串</p>
+<p>Concat( )需要一个或多个指定的串，各个串之间用逗号分隔。上边的SELECT语句连接需要以下四个元素：</p>
+<ul>
+<li>存储在XX列中的名字</li>
+<li>包含一个空格和一个左圆括号的串；</li>
+<li>存储在XX列中元素；</li>
+<li>包含一个右圆括号的串</li>
+</ul>
+<p>删除数据右侧多余的空格来整理数据，用RTrim()函数来实现</p>
+<p>RTrim（）函数去掉值右边的所有空格。通过使用RTrim()对列进行整理。</p>
+<p>LTrim（）函数去掉值左边的所有空格。</p>
+<h2 id="使用别名"><a href="#使用别名" class="headerlink" title="使用别名"></a>使用别名</h2><p><strong>别名</strong>：是一个字段或值得替换名。</p>
+<p>别名需要使用AS关键字赋予</p>
+<p><strong>语法结构</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT Concat(列名,&#x27; (&#x27;,RTrim,&#x27;)&#x27;) AS 别名</span><br><span class="line">FROM 表格</span><br><span class="line">ORDER BY 列名;</span><br></pre></td></tr></table></figure>
+
+<p>如果没使用列名，客户机不能使用被拼接的字符，而使用别名后，客户机就能对其进行引用了。</p>
+<h2 id="执行算术计算"><a href="#执行算术计算" class="headerlink" title="执行算术计算"></a>执行算术计算</h2><p>可以对列中的数值进行算术计算。</p>
+<p><strong>MySQL算术操作符</strong></p>
+<table>
+<thead>
+<tr>
+<th>操作符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>+</td>
+<td>加</td>
+</tr>
+<tr>
+<td>-</td>
+<td>减</td>
+</tr>
+<tr>
+<td>*</td>
+<td>乘</td>
+</tr>
+<tr>
+<td>/</td>
+<td>除</td>
+</tr>
+</tbody></table>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-正则表达式"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="article-date">
+  <time datetime="2021-12-16T14:54:34.309Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="用正则表达式进行搜索"><a href="#用正则表达式进行搜索" class="headerlink" title="用正则表达式进行搜索"></a>用正则表达式进行搜索</h1><h2 id="正则表达式的介绍"><a href="#正则表达式的介绍" class="headerlink" title="正则表达式的介绍"></a>正则表达式的介绍</h2><p>正则表达式的使用环境</p>
+<ul>
+<li>如果你想从一个文本文件中提取电话号码</li>
+<li>如果你需要查找名字中间有数字的所有文件</li>
+<li>如果你想在一个文本块中找到所有重复的单词</li>
+<li>如果你想替换一个页面中的所有URL为这些URL的实际HTML链接</li>
+</ul>
+<h2 id="基本字符匹配"><a href="#基本字符匹配" class="headerlink" title="基本字符匹配"></a>基本字符匹配</h2><p><strong>语法结构</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT 列名</span><br><span class="line">FROM 表格</span><br><span class="line">WHERE 列名 REGEXP &#x27;XX&#x27;</span><br><span class="line">ORDER BY 列名</span><br></pre></td></tr></table></figure>
+
+<p>表示返回列中列名中包含(XX)子列的所有行</p>
+<p>除了关键字LIKE被REGEXP代替外，这个语法结构和LIKE的语句相同</p>
+<p><strong>LIKE与REGEXP的区别</strong></p>
+<p>如果LIKE语句想和REGEXP语句有相同的作用，需要结合(_或%)来使用</p>
+<h2 id="进行OR匹配"><a href="#进行OR匹配" class="headerlink" title="进行OR匹配"></a>进行OR匹配</h2><p><strong>语法结构</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT 列名</span><br><span class="line">FROM 表格</span><br><span class="line">WHERE 列名 REGEXP 条件一 | 条件二</span><br><span class="line">ORDER BY 列名;</span><br></pre></td></tr></table></figure>
+
+<p>这个语句用于检索列表中满足条件一或条件二的所有行</p>
+<h2 id="匹配几个字符之一"><a href="#匹配几个字符之一" class="headerlink" title="匹配几个字符之一"></a>匹配几个字符之一</h2><p>匹配任何单一字符。但是如果匹配特定的字符，怎么办，可以通过指定一组用[和]括起来的字符来完成。</p>
+<p><strong>语法结构</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT 列名</span><br><span class="line">FROM 表格</span><br><span class="line">WHERE 列名 REGEXP &#x27;[abc] XX&#x27;</span><br><span class="line">ORDER BY 列名;</span><br></pre></td></tr></table></figure>
+
+<p>该语句意义为：删选除列值满足a XX 或 b XX 或 c XX的所有的列</p>
+<p>正则表达式[abc]xx是[a|b|c]xx的缩写</p>
+<h2 id="匹配范围"><a href="#匹配范围" class="headerlink" title="匹配范围"></a>匹配范围</h2><p>要是匹配范围，将匹配字符的[abc]换成[a-c]即可</p>
+<h2 id="匹配特殊字符"><a href="#匹配特殊字符" class="headerlink" title="匹配特殊字符"></a>匹配特殊字符</h2><p>要匹配列值中包含特殊字符，必须使用\ \为作为前导</p>
+<p><strong>空白元字符</strong></p>
+<table>
+<thead>
+<tr>
+<th>元字符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\ \f</td>
+<td>换页</td>
+</tr>
+<tr>
+<td>\ \n</td>
+<td>换行</td>
+</tr>
+<tr>
+<td>\ \r</td>
+<td>回车</td>
+</tr>
+<tr>
+<td>\ \t</td>
+<td>制表</td>
+</tr>
+<tr>
+<td>\ \v</td>
+<td>纵向制表</td>
+</tr>
+</tbody></table>
+<h2 id="匹配字符类"><a href="#匹配字符类" class="headerlink" title="匹配字符类"></a>匹配字符类</h2><p><strong>字符类</strong></p>
+<table>
+<thead>
+<tr>
+<th>类</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[ :alnum: ]</td>
+<td>任意字母和数字（同[a-ZA-z0-9]）</td>
+</tr>
+<tr>
+<td>[ :alpha: ]</td>
+<td>任意字符（同[a-zA-Z]）</td>
+</tr>
+<tr>
+<td>[ :black: ]</td>
+<td>空格和制表（同[ \ \t]）</td>
+</tr>
+<tr>
+<td>[ :cntrl: ]</td>
+<td>ASCLL控制字符（ASCLL 0到31和127）</td>
+</tr>
+<tr>
+<td>[ :digit: ]</td>
+<td>任意数字（同[0-9]）</td>
+</tr>
+<tr>
+<td>[ :graph: ]</td>
+<td>与[ :print: ]相同，但不包括空格</td>
+</tr>
+<tr>
+<td>[ :lower: ]</td>
+<td>任意小写字母（同[a-z]）</td>
+</tr>
+<tr>
+<td>[ :print: ]</td>
+<td>任意可打印字符</td>
+</tr>
+<tr>
+<td>[ :punct: ]</td>
+<td>即不在[ :alnum: ]又不在[ :cntrl: ]中的任意字符</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>类</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[ :space: ]</td>
+<td>包括空格在内地任意空白字符</td>
+</tr>
+<tr>
+<td>[ :upper: ]</td>
+<td>任意大写字符</td>
+</tr>
+<tr>
+<td>[ :xdigit: ]</td>
+<td>任意十六进制数字</td>
+</tr>
+</tbody></table>
+<h2 id="匹配多个实例"><a href="#匹配多个实例" class="headerlink" title="匹配多个实例"></a>匹配多个实例</h2><p><strong>重复元字符</strong></p>
+<table>
+<thead>
+<tr>
+<th>元字符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>*</td>
+<td>0个或多个匹配</td>
+</tr>
+<tr>
+<td>+</td>
+<td>1个或多个匹配</td>
+</tr>
+<tr>
+<td>？</td>
+<td>0个或1个匹配</td>
+</tr>
+<tr>
+<td>{n}</td>
+<td>指定数目的匹配</td>
+</tr>
+<tr>
+<td>{n,}</td>
+<td>不少于指定数目的匹配</td>
+</tr>
+<tr>
+<td>{n,m}</td>
+<td>匹配数目的范围</td>
+</tr>
+</tbody></table>
+<h2 id="定位符"><a href="#定位符" class="headerlink" title="定位符"></a>定位符</h2><p><strong>定位元字符</strong></p>
+<table>
+<thead>
+<tr>
+<th>元字符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>^</td>
+<td>文本的开始</td>
+</tr>
+<tr>
+<td>$</td>
+<td>文本的结尾</td>
+</tr>
+<tr>
+<td>[[: &lt; :]]</td>
+<td>词的开始</td>
+</tr>
+<tr>
+<td>[[: &gt; :]]</td>
+<td>词的结尾</td>
+</tr>
+</tbody></table>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-用通用符进行过滤"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/%E7%94%A8%E9%80%9A%E7%94%A8%E7%AC%A6%E8%BF%9B%E8%A1%8C%E8%BF%87%E6%BB%A4/" class="article-date">
+  <time datetime="2021-12-16T14:54:34.309Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="用通配符进行过滤"><a href="#用通配符进行过滤" class="headerlink" title="用通配符进行过滤"></a>用通配符进行过滤</h1><h2 id="LIKE操作符"><a href="#LIKE操作符" class="headerlink" title="LIKE操作符"></a>LIKE操作符</h2><p><strong>通配符</strong>：用来匹配值的一部分的特殊字符。</p>
+<h2 id="百分号（-）通配符"><a href="#百分号（-）通配符" class="headerlink" title="百分号（%）通配符"></a>百分号（%）通配符</h2><p>最常使用的通配符是百分号(%),%表示任何字符出现任意次数。</p>
+<p><strong>语法结构</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT 列名</span><br><span class="line">FROM 表格</span><br><span class="line">WHERE 列名 LIKE &#x27;XX%&#x27;</span><br></pre></td></tr></table></figure>
+
+<p><strong>表示用于搜索以“XX”开头的产品，是需要区分大小写的</strong></p>
+<p><strong>如果结构是（“%XX%”）</strong></p>
+<p>表示匹配任何位置包含文本XX的值，不论它之前或之后出现什么字符</p>
+<p><strong>如果结构是（“XX%xx”）</strong></p>
+<p>表示匹配以XX开头，以xx结尾的数据</p>
+<h2 id="下划线-通配符"><a href="#下划线-通配符" class="headerlink" title="下划线(_)通配符"></a>下划线(_)通配符</h2><p>另一个有用的通配符是下划线(_)。下划线的用途与%一样，但下划线只匹配单个字符而不是多个字符</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-排序检索数据"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/%E6%8E%92%E5%BA%8F%E6%A3%80%E7%B4%A2%E6%95%B0%E6%8D%AE/" class="article-date">
+  <time datetime="2021-12-16T14:54:34.299Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="排序检索数据"><a href="#排序检索数据" class="headerlink" title="排序检索数据"></a>排序检索数据</h1><h2 id="排序数据"><a href="#排序数据" class="headerlink" title="排序数据"></a>排序数据</h2><p>使用ORDER BY子句可以进行排序，子句可以取一个或多个列的名字</p>
+<p>自己排序是是根据其对应的数字大写升序排序的</p>
+<p><strong>语法结构</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT 列名</span><br><span class="line">FROM 表名</span><br><span class="line">ORDER BY 列名;</span><br></pre></td></tr></table></figure>
+
+<h2 id="按多个列排序"><a href="#按多个列排序" class="headerlink" title="按多个列排序"></a>按多个列排序</h2><p>这里的“按多个列排序”是有比较的先后级的</p>
+<ul>
+<li>先按照选择的第一列进行排序</li>
+<li>在对第一列中重复的按照第二列进行排序，以后的以此中模式进行</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT 列名,列名,列名</span><br><span class="line">FORM 表名</span><br><span class="line">ORDER BY 列名,列名;</span><br></pre></td></tr></table></figure>
+
+<h2 id="指定排序方向"><a href="#指定排序方向" class="headerlink" title="指定排序方向"></a>指定排序方向</h2><p>数据排序在默认情况下是按照升序排序的，不过也可以通过使用<strong>DECS</strong>来实现降序排序</p>
+<p><strong>语法结构</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT 列名</span><br><span class="line">FROM 表名</span><br><span class="line">ORDER BY 列名 DESC;</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意</strong>：如果要实现多个列上进行降序排序，必须在每个列指定DESC关键字</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-数据过滤"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/12/16/%E6%95%B0%E6%8D%AE%E8%BF%87%E6%BB%A4/"
+    >过滤</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/%E6%95%B0%E6%8D%AE%E8%BF%87%E6%BB%A4/" class="article-date">
+  <time datetime="2021-12-16T14:54:34.299Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="过滤"><a href="#过滤" class="headerlink" title="过滤"></a>过滤</h1><h2 id="组合WHERE子句"><a href="#组合WHERE子句" class="headerlink" title="组合WHERE子句"></a>组合WHERE子句</h2><p>为了进行更强的过滤控制，MySQL允许给出多个WHERE子句，<strong>以AND子句的方式或OR子句的方式使用</strong></p>
+<h2 id="AND操作符"><a href="#AND操作符" class="headerlink" title="AND操作符"></a>AND操作符</h2><p>关键字<strong>AND</strong>用于添加多个过滤条件，<strong>每添加一条就要使用一个AND</strong></p>
+<p><strong>语法结构</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT 列名</span><br><span class="line">FROM 表格</span><br><span class="line">WHERE 条件一 AND 条件二;</span><br></pre></td></tr></table></figure>
+
+<p><strong>意义</strong>:筛选出即符合条件一并且符合条件二的数据</p>
+<h2 id="OR操作符"><a href="#OR操作符" class="headerlink" title="OR操作符"></a>OR操作符</h2><p>关键字<strong>OR</strong>也是用于添加过滤条件，<strong>每添加一条条件就需要使用一个OR</strong></p>
+<p><strong>语法结构</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT 列名</span><br><span class="line">FROM 表格</span><br><span class="line">WHERE 条件一 OR 条件二;</span><br></pre></td></tr></table></figure>
+
+<p><strong>意义</strong>:筛选出符合条件一或者符合条件二的数据</p>
+<h3 id="计算次序"><a href="#计算次序" class="headerlink" title="计算次序"></a>计算次序</h3><p>在复合使用<strong>AND</strong>和<strong>OR</strong>时，需要注意，AND的优先级要高于OR，因此如果要正确的表达你所要表达的意思，一般配合括号**()**来使用。</p>
+<h2 id="IN操作符"><a href="#IN操作符" class="headerlink" title="IN操作符"></a>IN操作符</h2><p>IN操作符用来指定条件范围，范围中的每一个条件都可以进行匹配。IN取合法值得由逗号分隔的清单全部括在圆括号里.</p>
+<p><strong>语法结构</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT 列名</span><br><span class="line">FROM 表格</span><br><span class="line">WHERE 列名 IN (xx,XX);</span><br></pre></td></tr></table></figure>
+
+<p>IN(xx,XX)是等同于xx OR XX</p>
+<p>那么为什么要是用IN而不是OR呐？</p>
+<p><strong>使用IN操作符的优势</strong></p>
+<ul>
+<li>在使用长的合法选项清单时，IN操作符的语法更加清楚，且更加直观</li>
+<li>在使用IN时，计算的次序容易管理</li>
+<li>IN操作符一般比OR操作符清单执行更快</li>
+<li>IN的最大优点在于可以包含其他SELECT语句，是能够更动态地建立WHERE子句。</li>
+</ul>
+<h2 id="NOT操作符"><a href="#NOT操作符" class="headerlink" title="NOT操作符"></a>NOT操作符</h2><p><strong>NOT</strong>操作符用于对其他条件进行否定，因此NOT操作符要配合其他条件一起使用</p>
+<p><strong>语法结构</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT 列名</span><br><span class="line">FROM 表格</span><br><span class="line">WHERE 列名 NOT 条件;</span><br></pre></td></tr></table></figure>
+
+<p>MySQL中的NOT ，<strong>支持对IN、BETWEEN和EXISTS子句取反</strong></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-过滤数据"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/%E8%BF%87%E6%BB%A4%E6%95%B0%E6%8D%AE/" class="article-date">
+  <time datetime="2021-12-16T14:54:34.299Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="过滤数据"><a href="#过滤数据" class="headerlink" title="过滤数据"></a>过滤数据</h1><h2 id="使用WHERE子句"><a href="#使用WHERE子句" class="headerlink" title="使用WHERE子句"></a>使用WHERE子句</h2><p>数据WHERE子句中指定的搜索条件进行过滤WHERE子句在表名（FROM子句）之后给出。</p>
+<p><strong>语法结构</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT 列名</span><br><span class="line">FROM 表格</span><br><span class="line">WHERE 条件;</span><br></pre></td></tr></table></figure>
+
+<p>它检查的是一个列是否具有指定的值据此进行过滤</p>
+<h1 id="WHERE子句操作符"><a href="#WHERE子句操作符" class="headerlink" title="WHERE子句操作符"></a>WHERE子句操作符</h1><p><strong>WHERE子句操作符</strong></p>
+<table>
+<thead>
+<tr>
+<th>操作符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>=</td>
+<td>等于</td>
+</tr>
+<tr>
+<td>&lt;&gt;</td>
+<td>不等于</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>不等于</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>小于</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>小于等于</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>大于</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>大于等于</td>
+</tr>
+<tr>
+<td>BETWEEN</td>
+<td>在指定的两个数中间(包含这两个数)</td>
+</tr>
+</tbody></table>
+<p><strong>注意，在比较时，我们有事会使用到单引号（’’）</strong></p>
+<ul>
+<li>当比较的数据是数字类型则不需要用单引号</li>
+<li>当比较的数据是字符串类型则需要用单引号将子句括起来</li>
+</ul>
+<h2 id="范围值检查"><a href="#范围值检查" class="headerlink" title="范围值检查"></a>范围值检查</h2><p>范围值检查使用的是关键字<strong>BETWEEN</strong></p>
+<p>在使用<strong>BETWEEN</strong>时，必须给出范围所需的低端值和高端值，这两个值必须使用AND关键字分隔.。</p>
+<p><strong>语法结构</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT 列名</span><br><span class="line">FROM 表格</span><br><span class="line">WHERE 列名 BETWEEN x AND x;</span><br></pre></td></tr></table></figure>
+
+<h3 id="空值检查"><a href="#空值检查" class="headerlink" title="空值检查"></a>空值检查</h3><p>空值检查是可以用**(NULL)**表示的，但是可以检索到，不能提取出来</p>
+<p><strong>语法结构</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT 列名</span><br><span class="line">FROM 表格</span><br><span class="line">WHERE 列名 IS NULL;</span><br></pre></td></tr></table></figure>
+
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+  </article>
+  
+
+  
+  <nav class="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/13/">上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/15/">下一页</a>
+  </nav>
+  
+</section>
+</div>
+
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2022
+        <i class="ri-heart-fill heart_icon"></i> dwx
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="dwx-tx的小天地"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>

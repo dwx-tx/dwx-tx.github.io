@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>itext生成pdf |  dwx-tx的小天地</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"
+      />
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+       
+ 
+<script>
+var _hmt = _hmt || [];
+(function() {
+	var hm = document.createElement("script");
+	hm.src = "https://hm.baidu.com/hm.js?57bee4bd4703d5af3f9154ce72c6f85f";
+	var s = document.getElementsByTagName("script")[0]; 
+	s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    <link rel="alternate" href="/atom.xml" title="dwx-tx的小天地" type="application/atom+xml">
+</head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-itext生成PDF"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  itext生成pdf
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/05/15/itext%E7%94%9F%E6%88%90PDF/" class="article-date">
+  <time datetime="2022-05-15T14:19:16.570Z" itemprop="datePublished">2022-05-15</time>
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">3.3k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">17 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="itext生成pdf"><a href="#itext生成pdf" class="headerlink" title="itext生成pdf"></a>itext生成pdf</h1><p>最近写了一个java后端生成pdf程序，因此我在这里提供自己生成pdf的一个策略。</p>
+<p><strong>使用itext生成pdf</strong></p>
+<h2 id="iText的依赖"><a href="#iText的依赖" class="headerlink" title="iText的依赖"></a>iText的依赖</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.itextpdf<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>itextpdf<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.5.6<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">   <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.itextpdf<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>itext-asian<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.2.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>这两程序是都需要的，特别是第二个依赖，是itext能够使用字体的重要的依赖</p>
+<h2 id="代码实践"><a href="#代码实践" class="headerlink" title="代码实践"></a>代码实践</h2><p><strong>学习参考</strong></p>
+<p> <a target="_blank" rel="noopener" href="https://www.docin.com/p-1415601116.html">iText中文帮助文档 - 豆丁网 (docin.com)</a> </p>
+<p><strong>生成pdf的代码</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br><span class="line">438</span><br><span class="line">439</span><br><span class="line">440</span><br><span class="line">441</span><br><span class="line">442</span><br><span class="line">443</span><br><span class="line">444</span><br><span class="line">445</span><br><span class="line">446</span><br><span class="line">447</span><br><span class="line">448</span><br><span class="line">449</span><br><span class="line">450</span><br><span class="line">451</span><br><span class="line">452</span><br><span class="line">453</span><br><span class="line">454</span><br><span class="line">455</span><br><span class="line">456</span><br><span class="line">457</span><br><span class="line">458</span><br><span class="line">459</span><br><span class="line">460</span><br><span class="line">461</span><br><span class="line">462</span><br><span class="line">463</span><br><span class="line">464</span><br><span class="line">465</span><br><span class="line">466</span><br><span class="line">467</span><br><span class="line">468</span><br><span class="line">469</span><br><span class="line">470</span><br><span class="line">471</span><br><span class="line">472</span><br><span class="line">473</span><br><span class="line">474</span><br><span class="line">475</span><br><span class="line">476</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.dwx.utils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.dwx.pojo.g_hld1;</span><br><span class="line"><span class="keyword">import</span> com.dwx.pojo.g_hld2;</span><br><span class="line"><span class="keyword">import</span> com.itextpdf.text.*;</span><br><span class="line"><span class="keyword">import</span> com.itextpdf.text.Font;</span><br><span class="line"><span class="keyword">import</span> com.itextpdf.text.Rectangle;</span><br><span class="line"><span class="keyword">import</span> com.itextpdf.text.pdf.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.swing.*;</span><br><span class="line"><span class="keyword">import</span> java.awt.*;</span><br><span class="line"><span class="keyword">import</span> java.io.ByteArrayOutputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.io.FileOutputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.time.LocalDate;</span><br><span class="line"><span class="keyword">import</span> java.time.format.DateTimeFormatter;</span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="comment">//这是一个生成pdf的工具类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">pdfUtils</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Map&lt;String,Object&gt; <span class="title">setPDF</span><span class="params">(String E,String I,String S,String N,String TT,String F,String J,String P,String csrul,String personalityProfile,String personalityDescription,String field,String careerStudent,String career)</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line"></span><br><span class="line">        ByteArrayOutputStream stream = <span class="keyword">new</span> ByteArrayOutputStream();</span><br><span class="line">        <span class="comment">//创建一个新的文档</span></span><br><span class="line">        <span class="comment">//创建一个空的文档并且设置文档的大小</span></span><br><span class="line">        Document document = <span class="keyword">new</span> Document(PageSize.A4);</span><br><span class="line"></span><br><span class="line">        PdfWriter.getInstance(document, stream);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//打开文档 准备添加数据</span></span><br><span class="line">        document.open();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//添加数据</span></span><br><span class="line">        <span class="comment">//创建字体 基本字体 字体需要不同定制都是以这个基础字体为基础的</span></span><br><span class="line">        BaseFont baseFont = BaseFont.createFont(<span class="string">&quot;STSongStd-Light&quot;</span>, <span class="string">&quot;UniGB-UCS2-H&quot;</span>, BaseFont.EMBEDDED);</span><br><span class="line">        <span class="comment">//固定格式部分</span></span><br><span class="line">        <span class="comment">//主标题</span></span><br><span class="line">        String T = <span class="string">&quot;MBTI职业性格测试报告&quot;</span>;</span><br><span class="line">        Paragraph Title = <span class="keyword">new</span> Paragraph();</span><br><span class="line">        Title.setFont(<span class="keyword">new</span> Font(baseFont,<span class="number">23</span>,<span class="number">0</span>));</span><br><span class="line">        <span class="comment">//居中</span></span><br><span class="line">        Title.setAlignment(Element.ALIGN_CENTER);</span><br><span class="line">        Title.add(T);</span><br><span class="line"></span><br><span class="line">        Title.setSpacingAfter(<span class="number">25</span>);</span><br><span class="line">        Title.setSpacingBefore(<span class="number">25</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//副标题</span></span><br><span class="line">        String t = <span class="string">&quot;你的性格类型是:&quot;</span>+csrul;</span><br><span class="line">        Paragraph title = <span class="keyword">new</span> Paragraph();</span><br><span class="line">        title.setFont(<span class="keyword">new</span> Font(baseFont,<span class="number">12</span>,<span class="number">0</span>));</span><br><span class="line">        <span class="comment">//居中</span></span><br><span class="line">        title.setAlignment(Element.ALIGN_CENTER);</span><br><span class="line">        title.add(t);</span><br><span class="line">        title.setSpacingAfter(<span class="number">10</span>);</span><br><span class="line">        title.setSpacingBefore(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//添加百分比部分</span></span><br><span class="line">        String TT1 = E+<span class="string">&quot;%   外向(E) ---- 内向(I)  &quot;</span>+I+<span class="string">&quot;%&quot;</span>;</span><br><span class="line">        String TT2 = S+<span class="string">&quot;%   感觉(S) ---- 直觉(N)  &quot;</span>+N+<span class="string">&quot;%&quot;</span>;</span><br><span class="line">        String TT3 = TT+<span class="string">&quot;%   思考(T) ---- 感情(F)  &quot;</span>+F+<span class="string">&quot;%&quot;</span>;</span><br><span class="line">        String TT4 = J+<span class="string">&quot;%   判断(J) ---- 知觉(P)  &quot;</span>+P+<span class="string">&quot;%&quot;</span>;</span><br><span class="line"></span><br><span class="line">        Paragraph tt1 = <span class="keyword">new</span> Paragraph();</span><br><span class="line">        tt1.setFont(<span class="keyword">new</span> Font(baseFont,<span class="number">10</span>,<span class="number">0</span>));</span><br><span class="line">        tt1.add(TT1);</span><br><span class="line">        tt1.setAlignment(Element.ALIGN_CENTER);</span><br><span class="line">        Paragraph tt2 = <span class="keyword">new</span> Paragraph();</span><br><span class="line">        tt2.setFont(<span class="keyword">new</span> Font(baseFont,<span class="number">10</span>,<span class="number">0</span>));</span><br><span class="line">        tt2.add(TT2);</span><br><span class="line">        tt2.setAlignment(Element.ALIGN_CENTER);</span><br><span class="line">        Paragraph tt3 = <span class="keyword">new</span> Paragraph();</span><br><span class="line">        tt3.setFont(<span class="keyword">new</span> Font(baseFont,<span class="number">10</span>,<span class="number">0</span>));</span><br><span class="line">        tt3.add(TT3);</span><br><span class="line">        tt3.setAlignment(Element.ALIGN_CENTER);</span><br><span class="line">        Paragraph tt4 = <span class="keyword">new</span> Paragraph();</span><br><span class="line">        tt4.setFont(<span class="keyword">new</span> Font(baseFont,<span class="number">10</span>,<span class="number">0</span>));</span><br><span class="line">        tt4.add(TT4);</span><br><span class="line">        tt4.setAlignment(Element.ALIGN_CENTER);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//第一部分</span></span><br><span class="line">        String t1 = <span class="string">&quot;一、性格特点&quot;</span>;</span><br><span class="line">        Paragraph T1 = <span class="keyword">new</span> Paragraph();</span><br><span class="line">        T1.setFont(<span class="keyword">new</span> Font(baseFont,<span class="number">15</span>,<span class="number">0</span>));</span><br><span class="line">        T1.add(t1);</span><br><span class="line">        T1.setSpacingAfter(<span class="number">10</span>);</span><br><span class="line">        T1.setSpacingBefore(<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//第二部分</span></span><br><span class="line"></span><br><span class="line">        String t2 = <span class="string">&quot;1.概要&quot;</span>;</span><br><span class="line">        Paragraph T2 = <span class="keyword">new</span> Paragraph();</span><br><span class="line">        T2.setFont(<span class="keyword">new</span> Font(baseFont,<span class="number">13</span>,<span class="number">0</span>));</span><br><span class="line">        T2.add(t2);</span><br><span class="line">        T2.setSpacingAfter(<span class="number">10</span>);</span><br><span class="line">        T2.setSpacingBefore(<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//第三部分</span></span><br><span class="line">        String t3 = <span class="string">&quot;2.描述&quot;</span>;</span><br><span class="line">        Paragraph T3 = <span class="keyword">new</span> Paragraph();</span><br><span class="line">        T3.setFont(<span class="keyword">new</span> Font(baseFont,<span class="number">13</span>,<span class="number">0</span>));</span><br><span class="line">        T3.add(t3);</span><br><span class="line">        T3.setSpacingAfter(<span class="number">10</span>);</span><br><span class="line">        T3.setSpacingBefore(<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//第四部分</span></span><br><span class="line">        String t4 = <span class="string">&quot;二、适合领域&quot;</span>;</span><br><span class="line">        Paragraph T4 = <span class="keyword">new</span> Paragraph();</span><br><span class="line">        T4.setFont(<span class="keyword">new</span> Font(baseFont,<span class="number">15</span>,<span class="number">0</span>));</span><br><span class="line">        T4.add(t4);</span><br><span class="line">        T4.setSpacingAfter(<span class="number">10</span>);</span><br><span class="line">        T4.setSpacingBefore(<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">        String t45 = <span class="string">&quot;三、适合职业&quot;</span>;</span><br><span class="line">        Paragraph T45 = <span class="keyword">new</span> Paragraph();</span><br><span class="line">        T45.setFont(<span class="keyword">new</span> Font(baseFont,<span class="number">15</span>,<span class="number">0</span>));</span><br><span class="line">        T45.add(t45);</span><br><span class="line">        T45.setSpacingAfter(<span class="number">10</span>);</span><br><span class="line">        T45.setSpacingBefore(<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//第五部分</span></span><br><span class="line">        String t5 = <span class="string">&quot;1.学生&quot;</span>;</span><br><span class="line">        Paragraph T5 = <span class="keyword">new</span> Paragraph();</span><br><span class="line">        T5.setFont(<span class="keyword">new</span> Font(baseFont,<span class="number">13</span>,<span class="number">0</span>));</span><br><span class="line">        T5.add(t5);</span><br><span class="line"></span><br><span class="line">        T5.setSpacingAfter(<span class="number">10</span>);</span><br><span class="line">        T5.setSpacingBefore(<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//第六部分</span></span><br><span class="line">        String t6 = <span class="string">&quot;2.职场&quot;</span>;</span><br><span class="line">        Paragraph T6 = <span class="keyword">new</span> Paragraph();</span><br><span class="line">        T6.setFont(<span class="keyword">new</span> Font(baseFont,<span class="number">13</span>,<span class="number">0</span>));</span><br><span class="line">        T6.add(t6);</span><br><span class="line"></span><br><span class="line">        T6.setSpacingAfter(<span class="number">10</span>);</span><br><span class="line">        T6.setSpacingBefore(<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//第七部分</span></span><br><span class="line">        String t7 = <span class="string">&quot;四、用户须知&quot;</span>;</span><br><span class="line">        Paragraph T7 = <span class="keyword">new</span> Paragraph();</span><br><span class="line">        T7.setFont(<span class="keyword">new</span> Font(baseFont,<span class="number">15</span>,<span class="number">0</span>));</span><br><span class="line">        T7.add(t7);</span><br><span class="line"></span><br><span class="line">        T7.setSpacingAfter(<span class="number">10</span>);</span><br><span class="line">        T7.setSpacingBefore(<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//第八部分</span></span><br><span class="line">        String p6 = <span class="string">&quot;《性格分析报告》展示的是你的性格倾向，而不是你的知识、技能、经验。\n&quot;</span> +</span><br><span class="line">                <span class="string">&quot;MBTI提供的性格类型描述仅供测试者确定自己的性格类型之用，性格类型没有好坏，只有不同。每一种性格特征都有其价值和优点，也有缺点和需要注意的地方。清楚地了解自己的性格优劣势，有利于更好地发挥自己的特长，而尽可能的在为人处事中避免自己性格中的劣势，更好地和他人相处，更好地作重要的决策。\n&quot;</span> +</span><br><span class="line">                <span class="string">&quot;&quot;</span>;</span><br><span class="line">        Paragraph P6 = <span class="keyword">new</span> Paragraph();</span><br><span class="line">        P6.setFont(<span class="keyword">new</span> Font(baseFont,<span class="number">10</span>,<span class="number">0</span>));</span><br><span class="line">        P6.add(p6);</span><br><span class="line">        P6.setLeading(<span class="number">15.5f</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//尾缀一</span></span><br><span class="line">        String l1 = <span class="string">&quot;[性格无好坏，人生各不同]&quot;</span>;</span><br><span class="line">        Paragraph L1 = <span class="keyword">new</span> Paragraph();</span><br><span class="line">        L1.setFont(<span class="keyword">new</span> Font(baseFont,<span class="number">10</span>,<span class="number">0</span>));</span><br><span class="line">        L1.setSpacingBefore(<span class="number">50</span>);</span><br><span class="line">        <span class="comment">//设置居中</span></span><br><span class="line">        L1.setAlignment(Element.ALIGN_RIGHT);</span><br><span class="line">        L1.add(l1);</span><br><span class="line">        <span class="comment">//尾缀二</span></span><br><span class="line">        String l2 = <span class="string">&quot;留心智愿&quot;</span>;</span><br><span class="line">        Paragraph L2 = <span class="keyword">new</span> Paragraph();</span><br><span class="line">        L2.setFont(<span class="keyword">new</span> Font(baseFont,<span class="number">10</span>,<span class="number">0</span>));</span><br><span class="line">        <span class="comment">//设置居中</span></span><br><span class="line">        L2.setAlignment(Element.ALIGN_RIGHT);</span><br><span class="line">        L2.add(l2);</span><br><span class="line">        <span class="comment">//最后的时间</span></span><br><span class="line"></span><br><span class="line">        DateTimeFormatter dtf = DateTimeFormatter.ofPattern(<span class="string">&quot;uuuu/MM/dd&quot;</span>);</span><br><span class="line">        LocalDate localDate = LocalDate.now();</span><br><span class="line">        <span class="keyword">int</span> year = localDate.getYear();</span><br><span class="line">        <span class="keyword">int</span> monthValue = localDate.getMonthValue();</span><br><span class="line">        <span class="keyword">int</span> dayOfMonth = localDate.getDayOfMonth();</span><br><span class="line">        System.out.println(year);</span><br><span class="line">        System.out.println(monthValue );</span><br><span class="line">        System.out.println(dayOfMonth);</span><br><span class="line"></span><br><span class="line">        String data = year+<span class="string">&quot;年&quot;</span>+monthValue+<span class="string">&quot;月&quot;</span>+dayOfMonth+<span class="string">&quot;日&quot;</span>;</span><br><span class="line">        Paragraph Data = <span class="keyword">new</span> Paragraph();</span><br><span class="line">        Data.setAlignment(Element.ALIGN_RIGHT);</span><br><span class="line">        Data.setFont(<span class="keyword">new</span> Font(baseFont,<span class="number">10</span>,<span class="number">0</span>));</span><br><span class="line">        Data.add(data);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//五个移动的数据</span></span><br><span class="line">        String p1 = personalityProfile;</span><br><span class="line">        String p2 = personalityDescription;</span><br><span class="line">        String p3 = field;</span><br><span class="line">        String p4 = careerStudent;</span><br><span class="line">        String p5 = career;</span><br><span class="line"></span><br><span class="line">        Paragraph P1 = <span class="keyword">new</span> Paragraph();</span><br><span class="line">        P1.setFont(<span class="keyword">new</span> Font(baseFont,<span class="number">10</span>,<span class="number">0</span>));</span><br><span class="line">        P1.add(p1);</span><br><span class="line"></span><br><span class="line">        Paragraph P2 = <span class="keyword">new</span> Paragraph();</span><br><span class="line">        P2.setFont(<span class="keyword">new</span> Font(baseFont,<span class="number">10</span>,<span class="number">0</span>));</span><br><span class="line">        P2.add(p2);</span><br><span class="line"></span><br><span class="line">        Paragraph P3 = <span class="keyword">new</span> Paragraph();</span><br><span class="line">        P3.setFont(<span class="keyword">new</span> Font(baseFont,<span class="number">10</span>,<span class="number">0</span>));</span><br><span class="line">        P3.add(p3);</span><br><span class="line"></span><br><span class="line">        Paragraph P4 = <span class="keyword">new</span> Paragraph();</span><br><span class="line">        P4.setFont(<span class="keyword">new</span> Font(baseFont,<span class="number">10</span>,<span class="number">0</span>));</span><br><span class="line">        P4.add(p4);</span><br><span class="line"></span><br><span class="line">        Paragraph P5 = <span class="keyword">new</span> Paragraph();</span><br><span class="line">        P5.setFont(<span class="keyword">new</span> Font(baseFont,<span class="number">10</span>,<span class="number">0</span>));</span><br><span class="line">        P5.add(p5);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//将元素添加进去</span></span><br><span class="line">        document.add(Title);</span><br><span class="line">        document.add(title);</span><br><span class="line">        document.add(tt1);</span><br><span class="line">        document.add(tt2);</span><br><span class="line">        document.add(tt3);</span><br><span class="line">        document.add(tt4);</span><br><span class="line">        document.add(T1);</span><br><span class="line">        document.add(T2);</span><br><span class="line">        document.add(P1);</span><br><span class="line">        document.add(T3);</span><br><span class="line">        document.add(P2);</span><br><span class="line">        document.add(T4);</span><br><span class="line">        document.add(P3);</span><br><span class="line">        document.add(T45);</span><br><span class="line">        document.add(T5);</span><br><span class="line">        document.add(P4);</span><br><span class="line">        document.add(T6);</span><br><span class="line">        document.add(P5);</span><br><span class="line">        document.add(T7);</span><br><span class="line">        document.add(P6);</span><br><span class="line">        document.add(L1);</span><br><span class="line">        document.add(L2);</span><br><span class="line">        document.add(Data);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//关闭文档</span></span><br><span class="line">        document.close();</span><br><span class="line"></span><br><span class="line">        Map&lt;String, Object&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        map.put(<span class="string">&quot;document&quot;</span>,document);</span><br><span class="line">        map.put(<span class="string">&quot;stream&quot;</span>,stream);</span><br><span class="line">        <span class="keyword">return</span> map;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Map&lt;String,Object&gt; <span class="title">setHldPDF</span><span class="params">(String R, String C, String E, String S, String A, String I, String d1, String d2, String d3, g_hld1 n1, g_hld1  n2, g_hld1  n3, g_hld2 d)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        ByteArrayOutputStream stream = <span class="keyword">new</span> ByteArrayOutputStream();</span><br><span class="line">        <span class="comment">//创建一个新的文档</span></span><br><span class="line">        <span class="comment">//创建一个空的文档并且设置文档的大小</span></span><br><span class="line">        Document document = <span class="keyword">new</span> Document(PageSize.A4);</span><br><span class="line"></span><br><span class="line">        PdfWriter.getInstance(document, stream);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//打开文档 准备添加数据</span></span><br><span class="line">        document.open();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//添加数据</span></span><br><span class="line">        <span class="comment">//创建字体 基本字体 字体需要不同定制都是以这个基础字体为基础的</span></span><br><span class="line">        BaseFont baseFont = BaseFont.createFont(<span class="string">&quot;STSongStd-Light&quot;</span>, <span class="string">&quot;UniGB-UCS2-H&quot;</span>, BaseFont.EMBEDDED);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//创建标题</span></span><br><span class="line">        String title = <span class="string">&quot;霍兰德职业兴趣测试\n&quot;</span>+<span class="string">&quot;深度分析报告&quot;</span>;</span><br><span class="line">        Paragraph Title = <span class="keyword">new</span> Paragraph();</span><br><span class="line">        Title.setFont(<span class="keyword">new</span> Font(baseFont,<span class="number">20</span>,<span class="number">0</span>));</span><br><span class="line">        <span class="comment">//设置居中</span></span><br><span class="line">        Title.setAlignment(Element.ALIGN_CENTER);</span><br><span class="line">        Title.setLeading((<span class="keyword">float</span>) (<span class="number">15.5f</span>*<span class="number">1.5</span>));</span><br><span class="line">        Title.add(title);</span><br><span class="line">        Title.setSpacingAfter(<span class="number">20</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//创建文档中固定的部分</span></span><br><span class="line">        String t1 = <span class="string">&quot;测试结果       &quot;</span>+d.getAll_type();</span><br><span class="line">        Paragraph T1 = <span class="keyword">new</span> Paragraph();</span><br><span class="line">        T1.setFont(<span class="keyword">new</span> Font(baseFont,<span class="number">15</span>));</span><br><span class="line">        T1.add(t1);</span><br><span class="line">        T1.setSpacingBefore(<span class="number">10</span>);</span><br><span class="line">        T1.setSpacingAfter(<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">        String t2 = <span class="string">&quot;维度分析&quot;</span>;</span><br><span class="line">        Paragraph T2 = <span class="keyword">new</span> Paragraph();</span><br><span class="line">        T2.setFont(<span class="keyword">new</span> Font(baseFont,<span class="number">15</span>));</span><br><span class="line">        T2.add(t2);</span><br><span class="line">        T2.setAlignment(Element.ALIGN_CENTER);</span><br><span class="line">        T2.setSpacingBefore(<span class="number">10</span>);</span><br><span class="line">        T2.setSpacingAfter(<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        String t3 = <span class="string">&quot;职业匹配&quot;</span>;</span><br><span class="line">        Paragraph T3  = <span class="keyword">new</span> Paragraph();</span><br><span class="line">        T3.setFont(<span class="keyword">new</span> Font(baseFont,<span class="number">15</span>));</span><br><span class="line">        <span class="comment">//设置居中</span></span><br><span class="line">        T3.setAlignment(Element.ALIGN_CENTER);</span><br><span class="line">        T3.add(t3);</span><br><span class="line">        T3.setSpacingBefore(<span class="number">10</span>);</span><br><span class="line">        T3.setSpacingAfter(<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//设置可以活动的部分</span></span><br><span class="line">        String p6 = d.getAll_career();</span><br><span class="line">        Paragraph P6 = <span class="keyword">new</span> Paragraph();</span><br><span class="line">        P6.setFont(<span class="keyword">new</span> Font(baseFont,<span class="number">10</span>));</span><br><span class="line">        P6.add(p6);</span><br><span class="line"></span><br><span class="line">        String p1 = <span class="string">&quot;现实型R  ----  &quot;</span>+R+<span class="string">&quot;%&quot;</span>+<span class="string">&quot;\n&quot;</span></span><br><span class="line">                +<span class="string">&quot;传统型C  ----  &quot;</span>+C+<span class="string">&quot;%&quot;</span>+<span class="string">&quot;\n&quot;</span></span><br><span class="line">                +<span class="string">&quot;企业型E  ----  &quot;</span>+E+<span class="string">&quot;%&quot;</span>+<span class="string">&quot;\n&quot;</span></span><br><span class="line">                +<span class="string">&quot;社会型S  ----  &quot;</span>+S+<span class="string">&quot;%&quot;</span>+<span class="string">&quot;\n&quot;</span></span><br><span class="line">                +<span class="string">&quot;艺术型A  ----  &quot;</span>+A+<span class="string">&quot;%&quot;</span>+<span class="string">&quot;\n&quot;</span></span><br><span class="line">                +<span class="string">&quot;研究型I  ----  &quot;</span>+I+<span class="string">&quot;%&quot;</span>+<span class="string">&quot;\n&quot;</span>;</span><br><span class="line">        Paragraph P1 = <span class="keyword">new</span> Paragraph();</span><br><span class="line">        P1.setFont(<span class="keyword">new</span> Font(baseFont,<span class="number">13</span>));</span><br><span class="line">        P1.add(p1);</span><br><span class="line">        P1.setAlignment(Element.ALIGN_CENTER);</span><br><span class="line">        P1.setLeading((<span class="keyword">float</span>) (<span class="number">15.5f</span>*<span class="number">1.5</span>));</span><br><span class="line"></span><br><span class="line">        P1.setSpacingBefore(<span class="number">10</span>);</span><br><span class="line">        P1.setSpacingAfter(<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">        String t4 = d1;</span><br><span class="line">        <span class="keyword">switch</span> (t4)&#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;R现实型&quot;</span>: t4 = <span class="string">&quot;R&quot;</span>;<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;C&quot;</span>: t4 = <span class="string">&quot;C&quot;</span>;<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;E&quot;</span>: t4 = <span class="string">&quot;E&quot;</span>;<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;S&quot;</span>: t4 = <span class="string">&quot;S&quot;</span>;<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;A&quot;</span>: t4 = <span class="string">&quot;A&quot;</span>;<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;I&quot;</span>: t4 = <span class="string">&quot;I&quot;</span>;<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:<span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        Paragraph T4 = <span class="keyword">new</span> Paragraph();</span><br><span class="line">        T4.add(t4);</span><br><span class="line">        T4.setFont(<span class="keyword">new</span> Font(baseFont,<span class="number">15</span>));</span><br><span class="line">        String p3 = n1.getPersonality()+<span class="string">&quot;\n&quot;</span>+<span class="string">&quot;\n&quot;</span>+n1.getCareer();</span><br><span class="line">        Paragraph P3 = <span class="keyword">new</span> Paragraph();</span><br><span class="line">        P3.setFont(<span class="keyword">new</span> Font(baseFont,<span class="number">10</span>));</span><br><span class="line">        P3.add(p3);</span><br><span class="line">        P3.setSpacingAfter(<span class="number">10</span>);</span><br><span class="line">        P3.setSpacingBefore(<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        String t5 = d2;</span><br><span class="line">        <span class="keyword">switch</span> (t5)&#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;R现实型&quot;</span>: t4 = <span class="string">&quot;R&quot;</span>+<span class="string">&quot;现实性&quot;</span>;<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;C&quot;</span>: t4 = <span class="string">&quot;C&quot;</span>;<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;E&quot;</span>: t4 = <span class="string">&quot;E&quot;</span>;<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;S&quot;</span>: t4 = <span class="string">&quot;S&quot;</span>;<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;A&quot;</span>: t4 = <span class="string">&quot;A&quot;</span>;<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;I&quot;</span>: t4 = <span class="string">&quot;I&quot;</span>;<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:<span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        Paragraph T5 = <span class="keyword">new</span> Paragraph();</span><br><span class="line">        T5.add(t5);</span><br><span class="line">        T5.setFont(<span class="keyword">new</span> Font(baseFont,<span class="number">15</span>));</span><br><span class="line">        String p4 = n2.getPersonality()+<span class="string">&quot;\n&quot;</span>+<span class="string">&quot;\n&quot;</span>+n2.getCareer();</span><br><span class="line">        Paragraph P4 = <span class="keyword">new</span> Paragraph();</span><br><span class="line">        P4.setFont(<span class="keyword">new</span> Font(baseFont,<span class="number">10</span>));</span><br><span class="line">        P4.add(p4);</span><br><span class="line">        P4.setSpacingAfter(<span class="number">10</span>);</span><br><span class="line">        P4.setSpacingBefore(<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        String t6 = d3;</span><br><span class="line">        <span class="keyword">switch</span> (t6)&#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;R现实型&quot;</span>: t4 = <span class="string">&quot;R&quot;</span>+<span class="string">&quot;现实性&quot;</span>;<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;C&quot;</span>: t4 = <span class="string">&quot;C&quot;</span>;<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;E&quot;</span>: t4 = <span class="string">&quot;E&quot;</span>;<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;S&quot;</span>: t4 = <span class="string">&quot;S&quot;</span>;<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;A&quot;</span>: t4 = <span class="string">&quot;A&quot;</span>;<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;I&quot;</span>: t4 = <span class="string">&quot;I&quot;</span>;<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:<span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        Paragraph T6 = <span class="keyword">new</span> Paragraph();</span><br><span class="line">        T6.add(t6);</span><br><span class="line">        T6.setFont(<span class="keyword">new</span> Font(baseFont,<span class="number">15</span>));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        String p5 = n3.getPersonality()+<span class="string">&quot;\n&quot;</span>+<span class="string">&quot;\n&quot;</span>+n3.getCareer();</span><br><span class="line">        Paragraph P5 = <span class="keyword">new</span> Paragraph();</span><br><span class="line">        P5.setFont(<span class="keyword">new</span> Font(baseFont,<span class="number">10</span>));</span><br><span class="line">        P5.add(p5);</span><br><span class="line">        P5.setSpacingAfter(<span class="number">10</span>);</span><br><span class="line">        P5.setSpacingBefore(<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//尾缀一</span></span><br><span class="line">        String l1 = <span class="string">&quot;[兴趣无好坏，人生各不同]&quot;</span>;</span><br><span class="line">        Paragraph L1 = <span class="keyword">new</span> Paragraph();</span><br><span class="line">        L1.setFont(<span class="keyword">new</span> Font(baseFont,<span class="number">10</span>,<span class="number">0</span>));</span><br><span class="line">        L1.setSpacingBefore(<span class="number">50</span>);</span><br><span class="line">        <span class="comment">//设置居中</span></span><br><span class="line">        L1.setAlignment(Element.ALIGN_RIGHT);</span><br><span class="line">        L1.add(l1);</span><br><span class="line">        <span class="comment">//尾缀二</span></span><br><span class="line">        String l2 = <span class="string">&quot;留心智愿&quot;</span>;</span><br><span class="line">        Paragraph L2 = <span class="keyword">new</span> Paragraph();</span><br><span class="line">        L2.setFont(<span class="keyword">new</span> Font(baseFont,<span class="number">10</span>,<span class="number">0</span>));</span><br><span class="line">        <span class="comment">//设置居中</span></span><br><span class="line">        L2.setAlignment(Element.ALIGN_RIGHT);</span><br><span class="line">        L2.add(l2);</span><br><span class="line">        <span class="comment">//最后的时间</span></span><br><span class="line"></span><br><span class="line">        DateTimeFormatter dtf = DateTimeFormatter.ofPattern(<span class="string">&quot;uuuu/MM/dd&quot;</span>);</span><br><span class="line">        LocalDate localDate = LocalDate.now();</span><br><span class="line">        <span class="keyword">int</span> year = localDate.getYear();</span><br><span class="line">        <span class="keyword">int</span> monthValue = localDate.getMonthValue();</span><br><span class="line">        <span class="keyword">int</span> dayOfMonth = localDate.getDayOfMonth();</span><br><span class="line">        System.out.println(year);</span><br><span class="line">        System.out.println(monthValue );</span><br><span class="line">        System.out.println(dayOfMonth);</span><br><span class="line"></span><br><span class="line">        String data = year+<span class="string">&quot;年&quot;</span>+monthValue+<span class="string">&quot;月&quot;</span>+dayOfMonth+<span class="string">&quot;日&quot;</span>;</span><br><span class="line">        Paragraph Data = <span class="keyword">new</span> Paragraph();</span><br><span class="line">        Data.setAlignment(Element.ALIGN_RIGHT);</span><br><span class="line">        Data.setFont(<span class="keyword">new</span> Font(baseFont,<span class="number">10</span>,<span class="number">0</span>));</span><br><span class="line">        Data.add(data);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//将片段加到文档中</span></span><br><span class="line">        document.add(Title);</span><br><span class="line">        document.add(P1);</span><br><span class="line">        document.add(T1);</span><br><span class="line"></span><br><span class="line">        document.add(T2);</span><br><span class="line">        document.add(T4);</span><br><span class="line">        document.add(P3);</span><br><span class="line"></span><br><span class="line">        document.add(T5);</span><br><span class="line">        document.add(P4);</span><br><span class="line"></span><br><span class="line">        document.add(T6);</span><br><span class="line">        document.add(P5);</span><br><span class="line"></span><br><span class="line">        document.add(T3);</span><br><span class="line">        document.add(P6);</span><br><span class="line"></span><br><span class="line">        document.add(L1);</span><br><span class="line">        document.add(L2);</span><br><span class="line">        document.add(Data);</span><br><span class="line"></span><br><span class="line">        document.close();</span><br><span class="line"></span><br><span class="line">        Map&lt;String, Object&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        map.put(<span class="string">&quot;document&quot;</span>,document);</span><br><span class="line">        map.put(<span class="string">&quot;stream&quot;</span>,stream);</span><br><span class="line">        <span class="keyword">return</span> map;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>将pdf写到网页的代码</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.dwx.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.dwx.pojo.g_hld1;</span><br><span class="line"><span class="keyword">import</span> com.dwx.pojo.g_hld2;</span><br><span class="line"><span class="keyword">import</span> com.dwx.pojo.g_report;</span><br><span class="line"><span class="keyword">import</span> com.dwx.service.hld1Service;</span><br><span class="line"><span class="keyword">import</span> com.dwx.service.hld2Service;</span><br><span class="line"><span class="keyword">import</span> com.dwx.service.reportService;</span><br><span class="line"><span class="keyword">import</span> com.dwx.utils.pdfUtils;</span><br><span class="line"><span class="keyword">import</span> com.itextpdf.text.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.ResponseBody;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletOutputStream;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> java.io.ByteArrayOutputStream;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.nio.charset.StandardCharsets;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ReportController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//嗲用service层</span></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> reportService reportService;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//调用hld1的service和hld2的service</span></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> hld1Service hld1Service;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> hld2Service hld2Service;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/getPDF&quot;)</span></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getPdf</span><span class="params">(String E,String I,String S,String N,String T,String F,String J,String P,String csrul,HttpServletResponse resp)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="comment">//设置下载pdf程序</span></span><br><span class="line">        System.out.println(csrul);</span><br><span class="line">        g_report report = reportService.getReport(csrul);</span><br><span class="line">        System.out.println(report);</span><br><span class="line"></span><br><span class="line">        System.out.println(E);</span><br><span class="line">        System.out.println(I);</span><br><span class="line">        System.out.println(S);</span><br><span class="line">        System.out.println(N);</span><br><span class="line">        System.out.println(T);</span><br><span class="line">        System.out.println(F);</span><br><span class="line">        System.out.println(J);</span><br><span class="line">        System.out.println(P);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//首先创建一个输出流</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//获得我们生成的pdf文档</span></span><br><span class="line">        pdfUtils utils = <span class="keyword">new</span> pdfUtils();</span><br><span class="line">        String profile = report.getPersonalityProfile();</span><br><span class="line">        String description = report.getPersonalityDescription();</span><br><span class="line">        String career = report.getCareer();</span><br><span class="line">        String student = report.getCareerStudent();</span><br><span class="line">        String field = report.getField();</span><br><span class="line">        Map&lt;String, Object&gt; map = utils.setPDF(E,I,S,N,T,F,J,P,csrul, profile,description,field,student,career );</span><br><span class="line"></span><br><span class="line">        Document document = (Document) map.get(<span class="string">&quot;document&quot;</span>);</span><br><span class="line">        ByteArrayOutputStream  stream = (ByteArrayOutputStream) map.get(<span class="string">&quot;stream&quot;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//转化成流 直接输出</span></span><br><span class="line">        resp.setHeader(<span class="string">&quot;Content-Disposition&quot;</span>, <span class="string">&quot;attachment; filename=&quot;</span> + <span class="keyword">new</span> String((csrul + <span class="string">&quot;.pdf&quot;</span>).getBytes(), StandardCharsets.ISO_8859_1));</span><br><span class="line">        resp.setContentLength(stream.size());</span><br><span class="line"></span><br><span class="line">        ServletOutputStream streamOut = resp.getOutputStream();</span><br><span class="line"></span><br><span class="line">        stream.writeTo(streamOut);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;ok&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/getHldPDF&quot;)</span></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getHldPDF</span><span class="params">(String R,String C,String E,String S,String A,String I,String d1,String d2,String d3,String dimension,HttpServletResponse resp)</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">switch</span> (d1)&#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;R&quot;</span>: d1 = <span class="string">&quot;R现实型&quot;</span>;<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;C&quot;</span>: d1 = <span class="string">&quot;C传统型&quot;</span>;<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;E&quot;</span>: d1 = <span class="string">&quot;E管理型&quot;</span>;<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;S&quot;</span>: d1 = <span class="string">&quot;S社会型&quot;</span>;<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;A&quot;</span>: d1 = <span class="string">&quot;A艺术型&quot;</span>;<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;I&quot;</span>: d1 = <span class="string">&quot;I研究型&quot;</span>;<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:<span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">switch</span> (d2)&#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;R&quot;</span>: d2 = <span class="string">&quot;R现实型&quot;</span>;<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;C&quot;</span>: d2 = <span class="string">&quot;C传统型&quot;</span>;<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;E&quot;</span>: d2 = <span class="string">&quot;E管理型&quot;</span>;<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;S&quot;</span>: d2 = <span class="string">&quot;S社会型&quot;</span>;<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;A&quot;</span>: d2 = <span class="string">&quot;A艺术型&quot;</span>;<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;I&quot;</span>: d2 = <span class="string">&quot;I研究型&quot;</span>;<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:<span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">switch</span> (d3)&#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;R&quot;</span>: d3 = <span class="string">&quot;R现实型&quot;</span>;<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;C&quot;</span>: d3 = <span class="string">&quot;C传统型&quot;</span>;<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;E&quot;</span>: d3 = <span class="string">&quot;E管理型&quot;</span>;<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;S&quot;</span>: d3 = <span class="string">&quot;S社会型&quot;</span>;<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;A&quot;</span>: d3 = <span class="string">&quot;A艺术型&quot;</span>;<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;I&quot;</span>: d3 = <span class="string">&quot;I研究型&quot;</span>;<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:<span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//通过service进行分别的查询</span></span><br><span class="line">        g_hld1 hld1 = hld1Service.getHld1(d1);</span><br><span class="line">        System.out.println(hld1);</span><br><span class="line">        g_hld1 hld11 = hld1Service.getHld1(d2);</span><br><span class="line">        System.out.println(hld11);</span><br><span class="line">        g_hld1 hld12 = hld1Service.getHld1(d3);</span><br><span class="line">        System.out.println(hld12);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//查询hld2的数据</span></span><br><span class="line">        g_hld2 hld2 = hld2Service.getHld2(dimension);</span><br><span class="line">        System.out.println(hld2);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        pdfUtils utils = <span class="keyword">new</span> pdfUtils();</span><br><span class="line">        Map&lt;String, Object&gt; map = utils.setHldPDF(R, C, E, S, A, I, d1, d2, d3, hld1, hld11, hld12, hld2);</span><br><span class="line"></span><br><span class="line">        Document document = (Document) map.get(<span class="string">&quot;document&quot;</span>);</span><br><span class="line">        ByteArrayOutputStream  stream = (ByteArrayOutputStream) map.get(<span class="string">&quot;stream&quot;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//转化成流 直接输出</span></span><br><span class="line">        resp.setHeader(<span class="string">&quot;Content-Disposition&quot;</span>, <span class="string">&quot;attachment; filename=&quot;</span> + <span class="keyword">new</span> String((dimension + <span class="string">&quot;.pdf&quot;</span>).getBytes(), StandardCharsets.ISO_8859_1));</span><br><span class="line">        resp.setContentLength(stream.size());</span><br><span class="line"></span><br><span class="line">        ServletOutputStream streamOut = resp.getOutputStream();</span><br><span class="line"></span><br><span class="line">        stream.writeTo(streamOut);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;ok&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="代码的细小但重要的代码"><a href="#代码的细小但重要的代码" class="headerlink" title="代码的细小但重要的代码"></a>代码的细小但重要的代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ByteArrayOutputStream stream = <span class="keyword">new</span> ByteArrayOutputStream();</span><br><span class="line"><span class="comment">//创建一个新的文档</span></span><br><span class="line"><span class="comment">//创建一个空的文档并且设置文档的大小</span></span><br><span class="line">Document document = <span class="keyword">new</span> Document(PageSize.A4);</span><br><span class="line"></span><br><span class="line">PdfWriter.getInstance(document, stream);</span><br></pre></td></tr></table></figure>
+
+<p>注意这里有个stream流，将pdf转化成流</p>
+<p>在这个程序流是在写到网页的时候所需要的</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Document document = (Document) map.get(<span class="string">&quot;document&quot;</span>);</span><br><span class="line">       ByteArrayOutputStream  stream = (ByteArrayOutputStream) map.get(<span class="string">&quot;stream&quot;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">       <span class="comment">//转化成流 直接输出</span></span><br><span class="line">       resp.setHeader(<span class="string">&quot;Content-Disposition&quot;</span>, <span class="string">&quot;attachment; filename=&quot;</span> + <span class="keyword">new</span> String((dimension + <span class="string">&quot;.pdf&quot;</span>).getBytes(), StandardCharsets.ISO_8859_1));</span><br><span class="line">       resp.setContentLength(stream.size());</span><br><span class="line"></span><br><span class="line">       ServletOutputStream streamOut = resp.getOutputStream();</span><br><span class="line"></span><br><span class="line">       stream.writeTo(streamOut);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>这里就拿到了util方法生成的流和文档 将这个流直接通过springMVC中的HttpService直接将我们的流写到网页上生成文档。</p>
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          Donate
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://dwx-tx/dwx-tx.github.io/2022/05/15/itext%E7%94%9F%E6%88%90PDF/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2022/05/21/%E8%89%BA%E6%9C%AF%E7%94%9F%E7%9A%84%E5%A1%AB%E6%8A%A5%E8%A7%84%E5%88%99%E5%88%86%E6%9E%90/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            艺术生的填报规则分析
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2022/05/13/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E4%B9%8BKruskal%E7%AE%97%E6%B3%95/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">Kruskal算法</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2022
+        <i class="ri-heart-fill heart_icon"></i> dwx
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="dwx-tx的小天地"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>

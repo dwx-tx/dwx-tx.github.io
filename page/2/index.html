@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title> dwx-tx的小天地</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"
+      />
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+       
+ 
+<script>
+var _hmt = _hmt || [];
+(function() {
+	var hm = document.createElement("script");
+	hm.src = "https://hm.baidu.com/hm.js?57bee4bd4703d5af3f9154ce72c6f85f";
+	var s = document.getElementsByTagName("script")[0]; 
+	s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    <link rel="alternate" href="/atom.xml" title="dwx-tx的小天地" type="application/atom+xml">
+</head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      
+<section class="cover">
+    
+      
+      <a class="forkMe" href="https://github.com/Shen-Yu/hexo-theme-ayer"
+        target="_blank"><img width="149" height="149" src="/images/forkme.png"
+          class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+    
+  <div class="cover-frame">
+    <div class="bg-box">
+      <img src="/images/cover1.jpg" alt="image frame" />
+    </div>
+    <div class="cover-inner text-center text-white">
+      <h1><a href="/">dwx-tx的小天地</a></h1>
+      <div id="subtitle-box">
+        
+        <span id="subtitle"></span>
+        
+      </div>
+      <div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="cover-learn-more">
+    <a href="javascript:void(0)" class="anchor"><i class="ri-arrow-down-line"></i></a>
+  </div>
+</section>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script>
+
+
+<!-- Subtitle -->
+
+  <script>
+    try {
+      var typed = new Typed("#subtitle", {
+        strings: ['面朝大海，春暖花开', '愿你一生努力，一生被爱', '想要的都拥有，得不到的都释怀'],
+        startDelay: 0,
+        typeSpeed: 200,
+        loop: true,
+        backSpeed: 100,
+        showCursor: true
+      });
+    } catch (err) {
+      console.log(err)
+    }
+  </script>
+  
+<div id="main">
+  <section class="outer">
+  
+  
+  
+
+<div class="notice" style="margin-top:50px">
+    <i class="ri-heart-fill"></i>
+    <div class="notice-content" id="broad"></div>
+</div>
+<script type="text/javascript">
+    fetch('https://v1.hitokoto.cn')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("broad").innerHTML = data.hitokoto;
+        })
+        .catch(console.error)
+</script>
+
+<style>
+    .notice {
+        padding: 20px;
+        border: 1px dashed #e6e6e6;
+        color: #969696;
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        background: #fbfbfb50;
+        border-radius: 10px;
+    }
+
+    .notice i {
+        float: left;
+        color: #999;
+        font-size: 16px;
+        padding-right: 10px;
+        vertical-align: middle;
+        margin-top: -2px;
+    }
+
+    .notice-content {
+        display: initial;
+        vertical-align: middle;
+    }
+</style>
+  
+  <article class="articles">
+    
+    
+    
+    
+    <article
+  id="post-人脸识别尝试"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/10/25/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%B0%9D%E8%AF%95/"
+    >人脸识别尝试</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/10/25/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%B0%9D%E8%AF%95/" class="article-date">
+  <time datetime="2022-10-25T14:02:50.990Z" itemprop="datePublished">2022-10-25</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="人脸识别尝试"><a href="#人脸识别尝试" class="headerlink" title="人脸识别尝试"></a>人脸识别尝试</h1><p><strong>参考材料</strong></p>
+<p>[(181条消息) Java实现人脸识别(各项目结构都有案例说明)_高冷小伙的博客-CSDN博客_java实现人脸识别](<a target="_blank" rel="noopener" href="https://blog.csdn.net/alpha_xia/article/details/121755220?ops_request_misc=&amp;request_id=&amp;biz_id=102&amp;utm_term=java">https://blog.csdn.net/alpha_xia/article/details/121755220?ops_request_misc=&amp;request_id=&amp;biz_id=102&amp;utm_term=java</a> 人脸识别&amp;utm_medium=distribute.pc_search_result.none-task-blog-2<del>all</del>sobaiduweb~default-0-121755220.nonecase&amp;spm=1018.2226.3001.4187)</p>
+<h2 id="下次SDK"><a href="#下次SDK" class="headerlink" title="下次SDK"></a>下次SDK</h2><p>人脸识别核心部分是蚕蛹蓝虹公司免费的SDK</p>
+<p><strong>下载地址：</strong></p>
+<p><a target="_blank" rel="noopener" href="https://ai.arcsoft.com.cn/ucenter/resource/build/index.html#/application/259124">开发者中心 (arcsoft.com.cn)</a></p>
+<h2 id="测试阶段"><a href="#测试阶段" class="headerlink" title="测试阶段"></a>测试阶段</h2><p><strong>官方给的程序</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> samplecode;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.arcsoft.face.*;</span><br><span class="line"><span class="keyword">import</span> com.arcsoft.face.enums.*;</span><br><span class="line"><span class="keyword">import</span> com.arcsoft.face.toolkit.ImageInfo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.arcsoft.face.toolkit.ImageInfoEx;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> com.arcsoft.face.toolkit.ImageFactory.getGrayData;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> com.arcsoft.face.toolkit.ImageFactory.getRGBData;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FaceEngineTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        String appId = <span class="string">&quot;7K7KG9zfBVrtyhgdfdfg&quot;</span>;</span><br><span class="line">        String sdkKey = <span class="string">&quot;AuyJsdgsdfhsf&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        FaceEngine faceEngine = <span class="keyword">new</span> FaceEngine(<span class="string">&quot;D:\\AreFace\\libs\\WIN64&quot;</span>);</span><br><span class="line">        <span class="comment">//激活引擎，只需要一次</span></span><br><span class="line">        <span class="keyword">int</span> errorCode = faceEngine.activeOnline(appId, sdkKey);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (errorCode != ErrorInfo.MOK.getValue() &amp;&amp; errorCode != ErrorInfo.MERR_ASF_ALREADY_ACTIVATED.getValue()) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;引擎激活失败&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        ActiveFileInfo activeFileInfo=<span class="keyword">new</span> ActiveFileInfo();</span><br><span class="line">        errorCode = faceEngine.getActiveFileInfo(activeFileInfo);</span><br><span class="line">        <span class="keyword">if</span> (errorCode != ErrorInfo.MOK.getValue() &amp;&amp; errorCode != ErrorInfo.MERR_ASF_ALREADY_ACTIVATED.getValue()) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;获取激活文件信息失败&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//引擎配置，保存默认即可</span></span><br><span class="line">        EngineConfiguration engineConfiguration = <span class="keyword">new</span> EngineConfiguration();</span><br><span class="line">        engineConfiguration.setDetectMode(DetectMode.ASF_DETECT_MODE_IMAGE);</span><br><span class="line">        engineConfiguration.setDetectFaceOrientPriority(DetectOrient.ASF_OP_ALL_OUT);</span><br><span class="line">        engineConfiguration.setDetectFaceMaxNum(<span class="number">10</span>);</span><br><span class="line">        engineConfiguration.setDetectFaceScaleVal(<span class="number">16</span>);</span><br><span class="line">        <span class="comment">//功能配置，可以设置面容识别时是否分析年龄、性别、3d等。</span></span><br><span class="line">        FunctionConfiguration functionConfiguration = <span class="keyword">new</span> FunctionConfiguration();</span><br><span class="line">        functionConfiguration.setSupportAge(<span class="keyword">true</span>);</span><br><span class="line">        functionConfiguration.setSupportFace3dAngle(<span class="keyword">true</span>);</span><br><span class="line">        functionConfiguration.setSupportFaceDetect(<span class="keyword">true</span>);</span><br><span class="line">        functionConfiguration.setSupportFaceRecognition(<span class="keyword">true</span>);</span><br><span class="line">        functionConfiguration.setSupportGender(<span class="keyword">true</span>);</span><br><span class="line">        functionConfiguration.setSupportLiveness(<span class="keyword">true</span>);</span><br><span class="line">        functionConfiguration.setSupportIRLiveness(<span class="keyword">true</span>);</span><br><span class="line">        engineConfiguration.setFunctionConfiguration(functionConfiguration);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//初始化引擎</span></span><br><span class="line">        errorCode = faceEngine.init(engineConfiguration);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (errorCode != ErrorInfo.MOK.getValue()) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;初始化引擎失败&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//人脸检测</span></span><br><span class="line">        ImageInfo imageInfo = getRGBData(<span class="keyword">new</span> File(<span class="string">&quot;d:\\aaa.jpg&quot;</span>));</span><br><span class="line">        List&lt;FaceInfo&gt; faceInfoList = <span class="keyword">new</span> ArrayList&lt;FaceInfo&gt;();</span><br><span class="line">        errorCode = faceEngine.detectFaces(imageInfo.getImageData(), imageInfo.getWidth(), imageInfo.getHeight(), imageInfo.getImageFormat(), faceInfoList);</span><br><span class="line">        System.out.println(faceInfoList);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//特征提取</span></span><br><span class="line">        FaceFeature faceFeature = <span class="keyword">new</span> FaceFeature();</span><br><span class="line">        errorCode = faceEngine.extractFaceFeature(imageInfo.getImageData(), imageInfo.getWidth(), imageInfo.getHeight(), imageInfo.getImageFormat(), faceInfoList.get(<span class="number">0</span>), faceFeature);</span><br><span class="line">        System.out.println(<span class="string">&quot;特征值大小：&quot;</span> + faceFeature.getFeatureData().length);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//人脸检测2</span></span><br><span class="line">        ImageInfo imageInfo2 = getRGBData(<span class="keyword">new</span> File(<span class="string">&quot;d:\\ccc.jpg&quot;</span>));</span><br><span class="line">        List&lt;FaceInfo&gt; faceInfoList2 = <span class="keyword">new</span> ArrayList&lt;FaceInfo&gt;();</span><br><span class="line">        errorCode = faceEngine.detectFaces(imageInfo2.getImageData(), imageInfo2.getWidth(), imageInfo2.getHeight(),imageInfo.getImageFormat(), faceInfoList2);</span><br><span class="line">        System.out.println(faceInfoList);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//特征提取2</span></span><br><span class="line">        FaceFeature faceFeature2 = <span class="keyword">new</span> FaceFeature();</span><br><span class="line">        errorCode = faceEngine.extractFaceFeature(imageInfo2.getImageData(), imageInfo2.getWidth(), imageInfo2.getHeight(), imageInfo.getImageFormat(), faceInfoList2.get(<span class="number">0</span>), faceFeature2);</span><br><span class="line">        System.out.println(<span class="string">&quot;特征值大小：&quot;</span> + faceFeature.getFeatureData().length);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//特征比对</span></span><br><span class="line">        FaceFeature targetFaceFeature = <span class="keyword">new</span> FaceFeature();</span><br><span class="line">        targetFaceFeature.setFeatureData(faceFeature.getFeatureData());</span><br><span class="line">        FaceFeature sourceFaceFeature = <span class="keyword">new</span> FaceFeature();</span><br><span class="line">        sourceFaceFeature.setFeatureData(faceFeature2.getFeatureData());</span><br><span class="line">        FaceSimilar faceSimilar = <span class="keyword">new</span> FaceSimilar();</span><br><span class="line"></span><br><span class="line">        errorCode = faceEngine.compareFaceFeature(targetFaceFeature, sourceFaceFeature, faceSimilar);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;相似度：&quot;</span> + faceSimilar.getScore());</span><br><span class="line"></span><br><span class="line">        <span class="comment">//设置活体测试</span></span><br><span class="line">        errorCode = faceEngine.setLivenessParam(<span class="number">0.5f</span>, <span class="number">0.7f</span>);</span><br><span class="line">        <span class="comment">//人脸属性检测，如果上面功能配置没有的话，这里就不可用</span></span><br><span class="line">        FunctionConfiguration configuration = <span class="keyword">new</span> FunctionConfiguration();</span><br><span class="line">        configuration.setSupportAge(<span class="keyword">true</span>);</span><br><span class="line">        configuration.setSupportFace3dAngle(<span class="keyword">true</span>);</span><br><span class="line">        configuration.setSupportGender(<span class="keyword">true</span>);</span><br><span class="line">        configuration.setSupportLiveness(<span class="keyword">true</span>);</span><br><span class="line">        errorCode = faceEngine.process(imageInfo.getImageData(), imageInfo.getWidth(), imageInfo.getHeight(), imageInfo.getImageFormat(), faceInfoList, configuration);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//性别检测，如果上面功能配置没有的话，这里就不可用</span></span><br><span class="line">        List&lt;GenderInfo&gt; genderInfoList = <span class="keyword">new</span> ArrayList&lt;GenderInfo&gt;();</span><br><span class="line">        errorCode = faceEngine.getGender(genderInfoList);</span><br><span class="line">        System.out.println(<span class="string">&quot;性别：&quot;</span> + genderInfoList.get(<span class="number">0</span>).getGender());</span><br><span class="line"></span><br><span class="line">        <span class="comment">//年龄检测，如果上面功能配置没有的话，这里就不可用</span></span><br><span class="line">        List&lt;AgeInfo&gt; ageInfoList = <span class="keyword">new</span> ArrayList&lt;AgeInfo&gt;();</span><br><span class="line">        errorCode = faceEngine.getAge(ageInfoList);</span><br><span class="line">        System.out.println(<span class="string">&quot;年龄：&quot;</span> + ageInfoList.get(<span class="number">0</span>).getAge());</span><br><span class="line"></span><br><span class="line">        <span class="comment">//3D信息检测，如果上面功能配置没有的话，这里就不可用</span></span><br><span class="line">        List&lt;Face3DAngle&gt; face3DAngleList = <span class="keyword">new</span> ArrayList&lt;Face3DAngle&gt;();</span><br><span class="line">        errorCode = faceEngine.getFace3DAngle(face3DAngleList);</span><br><span class="line">        System.out.println(<span class="string">&quot;3D角度：&quot;</span> + face3DAngleList.get(<span class="number">0</span>).getPitch() + <span class="string">&quot;,&quot;</span> + face3DAngleList.get(<span class="number">0</span>).getRoll() + <span class="string">&quot;,&quot;</span> + face3DAngleList.get(<span class="number">0</span>).getYaw());</span><br><span class="line"></span><br><span class="line">        <span class="comment">//活体检测，如果上面功能配置没有的话，这里就不可用</span></span><br><span class="line">        List&lt;LivenessInfo&gt; livenessInfoList = <span class="keyword">new</span> ArrayList&lt;LivenessInfo&gt;();</span><br><span class="line">        errorCode = faceEngine.getLiveness(livenessInfoList);</span><br><span class="line">        System.out.println(<span class="string">&quot;活体：&quot;</span> + livenessInfoList.get(<span class="number">0</span>).getLiveness());</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//IR属性处理，如果上面功能配置没有的话，这里就不可用</span></span><br><span class="line">        ImageInfo imageInfoGray = getGrayData(<span class="keyword">new</span> File(<span class="string">&quot;d:\\IR_480p.jpg&quot;</span>));</span><br><span class="line">        List&lt;FaceInfo&gt; faceInfoListGray = <span class="keyword">new</span> ArrayList&lt;FaceInfo&gt;();</span><br><span class="line">        errorCode = faceEngine.detectFaces(imageInfoGray.getImageData(), imageInfoGray.getWidth(), imageInfoGray.getHeight(), imageInfoGray.getImageFormat(), faceInfoListGray);</span><br><span class="line"></span><br><span class="line">        FunctionConfiguration configuration2 = <span class="keyword">new</span> FunctionConfiguration();</span><br><span class="line">        configuration2.setSupportIRLiveness(<span class="keyword">true</span>);</span><br><span class="line">        errorCode = faceEngine.processIr(imageInfoGray.getImageData(), imageInfoGray.getWidth(), imageInfoGray.getHeight(), imageInfoGray.getImageFormat(), faceInfoListGray, configuration2);</span><br><span class="line">        <span class="comment">//IR活体检测，如果上面功能配置没有的话，这里就不可用</span></span><br><span class="line">        List&lt;IrLivenessInfo&gt; irLivenessInfo = <span class="keyword">new</span> ArrayList&lt;IrLivenessInfo&gt;();</span><br><span class="line">        errorCode = faceEngine.getLivenessIr(irLivenessInfo);</span><br><span class="line">        System.out.println(<span class="string">&quot;IR活体：&quot;</span> + irLivenessInfo.get(<span class="number">0</span>).getLiveness());</span><br><span class="line"></span><br><span class="line">        ImageInfoEx imageInfoEx = <span class="keyword">new</span> ImageInfoEx();</span><br><span class="line">        imageInfoEx.setHeight(imageInfo.getHeight());</span><br><span class="line">        imageInfoEx.setWidth(imageInfo.getWidth());</span><br><span class="line">        imageInfoEx.setImageFormat(imageInfo.getImageFormat());</span><br><span class="line">        imageInfoEx.setImageDataPlanes(<span class="keyword">new</span> <span class="keyword">byte</span>[][]&#123;imageInfo.getImageData()&#125;);</span><br><span class="line">        imageInfoEx.setImageStrides(<span class="keyword">new</span> <span class="keyword">int</span>[]&#123;imageInfo.getWidth() * <span class="number">3</span>&#125;);</span><br><span class="line">        List&lt;FaceInfo&gt; faceInfoList1 = <span class="keyword">new</span> ArrayList&lt;FaceInfo&gt;();</span><br><span class="line">        errorCode = faceEngine.detectFaces(imageInfoEx, DetectModel.ASF_DETECT_MODEL_RGB, faceInfoList1);</span><br><span class="line"></span><br><span class="line">        FunctionConfiguration fun = <span class="keyword">new</span> FunctionConfiguration();</span><br><span class="line">        fun.setSupportAge(<span class="keyword">true</span>);</span><br><span class="line">        errorCode = faceEngine.process(imageInfoEx, faceInfoList1, functionConfiguration);</span><br><span class="line">        List&lt;AgeInfo&gt; ageInfoList1 = <span class="keyword">new</span> ArrayList&lt;AgeInfo&gt;();</span><br><span class="line">        <span class="keyword">int</span> age = faceEngine.getAge(ageInfoList1);</span><br><span class="line">        System.out.println(<span class="string">&quot;年龄：&quot;</span> + ageInfoList1.get(<span class="number">0</span>).getAge());</span><br><span class="line"></span><br><span class="line">        FaceFeature feature = <span class="keyword">new</span> FaceFeature();</span><br><span class="line">        errorCode = faceEngine.extractFaceFeature(imageInfoEx, faceInfoList1.get(<span class="number">0</span>), feature);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//引擎卸载</span></span><br><span class="line">        errorCode = faceEngine.unInit();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>注意 这里需要导包 吧需要的包导到maven里边</strong></p>
+<h2 id="学习阶段"><a href="#学习阶段" class="headerlink" title="学习阶段"></a>学习阶段</h2><p>分析官方给的pdf，来分析又什么用法，学会阅读官方文档也是一种能力</p>
+<h2 id="使用步奏第一阶段-配置引擎"><a href="#使用步奏第一阶段-配置引擎" class="headerlink" title="使用步奏第一阶段 配置引擎"></a>使用步奏第一阶段 配置引擎</h2><h3 id="获得引擎"><a href="#获得引擎" class="headerlink" title="获得引擎"></a>获得引擎</h3><p>==代码中出现的数组都是乱码，具体值需要自己到官网拷贝==</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">String appId = <span class="string">&quot;7asdasfG3cxqKmpF1DwijXxJ73s75v7uZqxoT&quot;</span>;</span><br><span class="line">String sdkKey = <span class="string">&quot;AuyJJasdqwafgadgBnD5wXzSEPtXs5C&quot;</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      FaceEngine faceEngine = <span class="keyword">new</span> FaceEngine(<span class="string">&quot;D:\\AreFace\\libs\\WIN64&quot;</span>);</span><br><span class="line">      <span class="comment">//激活引擎，只需要一次</span></span><br><span class="line">      <span class="keyword">int</span> errorCode = faceEngine.activeOnline(appId, sdkKey);</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (errorCode != ErrorInfo.MOK.getValue() &amp;&amp; errorCode != ErrorInfo.MERR_ASF_ALREADY_ACTIVATED.getValue()) &#123;</span><br><span class="line">          System.out.println(<span class="string">&quot;引擎激活失败&quot;</span>);</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>C:\Users\Lenovo\Desktop\人脸识别尝试\libs\WIN64该文件名是从官网拷贝下来的压缩包解压后 xx.dll文件所在的位置</strong></p>
+<p><img src="/dwx-tx.github.io/2022/10/25/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%B0%9D%E8%AF%95/Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20221025162958075.png" alt="image-20221025162958075"></p>
+<h3 id="第二步-获得激活文件"><a href="#第二步-获得激活文件" class="headerlink" title="第二步 获得激活文件"></a>第二步 获得激活文件</h3><p>激活文件是可以直接new 生成 没有对其的配置</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建激活文件</span></span><br><span class="line">ActiveFileInfo activeFileInfo = <span class="keyword">new</span> ActiveFileInfo();</span><br><span class="line">errorCode = faceEngine.getActiveFileInfo(activeFileInfo);</span><br><span class="line"></span><br><span class="line"><span class="comment">//判断激活文件是否获取成功</span></span><br><span class="line"><span class="keyword">if</span> (errorCode != ErrorInfo.MOK.getValue() &amp;&amp; errorCode != ErrorInfo.MERR_ASF_ALREADY_ACTIVATED.getValue()) &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;获取激活文件信息失败&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="第三步-配置引擎"><a href="#第三步-配置引擎" class="headerlink" title="第三步 配置引擎"></a>第三步 配置引擎</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//设置配置引擎对象</span><br><span class="line">EngineConfiguration engineConfiguration = new EngineConfiguration();</span><br><span class="line"></span><br><span class="line">//几个比较重要的配置设置</span><br><span class="line"></span><br><span class="line">//检测模式设置</span><br><span class="line">//这里因为我们是对图片进行人脸识别，因此这里我们使用一个IMAGE模式</span><br><span class="line">engineConfiguration.setDetectMode(DetectMode.ASF_DETECT_MODE_IMAGE);</span><br><span class="line"></span><br><span class="line">//可检测图片人脸方向设置</span><br><span class="line">engineConfiguration.setDetectFaceOrientPriority(DetectOrient.ASF_OP_ALL_OUT);//这里我设置的是全方位角设置</span><br></pre></td></tr></table></figure>
+
+<p><strong>具体功能 请参考文档 文档在下载下来的压缩包里有</strong></p>
+<h3 id="第四步-配置引擎功能"><a href="#第四步-配置引擎功能" class="headerlink" title="第四步 配置引擎功能"></a>第四步 配置引擎功能</h3><p>引擎功能 即引擎能够干什么；</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//功能配置，可以设置面容识别时是否分析年龄、性别、3d等。</span></span><br><span class="line">FunctionConfiguration functionConfiguration = <span class="keyword">new</span> FunctionConfiguration();</span><br><span class="line">functionConfiguration.setSupportAge(<span class="keyword">true</span>);</span><br><span class="line">functionConfiguration.setSupportFace3dAngle(<span class="keyword">true</span>);</span><br><span class="line">functionConfiguration.setSupportFaceDetect(<span class="keyword">true</span>);</span><br><span class="line">functionConfiguration.setSupportFaceRecognition(<span class="keyword">true</span>);</span><br><span class="line">functionConfiguration.setSupportGender(<span class="keyword">true</span>);</span><br><span class="line">functionConfiguration.setSupportLiveness(<span class="keyword">true</span>);</span><br><span class="line">functionConfiguration.setSupportIRLiveness(<span class="keyword">true</span>);</span><br><span class="line">       </span><br><span class="line">engineConfiguration.setFunctionConfiguration(functionConfiguration);</span><br></pre></td></tr></table></figure>
+
+<h3 id="第五步-初始化引擎"><a href="#第五步-初始化引擎" class="headerlink" title="第五步 初始化引擎"></a>第五步 初始化引擎</h3><p>将配置好的引擎和引擎功能的对象都放到引擎里</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//初始化引擎 (将配置设置到引擎中)</span><br><span class="line">     errorCode = faceEngine.init(engineConfiguration);</span><br><span class="line"></span><br><span class="line">     if (errorCode!=ErrorInfo.MOK.getValue())&#123;</span><br><span class="line">         System.out.println(&quot;引擎初始化失败&quot;);</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+
+<p>引擎准备阶段就到此结束，下边就是引擎能进行的操作了</p>
+<p><strong>再次强调</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">EngineConfiguration engineConfiguration = <span class="keyword">new</span> EngineConfiguration();</span><br><span class="line">engineConfiguration.setDetectMode(DetectMode.ASF_DETECT_MODE_IMAGE);</span><br><span class="line">engineConfiguration.setDetectFaceOrientPriority(DetectOrient.ASF_OP_ALL_OUT);</span><br><span class="line">engineConfiguration.setDetectFaceMaxNum(<span class="number">10</span>);</span><br><span class="line">engineConfiguration.setDetectFaceScaleVal(<span class="number">16</span>);</span><br></pre></td></tr></table></figure>
+
+<p>配置引擎时，这里个配置比较重要</p>
+<p>从上到下分别是</p>
+<ul>
+<li>引擎识别模式，是识别静态图片还是视频流</li>
+<li>引擎可以识别的头像角度，这里设置的是都可以识别</li>
+<li>引擎识别来拿的最大数量</li>
+<li>以及引擎识别等级</li>
+</ul>
+<h2 id="使用步奏第二部分-使用引擎"><a href="#使用步奏第二部分-使用引擎" class="headerlink" title="使用步奏第二部分 使用引擎"></a>使用步奏第二部分 使用引擎</h2><p><strong>准备图像</strong></p>
+<h3 id="人脸特征获取"><a href="#人脸特征获取" class="headerlink" title="人脸特征获取"></a>人脸特征获取</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//准备文件</span></span><br><span class="line">      File file = <span class="keyword">new</span> File(<span class="string">&quot;D:\\aaa.jpg&quot;</span>);</span><br><span class="line"></span><br><span class="line">      <span class="comment">//这里使用detectFaces方法来对图片进行分析 detectFaces需要很多参数 这里使用getRGBData方法来获得这些参数</span></span><br><span class="line">      ImageInfo imageInfo = getRGBData(file);</span><br><span class="line">      <span class="comment">//分析得到的数据保存在faceInfoList列表中</span></span><br><span class="line">      List&lt;FaceInfo&gt; faceInfoList = <span class="keyword">new</span> ArrayList&lt;FaceInfo&gt;();</span><br><span class="line">      faceEngine.detectFaces(imageInfo.getImageData(), imageInfo.getWidth(), imageInfo.getHeight(), imageInfo.getImageFormat(), faceInfoList);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      System.out.println(faceInfoList);</span><br></pre></td></tr></table></figure>
+
+<p><strong>结果：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[com.arcsoft.face.Rect(<span class="number">245</span>, <span class="number">397</span> - <span class="number">937</span>, <span class="number">1089</span>),<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+
+<p><strong>如果一个图中有多个人脸也是能够识别的</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">com.arcsoft.face.Rect(<span class="number">1974</span>, <span class="number">213</span> - <span class="number">2749</span>, <span class="number">987</span>),<span class="number">1</span></span><br><span class="line">com.arcsoft.face.Rect(<span class="number">1352</span>, <span class="number">769</span> - <span class="number">1839</span>, <span class="number">1256</span>),<span class="number">1</span></span><br><span class="line">com.arcsoft.face.Rect(<span class="number">1112</span>, <span class="number">550</span> - <span class="number">1417</span>, <span class="number">854</span>),<span class="number">1</span></span><br><span class="line">com.arcsoft.face.Rect(<span class="number">327</span>, <span class="number">692</span> - <span class="number">571</span>, <span class="number">936</span>),<span class="number">1</span></span><br><span class="line">com.arcsoft.face.Rect(<span class="number">950</span>, <span class="number">249</span> - <span class="number">1200</span>, <span class="number">498</span>),<span class="number">1</span></span><br><span class="line">com.arcsoft.face.Rect(<span class="number">961</span>, <span class="number">708</span> - <span class="number">1186</span>, <span class="number">933</span>),<span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="人脸特征提取"><a href="#人脸特征提取" class="headerlink" title="人脸特征提取"></a>人脸特征提取</h3><p><code>extractFaceFeature</code>方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//人脸特征提取</span></span><br><span class="line"></span><br><span class="line">       <span class="comment">//在输入一个图片</span></span><br><span class="line">       File file1 = <span class="keyword">new</span> File(<span class="string">&quot;D:\\aaa.jpg&quot;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">       ImageInfo imageInfo1 = getRGBData(file1);</span><br><span class="line">       <span class="comment">//分析得到的数据保存在faceInfoList列表中</span></span><br><span class="line">       List&lt;FaceInfo&gt; faceInfoList1 = <span class="keyword">new</span> ArrayList&lt;FaceInfo&gt;();</span><br><span class="line">       faceEngine.detectFaces(imageInfo1.getImageData(), imageInfo1.getWidth(), imageInfo1.getHeight(), imageInfo1.getImageFormat(), faceInfoList1);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">       <span class="keyword">for</span> (FaceInfo faceInfo : faceInfoList1) &#123;</span><br><span class="line">           System.out.println(faceInfo);</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">       <span class="comment">//人脸信息都存放在这个对象里</span></span><br><span class="line">       FaceFeature faceFeature = <span class="keyword">new</span> FaceFeature();</span><br><span class="line">       faceEngine.extractFaceFeature(imageInfo1.getImageData(),imageInfo1.getWidth(), imageInfo1.getHeight(), imageInfo1.getImageFormat(),faceInfoList1.get(<span class="number">0</span>),faceFeature);</span><br><span class="line"></span><br><span class="line">       System.out.println(<span class="string">&quot;图片AAA.jpg的特征是大小为:&quot;</span>+faceFeature.getFeatureData().length);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="人脸相似度对比"><a href="#人脸相似度对比" class="headerlink" title="人脸相似度对比"></a>人脸相似度对比</h3><p><strong>准备两张图片，按照上述的方法，获得两个feature 来进行比较</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//在输入一个图片</span></span><br><span class="line">File file1 = <span class="keyword">new</span> File(<span class="string">&quot;D:\\fff.jpg&quot;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ImageInfo imageInfo1 = getRGBData(file1);</span><br><span class="line"><span class="comment">//分析得到的数据保存在faceInfoList列表中</span></span><br><span class="line">List&lt;FaceInfo&gt; faceInfoList1 = <span class="keyword">new</span> ArrayList&lt;FaceInfo&gt;();</span><br><span class="line">faceEngine.detectFaces(imageInfo1.getImageData(), imageInfo1.getWidth(), imageInfo1.getHeight(), imageInfo1.getImageFormat(), faceInfoList1);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (FaceInfo faceInfo : faceInfoList1) &#123;</span><br><span class="line">    System.out.print(<span class="string">&quot;第一张图片获得的数据:&quot;</span>);</span><br><span class="line">    System.out.println(faceInfo);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//人脸信息都存放在这个对象里</span></span><br><span class="line">FaceFeature faceFeature = <span class="keyword">new</span> FaceFeature();</span><br><span class="line">faceEngine.extractFaceFeature(imageInfo1.getImageData(),imageInfo1.getWidth(), imageInfo1.getHeight(), imageInfo1.getImageFormat(),faceInfoList1.get(<span class="number">0</span>),faceFeature);</span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">&quot;图片fff.jpg的特征值大小为:&quot;</span>+faceFeature.getFeatureData().length);</span><br><span class="line"></span><br><span class="line"><span class="comment">//第二个图片</span></span><br><span class="line">File file2 = <span class="keyword">new</span> File(<span class="string">&quot;D:\\eee.jpg&quot;</span>);</span><br><span class="line">ImageInfo imageInfo2 = getRGBData(file2);</span><br><span class="line">ArrayList&lt;FaceInfo&gt; faceInfoList2 = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">faceEngine.detectFaces(imageInfo2.getImageData(),imageInfo2.getWidth(),imageInfo2.getHeight(),imageInfo2.getImageFormat(),faceInfoList2);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (FaceInfo faceInfo : faceInfoList2) &#123;</span><br><span class="line">    System.out.print(<span class="string">&quot;第二张图片获得的数据:&quot;</span>);</span><br><span class="line">    System.out.println(faceInfo);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//获得脸部信息</span></span><br><span class="line">FaceFeature faceFeature1 = <span class="keyword">new</span> FaceFeature();</span><br><span class="line">faceEngine.extractFaceFeature(imageInfo2.getImageData(),imageInfo2.getWidth(),imageInfo2.getHeight(),imageInfo2.getImageFormat(),faceInfoList2.get(<span class="number">0</span>),faceFeature1);</span><br><span class="line">System.out.println(<span class="string">&quot;图片eee.jpg的特征值大小为:&quot;</span>+faceFeature1.getFeatureData().length);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* @Param faceFeature</span></span><br><span class="line"><span class="comment">* @Param faceFeature1</span></span><br><span class="line"><span class="comment">* */</span></span><br><span class="line">FaceSimilar faceSimilar = <span class="keyword">new</span> FaceSimilar();</span><br><span class="line"><span class="comment">//进行图片对比</span></span><br><span class="line">faceEngine.compareFaceFeature(faceFeature,faceFeature1, CompareModel.ID_PHOTO,faceSimilar);</span><br><span class="line">System.out.println(<span class="string">&quot;两张图片的相似度为:&quot;</span>+faceSimilar.getScore());</span><br></pre></td></tr></table></figure>
+
+<p>通过两个面部特征对象 调用方法进行比较 最后获得值</p>
+<h3 id="获得可以获得的数据"><a href="#获得可以获得的数据" class="headerlink" title="获得可以获得的数据"></a>获得可以获得的数据</h3><p><strong>可以获得的数据包括</strong></p>
+<ul>
+<li>年龄 getAge</li>
+<li>性别 getGender</li>
+<li>人脸三维角度信息 getFace#DAngle</li>
+<li>是否为活物 getLiveness</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获得 年龄 性别</span></span><br><span class="line"></span><br><span class="line">        faceEngine.process(imageInfo2.getImageData(),imageInfo2.getWidth(),imageInfo2.getHeight(),imageInfo2.getImageFormat(),faceInfoList2,functionConfiguration);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        ImageInfoEx infoEx = <span class="keyword">new</span> ImageInfoEx();</span><br><span class="line">        infoEx.setHeight(imageInfo2.getHeight());</span><br><span class="line">        infoEx.setWidth(imageInfo2.getWidth());</span><br><span class="line">        infoEx.setImageFormat(imageInfo2.getImageFormat());</span><br><span class="line">        infoEx.setImageDataPlanes(<span class="keyword">new</span> <span class="keyword">byte</span>[][]&#123;imageInfo2.getImageData()&#125;);</span><br><span class="line">        infoEx.setImageStrides(<span class="keyword">new</span> <span class="keyword">int</span>[]&#123;imageInfo2.getWidth() * <span class="number">3</span>&#125;);</span><br><span class="line">        List&lt;FaceInfo&gt; faceInfoList3 = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        faceEngine.detectFaces(infoEx, DetectModel.ASF_DETECT_MODEL_RGB,faceInfoList3);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//这里又设置了一个引擎功能 不知道为何</span></span><br><span class="line">        FunctionConfiguration configuration = <span class="keyword">new</span> FunctionConfiguration();</span><br><span class="line">        configuration.setSupportAge(<span class="keyword">true</span>);</span><br><span class="line">        configuration.setSupportFace3dAngle(<span class="keyword">true</span>);</span><br><span class="line">        configuration.setSupportGender(<span class="keyword">true</span>);</span><br><span class="line">        configuration.setSupportLiveness(<span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line">        faceEngine.process(infoEx,faceInfoList3,configuration);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        ArrayList&lt;AgeInfo&gt; ageInfos = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> age = faceEngine.getAge(ageInfos);</span><br><span class="line">        System.out.println(<span class="string">&quot;图片eee.jpg中人物的大致年龄为:&quot;</span>+ageInfos.get(<span class="number">0</span>).getAge());</span><br><span class="line"></span><br><span class="line">        ArrayList&lt;GenderInfo&gt; genderInfos = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        faceEngine.getGender(genderInfos);</span><br><span class="line">        System.out.println(<span class="string">&quot;图片eee.jpg中的人物的性别为:&quot;</span>+genderInfos.get(<span class="number">0</span>).getGender());</span><br></pre></td></tr></table></figure>
+
+<p><strong>中间有一个新建立的FunctionConfiguration()的对象configure，但是我不明白为什么要新建一个 因为之前的程序中已经存在这个对象了，而且设置的配置也是相同的，日后继续学习</strong></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>使用别人的包，固然是一个快速入门的方法，但是具象性太多，只能获得面部数据，年龄，性别，是否为活物，等等等。</p>
+<p>做一个人脸识别功能，是能够实现的，但是无法生成标志着红框框的图片，生产那种高大上的好像在追踪分析的图片。（或许是我自己不会）</p>
+<p>学完这个包的使用，增加了自己阅读各种依赖官方文档的能力，人工智能涉足，后续会继续向更深处学习，争取能够手搓出一个程序</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-安全性算法"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/10/24/%E5%AE%89%E5%85%A8%E6%80%A7%E7%AE%97%E6%B3%95/"
+    >操作系统银行家算法下的安全性算法</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/10/24/%E5%AE%89%E5%85%A8%E6%80%A7%E7%AE%97%E6%B3%95/" class="article-date">
+  <time datetime="2022-10-24T10:03:46.707Z" itemprop="datePublished">2022-10-24</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="操作系统银行家算法下的安全性算法"><a href="#操作系统银行家算法下的安全性算法" class="headerlink" title="操作系统银行家算法下的安全性算法"></a>操作系统银行家算法下的安全性算法</h1><p><strong>具体介绍：</strong></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_46242152/article/details/109710603?ops_request_misc=%7B%22request_id%22:%22166660557716782417019465%22,%22scm%22:%2220140713.130102334..%22%7D&request_id=166660557716782417019465&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-2-109710603-null-null.142%5Ev59%5Epc_search_tree,201%5Ev3%5Econtrol_2&utm_term=%E5%AE%89%E5%85%A8%E6%80%A7%E7%AE%97%E6%B3%95&spm=1018.2226.3001.4187">(181条消息) 操作系统中的银行家算法与安全性算法_Tsuki_L的博客-CSDN博客_安全性算法</a></p>
+<p>这里我只做我自己的实现，具体含义以及逻辑请参考上述的blog</p>
+<h2 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h2><p>算法的目的是为了查询一个序列是否有安全性序列</p>
+<p><strong>pojo类</strong>即实体类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.dwx.pojo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Task</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> A;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> B;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> C;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getA</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> A;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setA</span><span class="params">(<span class="keyword">int</span> a)</span> </span>&#123;</span><br><span class="line">        A = a;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getB</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> B;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setB</span><span class="params">(<span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">        B = b;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getC</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> C;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setC</span><span class="params">(<span class="keyword">int</span> c)</span> </span>&#123;</span><br><span class="line">        C = c;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;task&#123;&quot;</span> +</span><br><span class="line">                <span class="string">&quot;A=&quot;</span> + A +</span><br><span class="line">                <span class="string">&quot;, B=&quot;</span> + B +</span><br><span class="line">                <span class="string">&quot;, C=&quot;</span> + C +</span><br><span class="line">                <span class="string">&#x27;&#125;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Task</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> c)</span> </span>&#123;</span><br><span class="line">        A = a;</span><br><span class="line">        B = b;</span><br><span class="line">        C = c;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Task</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>安全性算法的实现</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.dwx.untils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.dwx.pojo.Task;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Array;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MySecurityAlgorithms</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">//这是一个安全性算法</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getSecurityList</span><span class="params">(<span class="keyword">int</span> num, List&lt;Task&gt; taskList, Task available, List&lt;Task&gt; allocation)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//数据</span></span><br><span class="line">        <span class="keyword">boolean</span> finish[] = <span class="keyword">new</span> <span class="keyword">boolean</span>[num];</span><br><span class="line">        Task work = <span class="keyword">new</span> Task();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//默认所有的finish初始化都为false</span></span><br><span class="line">        <span class="comment">//数据初始化</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; num; i++) &#123;</span><br><span class="line">            finish[i] = <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        work = available;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span>[] safeList = <span class="keyword">new</span> <span class="keyword">int</span>[num];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//表示回合里边有程序能够执行 如果回合里没有程序能够执行 则说明没有足够量的资源可以执行 程序进入等待状态</span></span><br><span class="line">        <span class="keyword">boolean</span> can = <span class="keyword">true</span>;</span><br><span class="line">        <span class="comment">//按照顺序遍历taskList</span></span><br><span class="line">        <span class="comment">//找到能够完成的进程</span></span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (can) &#123;</span><br><span class="line">            can = <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//遍历整个taskList</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; num; j++) &#123;</span><br><span class="line"></span><br><span class="line">                Task p = taskList.get(j);</span><br><span class="line">                Task a = allocation.get(j);</span><br><span class="line">                <span class="comment">//如果资源都足够 且都符合执行条件 那么就执行</span></span><br><span class="line">                <span class="keyword">if</span> (p.getA() &lt;= work.getA() + a.getA() &amp;&amp; p.getB() &lt;= work.getB() + a.getB() &amp;&amp; p.getC() &lt;= work.getC() + a.getC() &amp;&amp; !finish[j]) &#123;</span><br><span class="line">                    work.setA(work.getA() + a.getA());</span><br><span class="line">                    work.setB(work.getB() + a.getB());</span><br><span class="line">                    work.setC(work.getC() + a.getC());</span><br><span class="line">                    finish[j] = <span class="keyword">true</span>;</span><br><span class="line">                    can = <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">                    <span class="comment">//将序号读入安全序列</span></span><br><span class="line">                    safeList[i] = j;</span><br><span class="line">                    i++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//如果所有的finish都为true 则说明有执行过了 也有安全的序列</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> t = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">boolean</span> b : finish) &#123;</span><br><span class="line">            <span class="keyword">if</span> (b) &#123;</span><br><span class="line">                t++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (t == num) &#123;</span><br><span class="line">            System.out.print(<span class="string">&quot;找到了安全序列 安全序列为：&quot;</span>);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; num; k++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (k == num - <span class="number">1</span>) &#123;</span><br><span class="line">                    System.out.println(<span class="string">&quot;p&quot;</span> + safeList[k]);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    System.out.print(<span class="string">&quot;p&quot;</span> + safeList[k] + <span class="string">&quot;--&gt;&quot;</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;未找到安全序列&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>测试类</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.dwx.pojo.Task;</span><br><span class="line"><span class="keyword">import</span> com.dwx.untils.MySecurityAlgorithms;</span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MySATest</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">MySITest</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        MySecurityAlgorithms mySecurityAlgorithms = <span class="keyword">new</span> MySecurityAlgorithms();</span><br><span class="line">        <span class="keyword">int</span> num = <span class="number">5</span>;</span><br><span class="line">        <span class="comment">//需求队列</span></span><br><span class="line">        List&lt;Task&gt; taskList = <span class="keyword">new</span> ArrayList&lt;Task&gt;();</span><br><span class="line"></span><br><span class="line">        taskList.add(<span class="keyword">new</span> Task(<span class="number">7</span>,<span class="number">5</span>,<span class="number">3</span>));</span><br><span class="line">        taskList.add(<span class="keyword">new</span> Task(<span class="number">3</span>,<span class="number">2</span>,<span class="number">2</span>));</span><br><span class="line">        taskList.add(<span class="keyword">new</span> Task(<span class="number">9</span>,<span class="number">0</span>,<span class="number">2</span>));</span><br><span class="line">        taskList.add(<span class="keyword">new</span> Task(<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>));</span><br><span class="line">        taskList.add(<span class="keyword">new</span> Task(<span class="number">4</span>,<span class="number">3</span>,<span class="number">3</span>));</span><br><span class="line"></span><br><span class="line">        <span class="comment">//已分配资源队列</span></span><br><span class="line">        List&lt;Task&gt; allocation = <span class="keyword">new</span> ArrayList&lt;Task&gt;();</span><br><span class="line">        allocation.add(<span class="keyword">new</span> Task(<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>));</span><br><span class="line">        allocation.add(<span class="keyword">new</span> Task(<span class="number">2</span>,<span class="number">0</span>,<span class="number">0</span>));</span><br><span class="line">        allocation.add(<span class="keyword">new</span> Task(<span class="number">3</span>,<span class="number">0</span>,<span class="number">2</span>));</span><br><span class="line">        allocation.add(<span class="keyword">new</span> Task(<span class="number">2</span>,<span class="number">1</span>,<span class="number">1</span>));</span><br><span class="line">        allocation.add(<span class="keyword">new</span> Task(<span class="number">0</span>,<span class="number">0</span>,<span class="number">2</span>));</span><br><span class="line"></span><br><span class="line">        Task available = <span class="keyword">new</span> Task(<span class="number">3</span>,<span class="number">3</span>,<span class="number">2</span>);</span><br><span class="line">        mySecurityAlgorithms.getSecurityList(num,taskList,available,allocation);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>结果</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">找到了安全序列 安全序列为：p1--&gt;p3--&gt;p4--&gt;p0--&gt;p2</span><br></pre></td></tr></table></figure>
+
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-1.2.1版本的优化"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/10/23/1.2.1%E7%89%88%E6%9C%AC%E7%9A%84%E4%BC%98%E5%8C%96/"
+    >1.2.1版本存在问题与优化</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/10/23/1.2.1%E7%89%88%E6%9C%AC%E7%9A%84%E4%BC%98%E5%8C%96/" class="article-date">
+  <time datetime="2022-10-23T13:43:09.991Z" itemprop="datePublished">2022-10-23</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="1-2-1版本存在问题与优化"><a href="#1-2-1版本存在问题与优化" class="headerlink" title="1.2.1版本存在问题与优化"></a>1.2.1版本存在问题与优化</h1><h2 id="存在问题"><a href="#存在问题" class="headerlink" title="存在问题"></a>存在问题</h2><p>由于我使用的是团队服务器，服务器是通过IP地址来进行访问的，没有域名，很难记得，因此我尝试，使用二维码来实现对网站方便的访问</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p><em>二维码技术</em></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/jam_fanatic/article/details/82818857">(180条消息) java实现二维码的生成与解析_jam_fanatic的博客-CSDN博客_java 二维码生成</a></p>
+<p><strong>需要的依赖</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> &lt;dependency&gt;</span><br><span class="line"><span class="number">2</span>     &lt;groupId&gt;com.google.zxing&lt;/groupId&gt;</span><br><span class="line"><span class="number">3</span>     &lt;artifactId&gt;core&lt;/artifactId&gt;</span><br><span class="line"><span class="number">4</span>     &lt;version&gt;<span class="number">3.3</span><span class="number">.3</span>&lt;/version&gt;</span><br><span class="line"><span class="number">5</span> &lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>代码</strong></p>
+<p><strong>生成二维码类</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.google.zxing.common.BitMatrix;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.imageio.ImageIO;</span><br><span class="line"><span class="keyword">import</span> java.awt.image.BufferedImage;</span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MatrixToImageWriter</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> BLACK = <span class="number">0xFF000000</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> WHITE = <span class="number">0xFFFFFFFF</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">MatrixToImageWriter</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> BufferedImage <span class="title">toBufferedImage</span><span class="params">(BitMatrix matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> width = matrix.getWidth();</span><br><span class="line">        <span class="keyword">int</span> height = matrix.getHeight();</span><br><span class="line">        BufferedImage image = <span class="keyword">new</span> BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> x = <span class="number">0</span>; x &lt; width; x++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> y = <span class="number">0</span>; y &lt; height; y++) &#123;</span><br><span class="line">                image.setRGB(x, y, matrix.get(x, y) ? BLACK : WHITE);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> image;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">writeToFile</span><span class="params">(BitMatrix matrix, String format, File file)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        BufferedImage image = toBufferedImage(matrix);</span><br><span class="line">        <span class="keyword">if</span> (!ImageIO.write(image, format, file)) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IOException(<span class="string">&quot;Could not write an image of format &quot;</span> + format + <span class="string">&quot; to &quot;</span> + file);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>测试类</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.google.zxing.BarcodeFormat;</span><br><span class="line"><span class="keyword">import</span> com.google.zxing.EncodeHintType;</span><br><span class="line"><span class="keyword">import</span> com.google.zxing.MultiFormatWriter;</span><br><span class="line"><span class="keyword">import</span> com.google.zxing.WriterException;</span><br><span class="line"><span class="keyword">import</span> com.google.zxing.common.BitMatrix;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"><span class="keyword">import</span> java.util.UUID;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;开始生成...&quot;</span>);</span><br><span class="line">        code();</span><br><span class="line">        System.out.println(<span class="string">&quot;生成完毕！&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">code</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            String content = <span class="string">&quot;https://www.baidu.com&quot;</span>;</span><br><span class="line">            String path = <span class="string">&quot;E:/测试&quot;</span>;<span class="comment">// 二维码保存的路径</span></span><br><span class="line">            String codeName = UUID.randomUUID().toString();<span class="comment">// 二维码的图片名</span></span><br><span class="line">            String imageType = <span class="string">&quot;jpg&quot;</span>;<span class="comment">// 图片类型</span></span><br><span class="line">            MultiFormatWriter multiFormatWriter = <span class="keyword">new</span> MultiFormatWriter();</span><br><span class="line">            Map&lt;EncodeHintType, String&gt; hints = <span class="keyword">new</span> HashMap&lt;EncodeHintType, String&gt;();</span><br><span class="line">            hints.put(EncodeHintType.CHARACTER_SET, <span class="string">&quot;UTF-8&quot;</span>);</span><br><span class="line">            BitMatrix bitMatrix = multiFormatWriter.encode(content, BarcodeFormat.QR_CODE, <span class="number">400</span>, <span class="number">400</span>, hints);</span><br><span class="line">            File file1 = <span class="keyword">new</span> File(path, codeName + <span class="string">&quot;.&quot;</span> + imageType);</span><br><span class="line">            MatrixToImageWriter.writeToFile(bitMatrix, imageType, file1);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (WriterException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">import</span> com.google.zxing.BarcodeFormat;</span><br><span class="line"><span class="keyword">import</span> com.google.zxing.EncodeHintType;</span><br><span class="line"><span class="keyword">import</span> com.google.zxing.MultiFormatWriter;</span><br><span class="line"><span class="keyword">import</span> com.google.zxing.WriterException;</span><br><span class="line"><span class="keyword">import</span> com.google.zxing.common.BitMatrix;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"><span class="keyword">import</span> java.util.UUID;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;开始生成...&quot;</span>);</span><br><span class="line">        code();</span><br><span class="line">        System.out.println(<span class="string">&quot;生成完毕！&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">code</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            String content = <span class="string">&quot;https://www.baidu.com&quot;</span>;</span><br><span class="line">            String path = <span class="string">&quot;E:/测试&quot;</span>;<span class="comment">// 二维码保存的路径</span></span><br><span class="line">            String codeName = UUID.randomUUID().toString();<span class="comment">// 二维码的图片名</span></span><br><span class="line">            String imageType = <span class="string">&quot;jpg&quot;</span>;<span class="comment">// 图片类型</span></span><br><span class="line">            MultiFormatWriter multiFormatWriter = <span class="keyword">new</span> MultiFormatWriter();</span><br><span class="line">            Map&lt;EncodeHintType, String&gt; hints = <span class="keyword">new</span> HashMap&lt;EncodeHintType, String&gt;();</span><br><span class="line">            hints.put(EncodeHintType.CHARACTER_SET, <span class="string">&quot;UTF-8&quot;</span>);</span><br><span class="line">            BitMatrix bitMatrix = multiFormatWriter.encode(content, BarcodeFormat.QR_CODE, <span class="number">400</span>, <span class="number">400</span>, hints);</span><br><span class="line">            File file1 = <span class="keyword">new</span> File(path, codeName + <span class="string">&quot;.&quot;</span> + imageType);</span><br><span class="line">            MatrixToImageWriter.writeToFile(bitMatrix, imageType, file1);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (WriterException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>IP地址</strong></p>
+<p><code>http://115.29.41.122:8099/union</code></p>
+<p><strong>组合</strong></p>
+<p>结束</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/x2CWSU"><img src="https://s1.ax1x.com/2022/10/23/x2CWSU.jpg" alt="x2CWSU.jpg"></a></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-天梯计划1.2版本分析"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/10/04/%E5%A4%A9%E6%A2%AF%E8%AE%A1%E5%88%921.2%E7%89%88%E6%9C%AC%E5%88%86%E6%9E%90/"
+    >天梯计划1.2版本更新</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/10/04/%E5%A4%A9%E6%A2%AF%E8%AE%A1%E5%88%921.2%E7%89%88%E6%9C%AC%E5%88%86%E6%9E%90/" class="article-date">
+  <time datetime="2022-10-04T03:14:31.339Z" itemprop="datePublished">2022-10-04</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="天梯计划1-2版本更新"><a href="#天梯计划1-2版本更新" class="headerlink" title="天梯计划1.2版本更新"></a>天梯计划1.2版本更新</h1><p>file:///C:/Users/Lenovo/Desktop/阶梯计划/1.2.1版本/存在问题与优化.md</p>
+<h2 id="存在的问题"><a href="#存在的问题" class="headerlink" title="存在的问题"></a>存在的问题</h2><ul>
+<li>现在还没有服务器可以使用                                 √</li>
+<li>前端有些问题 简单的展示都会出现问题             √</li>
+<li>后端逻辑上 没有设置如果有人恶意访问后台会怎么样 要设置 √</li>
+<li>前端的操作 没有js的参与 确实有点生硬 （暂时不用更改 √）</li>
+<li>添加更多的功能    <ul>
+<li>添加专有名词创建者和浏览量 √</li>
+<li>对管理员添加role职责 总管理员可以对所有的关键词增删改查 但是子管理员只能对自己添加的关键词进行删除和修改 √</li>
+<li>专有名词序列需要添加 分页查询功能（暂时还不用） 暂时专有名词不够多（暂时没有这个技术 √）</li>
+</ul>
+</li>
+</ul>
+<h2 id="服务器问题"><a href="#服务器问题" class="headerlink" title="服务器问题"></a>服务器问题</h2><p>已经放到服务器上了 是团队的服务器</p>
+<p><code>http://115.29.41.122:8099/union</code></p>
+<p><strong>我想还是找个好时间买一个自己的服务器</strong></p>
+<h2 id="安全问题"><a href="#安全问题" class="headerlink" title="安全问题"></a>安全问题</h2><p><strong>直接通过绝对路径进行访问</strong></p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/xQTL7T"><img src="https://s1.ax1x.com/2022/10/04/xQTL7T.png" alt="xQTL7T.png"></a></p>
+<p>这里我要求 进到这个页面就算了 但是如果执行任何操作 都需要检查一下user对象是否存在</p>
+<p>如果不存在 就跳转到404页面</p>
+<p><img src="/dwx-tx.github.io/2022/10/04/%E5%A4%A9%E6%A2%AF%E8%AE%A1%E5%88%921.2%E7%89%88%E6%9C%AC%E5%88%86%E6%9E%90/Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20221002185721258.png" alt="image-20221002185721258"></p>
+<p><strong>通过一个until达到了我们的目的：</strong>能进入后台首页 但是啥也做不了</p>
+<p>只要要通过后台执行的操作 就会跳转到这个页面</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/xQTjNF"><img src="https://s1.ax1x.com/2022/10/04/xQTjNF.png" alt="xQTjNF.png"></a></p>
+<h2 id="新增功能"><a href="#新增功能" class="headerlink" title="新增功能"></a>新增功能</h2><p>分析一下逻辑，为了更好的使用这个网站，我认为可以加入更多人来维护这个网站，但是这个网站仍然存在很多问题，需要一点点添加新的功能。</p>
+<ul>
+<li>需要在专有名词查询上加上分页功能</li>
+<li>专有名词加上 createBy 和 viewCount两个属性 </li>
+<li>对于管理员加上userRole属性</li>
+</ul>
+<p>userRole我本人是1 其他的管理员是2 </p>
+<p>1表示总管理员 可以增 删 改所有的专有名词</p>
+<p>2表示分管理员 只能够增 ，删改自己创造的专有名词</p>
+<h3 id="对专有名词添加属性"><a href="#对专有名词添加属性" class="headerlink" title="对专有名词添加属性"></a><strong>对专有名词添加属性</strong></h3><p><strong>对专有名词添加属性</strong></p>
+<p>已经添加成功</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/xQTz9J"><img src="https://s1.ax1x.com/2022/10/04/xQTz9J.png" alt="xQTz9J.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/xQ7S39"><img src="https://s1.ax1x.com/2022/10/04/xQ7S39.png" alt="xQ7S39.png"></a></p>
+<h3 id="对管理员添加属性"><a href="#对管理员添加属性" class="headerlink" title="对管理员添加属性"></a>对管理员添加属性</h3><p><strong>对管理员添加属性</strong></p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/xQ7Pnx"><img src="https://s1.ax1x.com/2022/10/04/xQ7Pnx.png" alt="xQ7Pnx.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/xQ7AAO"><img src="https://s1.ax1x.com/2022/10/04/xQ7AAO.png" alt="xQ7AAO.png"></a></p>
+<p>能够实现不同管理员操作不同</p>
+<h2 id="人性化问题"><a href="#人性化问题" class="headerlink" title="人性化问题"></a>人性化问题</h2><p>人性化问题主要存在于</p>
+<ul>
+<li>分页查询的实现</li>
+<li>一些不合人类逻辑的设计的改善</li>
+</ul>
+<h3 id="分页查询的实现"><a href="#分页查询的实现" class="headerlink" title="分页查询的实现"></a>分页查询的实现</h3><h3 id="不合人类逻辑的设计的改善"><a href="#不合人类逻辑的设计的改善" class="headerlink" title="不合人类逻辑的设计的改善"></a>不合人类逻辑的设计的改善</h3><p><strong>对于关键词查询页的改善，选用关键词名称加创建管理员昵称的方式更加符合人类的逻辑</strong></p>
+<p><strong>还可以添加排序方式 通过ID排序 或者通过浏览量排序</strong></p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/xQ7e9H"><img src="https://s1.ax1x.com/2022/10/04/xQ7e9H.png" alt="xQ7e9H.png"></a></p>
+<p><strong>添加了一个排序方式</strong></p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/xQ7ngA"><img src="https://s1.ax1x.com/2022/10/04/xQ7ngA.png" alt="xQ7ngA.png"></a></p>
+<p><strong>已经实现了</strong></p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/xQ7ujI"><img src="https://s1.ax1x.com/2022/10/04/xQ7ujI.png" alt="xQ7ujI.png"></a></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-阶梯计划开发历程"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/09/30/%E9%98%B6%E6%A2%AF%E8%AE%A1%E5%88%92%E5%BC%80%E5%8F%91%E5%8E%86%E7%A8%8B/"
+    >阶梯计划开发历程</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/09/30/%E9%98%B6%E6%A2%AF%E8%AE%A1%E5%88%92%E5%BC%80%E5%8F%91%E5%8E%86%E7%A8%8B/" class="article-date">
+  <time datetime="2022-09-30T10:13:03.337Z" itemprop="datePublished">2022-09-30</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="开发历程"><a href="#开发历程" class="headerlink" title="开发历程"></a>开发历程</h1><h2 id="起点（2022-9-27）"><a href="#起点（2022-9-27）" class="headerlink" title="起点（2022/9/27）"></a>起点（2022/9/27）</h2><p>今晚，在某学习平台学习党的先进知识的时候，偶然翻阅到一篇文章</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/xu6D4U"><img src="https://s1.ax1x.com/2022/09/30/xu6D4U.jpg" alt="xu6D4U.jpg"></a></p>
+<p>作为名在校大学生，我是能够看懂这些文字的，但是理解意思上很吃力。</p>
+<p>对里边的一些特有名词比如“xx个xx”，我是没有理解的。是我个人党的基本理论掌握不牢，作者在写这篇文章时直接使用特有名词来缩短文章篇幅的行为是可以理解的。</p>
+<p>解决这个问题的方法有很多，比如建议所有作者在引用完专有名词后在文章末尾对专有名词进行解释。如《毛泽东选集》的每一章，和《邓小平文选》的文章后边都是有做注释的。但是改变别人的方法不可取，也是比较难实现的。</p>
+<p>因此我想到，用浏览器是可以帮助我的，但是不能帮助我记录，且很多的浏览器是对知识服务收费的。因此我萌生了自己写一个==专有名词查询网站==的想法。</p>
+<h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><p>该网站最启初版，是有两个部分组成，第一部分是像浏览器一样的搜索，查询平台（前台），是给所有用户使用的。</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/xu6cv9"><img src="https://s1.ax1x.com/2022/09/30/xu6cv9.png" alt="xu6cv9.png"></a></p>
+<p>像这种</p>
+<p>另一部分是后台管理员页面，用来对词条进行查看和修改</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/xu62uR"><img src="https://s1.ax1x.com/2022/09/30/xu62uR.png" alt="xu62uR.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/xu6RD1"><img src="https://s1.ax1x.com/2022/09/30/xu6RD1.png" alt="xu6RD1.png"></a></p>
+<p>类似于超时订单系统</p>
+<h3 id="技术以及来源"><a href="#技术以及来源" class="headerlink" title="技术以及来源"></a>技术以及来源</h3><p><strong>后端：</strong>使用SSM框架，由我本人手写，数据库选用mysql</p>
+<p><strong>前端：</strong>使用网上搜索到的免费的前台和后台代码进行改进</p>
+<h2 id="2022-9-27"><a href="#2022-9-27" class="headerlink" title="2022/9/27"></a>2022/9/27</h2><p>前台结束（只实现一个关键词查询功能）很简单。后续可能会逐步添加一些东西，暂时只有一个查询功能。</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/xu6WHx"><img src="https://s1.ax1x.com/2022/09/30/xu6WHx.png" alt="xu6WHx.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/xu6oCD"><img src="https://s1.ax1x.com/2022/09/30/xu6oCD.png" alt="xu6oCD.png"></a></p>
+<p>大概就这样 ，后续添加后端。</p>
+<h2 id="2022-9-28"><a href="#2022-9-28" class="headerlink" title="2022/9/28"></a>2022/9/28</h2><p><strong>登录与后台系统已经打通</strong></p>
+<p>现在可以通过登录页面跳转到后台页面了</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/xu67gH"><img src="https://s1.ax1x.com/2022/09/30/xu67gH.png" alt="xu67gH.png"></a></p>
+<p>也实现了退出和修改密码功能</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/xu6Hvd"><img src="https://s1.ax1x.com/2022/09/30/xu6Hvd.png" alt="xu6Hvd.png"></a></p>
+<p><strong>对于订单管理部分</strong>：计划是对这个页面进行改造，我并没有掌握ajax技术，因此可能这个页面无法实现分页，可以进行尝试一下</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/xu6vUf"><img src="https://s1.ax1x.com/2022/09/30/xu6vUf.png" alt="xu6vUf.png"></a></p>
+<h1 id="2022-9-30"><a href="#2022-9-30" class="headerlink" title="2022/9/30"></a>2022/9/30</h1><p>今天对关键词程序进行了一个实现，增，删，改，查全部完成，但是没有完成分页查询，在后续优化中，会对分页查询进行实现</p>
+<p><strong>查询所有</strong></p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/xu6x58"><img src="https://s1.ax1x.com/2022/09/30/xu6x58.png" alt="xu6x58.png"></a></p>
+<p><strong>查询单个</strong></p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/xucp8g"><img src="https://s1.ax1x.com/2022/09/30/xucp8g.png" alt="xucp8g.png"></a></p>
+<p><strong>增加</strong></p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/xuc92Q"><img src="https://s1.ax1x.com/2022/09/30/xuc92Q.png" alt="xuc92Q.png"></a><a target="_blank" rel="noopener" href="https://imgse.com/i/xuc92Q"><img src="https://s1.ax1x.com/2022/09/30/xuc92Q.png" alt="xuc92Q.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/xucCvj"><img src="https://s1.ax1x.com/2022/09/30/xucCvj.png" alt="xucCvj.png"></a></p>
+<p><strong>修改</strong></p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/xuciKs"><img src="https://s1.ax1x.com/2022/09/30/xuciKs.png" alt="xuciKs.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/xucFrn"><img src="https://s1.ax1x.com/2022/09/30/xucFrn.png" alt="xucFrn.png"></a></p>
+<p><strong>删除</strong></p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/xuckbq"><img src="https://s1.ax1x.com/2022/09/30/xuckbq.png" alt="xuckbq.png"></a></p>
+<p><strong>删除之后的情况</strong></p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/xucEV0"><img src="https://s1.ax1x.com/2022/09/30/xucEV0.png" alt="xucEV0.png"></a></p>
+<p><strong>对于管理员操作 对下边这个页面进行操作</strong></p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/xucmPU"><img src="https://s1.ax1x.com/2022/09/30/xucmPU.png" alt="xucmPU.png"></a><a target="_blank" rel="noopener" href="https://imgse.com/i/xucmPU"><img src="https://s1.ax1x.com/2022/09/30/xucmPU.png" alt="xucmPU.png"></a></p>
+<h2 id="2022-10-1"><a href="#2022-10-1" class="headerlink" title="2022/10/1"></a>2022/10/1</h2><p><strong>用户程序已经写好了</strong></p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/xKASBD"><img src="https://s1.ax1x.com/2022/10/01/xKASBD.png" alt="xKASBD.png"></a></p>
+<p>包括搜索 展示 修改功能 有已经完成</p>
+<p><strong>展示</strong></p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/xKApHe"><img src="https://s1.ax1x.com/2022/10/01/xKApHe.png" alt="xKApHe.png"></a></p>
+<p><strong>修改</strong></p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/xKACAH"><img src="https://s1.ax1x.com/2022/10/01/xKACAH.png" alt="xKACAH.png"></a></p>
+<h2 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h2><p>第一版已经结束了，要把我们的项目放到服务器上 在运行一下试试</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-2021年C题"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/08/21/2021%E5%B9%B4C%E9%A2%98/"
+    >2021年C题的分析</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/08/21/2021%E5%B9%B4C%E9%A2%98/" class="article-date">
+  <time datetime="2022-08-21T02:12:35.978Z" itemprop="datePublished">2022-08-21</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="2021年C题的分析"><a href="#2021年C题的分析" class="headerlink" title="2021年C题的分析"></a>2021年C题的分析</h1><p>分析此题，感觉比2021年其他的题要简单。</p>
+<hr>
+<p><strong>原文</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">某建筑和装饰板材的生产企业所用原材料主要是木质纤维和其他植物素纤维材料,</span><br><span class="line">总体可分为 A，B，C 三种类型。该企业每年按 48 周安排生产，需要提前制定 24 周的原</span><br><span class="line">材料订购和转运计划，即根据产能要求确定需要订购的原材料供应商（称为“供应商”）</span><br><span class="line">和相应每周的原材料订购数量（称为“订货量”），确定第三方物流公司（称为“转运</span><br><span class="line">商”）并委托其将供应商每周的原材料供货数量（称为“供货量”）转运到企业仓库。</span><br><span class="line">该企业每周的产能为 2.82 万立方米，每立方米产品需消耗 A 类原材料 0.6 立方米，</span><br><span class="line">或 B 类原材料 0.66 立方米，或 C 类原材料 0.72 立方米。由于原材料的特殊性，供应商</span><br><span class="line">不能保证严格按订货量供货，实际供货量可能多于或少于订货量。为了保证正常生产的</span><br><span class="line">需要，该企业要尽可能保持不少于满足两周生产需求的原材料库存量，为此该企业对供</span><br><span class="line">应商实际提供的原材料总是全部收购。</span><br><span class="line">在实际转运过程中，原材料会有一定的损耗（损耗量占供货量的百分比称为“损耗</span><br><span class="line">率”），转运商实际运送到企业仓库的原材料数量称为“接收量”。每家转运商的运输</span><br><span class="line">能力为 6000 立方米/周。通常情况下，一家供应商每周供应的原材料尽量由一家转运商</span><br><span class="line">运输。</span><br><span class="line">原材料的采购成本直接影响到企业的生产效益，实际中 A 类和 B 类原材料的采购单</span><br><span class="line">价分别比 C 类原材料高 20%和 10%。三类原材料运输和储存的单位费用相同。</span><br><span class="line">附件 1 给出了该企业近 5 年 402 家原材料供应商的订货量和供货量数据。附件 2 给</span><br><span class="line">出了 8 家转运商的运输损耗率数据。请你们团队结合实际情况，对相关数据进行深入分</span><br><span class="line">析，研究下列问题：</span><br><span class="line">1．根据附件 1，对</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="第一问"><a href="#第一问" class="headerlink" title="第一问"></a>第一问</h2><p><strong>问题：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">根据附件 1，对 402 家供应商的供货特征进行量化分析，建立反映保障企业生产</span><br><span class="line">重要性的数学模型，在此基础上确定 50 家最重要的供应商，并在论文中列表给出结果。</span><br></pre></td></tr></table></figure>
+
+<p>根据分析，我们认为此题是一个评价类问题，但是评价标准不好找。有如下几点问题</p>
+<ol>
+<li>没有训练集，不能通过拟合等确定个因素的比重</li>
+<li>因素太少，只有订货量和供货量</li>
+</ol>
+<p>因此，我们分析得，我们采用专家法，自己指定一套评价体系，评价体系如下：</p>
+<ul>
+<li>关于重要性，我认为 我们对重要客户的依赖度要足够高（订单量要尽可能大）</li>
+<li>关于可信度，我认为供货商要极可能满足我们的订单（订单少的数量要尽可能少）</li>
+</ul>
+<p>因此我们确定了两个指标<strong>重要性S1</strong>和<strong>可信度S2</strong></p>
+<p><code>S1 = 某个供货商的订单总数/max(供货商订单总数)</code></p>
+<p><code>S2 = 1 - 某个订货商的缺少数/max(订货商的缺少数)</code></p>
+<h3 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h3><p><strong>代码</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.dwx.C;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">demo02</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//确定企业数为402</span></span><br><span class="line">        <span class="comment">//确定订单次数为240</span></span><br><span class="line">        <span class="keyword">int</span> m = <span class="number">402</span>;</span><br><span class="line">        <span class="keyword">int</span> n = <span class="number">240</span>;</span><br><span class="line">        System.out.println(<span class="string">&quot;:请输入企业订单数据：&quot;</span>);</span><br><span class="line">        <span class="comment">//读入企业订单数据</span></span><br><span class="line">        <span class="keyword">int</span>[][] Q = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">402</span>][<span class="number">240</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; m;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>;j &lt; n;j++)&#123;</span><br><span class="line">                Q[i][j] = scanner.nextInt();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;:请输入供应商数据：&quot;</span>);</span><br><span class="line">        <span class="comment">//读入供应商数据</span></span><br><span class="line">        <span class="keyword">int</span>[][] G = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">402</span>][<span class="number">240</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; m;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>;j &lt; n;j++)&#123;</span><br><span class="line">                G[i][j] = scanner.nextInt();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//对供应商的依赖度进行处理 即先求出供应商的总订单 再求出每个供应商对我们总总订单的占比</span></span><br><span class="line">        <span class="comment">//存储各个供应商的订单量总和</span></span><br><span class="line">        <span class="keyword">int</span>[] q1 = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">402</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n;j++)&#123;</span><br><span class="line">                q1[i] = q1[i] + Q[i][j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//求出我们需求的总和</span></span><br><span class="line">        <span class="keyword">int</span> Max = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(q1[i]&gt;Max)&#123;</span><br><span class="line">                Max = q1[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//求出占比</span></span><br><span class="line">        <span class="keyword">double</span>[] s1 = <span class="keyword">new</span> <span class="keyword">double</span>[<span class="number">402</span>];</span><br><span class="line">        System.out.println(<span class="string">&quot;对供应商下达的最大订单为:&quot;</span>+Max);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++)&#123;</span><br><span class="line">            s1[i] = q1[i]* <span class="number">1.0</span>/Max ;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//输出依赖度</span></span><br><span class="line">        <span class="comment">//保留两位小数</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">double</span> v : s1) &#123;</span><br><span class="line">            System.out.printf(<span class="string">&quot;%.2f\n&quot;</span>,v);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//求可靠度 即 求供应商和订单之间的差异度</span></span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        * 在此我们规定 对于供应商供给的货多于订单量或等于订单量 我们都视为0</span></span><br><span class="line"><span class="comment">        * 当供应商供给订单数量少于订单数量 则即差异度为（订单-实际供货）</span></span><br><span class="line"><span class="comment">        * 我们对每一次订货进行操作 因此不至于有误差</span></span><br><span class="line"><span class="comment">        * 差异度 只对占比比较大的厂家进行使用*/</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//读入厂家数据</span></span><br><span class="line">        System.out.println(<span class="string">&quot;请输入符合要求的供应商:&quot;</span>);</span><br><span class="line">        <span class="comment">//有意义的供应商有89加</span></span><br><span class="line">        <span class="keyword">int</span> m1 = <span class="number">89</span>;</span><br><span class="line">        <span class="keyword">int</span>[] M = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">89</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m1;i++)&#123;</span><br><span class="line">            M[i] = scanner.nextInt();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span>[] d = <span class="keyword">new</span> <span class="keyword">int</span>[m1];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m1;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span> (G[M[i]][j] &gt;= Q[M[i]][j])&#123;</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                    d[i] = d[i] + (Q[M[i]][j] - G[M[i]][j]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//输出差异度</span></span><br><span class="line">        System.out.println(<span class="string">&quot;输出差异度：&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i : d) &#123;</span><br><span class="line">            System.out.println(i);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//求得最小差异度</span></span><br><span class="line">        <span class="keyword">int</span> min = <span class="number">9999</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m1;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (d[i] &lt; min)&#123;</span><br><span class="line">                min = d[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;最小数为:&quot;</span>+min);</span><br><span class="line">        <span class="comment">//求得可信度</span></span><br><span class="line">        <span class="keyword">double</span>[] K = <span class="keyword">new</span> <span class="keyword">double</span>[m1];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m1;i++)&#123;</span><br><span class="line">            K[i] = d[i]*<span class="number">1.0</span>/min;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//输出可信度</span></span><br><span class="line">        System.out.println(<span class="string">&quot;输出可信度:&quot;</span>);</span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m1;i++)&#123;</span><br><span class="line">           System.out.println(<span class="string">&quot;供应商&quot;</span>+M[i]+<span class="string">&quot;的差异数为:&quot;</span>+K[i]);</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="comment">/*</span></span><br><span class="line"><span class="comment">       * 可信度分数 = 1 - 差异度/max(差异度s)*/</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; m1;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (d[i] &gt; max)&#123;</span><br><span class="line">                max = d[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;最大值为:&quot;</span>+max);</span><br><span class="line">        <span class="keyword">double</span>[] k = <span class="keyword">new</span> <span class="keyword">double</span>[m1];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m1;i++)&#123;</span><br><span class="line">            k[i] = <span class="number">1</span> - d[i]*<span class="number">1.0</span>/max;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">double</span> v : k) &#123;</span><br><span class="line">            System.out.printf(<span class="string">&quot;%.4f\n&quot;</span>,v);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>首先获得重要性分数</strong></p>
+<p><img src="https://pic.imgdb.cn/item/630193b216f2c2beb12d9052.jpg"></p>
+<p>进行降序排序后，我发现，只有前91名供应商的数据是有效的，因此我认为可以忽略其余的300+的小供应商，避免这些供应商数据稳定性良好影响大供应商的分数。</p>
+<p><strong>再对大供应商进行操作，求得他们的可靠性分数</strong></p>
+<p><img src="https://pic.imgdb.cn/item/6301940c16f2c2beb12db3d1.jpg"></p>
+<p><strong>分析数据，可得，数据多在0.99附近，差异性小。</strong></p>
+<p><img src="https://pic.imgdb.cn/item/6301941e16f2c2beb12db9e8.jpg"></p>
+<p><strong>总分 = 依赖性 + 可靠性</strong>这样分析，还是有不小的差异性的。</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-关于生死疲劳一书的疑问"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/08/02/%E5%85%B3%E4%BA%8E%E7%94%9F%E6%AD%BB%E7%96%B2%E5%8A%B3%E4%B8%80%E4%B9%A6%E7%9A%84%E7%96%91%E9%97%AE/"
+    >关于《生死疲劳》一书部分情节的疑问</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/08/02/%E5%85%B3%E4%BA%8E%E7%94%9F%E6%AD%BB%E7%96%B2%E5%8A%B3%E4%B8%80%E4%B9%A6%E7%9A%84%E7%96%91%E9%97%AE/" class="article-date">
+  <time datetime="2022-08-01T22:36:36.094Z" itemprop="datePublished">2022-08-02</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="关于《生死疲劳》一书部分情节的疑问"><a href="#关于《生死疲劳》一书部分情节的疑问" class="headerlink" title="关于《生死疲劳》一书部分情节的疑问"></a>关于《生死疲劳》一书部分情节的疑问</h1><p>近期，网上有关于莫言文章是否有问题的讨论很多，我所看过的有</p>
+<p><strong>司马南先生对莫言颁奖词的解读：</strong> <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1bB4y147ur?spm_id_from=333.337.search-card.all.click&vd_source=0ea52ecf6dd9b65e39169fa227f46435">司马南：莫言是这样获奖的，解读诺贝尔文学奖颁奖词_哔哩哔哩_bilibili</a> </p>
+<p><strong>前进四对莫言红高粱中不实片段的批判：</strong> <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1oU4y1v7y7?spm_id_from=333.337.search-card.all.click">反对历史虚无主义！五万字文稿浓缩版！对吃粥饭和莫言的批判！_哔哩哔哩_bilibili</a> </p>
+<p><strong>前进四对UP“吃粥饭”对自己批判的批判：</strong> <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Ag411179V?spm_id_from=333.337.search-card.all.click">吃粥饭如何断章取义 歪曲历史 虚空批判 洗白莫言-4-看历史虚无主义者如何把你一步步忽悠瘸了。对吃粥饭对我之虚空批判的严肃批判！_哔哩哔哩_bilibili</a></p>
+<p><strong>李敖谈诺贝尔文学奖：你要出卖自己的祖国，你才有机会获得！：</strong> <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1k3411M7Ut?p=1&share_plat=android&share_session_id=2f4fbbf3-e044-473b-afd1-faf92efe56ac&share_tag=s_i&unique_k=xTbJaDO&vd_source=0ea52ecf6dd9b65e39169fa227f46435">李敖谈诺贝尔文学奖：你要出卖自己的祖国，你才有机会获得！_哔哩哔哩_bilibili</a> </p>
+<p>对于莫言的作品，我只看过《生死疲劳》，我不懂什么历史虚无主义，不清楚我要说明的问题是否是1历史虚无主义造成的，但是我对书中的一些情节有深深的疑问。</p>
+<h2 id="西门闹被枪毙"><a href="#西门闹被枪毙" class="headerlink" title="西门闹被枪毙"></a>西门闹被枪毙</h2><p>文中西门闹自述自己是：<strong>”热爱劳动，勤俭持家，修桥补路，乐善好施……..一个正直的人，一个善良的人，一个大好人“</strong></p>
+<p>在被民兵队长黄瞳枪毙前询问：<strong>“我到底反了哪条律令。”</strong>黄瞳的回答是：<strong>“你导演王那里去问个明白吧”</strong></p>
+<p>此后，全文再也没有提过关于西门闹反了什么罪，为何被枪毙。<strong>因此，这是作者在暗示，西门闹就是惨死，死的不明不白。</strong></p>
+<p>同样的话，在西门闹被阎王审问时，通过阎王的嘴说了出来：<strong>“好了，西门闹，我知道你是冤枉的。世界上许多人该死，但却不死；许多人不该死，偏偏死了……”</strong></p>
+<p>==<strong>“许多人”，“冤枉”，“民兵”，“枪毙”</strong>==</p>
+<p>这几个关键词放到这里，给人的感觉是，中共在执行土地革命时，有大量的“矫枉过正”行为，对于地主不分好坏一股脑全部枪毙，造成了很多人的冤死。</p>
+<p>对于此，我表示怀疑，我曾经自己解释过，中国这么大，会不会真的有地方发生这种事，但是如果这样解释，就陷入了<strong>历史虚无主义</strong>的陷阱，我们要用史实来思考问题。</p>
+<p>在<strong>《毛泽东选集（第一卷）》</strong>的<strong>《湖南农民运动考察报告》</strong>中有描写当时农民运动的情景：</p>
+<ul>
+<li><p>打倒土豪劣绅，一切权力归农会</p>
+</li>
+<li><p>所谓的“过分问题”<img src="/dwx-tx.github.io/2022/08/02/%E5%85%B3%E4%BA%8E%E7%94%9F%E6%AD%BB%E7%96%B2%E5%8A%B3%E4%B8%80%E4%B9%A6%E7%9A%84%E7%96%91%E9%97%AE/Users\Lenovo\AppData\Roaming\Typora\typora-user-images\1659391653500.png" alt="1659391653500"></p>
+</li>
+<li><p>政治上打压地主</p>
+</li>
+<li><p>经济上打压地主</p>
+</li>
+</ul>
+<p>这篇考察报告说明了在第一次国民革命时期，湖南农民运动的样貌。</p>
+<p>农民运动是农民参与的，农民为主体的运动，农民对当地的地主进行评价，做得当时<strong>小资产阶级</strong>看来<strong>恐怖得不得了</strong>的事情也不过是，<strong>戴高帽子游乡，到小姐少奶奶的牙床上滚一滚……..</strong></p>
+<p>在<strong>《白鹿原》</strong>一文中，对于地主的审判，也是组织农会，让农民参与，让农民批判地主，在农会对地主批判最高潮的时候，有农民提出铡刀铡死地主，但是被农会会长制止了。</p>
+<p>由此，我并没有看到描写民兵等等，恶意杀人事件，土地革命有固定流程，也没有最后“枪毙地主”这一项。</p>
+<p>土地革命的目的是：<strong>没收地主土地，归还给贫下中农</strong>，地主在被没收土地后，理论上还是<strong>富</strong></p>
+<p><strong>那么有没有被打死的地主？</strong></p>
+<p>有的，部分地主不接受革命，组织武装镇压革命，打死打伤民兵，这种地主不该死吗？压迫农民获得的财富，买来枪炮镇压农民不该死吗？</p>
+<p>部分地主子女组织成<strong>还乡团</strong>，回到家乡打死<strong>烧杀抢掠</strong>，（ <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1rL411P7on?spm_id_from=333.999.0.0">“还乡团”为什么如此残忍？_哔哩哔哩_bilibili</a> ），这种人不该死吗？</p>
+<p>因此我得到的结论，农民有自己判断的能力，枪毙的都是不愿合作的且品行及其暴烈的。莫言先生笔下写的确是，中共为了打土豪滥杀无辜，不知道莫言先生如何解释。</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-艺术生推荐系统编写过程第一版"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/06/08/%E8%89%BA%E6%9C%AF%E7%94%9F%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E7%BC%96%E5%86%99%E8%BF%87%E7%A8%8B%E7%AC%AC%E4%B8%80%E7%89%88/"
+    >艺术上推荐系统编写过程（第一版）</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/06/08/%E8%89%BA%E6%9C%AF%E7%94%9F%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E7%BC%96%E5%86%99%E8%BF%87%E7%A8%8B%E7%AC%AC%E4%B8%80%E7%89%88/" class="article-date">
+  <time datetime="2022-06-07T16:46:45.420Z" itemprop="datePublished">2022-06-08</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="2022-5-21"><a href="#2022-5-21" class="headerlink" title="2022/5/21"></a>2022/5/21</h1><p><strong>编写工作开始</strong></p>
+<ul>
+<li>熟悉艺术生的填报规则</li>
+<li>搭建一个艺术生专业课优先的数据库</li>
+<li>将程序的后端搭建起来</li>
+</ul>
+<p><strong>问题所在：</strong></p>
+<p>经过上网查询，并没有发现网络上有类似的对艺术生的高考推荐程序，因为，艺术生的报考模式很奇怪，报考规则不一样，也没有一个全省的排名，社会上的公司都没在做这方面的工作，我对是否能写出这个程序表示担心。</p>
+<h2 id="2022-5-22"><a href="#2022-5-22" class="headerlink" title="2022/5/22"></a>2022/5/22</h2><p><strong>重新缕了一下思路 后端程序已经搭建完成 程序已经写好了 问题在于数据库的导入</strong></p>
+<p><strong>数据库出问题</strong></p>
+<ul>
+<li>数据库发生改变时要求数据类型符合数据库中的要求的数据类型 否则就会回滚 返回之前的数据</li>
+<li>将xlsx转化成csv能够实现数据的快速导入</li>
+<li>csv中不存在只有整数部分的小数 如（65.0）在导入到数据库时会被认为是整数 (65)</li>
+</ul>
+<p>美术推荐已经写好 工作重点在于数据库中数据的处理</p>
+<p><strong>推荐过程</strong></p>
+<ul>
+<li>首先计算这人是属于那个成绩段的</li>
+<li>到该程序段通过比例求得他的分数 与数据库中的分数线进行比较</li>
+<li>找到所有的符合要求的数据 返回给前端</li>
+</ul>
+<h2 id="2022年5月31日"><a href="#2022年5月31日" class="headerlink" title="2022年5月31日"></a>2022年5月31日</h2><p>已经写好了一版，由于太简单，老师不满意 继续更改</p>
+<hr>
+<p><strong>第一版的输入页面</strong></p>
+<p> <img src="https://i.bmp.ovh/imgs/2022/05/31/9bdae0f0a7199e97.png"> </p>
+<p><strong>第一版的展示页面</strong></p>
+<p> <img src="https://i.bmp.ovh/imgs/2022/05/31/76010257e6ab012d.png"> </p>
+<p><strong>重新分析了需求</strong></p>
+<p><img src="https://s3.bmp.ovh/imgs/2022/05/31/c433da447721bbdb.jpg"></p>
+<p><strong>重新建了数据库</strong></p>
+<p>  <img src="https://s3.bmp.ovh/imgs/2022/05/31/97ae82e068d021ae.jpg">  </p>
+<h2 id="2022-6-4"><a href="#2022-6-4" class="headerlink" title="2022/6/4"></a>2022/6/4</h2><p>导入学校数据<img src="https://pic.imgdb.cn/item/629f800009475431293d238b.jpg">学校推荐程序已经写好了 </p>
+<p>由于没有使用ajax 不能实现局部刷新 是一个跳转过程</p>
+<p>前端样式还是需要改</p>
+<p>学校的排名太无序，但是我没有别的方法 只能让他无序吧</p>
+<h2 id="2022-6-5"><a href="#2022-6-5" class="headerlink" title="2022/6/5"></a>2022/6/5</h2><p><img src="https://pic.imgdb.cn/item/629f7fb809475431293cc214.jpg"></p>
+<p>学院细节已经能写了</p>
+<p>继续编写程序 </p>
+<ul>
+<li>专业 （可以上的专业/所有的专业）</li>
+<li>录取分数线（需要用ajax）</li>
+<li>招生计划（要当年的招生计划）（每年都需要导入数据）</li>
+</ul>
+<h1 id="2022-6-6"><a href="#2022-6-6" class="headerlink" title="2022/6/6"></a>2022/6/6</h1><p>专业信息已经录入了</p>
+<p><img src="https://pic.imgdb.cn/item/629f7f9a09475431293c9bbd.jpg"></p>
+<p><img src="https://pic.imgdb.cn/item/629f7f5a09475431293c572b.jpg"></p>
+<p>程序最后写好了</p>
+<p>问题来自：</p>
+<ul>
+<li>前端给数据块设置的是默认不展示</li>
+<li>前端安排的程序块分布问题 分的太开了</li>
+</ul>
+<p>明天计划 把录取分数线写了 不过需要前端进行一点修改了 <img src="https://i.bmp.ovh/imgs/2022/06/08/867ea6a610fdec29.png"> </p>
+<p>这个界面不太好看而且明显需要使用ajax 看看是否有平替的方法</p>
+<h1 id="2022-6-7"><a href="#2022-6-7" class="headerlink" title="2022/6/7"></a>2022/6/7</h1><p>今天把招生计划</p>
+<p> <img src="https://i.bmp.ovh/imgs/2022/06/08/3472692fbdd5faf7.png"> </p>
+<p>只剩下一个页面了“录取分数线”</p>
+<p>但是那个录取分数线需要使用ajax，就交给前端的同学去写，我先不动</p>
+<h1 id="2022-6-8"><a href="#2022-6-8" class="headerlink" title="2022/6/8"></a>2022/6/8</h1><p>ajax就是个屑 不用局部刷新 加个from表单照样进行查询 <img src="https://i.bmp.ovh/imgs/2022/06/08/22772a983e0cde8b.png"> </p>
+<p> <img src="https://i.bmp.ovh/imgs/2022/06/08/1616e6d0dc7bab6f.png"> </p>
+<p>除了重新跳到这个页面会是null以外 根本没有问题</p>
+<p>真不错</p>
+<p>程序写完了</p>
+<p><img src="https://i.bmp.ovh/imgs/2022/06/08/b2d9650ab7a43a22.png"> </p>
+<p>招生计划前端加了个样式 真不错</p>
+<p>2022年6月8日 0点30分 程序写完了（第一阶段写完了）</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-2022年暑假计划"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/06/05/2022%E5%B9%B4%E6%9A%91%E5%81%87%E8%AE%A1%E5%88%92/"
+    >2022年暑假计划</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/06/05/2022%E5%B9%B4%E6%9A%91%E5%81%87%E8%AE%A1%E5%88%92/" class="article-date">
+  <time datetime="2022-06-05T09:00:11.048Z" itemprop="datePublished">2022-06-05</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="2022年暑假计划"><a href="#2022年暑假计划" class="headerlink" title="2022年暑假计划"></a>2022年暑假计划</h1><p>我们必须在暑假前指定一个暑假计划 在暑假后进行一个检验，下边分析一个我们需要做的事</p>
+<ul>
+<li>机组学习 机组笔记的编写</li>
+<li>高数下学习</li>
+<li>概率论学习</li>
+<li>英语单词背记（准备四级）</li>
+<li>驾照考试</li>
+<li>数学建模学习（不能托团队后腿）</li>
+<li>锻炼（感觉身体肌肉不够 太瘦了）</li>
+</ul>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-思路"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2022/05/26/%E6%80%9D%E8%B7%AF/" class="article-date">
+  <time datetime="2022-05-26T08:36:00.929Z" itemprop="datePublished">2022-05-26</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="MtachorCupD题解题思路"><a href="#MtachorCupD题解题思路" class="headerlink" title="MtachorCupD题解题思路"></a>MtachorCupD题解题思路</h1><h2 id="第一题的解题思路"><a href="#第一题的解题思路" class="headerlink" title="第一题的解题思路"></a>第一题的解题思路</h2><p>对于第一题，是一个求圆进行覆盖的图，基本思路是：</p>
+<ul>
+<li>先对这些数进行从大到小的排序</li>
+<li>找出最大的数，对这个数进行建站</li>
+<li>这个数方圆</li>
+</ul>
+<h2 id="第三问"><a href="#第三问" class="headerlink" title="第三问"></a>第三问</h2><p>第三问 我的思路是将所有的单点都去除掉</p>
+<p>然后使用聚类 看看聚类的效果，</p>
+<p>使用k-means聚类来测试</p>
+<p><strong>第一次聚类 428有点小了</strong></p>
+<p><strong>第二次聚类 5000 有点大了</strong></p>
+<p>采用折半搜索</p>
+<p><strong>第三次聚类 2714 有点大了</strong></p>
+<p><strong>第四次聚类 1571 有点大了</strong></p>
+<p><strong>第五次聚类 999 有点大了</strong></p>
+<p><strong>第六次聚类 713有点大了</strong></p>
+<p><strong>第七次聚类 571有点大了</strong></p>
+<p><strong>第七次聚类 499不合适了</strong></p>
+<p>不能用多重聚类这种方法去写 因为k-means的机制的原因。k-means是先找到一个点，然后找里这个点进的点，但是跟题目中的要求不同，因此不能这样去考虑</p>
+<h2 id="利用最短距离法进行聚类"><a href="#利用最短距离法进行聚类" class="headerlink" title="利用最短距离法进行聚类"></a>利用最短距离法进行聚类</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">错误使用 internal.stats.pdistmex</span><br><span class="line">请求的 1x16677862930 (<span class="number">124.</span>3GB)数组超过预设的最大数组大小。创建大于此限制的数组可能需要较长时间，并且会导致 MATLAB</span><br><span class="line">无响应。</span><br></pre></td></tr></table></figure>
+
+<p>无法直接使用最短距离法进行聚类</p>
+<p>既然k-means可以搞出几个临近的数 我们也可以在k-means聚类后的基础上进行聚类</p>
+<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p>三等奖</p>
+<p>我个人认为还不错</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+  </article>
+  
+
+  
+  <nav class="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/">上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/3/">下一页</a>
+  </nav>
+  
+</section>
+</div>
+
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2022
+        <i class="ri-heart-fill heart_icon"></i> dwx
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="dwx-tx的小天地"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>

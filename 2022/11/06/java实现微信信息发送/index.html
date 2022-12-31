@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>java实现微信信息定时发送 |  dwx-tx的小天地</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"
+      />
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+       
+ 
+<script>
+var _hmt = _hmt || [];
+(function() {
+	var hm = document.createElement("script");
+	hm.src = "https://hm.baidu.com/hm.js?57bee4bd4703d5af3f9154ce72c6f85f";
+	var s = document.getElementsByTagName("script")[0]; 
+	s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    <link rel="alternate" href="/atom.xml" title="dwx-tx的小天地" type="application/atom+xml">
+</head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-java实现微信信息发送"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  java实现微信信息定时发送
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/11/06/java%E5%AE%9E%E7%8E%B0%E5%BE%AE%E4%BF%A1%E4%BF%A1%E6%81%AF%E5%8F%91%E9%80%81/" class="article-date">
+  <time datetime="2022-11-06T14:01:14.417Z" itemprop="datePublished">2022-11-06</time>
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">2.2k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">10 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="java实现微信信息定时发送"><a href="#java实现微信信息定时发送" class="headerlink" title="java实现微信信息定时发送"></a>java实现微信信息定时发送</h1><p><strong>今天遇到一个问题，需要在凌晨0点发送信息，但是怕之前想好的信息遗忘，因此希望编写一个java程序来实现程序按时发送</strong></p>
+<p>分析可得，整个程序可以分为三个问题：</p>
+<ul>
+<li>java调用微信发送信息</li>
+<li>创建一个信息池，来存储要发送的信息</li>
+<li>设置时间，发送信息</li>
+</ul>
+<h2 id="java调用微信给特定对象发送信息"><a href="#java调用微信给特定对象发送信息" class="headerlink" title="java调用微信给特定对象发送信息"></a>java调用微信给特定对象发送信息</h2><p><strong>参考blog：</strong></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/baidu_39265156/article/details/109698987">(188条消息) Java实现微信每天定时发送消息，指定好友 – 柚子真好吃_我是小金毛的博客-CSDN博客_java微信给指定好友发消息</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42601136/article/details/121498263">(188条消息) 使用Java实现发送微信消息（附源码）_此程序在手再也不怕对象跟你闹了_Willing卡卡的博客-CSDN博客_java发送微信消息</a></p>
+<p>分析blog的 robot类很重要</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_38901340/article/details/99225140">(188条消息) Java Robot类使用指南_Javee-Y的博客-CSDN博客_robot类</a></p>
+<p>因此 ，java调用电脑上的程序是通过robot对象来实现的。</p>
+<p><strong>robot类略解</strong></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_37671741/article/details/102975016">(188条消息) Java中Robot类详解_MardenSSS的博客-CSDN博客_robot类</a></p>
+<p><strong>具体思路</strong></p>
+<p>通过java的robot( )类来模拟人的操作</p>
+<ul>
+<li>使用java的robot( )类来模拟人的操作</li>
+<li>使用win的快捷键来操作微信</li>
+<li>使用robot来执行win的快捷键来实现对微信的操作</li>
+</ul>
+<h3 id="打开微信"><a href="#打开微信" class="headerlink" title="打开微信"></a>打开微信</h3><p><strong>程序前提：需要首先登录微信</strong></p>
+<p><strong>win快捷键</strong></p>
+<p><code>alt + ctrl +w</code></p>
+<p><strong>java代码</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">robot = <span class="keyword">new</span> Robot();</span><br><span class="line">         <span class="comment">//用robot模拟 alt+win+w 直接调用微信</span></span><br><span class="line">         robot.keyPress(KeyEvent.VK_CONTROL);</span><br><span class="line">         robot.keyPress(KeyEvent.VK_ALT);</span><br><span class="line">         robot.keyPress(KeyEvent.VK_W);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="延迟操作"><a href="#延迟操作" class="headerlink" title="延迟操作"></a>延迟操作</h3><p>java操作微信没有延迟，但是微信的打开和操作有延迟，为了避免发生冲突，需要在每次完成玩一个程序后执行一个延迟操作</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">robot.delay(1000);</span><br></pre></td></tr></table></figure>
+
+<p>单位为毫秒</p>
+<h3 id="按键释放操作"><a href="#按键释放操作" class="headerlink" title="按键释放操作"></a>按键释放操作</h3><p>必须释放按压，按压操作并不会随着程序的结束而结束</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//释放Ctrl按键，像Ctrl，退格键，删除键这样的功能性按键，在按下后一定要释放</span></span><br><span class="line">robot.keyRelease(KeyEvent.VK_CONTROL);</span><br><span class="line">robot.keyRelease(KeyEvent.VK_ALT);</span><br><span class="line">robot.keyRelease(KeyEvent.VK_W);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>不释放的话 会影响程序之后的电脑操作</p>
+<h3 id="搜索好友"><a href="#搜索好友" class="headerlink" title="搜索好友"></a>搜索好友</h3><p><strong>快捷键</strong></p>
+<p><code>Ctrl +F</code></p>
+<p><strong>java代码</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Ctrl + F 搜索指定好友</span></span><br><span class="line">robot.keyPress(KeyEvent.VK_CONTROL);</span><br><span class="line">robot.keyPress(KeyEvent.VK_F);</span><br></pre></td></tr></table></figure>
+
+<h3 id="进去"><a href="#进去" class="headerlink" title="进去"></a>进去</h3><p><strong>enter</strong></p>
+<p>实现输入</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//按下输入 enter</span></span><br><span class="line">         robot.keyPress(KeyEvent.VK_ENTER);</span><br><span class="line">         <span class="comment">//释放</span></span><br><span class="line">         robot.keyRelease(KeyEvent.VK_ENTER);</span><br><span class="line">         robot.delay(<span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="信息输入"><a href="#信息输入" class="headerlink" title="信息输入"></a>信息输入</h3><p>类似搜索程序</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">String msg = <span class="string">&quot;该信息为测试程序，不用回复&quot;</span>;</span><br><span class="line">tText = <span class="keyword">new</span> StringSelection(msg);</span><br><span class="line">clip.setContents(tText,<span class="keyword">null</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 以下两行按下了ctrl+v，完成粘贴功能</span></span><br><span class="line">robot.keyPress(KeyEvent.VK_CONTROL);</span><br><span class="line">robot.keyPress(KeyEvent.VK_V);</span><br><span class="line"></span><br><span class="line"><span class="comment">//释放</span></span><br><span class="line">robot.keyRelease(KeyEvent.VK_CONTROL);</span><br><span class="line">robot.keyRelease(KeyEvent.VK_V);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">robot.delay(<span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//按下输入 enter</span></span><br><span class="line">robot.keyPress(KeyEvent.VK_ENTER);</span><br><span class="line"><span class="comment">//释放</span></span><br><span class="line">robot.keyRelease(KeyEvent.VK_ENTER);</span><br><span class="line">robot.delay(<span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="完整的操作程序"><a href="#完整的操作程序" class="headerlink" title="完整的操作程序"></a>完整的操作程序</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.awt.*;</span><br><span class="line"><span class="keyword">import</span> java.awt.datatransfer.Clipboard;</span><br><span class="line"><span class="keyword">import</span> java.awt.datatransfer.StringSelection;</span><br><span class="line"><span class="keyword">import</span> java.awt.datatransfer.Transferable;</span><br><span class="line"><span class="keyword">import</span> java.awt.event.KeyEvent;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;程序开始执行&quot;</span>);</span><br><span class="line">        Robot robot = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">//创建robot对象</span></span><br><span class="line">            robot = <span class="keyword">new</span> Robot();</span><br><span class="line">            <span class="comment">//用robot模拟 alt+win+w 直接调用微信</span></span><br><span class="line">            robot.keyPress(KeyEvent.VK_CONTROL);</span><br><span class="line">            robot.keyPress(KeyEvent.VK_ALT);</span><br><span class="line">            robot.keyPress(KeyEvent.VK_W);</span><br><span class="line"></span><br><span class="line">            <span class="comment">//释放Ctrl按键，像Ctrl，退格键，删除键这样的功能性按键，在按下后一定要释放</span></span><br><span class="line">            robot.keyRelease(KeyEvent.VK_CONTROL);</span><br><span class="line">            robot.keyRelease(KeyEvent.VK_ALT);</span><br><span class="line">            robot.keyRelease(KeyEvent.VK_W);</span><br><span class="line"></span><br><span class="line">            <span class="comment">//执行一个延迟</span></span><br><span class="line">            robot.delay(<span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// Ctrl + F 搜索指定好友</span></span><br><span class="line">            robot.keyPress(KeyEvent.VK_CONTROL);</span><br><span class="line">            robot.keyPress(KeyEvent.VK_F);</span><br><span class="line">            <span class="comment">//释放按键</span></span><br><span class="line">            robot.keyRelease(KeyEvent.VK_CONTROL);</span><br><span class="line">            robot.keyRelease(KeyEvent.VK_F);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            <span class="comment">//将信息放到粘贴板上 并且发送</span></span><br><span class="line">            Clipboard clip = Toolkit.getDefaultToolkit().getSystemClipboard();</span><br><span class="line">            Transferable tText = <span class="keyword">new</span> StringSelection(<span class="string">&quot;聂八一&quot;</span>);</span><br><span class="line">            clip.setContents(tText, <span class="keyword">null</span>);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 以下两行按下了ctrl+v，完成粘贴功能</span></span><br><span class="line">            robot.keyPress(KeyEvent.VK_CONTROL);</span><br><span class="line">            robot.keyPress(KeyEvent.VK_V);</span><br><span class="line"></span><br><span class="line">            <span class="comment">//释放</span></span><br><span class="line">            robot.keyRelease(KeyEvent.VK_CONTROL);</span><br><span class="line">            robot.keyRelease(KeyEvent.VK_V);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            robot.delay(<span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line">            <span class="comment">//按下输入 enter</span></span><br><span class="line">            robot.keyPress(KeyEvent.VK_ENTER);</span><br><span class="line">            <span class="comment">//释放</span></span><br><span class="line">            robot.keyRelease(KeyEvent.VK_ENTER);</span><br><span class="line">            robot.delay(<span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            <span class="comment">//可以输入信息了</span></span><br><span class="line">            <span class="comment">//按照先放到剪切板 后赋值 后enter实现输入</span></span><br><span class="line"></span><br><span class="line">            String msg = <span class="string">&quot;该信息为测试程序，不用回复&quot;</span>;</span><br><span class="line">            tText = <span class="keyword">new</span> StringSelection(msg);</span><br><span class="line">            clip.setContents(tText,<span class="keyword">null</span>);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 以下两行按下了ctrl+v，完成粘贴功能</span></span><br><span class="line">            robot.keyPress(KeyEvent.VK_CONTROL);</span><br><span class="line">            robot.keyPress(KeyEvent.VK_V);</span><br><span class="line"></span><br><span class="line">            <span class="comment">//释放</span></span><br><span class="line">            robot.keyRelease(KeyEvent.VK_CONTROL);</span><br><span class="line">            robot.keyRelease(KeyEvent.VK_V);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            robot.delay(<span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line">            <span class="comment">//按下输入 enter</span></span><br><span class="line">            robot.keyPress(KeyEvent.VK_ENTER);</span><br><span class="line">            <span class="comment">//释放</span></span><br><span class="line">            robot.keyRelease(KeyEvent.VK_ENTER);</span><br><span class="line">            robot.delay(<span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (AWTException e) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(e);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;程序执行结束&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>总结：</strong>无论是昵称还是取得称号都是可以的</p>
+<h2 id="定时技术"><a href="#定时技术" class="headerlink" title="定时技术"></a>定时技术</h2><p><strong>分析可得逻辑</strong></p>
+<ul>
+<li>先设置一个预定的对象</li>
+<li>通过java里的system对象来获得系统时间（当时的时间）</li>
+</ul>
+<p><strong>获得当前时间方法</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SimpleDateFormat df = <span class="keyword">new</span> SimpleDateFormat(<span class="string">&quot;yyyy-MM-dd HH:mm:ss:SSS&quot;</span>);</span><br><span class="line">String time = df.format(System.currentTimeMillis());</span><br><span class="line">System.out.println(<span class="string">&quot;现在时间是:&quot;</span> + time);</span><br></pre></td></tr></table></figure>
+
+<p><strong>java设置时间格式</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//设置时间</span></span><br><span class="line">      <span class="keyword">int</span> year = <span class="number">2022</span>;</span><br><span class="line">      <span class="keyword">int</span> month = <span class="number">11</span>;</span><br><span class="line">      String day = <span class="string">&quot;06&quot;</span>;</span><br><span class="line">      <span class="keyword">int</span> hour = <span class="number">20</span>;</span><br><span class="line">      <span class="keyword">int</span> min = <span class="number">40</span>;</span><br><span class="line">      String today = year+<span class="string">&quot;-&quot;</span>+month+<span class="string">&quot;-&quot;</span>+day+<span class="string">&quot; &quot;</span>+hour+<span class="string">&quot;:&quot;</span>+min;</span><br><span class="line">      System.out.println(<span class="string">&quot;目标时间:&quot;</span>+today);</span><br><span class="line">      <span class="keyword">while</span> (<span class="keyword">true</span>)&#123;</span><br><span class="line">          time = df.format(System.currentTimeMillis());</span><br><span class="line">          time2 = df1.format(System.currentTimeMillis());</span><br><span class="line">          <span class="comment">//沉睡疫苗</span></span><br><span class="line">          <span class="keyword">try</span> &#123;</span><br><span class="line">              sleep(<span class="number">1000</span>);</span><br><span class="line">          &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">              <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(e);</span><br><span class="line">          &#125;</span><br><span class="line">          System.out.println(time2);</span><br><span class="line">          <span class="keyword">if</span> (time.equals(today))&#123;</span><br><span class="line">              System.out.println(<span class="string">&quot;到时候了&quot;</span>);</span><br><span class="line">              <span class="keyword">break</span>;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>TimeUtil</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.dwx.utils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.text.SimpleDateFormat;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TimeUtil</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//当前时间</span></span><br><span class="line">    <span class="keyword">private</span> String timeNow = <span class="keyword">null</span>;</span><br><span class="line">    <span class="comment">//目标时间</span></span><br><span class="line">    <span class="keyword">private</span> String targetTime = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//设置目标时间</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">setTargetTime</span><span class="params">(String year, String month, String day, String hour, String min)</span> </span>&#123;</span><br><span class="line">        targetTime = year + <span class="string">&quot;-&quot;</span> + month + <span class="string">&quot;-&quot;</span> + day + <span class="string">&quot; &quot;</span> + hour + <span class="string">&quot;:&quot;</span> + min;</span><br><span class="line">        System.out.println(<span class="string">&quot;目标时间为：&quot;</span> + targetTime);</span><br><span class="line">        <span class="keyword">return</span> targetTime;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//获得时钟 直到秒</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getClockToSecond</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> l = System.currentTimeMillis();</span><br><span class="line">        SimpleDateFormat df = <span class="keyword">new</span> SimpleDateFormat(<span class="string">&quot;yyyy-MM-dd HH:mm:ss&quot;</span>);</span><br><span class="line">        String time = df.format(l);</span><br><span class="line">        System.out.println(time);</span><br><span class="line">        <span class="keyword">return</span> time;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//获得时钟 直到分钟</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getClockToMin</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> l = System.currentTimeMillis();</span><br><span class="line">        SimpleDateFormat df = <span class="keyword">new</span> SimpleDateFormat(<span class="string">&quot;yyyy-MM-dd HH:mm&quot;</span>);</span><br><span class="line">        timeNow = df.format(l);</span><br><span class="line">        System.out.println(timeNow);</span><br><span class="line">        <span class="keyword">return</span> timeNow;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>两个程序执行结束</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.dwx.main;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.dwx.utils.RobotUtil;</span><br><span class="line"><span class="keyword">import</span> com.dwx.utils.TimeUtil;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> java.lang.Thread.sleep;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">demo01</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        RobotUtil robotUtil = <span class="keyword">new</span> RobotUtil();</span><br><span class="line">        String  msg1 = robotUtil.getFriendWin(<span class="string">&quot;文件传输助手&quot;</span>);</span><br><span class="line">        System.out.println(msg1);</span><br><span class="line">        String s = robotUtil.sendMsg(<span class="string">&quot;定时发送数据程序测试&quot;</span>);</span><br><span class="line">        System.out.println(s);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//设置时间</span></span><br><span class="line">        TimeUtil timeUtil = <span class="keyword">new</span> TimeUtil();</span><br><span class="line">        String t1 = timeUtil.setTargetTime(<span class="string">&quot;2022&quot;</span>, <span class="string">&quot;11&quot;</span>, <span class="string">&quot;06&quot;</span>, <span class="string">&quot;21&quot;</span>, <span class="string">&quot;13&quot;</span>);</span><br><span class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>)&#123;</span><br><span class="line">            <span class="comment">//沉睡一秒</span></span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                sleep(<span class="number">1000</span>);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;sleep出错:&quot;</span>+e);</span><br><span class="line">            &#125;</span><br><span class="line">            timeUtil.getClockToSecond();</span><br><span class="line">            String t2 = timeUtil.getClockToMin();</span><br><span class="line">            <span class="keyword">if</span> (t1.equals(t2))&#123;</span><br><span class="line">                <span class="comment">//时间正确 执行信息发送</span></span><br><span class="line">                robotUtil.getFriendWin(<span class="string">&quot;文件传输助手&quot;</span>);</span><br><span class="line">                robotUtil.sendMsg(<span class="string">&quot;时间到 执行程序&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>程序前提：</strong></p>
+<ul>
+<li>微信登录</li>
+<li>微信窗口隐藏</li>
+</ul>
+<h2 id="信息池"><a href="#信息池" class="headerlink" title="信息池"></a>信息池</h2><ul>
+<li>用String[ ]即可</li>
+<li>或者使用txt文件也行</li>
+</ul>
+<h3 id="使用String-做信息池"><a href="#使用String-做信息池" class="headerlink" title="使用String[ ]做信息池"></a>使用String[ ]做信息池</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">String[] msg = <span class="keyword">new</span> String[]&#123;</span><br><span class="line">        <span class="string">&quot;信息一&quot;</span>,</span><br><span class="line">        <span class="string">&quot;信息一&quot;</span>,</span><br><span class="line">        <span class="string">&quot;信息一&quot;</span>,</span><br><span class="line">        <span class="string">&quot;信息一&quot;</span>,</span><br><span class="line">        <span class="string">&quot;信息一&quot;</span>,</span><br><span class="line">        <span class="string">&quot;信息一&quot;</span>,</span><br><span class="line">        <span class="string">&quot;信息一&quot;</span>,</span><br><span class="line">        <span class="string">&quot;信息一&quot;</span>,</span><br><span class="line">        <span class="string">&quot;信息一&quot;</span>,</span><br><span class="line">        <span class="string">&quot;信息一&quot;</span>,</span><br><span class="line">        <span class="string">&quot;信息一&quot;</span>,</span><br><span class="line">        <span class="string">&quot;信息一&quot;</span>,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>实战</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.dwx.main;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.dwx.utils.RobotUtil;</span><br><span class="line"><span class="keyword">import</span> com.dwx.utils.TimeUtil;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> java.lang.Thread.sleep;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">demo01</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        RobotUtil robotUtil = <span class="keyword">new</span> RobotUtil();</span><br><span class="line">        <span class="comment">//设置时间</span></span><br><span class="line">        TimeUtil timeUtil = <span class="keyword">new</span> TimeUtil();</span><br><span class="line">        String t1 = timeUtil.setTargetTime(<span class="string">&quot;2022&quot;</span>, <span class="string">&quot;11&quot;</span>, <span class="string">&quot;06&quot;</span>, <span class="string">&quot;21&quot;</span>, <span class="string">&quot;35&quot;</span>);</span><br><span class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>)&#123;</span><br><span class="line">            <span class="comment">//沉睡一秒</span></span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                sleep(<span class="number">1000</span>);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;sleep出错:&quot;</span>+e);</span><br><span class="line">            &#125;</span><br><span class="line">            timeUtil.getClockToSecond();</span><br><span class="line">            String t2 = timeUtil.getClockToMin();</span><br><span class="line">            <span class="keyword">if</span> (t1.equals(t2))&#123;</span><br><span class="line">                <span class="comment">//时间正确 执行信息发送</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//信息池</span></span><br><span class="line">        String[] msg = <span class="keyword">new</span> String[]&#123;</span><br><span class="line">                <span class="string">&quot;信息一&quot;</span>,</span><br><span class="line">                <span class="string">&quot;信息一&quot;</span>,</span><br><span class="line">                <span class="string">&quot;信息一&quot;</span>,</span><br><span class="line">                <span class="string">&quot;信息一&quot;</span>,</span><br><span class="line">                <span class="string">&quot;信息一&quot;</span>,</span><br><span class="line">                <span class="string">&quot;信息一&quot;</span>,</span><br><span class="line">                <span class="string">&quot;信息一&quot;</span>,</span><br><span class="line">                <span class="string">&quot;信息一&quot;</span>,</span><br><span class="line">                <span class="string">&quot;信息一&quot;</span>,</span><br><span class="line">                <span class="string">&quot;信息一&quot;</span>,</span><br><span class="line">                <span class="string">&quot;信息一&quot;</span>,</span><br><span class="line">                <span class="string">&quot;信息一&quot;</span>,</span><br><span class="line">        &#125;;</span><br><span class="line">        robotUtil.getFriendWin(<span class="string">&quot;文件传输助手&quot;</span>);</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (String s : msg) &#123;</span><br><span class="line">            robotUtil.sendMsg(s+i++);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>结果</strong></p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/xjYK4s"><img src="https://s1.ax1x.com/2022/11/06/xjYK4s.png" alt="xjYK4s.png"></a></p>
+<h3 id="使用txt文件当做信息池"><a href="#使用txt文件当做信息池" class="headerlink" title="使用txt文件当做信息池"></a>使用txt文件当做信息池</h3><p><strong>原理</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">       <span class="comment">//文件读写</span></span><br><span class="line">       String fileUrl = <span class="string">&quot;E:\\java\\wechatTest\\src\\main\\resources\\msg.txt&quot;</span>;</span><br><span class="line">       File file = <span class="keyword">new</span> File(fileUrl);</span><br><span class="line">       BufferedReader bufferedReader = <span class="keyword">null</span>;</span><br><span class="line">       <span class="keyword">try</span> &#123;</span><br><span class="line">           bufferedReader = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> FileReader(file));</span><br><span class="line"></span><br><span class="line">           String s = bufferedReader.readLine();</span><br><span class="line">           <span class="keyword">while</span> (<span class="keyword">null</span> != s)&#123;</span><br><span class="line">               System.out.println(s);</span><br><span class="line">               s = bufferedReader.readLine();</span><br><span class="line">           &#125;</span><br><span class="line"></span><br><span class="line">       &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">           System.out.println(e);</span><br><span class="line">       &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">           System.out.println(e);</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>实战</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.dwx.main;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.dwx.utils.FileUtil;</span><br><span class="line"><span class="keyword">import</span> com.dwx.utils.RobotUtil;</span><br><span class="line"><span class="keyword">import</span> com.dwx.utils.TimeUtil;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> java.lang.Thread.sleep;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">demo01</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        RobotUtil robotUtil = <span class="keyword">new</span> RobotUtil();</span><br><span class="line">        <span class="comment">//设置时间</span></span><br><span class="line">        TimeUtil timeUtil = <span class="keyword">new</span> TimeUtil();</span><br><span class="line">        String t1 = timeUtil.setTargetTime(<span class="string">&quot;2022&quot;</span>, <span class="string">&quot;11&quot;</span>, <span class="string">&quot;06&quot;</span>, <span class="string">&quot;21&quot;</span>, <span class="string">&quot;57&quot;</span>);</span><br><span class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>)&#123;</span><br><span class="line">            <span class="comment">//沉睡一秒</span></span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                sleep(<span class="number">1000</span>);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;sleep出错:&quot;</span>+e);</span><br><span class="line">            &#125;</span><br><span class="line">            timeUtil.getClockToSecond();</span><br><span class="line">            String t2 = timeUtil.getClockToMin();</span><br><span class="line">            <span class="keyword">if</span> (t1.equals(t2))&#123;</span><br><span class="line">                <span class="comment">//时间正确 执行信息发送</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//信息池</span></span><br><span class="line">        FileUtil fileUtil = <span class="keyword">new</span> FileUtil();</span><br><span class="line">        List&lt;String&gt; msgByFile = fileUtil.getMsgByFile();</span><br><span class="line"></span><br><span class="line">        robotUtil.getFriendWin(<span class="string">&quot;文件传输助手&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (String s : msgByFile) &#123;</span><br><span class="line">            robotUtil.sendMsg(s);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>效果</strong></p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/xjYQCn"><img src="https://s1.ax1x.com/2022/11/06/xjYQCn.png" alt="xjYQCn.png"></a></p>
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          Donate
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://dwx-tx/dwx-tx.github.io/2022/11/06/java%E5%AE%9E%E7%8E%B0%E5%BE%AE%E4%BF%A1%E4%BF%A1%E6%81%AF%E5%8F%91%E9%80%81/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2022/11/16/%E7%AC%AC%E4%B8%89%E7%AB%A0%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%9C%E4%B8%9A/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            第三章数据库作业
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2022/10/31/%E4%B8%89%E6%AF%9B%E5%88%AB%E6%83%A8%E6%A1%88/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">三毛别惨案</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2022
+        <i class="ri-heart-fill heart_icon"></i> dwx
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="dwx-tx的小天地"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>

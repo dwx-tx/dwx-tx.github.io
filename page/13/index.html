@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title> dwx-tx的小天地</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"
+      />
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+       
+ 
+<script>
+var _hmt = _hmt || [];
+(function() {
+	var hm = document.createElement("script");
+	hm.src = "https://hm.baidu.com/hm.js?57bee4bd4703d5af3f9154ce72c6f85f";
+	var s = document.getElementsByTagName("script")[0]; 
+	s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    <link rel="alternate" href="/atom.xml" title="dwx-tx的小天地" type="application/atom+xml">
+</head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      
+<section class="cover">
+    
+      
+      <a class="forkMe" href="https://github.com/Shen-Yu/hexo-theme-ayer"
+        target="_blank"><img width="149" height="149" src="/images/forkme.png"
+          class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+    
+  <div class="cover-frame">
+    <div class="bg-box">
+      <img src="/images/cover1.jpg" alt="image frame" />
+    </div>
+    <div class="cover-inner text-center text-white">
+      <h1><a href="/">dwx-tx的小天地</a></h1>
+      <div id="subtitle-box">
+        
+        <span id="subtitle"></span>
+        
+      </div>
+      <div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="cover-learn-more">
+    <a href="javascript:void(0)" class="anchor"><i class="ri-arrow-down-line"></i></a>
+  </div>
+</section>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script>
+
+
+<!-- Subtitle -->
+
+  <script>
+    try {
+      var typed = new Typed("#subtitle", {
+        strings: ['面朝大海，春暖花开', '愿你一生努力，一生被爱', '想要的都拥有，得不到的都释怀'],
+        startDelay: 0,
+        typeSpeed: 200,
+        loop: true,
+        backSpeed: 100,
+        showCursor: true
+      });
+    } catch (err) {
+      console.log(err)
+    }
+  </script>
+  
+<div id="main">
+  <section class="outer">
+  
+  
+  
+
+<div class="notice" style="margin-top:50px">
+    <i class="ri-heart-fill"></i>
+    <div class="notice-content" id="broad"></div>
+</div>
+<script type="text/javascript">
+    fetch('https://v1.hitokoto.cn')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("broad").innerHTML = data.hitokoto;
+        })
+        .catch(console.error)
+</script>
+
+<style>
+    .notice {
+        padding: 20px;
+        border: 1px dashed #e6e6e6;
+        color: #969696;
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        background: #fbfbfb50;
+        border-radius: 10px;
+    }
+
+    .notice i {
+        float: left;
+        color: #999;
+        font-size: 16px;
+        padding-right: 10px;
+        vertical-align: middle;
+        margin-top: -2px;
+    }
+
+    .notice-content {
+        display: initial;
+        vertical-align: middle;
+    }
+</style>
+  
+  <article class="articles">
+    
+    
+    
+    
+    <article
+  id="post-python程序控制结构"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/python%E7%A8%8B%E5%BA%8F%E6%8E%A7%E5%88%B6%E7%BB%93%E6%9E%84/" class="article-date">
+  <time datetime="2021-12-16T15:00:16.811Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="python程序控制结构"><a href="#python程序控制结构" class="headerlink" title="python程序控制结构"></a>python程序控制结构</h1><p>程序都是有三种基本结构组成的<strong>顺序结构</strong>，<strong>分支结构</strong>，<strong>循环结构</strong></p>
+<h2 id="分支结构"><a href="#分支结构" class="headerlink" title="分支结构"></a>分支结构</h2><h3 id="单分支结构：if结构"><a href="#单分支结构：if结构" class="headerlink" title="单分支结构：if结构"></a>单分支结构：if结构</h3><p>python中if语句的语法结构格式如下:</p>
+<p>if &lt;条件&gt;:</p>
+<p>  &lt;语句块&gt;</p>
+<p>语句块是满足if条件后执行的一句或几句程序，通常，当条件判断为True时，执行语句块，当判断为False时，跳过语句块不执行。</p>
+<p>对于条件语句，python提供了六种关系操作符</p>
+<table>
+<thead>
+<tr>
+<th>操作符</th>
+<th>操作符含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&lt;</td>
+<td>小于</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>小于或等于</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>大于或等于</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>大于</td>
+</tr>
+<tr>
+<td>==</td>
+<td>等于</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>不等于</td>
+</tr>
+</tbody></table>
+<p><strong>特别注意</strong>：在python语言中’=’是赋值，‘==’是表示等于</p>
+<h3 id="二分支结构：if-else结构"><a href="#二分支结构：if-else结构" class="headerlink" title="二分支结构：if-else结构"></a>二分支结构：if-else结构</h3><p>python中if-else语句语法格式如下：</p>
+<p>if&lt;条件&gt;:</p>
+<p>​    &lt;语句块一&gt;</p>
+<p>else:</p>
+<p>​    &lt;语句块二&gt;</p>
+<p>在执行二分支结构时，先判断if后的条件语句，但结果为True时，执行语句一，否则执行语句二。</p>
+<h3 id="多分支结构：if-elif-else"><a href="#多分支结构：if-elif-else" class="headerlink" title="多分支结构：if-elif-else"></a>多分支结构：if-elif-else</h3><p>python语言中if-elif-else语句语法格式如下:</p>
+<p>if&lt;条件一&gt;:</p>
+<p>​    &lt;语句块一&gt;</p>
+<p>elif&lt;条件二&gt;:</p>
+<p>​    &lt;语句块二&gt;</p>
+<p>…………………</p>
+<p>elif&lt;条件n&gt;:</p>
+<p>​    &lt;语句块n&gt;</p>
+<p>else:</p>
+<p>&lt;语句块n+1&gt;</p>
+<p>执行时是从上到下依次执行判断，当某个条件语句结果为True时执行它所对应的语句块，然后跳出结构，<strong>及使后边还有条件语句判断为True，也不会执行</strong>；如果条件语句结果都为False,执行else下的语句块n+1。</p>
+<h2 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h2><h3 id="遍历循环：for语句"><a href="#遍历循环：for语句" class="headerlink" title="遍历循环：for语句"></a>遍历循环：for语句</h3><p>python通过保留字for实现“遍历循环”，格式为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> &lt;循环变量&gt; <span class="keyword">in</span> &lt;遍历结构&gt;:</span><br><span class="line">    &lt;语句块&gt;</span><br></pre></td></tr></table></figure>
+
+<p>遍历循环可以理解为从遍历结构中逐一提取元素，放在循环变量中，对于所提取的每个元素执行一次语句块。</p>
+<p>遍历结构可以是<strong>字符串</strong>，<strong>文件</strong>，<strong>组合数据类型</strong>，<strong>range（）函数</strong>等，常用的方法如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(N):       <span class="comment">#自行N次，是从0到N-1</span></span><br><span class="line">    &lt;语句块&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> fi:  <span class="comment">#遍历fi文件的每一行</span></span><br><span class="line">    &lt;语句块&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> c <span class="keyword">in</span> s:          <span class="comment">#遍历字符串s的每个字符</span></span><br><span class="line">    &lt;语句块&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> items <span class="keyword">in</span> ls:                 <span class="comment">#遍历列表ls的每个元素</span></span><br><span class="line">    &lt;语句块&gt;</span><br></pre></td></tr></table></figure>
+
+<p>也有一种和else结合使用的扩展模式</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> &lt;循环变量&gt; <span class="keyword">in</span> &lt;遍历结构&gt; :</span><br><span class="line">    &lt;语句块<span class="number">1</span>&gt;</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    &lt;语句块<span class="number">2</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<p>意义为：<strong>在执行完for循环后会执行else下的语句块2</strong></p>
+<h3 id="无线循环：while语句"><a href="#无线循环：while语句" class="headerlink" title="无线循环：while语句"></a>无线循环：while语句</h3><p>python通过保留字while实现无线循环，格式为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> &lt;条件&gt;:</span><br><span class="line">    &lt;语句块&gt;</span><br></pre></td></tr></table></figure>
+
+<p>和if结构一样，当条件为True时，执行语句块，当条件为False时跳出循环结构</p>
+<p>while也可以和else一起使用</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>&lt;条件&gt;:</span><br><span class="line">    &lt;语句块<span class="number">1</span>&gt;</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    &lt;语句块<span class="number">2</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="循环保留字continue和break"><a href="#循环保留字continue和break" class="headerlink" title="循环保留字continue和break"></a>循环保留字continue和break</h3><p>和C语言中break和continue关键字的作用一样</p>
+<p>continue：结束本次循环，仍在循环结构中</p>
+<p>break：结束整个循环，跳出循环结构</p>
+<p>而且，两者只能结束一层的循环，如果要对多层循环进行操作需要多次使用</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-pythonDatetime函数库"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/12/16/pythonDatetime%E5%87%BD%E6%95%B0%E5%BA%93/"
+    >datetime库的使用</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/pythonDatetime%E5%87%BD%E6%95%B0%E5%BA%93/" class="article-date">
+  <time datetime="2021-12-16T15:00:16.801Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="datetime库的使用"><a href="#datetime库的使用" class="headerlink" title="datetime库的使用"></a>datetime库的使用</h1><p>Python<strong>时间处理的标准函数库</strong>datetime提供了一批显示日期和时间的格式化方法</p>
+<h2 id="datetime库的概述"><a href="#datetime库的概述" class="headerlink" title="datetime库的概述"></a>datetime库的概述</h2><p>Python<strong>datetime</strong>库可以从系统中获得时间，并以用户选择的格式输出</p>
+<p><strong>注意</strong>：datetime库以<strong>格林威治时间</strong>时间为基础，每天由3600*24秒精度定义。</p>
+<p>该库包含两个常量：date.MINTEAR和date.MAXTEAR分别表示datetime所能表示的最小最大年份，值分别为1和9999</p>
+<p>datetime库提供的表示日期的方式：</p>
+<table>
+<thead>
+<tr>
+<th>方法（类）</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>datetime.date</td>
+<td>日期表示类，可以表示年、月、日等</td>
+</tr>
+<tr>
+<td>datetime.time</td>
+<td>时间表示类，可以表示小时、分钟、秒、毫秒等</td>
+</tr>
+<tr>
+<td>datetime.datetime</td>
+<td>日期和时间表示类，功能覆盖date和time类</td>
+</tr>
+<tr>
+<td>datetime.timedelta</td>
+<td>与时间间隔有关的类</td>
+</tr>
+<tr>
+<td>datetime.tzinfo</td>
+<td>与时区有关的信息表示类</td>
+</tr>
+</tbody></table>
+<h2 id="datetime库解析"><a href="#datetime库解析" class="headerlink" title="datetime库解析"></a>datetime库解析</h2><p>  datetime类(datetime.datetime类)的使用方法是先创建一个datetime对象，然后通过对象的方式和属性显示时间。创建datetime对象有3种方法：datetime.now(),datetime.utcnow()和datetime.datetime()。</p>
+<p>实例1：使用datetime.now（）获得当前日期的时间对象.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">datetime.now()</span><br></pre></td></tr></table></figure>
+
+<p>作用：返回一个datetime类型，表示当前的日期和时间，精确到微秒</p>
+<p><img src="/dwx-tx.github.io/2021/12/16/pythonDatetime%E5%87%BD%E6%95%B0%E5%BA%93/截屏\datetime.now.png"></p>
+<p>实例2：使用datetime.utcnow()获得日期和时间对应的UTC（世界标准时间）时间对象</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">datetime.utcnow()</span><br></pre></td></tr></table></figure>
+
+<p>作用：返回一个datetime类型，表示当前日期的时间的UTC表示，精确到微秒</p>
+<p><img src="/dwx-tx.github.io/2021/12/16/pythonDatetime%E5%87%BD%E6%95%B0%E5%BA%93/截屏\datetime.utcnow.png"></p>
+<p>实例3：datetime.now()和datetime.utcnow()返回的都是一个datetime类型的对象，也可以直接使用datetime()构造一个日期和时间对象</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">datetime(year, month, day, hour=<span class="number">0</span>, minute=<span class="number">0</span>, second=<span class="number">0</span>, microsecond=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<p>作用：返回一个datetime类型，表示指定的日期和时间</p>
+<p><img src="/dwx-tx.github.io/2021/12/16/pythonDatetime%E5%87%BD%E6%95%B0%E5%BA%93/截屏\datetime（）.png"></p>
+<p>datetime类的常用属性</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>someday.min</td>
+<td>固定返回datetime的最小时间对象，datetime（1,1,1,0,0）</td>
+</tr>
+<tr>
+<td>someday.max</td>
+<td>固定返回datetime的最大时间对象</td>
+</tr>
+<tr>
+<td>someday.year</td>
+<td>返回someday包含的年份</td>
+</tr>
+<tr>
+<td>someday.month</td>
+<td>返回someday包含的月份</td>
+</tr>
+<tr>
+<td>someday.day</td>
+<td>返回someday包含的日期</td>
+</tr>
+<tr>
+<td>someday.hour</td>
+<td>返回someday包含的小时</td>
+</tr>
+<tr>
+<td>someday.minture</td>
+<td>返回someday包含的分钟</td>
+</tr>
+<tr>
+<td>someday.second</td>
+<td>返回someday包含的秒</td>
+</tr>
+<tr>
+<td>someday.microsecond</td>
+<td>返回someday包含的毫秒</td>
+</tr>
+</tbody></table>
+<p>datetime常用的时间格式化方法</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>someday.isoformat()</td>
+<td>采用ISO861标准显示时间</td>
+</tr>
+<tr>
+<td>someday.isoweekday()</td>
+<td>根据日期计算星期后返回1~7，对应星期一到星期日</td>
+</tr>
+<tr>
+<td>someday.strftime(format)</td>
+<td>根据格式化字符串format进行格式显示的方法</td>
+</tr>
+</tbody></table>
+<p>strftime（format）</p>
+<table>
+<thead>
+<tr>
+<th>格式化字符</th>
+<th>日期/时间</th>
+<th>值范围和实例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>%Y</td>
+<td>年份</td>
+<td>0001~9999</td>
+</tr>
+<tr>
+<td>%m</td>
+<td>月份</td>
+<td>01~12</td>
+</tr>
+<tr>
+<td>%B</td>
+<td>月名</td>
+<td>january~December</td>
+</tr>
+<tr>
+<td>%b</td>
+<td>月名缩写</td>
+<td>jan~Dec</td>
+</tr>
+<tr>
+<td>%d</td>
+<td>日期</td>
+<td>01~31</td>
+</tr>
+<tr>
+<td>%A</td>
+<td>星期</td>
+<td>Monday~Sunday</td>
+</tr>
+<tr>
+<td>%a</td>
+<td>星期缩写</td>
+<td>Mon~Sun</td>
+</tr>
+<tr>
+<td>%H</td>
+<td>小时（24h）</td>
+<td>00~23</td>
+</tr>
+<tr>
+<td>%M</td>
+<td>分钟</td>
+<td>00~59</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>格式化字符</th>
+<th>日期/时间</th>
+<th>值范围和实例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>%S</td>
+<td>秒</td>
+<td>00~59</td>
+</tr>
+<tr>
+<td>%x</td>
+<td>日期</td>
+<td>月/日/年</td>
+</tr>
+<tr>
+<td>%X</td>
+<td>时间</td>
+<td>时：分：秒</td>
+</tr>
+</tbody></table>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-python内置函数"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/python%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/" class="article-date">
+  <time datetime="2021-12-16T15:00:16.801Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="python内置函数"><a href="#python内置函数" class="headerlink" title="python内置函数"></a>python内置函数</h1><p><strong>python提供了68个内置函数，不过常用的只有36个</strong></p>
+<table>
+<thead>
+<tr>
+<th>abs()</th>
+<th>id()</th>
+<th>round()</th>
+<th>compile()</th>
+<th>locals</th>
+<th>all()</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>input()</td>
+<td>set()</td>
+<td>dir()</td>
+<td>map()</td>
+<td>any()</td>
+<td>int()</td>
+</tr>
+<tr>
+<td>sorted()</td>
+<td>exec()</td>
+<td>memoryview()</td>
+<td>asci()</td>
+<td>len()</td>
+<td>str()</td>
+</tr>
+<tr>
+<td>enumerate()</td>
+<td>next()</td>
+<td>bin()</td>
+<td>list()</td>
+<td>tuple()</td>
+<td>filter()</td>
+</tr>
+<tr>
+<td>object()</td>
+<td>bool()</td>
+<td>max()</td>
+<td>type()</td>
+<td>formt()</td>
+<td>property()</td>
+</tr>
+<tr>
+<td>chr()</td>
+<td>min()</td>
+<td>zip()</td>
+<td>frozenset()</td>
+<td>repr()</td>
+<td>complex()</td>
+</tr>
+<tr>
+<td>oct()</td>
+<td>getattr()</td>
+<td>setattr()</td>
+<td>dict()</td>
+<td>open()</td>
+<td>globals()</td>
+</tr>
+<tr>
+<td>slice()</td>
+<td>divmod()</td>
+<td>ord()</td>
+<td>bytes()</td>
+<td>hasattr()</td>
+<td>staticmethod()</td>
+</tr>
+<tr>
+<td>eval()</td>
+<td>pow()</td>
+<td>delatter()</td>
+<td>help()</td>
+<td>sum()</td>
+<td>float()</td>
+</tr>
+<tr>
+<td>print()</td>
+<td>bytearray()</td>
+<td>isinstance()</td>
+<td>super()</td>
+<td>hash()</td>
+<td>range()</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>callable()</th>
+<th>issubclass()</th>
+<th>vars()</th>
+<th>hex()</th>
+<th>reversed()</th>
+<th>classmethod()</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>iter()</td>
+<td>_ import() _</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="部分内置函数的用途"><a href="#部分内置函数的用途" class="headerlink" title="部分内置函数的用途"></a>部分内置函数的用途</h2><ul>
+<li>all()函数：一般针对组合数据类型，如果其中每个元素都是True，则返回True，否则返回False。需要注意的是，整数0、空字符串“”、空表格[]等都被当成False</li>
+<li>any()函数：只要数据中有一个元素是True，则返回True，全部元素都是False时返回False</li>
+<li>hash()函数：对于能够计算哈希的类型，并返回哈希值</li>
+<li>id()：对每一个数据返回唯一的编号</li>
+<li>reversed(): 函数返回输入组合数据类型的逆序形式</li>
+<li>sorted()：对一个序列进行排序，默认从小到大排序</li>
+<li>type()：函数返回每个数据对应的类型</li>
+</ul>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-python组合数据类型"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/12/16/python%E7%BB%84%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"
+    >组合数据类型概述</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/python%E7%BB%84%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="article-date">
+  <time datetime="2021-12-16T15:00:16.801Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="组合数据类型概述"><a href="#组合数据类型概述" class="headerlink" title="组合数据类型概述"></a>组合数据类型概述</h1><p><strong>组合数据额类型为多个同类型或不同类型数据提供单一表示。组合数据类型分3类：序列类型、集合类型、映射类型</strong></p>
+<hr>
+<ul>
+<li>基本数据类型：表示单一数据类型</li>
+<li>组合数据类型：能够表示多个数据的类型</li>
+</ul>
+<h2 id="三种数据类型"><a href="#三种数据类型" class="headerlink" title="三种数据类型"></a>三种数据类型</h2><ul>
+<li>序列类型：是一个元素向量，元素之间存在先后关系，通过序号访问，元素之间不排他（可以有重复项）</li>
+<li>集合类型：一个元素集合，元素之间无需，相同元素在集合中唯一存在</li>
+<li>映射类型：“键-值”数据项的组合，每个元素是一个键值对，表示为（key，value）</li>
+</ul>
+<h2 id="序列类型"><a href="#序列类型" class="headerlink" title="序列类型"></a>序列类型</h2><p>序列类型是一维元素向量，元素之间存在先后关系，通过序号访问。序列的基本思想和表示方法均来源于数学概念</p>
+<hr>
+<p>由于元素之间存在顺序关系，所以序列中可以存在数值相同但位置不同的元素。序列类型支持成员关系操作符（in）、长度计算函数（len（））、分片([])，元素本事也可以是序列类型</p>
+<h3 id="三种比较重要的类型及其特点"><a href="#三种比较重要的类型及其特点" class="headerlink" title="三种比较重要的类型及其特点"></a>三种比较重要的类型及其特点</h3><p>Python语言中有很多数据类型都是序列类型，不过比较重要的有三种：str（字符串）、tuple（元祖）、list（列表）</p>
+<ul>
+<li>字符串：字符串可以看成是单一字符的有序组合，属于序列类型，同时因为序列经常用一个字符串表示一个含义，也被看作是基本数据类型</li>
+<li>元组：是包含0个或多个数据项的不可变序列类型。元组生成后是固定的，其中任何数据项不能替换或删除</li>
+<li>列表：可以修改序列中的数据，比较灵活</li>
+</ul>
+<h3 id="序列类型的通用操作符和函数"><a href="#序列类型的通用操作符和函数" class="headerlink" title="序列类型的通用操作符和函数"></a>序列类型的通用操作符和函数</h3><table>
+<thead>
+<tr>
+<th>操作符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>x in s</td>
+<td>如果x是s的元素，返回True，否则返回False</td>
+</tr>
+<tr>
+<td>x not in s</td>
+<td>如果x不是s的元素，返回True，否则返回False</td>
+</tr>
+<tr>
+<td>s + t</td>
+<td>连接s和t</td>
+</tr>
+<tr>
+<td>s * n 或 n * s</td>
+<td>将序列s复制n次</td>
+</tr>
+<tr>
+<td>s[i]</td>
+<td>索引，返回序列的第i个元素</td>
+</tr>
+<tr>
+<td>s[i:j]</td>
+<td>分片，返回包含s第i到j个元素的子序列（不包含第j个元素）</td>
+</tr>
+<tr>
+<td>s[i:j:k]</td>
+<td>步骤分片，返回包含s第i到j个元素的子序列（不包含第j个元素），以k为步数</td>
+</tr>
+<tr>
+<td>len(s)</td>
+<td>序列s的元素个数（长度）</td>
+</tr>
+<tr>
+<td>min(s)</td>
+<td>序列s中的最小元素</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>操作符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>max(s)</td>
+<td>序列s中的最大元素</td>
+</tr>
+<tr>
+<td>s.index(x[,,i[,j]])</td>
+<td>序列s中从i开始到j位置中第一次出现元素x的位置</td>
+</tr>
+<tr>
+<td>s.count(x)</td>
+<td>序列s中出现x的总次数</td>
+</tr>
+</tbody></table>
+<p><strong>生成元组</strong>只需要使用逗号将元素隔离开即可，一个元组可以作为另一个元组的元，可以采用多级索引获取信息。</p>
+<p>元组除了用于表达固定数据项外，还常用于3种情况：函数多返回值、多变量同步赋值、循环遍历</p>
+<h2 id="集合类型"><a href="#集合类型" class="headerlink" title="集合类型"></a>集合类型</h2><p>和数学中集合的特点一样，<strong>集合中的元素不能重复</strong>，元素类型只能是固定数据类型：整数、浮点数、字符串、元组等。</p>
+<p>而列表，字典和集合类型本身都是可变数据类型，不能作为集合的元素出现</p>
+<h3 id="哈希运算"><a href="#哈希运算" class="headerlink" title="哈希运算"></a>哈希运算</h3><p>哈希运算可以将任意长度的二进制值映射为较短的固定长度的二进制值，这个小的二进制值称为哈希值。哈希值是对数据的一种<strong>有损</strong>且<strong>紧凑</strong>的表示形式。Python提供了一个内置的hash（）函数来计算数据的哈希值</p>
+<p>哈希值与哈希前的内容无关，也与这些内容的组合无关，可以说，哈希值是在另一维度的数据。</p>
+<h3 id="结合类型的操作"><a href="#结合类型的操作" class="headerlink" title="结合类型的操作"></a>结合类型的操作</h3><p>由于集合是<strong>无序</strong>组合，它没有<strong>索引</strong>和<strong>位置</strong>的概念，不能分片，集合中元素可以动态增加或删除。集合用大括号（{}）表示，<strong>可以用赋值语句生成一个集合</strong></p>
+<p> <strong>集合类型的操作数</strong></p>
+<table>
+<thead>
+<tr>
+<th>操作数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>S_T或S.difference(T)</td>
+<td>返回一个新集合，包括在集合S中但不在集合T中的元素</td>
+</tr>
+<tr>
+<td>S-=T或S.difference_update(T)</td>
+<td>更新集合S，包括在集合S中但不在集合T中的元素</td>
+</tr>
+<tr>
+<td>S&amp;T或S.intersection(T)</td>
+<td>返回一个新的集合，包括同时集中在集合S和T中的元素</td>
+</tr>
+<tr>
+<td>S&amp;=T或intersction_update(T)</td>
+<td>更新集合S，包括同时集中在集合S和T中的元素</td>
+</tr>
+<tr>
+<td>s^T或s.symmetric_difference(T)</td>
+<td>返回一个新集合，包括集合S和T中的元素但不包括同时在其中的元素</td>
+</tr>
+<tr>
+<td>S^=T或s.symmetric_difference_update(T)</td>
+<td>更新集合S，包括集合S和T中的元素但不包括同时在其中的元素</td>
+</tr>
+<tr>
+<td>S|T或S.union(T)</td>
+<td>返回一个新的集合，包括S和T中的所有元素</td>
+</tr>
+<tr>
+<td>S|=T或S.update(T)</td>
+<td>更新集合S，包括S和T中的所有元素</td>
+</tr>
+<tr>
+<td>S&lt;=T或S.issubset(T)</td>
+<td>如果S与T相同或S是T的子集，返回True，否则返回False</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>操作数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>S&gt;=T或S.issuperset(T)</td>
+<td>如果S与T相同或S是T的超级，返回True，否则返回False</td>
+</tr>
+</tbody></table>
+<p><strong>集合类型的操作函数或方法</strong></p>
+<table>
+<thead>
+<tr>
+<th>操作函数或方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>S.add(x)</td>
+<td>如果数据项x不在集合S中，将x增加到S</td>
+</tr>
+<tr>
+<td>S.clear()</td>
+<td>移除S中的所有数据项</td>
+</tr>
+<tr>
+<td>S.copy()</td>
+<td>返回一个集合S的副本</td>
+</tr>
+<tr>
+<td>S.pop()</td>
+<td>随机返回集合S中的一个元素，如果S为空，产生KeyError异常</td>
+</tr>
+<tr>
+<td>S.discard(x)</td>
+<td>如果x在集合S中，移除该元素；如果x不在集合S中，不报错</td>
+</tr>
+<tr>
+<td>S.remove(x)</td>
+<td>如果x在集合S中，移除该元素；不在则产生KeyError异常</td>
+</tr>
+<tr>
+<td>S.isdisjoint(T)</td>
+<td>如果集合S与T没有相同元素，返回True</td>
+</tr>
+<tr>
+<td>len(S)</td>
+<td>返回集合S的元素个数</td>
+</tr>
+<tr>
+<td>x in S</td>
+<td>如果x是S的元素，返回True，否则返回False</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>操作函数或方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>x not in S</td>
+<td>如果x不是S的元素，返回True，否则返回False</td>
+</tr>
+</tbody></table>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-pycharm下载"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/12/16/pycharm%E4%B8%8B%E8%BD%BD/"
+    >pycharm下载</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/pycharm%E4%B8%8B%E8%BD%BD/" class="article-date">
+  <time datetime="2021-12-16T15:00:16.791Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="pycharm下载"><a href="#pycharm下载" class="headerlink" title="pycharm下载"></a>pycharm下载</h1><p>pycharm是一款现下载量比较多的Python IDE， PyCharm 是 JetBrains 开发的 Python IDE。PyCharm用于一般IDE具备的功能，比如， 调试、语法高亮、Project管理、代码跳转、智能提示、自动完成、单元测试、版本控制……另外，PyCharm还提供了一些很好的功能用于Django开发，同时支持Google App Engine，更酷的是，PyCharm支持IronPython！ </p>
+<h2 id="第一步：-JetBrains-官网"><a href="#第一步：-JetBrains-官网" class="headerlink" title="第一步： JetBrains 官网"></a>第一步： JetBrains 官网</h2><p>进入官网后找到Developer Tools，找到PyCharm，这是针对与Python的软件， JetBrains 还有其他的优秀的产品，下载方式都是一样的。</p>
+<p><img src="/dwx-tx.github.io/2021/12/16/pycharm%E4%B8%8B%E8%BD%BD/截屏\pc下载1.png"></p>
+<h2 id="第二部：选择下载规格"><a href="#第二部：选择下载规格" class="headerlink" title="第二部：选择下载规格"></a>第二部：选择下载规格</h2><p>PyCharm支持Windows，Mac（苹果系统），Linux，这里按照自己的情况来选择对应操作系统下的软件</p>
+<p>在Windows系统下有两个Professional和Community，按照自己的经济能力和需求来选择下载的版本</p>
+<ul>
+<li>Proessional是旗舰版，功能比较全，但是收费</li>
+<li>Community是阉割版，Free，但对于学习是够用的</li>
+</ul>
+<p><img src="/dwx-tx.github.io/2021/12/16/pycharm%E4%B8%8B%E8%BD%BD/截屏\pc下载2.png"></p>
+<h2 id="第三部：安装PyCharm"><a href="#第三部：安装PyCharm" class="headerlink" title="第三部：安装PyCharm"></a>第三部：安装PyCharm</h2><p>安装过程一路next就行，但是有些地方还是要注意</p>
+<p><img src="/dwx-tx.github.io/2021/12/16/pycharm%E4%B8%8B%E8%BD%BD/截屏\pc下载4.png"></p>
+<p><em><strong>在这里如果不是特别需要，最好全选</strong></em></p>
+<ol>
+<li> create desktop shortcut（创建桌面快捷方式</li>
+<li> update path variable(restart needed)更新路径变量将路径添加到环境变量中</li>
+<li> update context menu ： 更新通知</li>
+<li> create associations：关联.py文件，双击都是以pycharm打开</li>
+</ol>
+<h2 id="第四步：优化pycharm设置"><a href="#第四步：优化pycharm设置" class="headerlink" title="第四步：优化pycharm设置"></a>第四步：优化pycharm设置</h2><p>在下载之后为了更人性化的使用，可以个性化设置pycharm</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-python预科一"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/12/16/python%E9%A2%84%E7%A7%91%E4%B8%80/"
+    >初识python语言</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/python%E9%A2%84%E7%A7%91%E4%B8%80/" class="article-date">
+  <time datetime="2021-12-16T15:00:16.791Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="初识python语言"><a href="#初识python语言" class="headerlink" title="初识python语言"></a>初识python语言</h1><h2 id="编译与解释"><a href="#编译与解释" class="headerlink" title="编译与解释"></a>编译与解释</h2><p>高级语言按照计算机执行的方式不同可分为两种：静态语言和脚本语言</p>
+<ul>
+<li>静态语言采用编译执行——&gt;C语言，Java语言</li>
+<li>动态语言采用解释执行——&gt;python语言</li>
+</ul>
+<p><strong>编译</strong>是将源代码转换成目标代码的过程，通常，源代码是高级语言，目标代码是机器语言代码，执行编译的计算机程序称为编译器</p>
+<p><strong>解释</strong>是将源代码<em><strong>逐条</strong></em>转换成目标代码同时逐条运行目标代码的过程。执行解释的计算机程序称为解释器</p>
+<hr>
+<p>注意两者区别：</p>
+<p><em><strong>一旦程序被编译，不再需要编译程序或源代码。解释则在每次程序进行时都需要解释器和代码</strong></em></p>
+<hr>
+<h3 id="编译与解释的好处"><a href="#编译与解释的好处" class="headerlink" title="编译与解释的好处"></a>编译与解释的好处</h3><p><strong>采用编译方式有如下好处</strong></p>
+<ul>
+<li>对于相同的源代码，编译所产生的目标代码执行速度更快。</li>
+<li>目标代码不需要编译器就可以运行，在同类型操作系统上使用灵活</li>
+</ul>
+<p><strong>采用解释方式有如下好处</strong></p>
+<ul>
+<li>解释执行需要保留源代码，程序纠错和维护十分方便</li>
+<li>只要存在编译器，源代码可以在任何操作系统上运行，可移植性好</li>
+</ul>
+<h2 id="python语言概述"><a href="#python语言概述" class="headerlink" title="python语言概述"></a>python语言概述</h2><p><em><strong>python语言是一语法简洁、跨平台、可拓展的开源通用脚本语言</strong></em></p>
+<h3 id="开源软件"><a href="#开源软件" class="headerlink" title="开源软件"></a>开源软件</h3><p>开源软件是一类开放源代码软件的统称，这类软件的源代码在特定可协议范围内，可以被任何人学习、修改、甚至发布。</p>
+<h3 id="Python语言特点"><a href="#Python语言特点" class="headerlink" title="Python语言特点"></a>Python语言特点</h3><ol>
+<li>语法简洁：实现相同功能，python语言的代码行数仅为C语言的1/10~1/5</li>
+<li>与平台无关：作为脚本语言，python程序可以在任何安装了解释器的电脑上运行，可以不经修改实现跨平台</li>
+<li>粘性扩展：python可以通过接口和函数库等方式将其他语言整合在一起</li>
+<li>开源理念：</li>
+<li>灵活运用：功能十分强大，在各种领域都有运用</li>
+<li>强制可读：具有很强的格式，采用强制缩进来实现语句间的逻辑关系</li>
+<li>支持中文：</li>
+<li>模式多样</li>
+<li>库类丰富</li>
+</ol>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-python用python写hello world"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/python%E7%94%A8python%E5%86%99hello%20world/" class="article-date">
+  <time datetime="2021-12-16T15:00:16.754Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="用python写Hello-World"><a href="#用python写Hello-World" class="headerlink" title="用python写Hello World"></a>用python写Hello World</h1><p>运行python程序有两种方式：交互式和文件式</p>
+<h2 id="交互式"><a href="#交互式" class="headerlink" title="交互式"></a>交互式</h2><p>交互式又可分为通过cmd运行和通过IDLE远行两种</p>
+<p><em><strong>这种方式写的Python代码是输入一行，执行一行</strong></em></p>
+<h3 id="通过cmd运行hello-world"><a href="#通过cmd运行hello-world" class="headerlink" title="通过cmd运行hello world"></a>通过cmd运行hello world</h3><ol>
+<li>打开cmd</li>
+<li>在命令控制栏输入python进入python解释器</li>
+<li>在&gt;&gt;&gt;后输入print（“hello world”）</li>
+</ol>
+<p><img src="/dwx-tx.github.io/2021/12/16/python%E7%94%A8python%E5%86%99hello%20world/截屏\通过cmd输出helloworld.png"></p>
+<h3 id="通过IDLE运行hello-world"><a href="#通过IDLE运行hello-world" class="headerlink" title="通过IDLE运行hello world"></a>通过IDLE运行hello world</h3><ol>
+<li>点击python IDLE进入解释器</li>
+<li>在file中新建或打开一个python文件</li>
+<li>在文件中书写print（“hello world”）</li>
+<li>点击Run即可运行</li>
+</ol>
+<h3 id="通过pycharm运行hello-world"><a href="#通过pycharm运行hello-world" class="headerlink" title="通过pycharm运行hello world"></a>通过pycharm运行hello world</h3><p>pycharm和idle都是Python语言的集成开发软件，在这里编写会更加方便，代码也会被pycharm自动保存下来</p>
+<p>步奏和在IDLE编写代码时相同</p>
+<p><img src="/dwx-tx.github.io/2021/12/16/python%E7%94%A8python%E5%86%99hello%20world/截屏\python01.png"></p>
+<h2 id="文件式"><a href="#文件式" class="headerlink" title="文件式"></a>文件式</h2><ol>
+<li>新建一个文本文档</li>
+<li>将新建的文本文档命名，并改变文档的拓展名为.py</li>
+<li>在该文档中书写代码</li>
+<li>通过cmd找到该文档运行<ul>
+<li>查找文档所在的位置</li>
+<li>输入python 文档名.py运行</li>
+</ul>
+</li>
+</ol>
+<p><img src="/dwx-tx.github.io/2021/12/16/python%E7%94%A8python%E5%86%99hello%20world/截屏\cmd01.png"></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-创建高级联结"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/12/16/%E5%88%9B%E5%BB%BA%E9%AB%98%E7%BA%A7%E8%81%94%E7%BB%93/"
+    >创建高级联结</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/%E5%88%9B%E5%BB%BA%E9%AB%98%E7%BA%A7%E8%81%94%E7%BB%93/" class="article-date">
+  <time datetime="2021-12-16T14:54:34.339Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="使用表别名"><a href="#使用表别名" class="headerlink" title="使用表别名"></a>使用表别名</h2><p>别名除了用于列名和计算字段外，SQL还允许给表名起别名。这主要有两个方面：</p>
+<ul>
+<li>缩短SQL语句</li>
+<li>允许在单条SELECT语句中多次使用相同的表</li>
+</ul>
+<p>表另名只在查询执行中使用。与列别名不一样，表别名不返回到客户机。</p>
+<h2 id="使用不同类型的联结"><a href="#使用不同类型的联结" class="headerlink" title="使用不同类型的联结"></a>使用不同类型的联结</h2><p>我们将内部联结或等值联结的简单联结。其他的三种其外联结，它们是自联结、自然联结和外部联结。</p>
+<h3 id="自联结"><a href="#自联结" class="headerlink" title="自联结"></a>自联结</h3><p>在单条SELECT语句中不止一次引用相同的表。</p>
+<p><strong>用自联结而不用子联结</strong>：自联结通常作为外部语句用来代替从相同表中检索数据时使用的子查询语句。虽然最终的结果是相同的，但有时候处理联结远比处理子查询快的多。</p>
+<h3 id="自然联结"><a href="#自然联结" class="headerlink" title="自然联结"></a>自然联结</h3><p>标准的联结返回所有数据，甚至相同的列多次出现。自然联结排除多次出现，每个列只返回一次。</p>
+<p>自然联结是这样一种联结，其中你只能悬着那些唯一的列。这一般是通过对表使用通配符（SELECT*），对所有其他表的列使用明确的子集完成的。</p>
+<p> <strong>通配符只能对第一个表使用</strong></p>
+<h3 id="外部联结"><a href="#外部联结" class="headerlink" title="外部联结"></a>外部联结</h3><p>外部联结：联结包含了那些在相关表中没有关联行的行</p>
+<p><strong>语法结构</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT 全称列名1，全称列名2</span><br><span class="line">FROM 第一个表格 LEFT OUTER JOIN 第二个表格</span><br><span class="line">ON 条件（联结条件）;</span><br></pre></td></tr></table></figure>
+
+<p>其中，OUT JOIN是来指定联结的类型的</p>
+<p>在使用OUTER JOIN语法时，必须使用RIGHT或LEFT关键字指定包括所有行的表（RIGHT指出的是OUTER JOIN右边的表，而LEFT JOIN指出的是OUTER JOIN左边的表）</p>
+<h2 id="使用带聚集函数的联结"><a href="#使用带聚集函数的联结" class="headerlink" title="使用带聚集函数的联结"></a>使用带聚集函数的联结</h2><p>聚集函数可以与联结一起使用。</p>
+<p>在SELECT语句中，可以使用COUNT（）函数等等函数。</p>
+<h2 id="使用联结和联结条件"><a href="#使用联结和联结条件" class="headerlink" title="使用联结和联结条件"></a>使用联结和联结条件</h2><ul>
+<li>注意所使用对的联结类型。一般我们使用内部联结，但使用外部联结也是有效的</li>
+<li>保证正确的联结条件，否则将返回不正确的数据</li>
+<li>应该总是提供联结条件，否则会得出笛卡尔而积（将返回所有列的结合）</li>
+<li>在一个联结中可以包含多个表，甚至对于每个联结可以采用不用的联结类型。虽然这样做是合法的，一般也是很有用的，但应该在测试他们前分别测试每个联结。</li>
+</ul>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-组合查询"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/%E7%BB%84%E5%90%88%E6%9F%A5%E8%AF%A2/" class="article-date">
+  <time datetime="2021-12-16T14:54:34.339Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="组合查询"><a href="#组合查询" class="headerlink" title="组合查询"></a>组合查询</h1><p>多数的SQL查询都值包含从一个或多个表中返回数据的单条SELECT语句，MYSQL也允许执行多个查询，并将结果单一返回。这些组合查询通常称为并或符合查询</p>
+<p><strong>以下两种情况需要用到组合查询</strong></p>
+<ul>
+<li>在单个查询中从不同的表返回类似结构的数据；</li>
+<li>对单个表执行多个查询，按单个查询返回数据。</li>
+</ul>
+<p><strong>组合查询和多个WHERE条件</strong>：组合相同表的两个查询完成的工作与具有多个WHERE子句条件的单条查询完成的工作相同。</p>
+<h2 id="创建组合查询"><a href="#创建组合查询" class="headerlink" title="创建组合查询"></a>创建组合查询</h2><p>可用UNION操作符来组合数条SQL查询。利用<strong>UNION</strong>。可以给出多条SELECT语句，将他们的结果组合成的那个结果集。</p>
+<h3 id="使用UNION"><a href="#使用UNION" class="headerlink" title="使用UNION"></a>使用UNION</h3><p><strong>UNION的使用方法</strong>：所需做得只是给出每条SELECT语句，在各条语句之间放上关键字UNION</p>
+<p><strong>语法结构</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">第一条SELECT语句</span><br><span class="line">UNION</span><br><span class="line">第二天SELECT语句;</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意</strong>：这样使用组合查询，返回的是两条SELECT语句可以返回的数据对的并集。</p>
+<h3 id="UNION规则"><a href="#UNION规则" class="headerlink" title="UNION规则"></a>UNION规则</h3><p><strong>UNION的使用规则</strong>：</p>
+<ul>
+<li>UNION必须由两条或两条以上的SELECT语句组成，语句之间用关联词UNION分隔</li>
+<li>UNION中的每个查询必须包含相同的列、表达式或聚集函数</li>
+<li>列数据类型必须兼容：类型不必完全相同，但必须是DBMS可以隐含地转换的类型</li>
+</ul>
+<h3 id="包含或取消重复的行"><a href="#包含或取消重复的行" class="headerlink" title="包含或取消重复的行"></a>包含或取消重复的行</h3><p>UNION从查询结果集中自动去除重复的行（换句话说，他的行为与单条SELECT语句中使用多个WHERE子句条件一样）。</p>
+<p>如果想要返回所有的数据，使用UNION ALL而不是UNION</p>
+<p><strong>语法结构</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">第一条SELECT语句</span><br><span class="line">UNION ALL</span><br><span class="line">第二条SELECT语句;</span><br></pre></td></tr></table></figure>
+
+<h3 id="对组合查询结果排序"><a href="#对组合查询结果排序" class="headerlink" title="对组合查询结果排序"></a>对组合查询结果排序</h3><p>在使用UNION组合查询时，只能使用一条ORDER BY子句，它必须出现在最后一条SELECT语句之后。对于结果集，不存在用一种方式排序一部分，而有用另一种方式排序另一部分的情况，因此不允许使用多条ORDER BY子句。</p>
+<p><strong>如果要排序，在最后一个SELECT子句中使用</strong></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-使用子查询"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/12/16/%E4%BD%BF%E7%94%A8%E5%AD%90%E6%9F%A5%E8%AF%A2/"
+    >使用子查询</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/%E4%BD%BF%E7%94%A8%E5%AD%90%E6%9F%A5%E8%AF%A2/" class="article-date">
+  <time datetime="2021-12-16T14:54:34.329Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="使用子查询"><a href="#使用子查询" class="headerlink" title="使用子查询"></a>使用子查询</h1><h2 id="子查询"><a href="#子查询" class="headerlink" title="子查询"></a>子查询</h2><p><strong>查询</strong>：任何SQL语句都是查询。但此术语一般指SELECT语句</p>
+<h2 id="利用子查询进行过滤"><a href="#利用子查询进行过滤" class="headerlink" title="利用子查询进行过滤"></a>利用子查询进行过滤</h2><p>通过多重的子查询，可以实现从多个表格中调用其中的某些列</p>
+<p><strong>使用子查询的原理</strong>：在SELECT语句中，子查询总是从内向外处理。在处理上面的SELECT语句时，MySQL实际上执行了两个操作。</p>
+<p><strong>语法结构</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SELECT 表格1中的列名</span><br><span class="line">FROM 表格1</span><br><span class="line">WHERE 列名 IN(</span><br><span class="line">		SELECT 表格2中的列名</span><br><span class="line">		FROM 表格2</span><br><span class="line">		WHERE 限制条件);</span><br></pre></td></tr></table></figure>
+
+<p>从上边的语法结构可以看出，子查询的套用就是用另一个SELECT子句来替换了WHERE子句的过滤的作用</p>
+<p><strong>格式化SQL</strong>：包含子查询的SELECT语句难以阅读和调试，特别是它们较为复杂时更是如此。如上所示把子查询分解为多行并且适当地进行缩进，能极大地简化子查询的使用。</p>
+<p>在WHERE子句中使用子查询能够编写出功能很强并且很灵活地SQL语句。对于能嵌套的子查询的数目没有限制。</p>
+<p><strong>子嵌套的要求</strong>：</p>
+<p>列必须匹配，在WHERE子句中使用子查询应该保证SELECT语句具有与WHERE子句中相同数目的列。</p>
+<h2 id="作为计算字段使用子查询"><a href="#作为计算字段使用子查询" class="headerlink" title="作为计算字段使用子查询"></a>作为计算字段使用子查询</h2><p><strong>相关子查询</strong></p>
+<p>涉及外部查询的子查询。这种类型的子查询称为相关子查询。任何时候只要列名可能有多义性，就必须使用这种语法。</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+  </article>
+  
+
+  
+  <nav class="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/12/">上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/14/">下一页</a>
+  </nav>
+  
+</section>
+</div>
+
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2022
+        <i class="ri-heart-fill heart_icon"></i> dwx
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="dwx-tx的小天地"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>

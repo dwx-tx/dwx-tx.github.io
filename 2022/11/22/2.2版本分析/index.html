@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>2.2版本分析 |  dwx-tx的小天地</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"
+      />
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+       
+ 
+<script>
+var _hmt = _hmt || [];
+(function() {
+	var hm = document.createElement("script");
+	hm.src = "https://hm.baidu.com/hm.js?57bee4bd4703d5af3f9154ce72c6f85f";
+	var s = document.getElementsByTagName("script")[0]; 
+	s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    <link rel="alternate" href="/atom.xml" title="dwx-tx的小天地" type="application/atom+xml">
+</head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-2.2版本分析"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  2.2版本分析
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/11/22/2.2%E7%89%88%E6%9C%AC%E5%88%86%E6%9E%90/" class="article-date">
+  <time datetime="2022-11-22T13:54:01.237Z" itemprop="datePublished">2022-11-22</time>
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">2.8k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">14 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="2-2版本分析"><a href="#2-2版本分析" class="headerlink" title="2.2版本分析"></a>2.2版本分析</h1><p>2.1版本上的升级</p>
+<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>最近在读书做笔记时，想到，传统的手写笔记不容易编写，也不容易阅读。</p>
+<p>而且受写作的人的笔迹影响很大。由于我的笔迹看着很差，但是我是不想改的，因此我想到编写一个程序用来存放我的阅读笔迹。</p>
+<p>正好“阶梯计划”程序还有一个空闲地方没有用，因此就直接塞进这个程序吧</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/z3eGm6"><img src="https://s1.ax1x.com/2022/11/22/z3eGm6.png" alt="z3eGm6.png"></a></p>
+<p>这里模块虽然显示的是党章，但是这里其实只添加了一个别人的超链接，修改一下不会有影响。</p>
+<h2 id="编写"><a href="#编写" class="headerlink" title="编写"></a>编写</h2><h3 id="前端准备"><a href="#前端准备" class="headerlink" title="前端准备"></a>前端准备</h3><p><strong>首先我们应该挑选一个漂亮的前端来渲染我们的数据</strong></p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/z3ewpd"><img src="https://s1.ax1x.com/2022/11/22/z3ewpd.png" alt="z3ewpd.png"></a></p>
+<p>并没有在网上找到合适的页面，就自己手写吧</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/z3eDXt"><img src="https://s1.ax1x.com/2022/11/22/z3eDXt.png" alt="z3eDXt.png"></a></p>
+<p>大概就是这个样子 后续还会添加分页功能</p>
+<p><strong>前端预留的功能有：</strong></p>
+<ul>
+<li>添加金句</li>
+<li>修改金句</li>
+<li>删除金句</li>
+<li>分页查询</li>
+</ul>
+<h3 id="后端准备"><a href="#后端准备" class="headerlink" title="后端准备"></a>后端准备</h3><h4 id="最简单一个测试demo"><a href="#最简单一个测试demo" class="headerlink" title="最简单一个测试demo"></a>最简单一个测试demo</h4><p><strong>数据库准备</strong></p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/z3efpj"><img src="https://s1.ax1x.com/2022/11/22/z3efpj.png" alt="z3efpj.png"></a></p>
+<p>**表名为：fagment(片段)**列名包括</p>
+<table>
+<thead>
+<tr>
+<th>列名</th>
+<th>意义</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>content</td>
+<td>金句内容</td>
+<td>text</td>
+</tr>
+<tr>
+<td>from</td>
+<td>节选自</td>
+<td>varchar</td>
+</tr>
+<tr>
+<td>addByID</td>
+<td>添加的管理员的ID</td>
+<td>varchar</td>
+</tr>
+</tbody></table>
+<p><strong>后端框架搭建</strong></p>
+<p><strong>POJO</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.dwx.pojo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> lombok.AllArgsConstructor;</span><br><span class="line"><span class="keyword">import</span> lombok.Data;</span><br><span class="line"><span class="keyword">import</span> lombok.NoArgsConstructor;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@NoArgsConstructor</span></span><br><span class="line"><span class="meta">@AllArgsConstructor</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Fragment</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String content;</span><br><span class="line">    <span class="keyword">private</span> String from;</span><br><span class="line">    <span class="keyword">private</span> String addByID;</span><br><span class="line">    <span class="keyword">private</span> String addByName;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>Mapper</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">package com.dwx.mapper;</span><br><span class="line"></span><br><span class="line">import com.dwx.pojo.Fragment;</span><br><span class="line">import org.apache.ibatis.annotations.Mapper;</span><br><span class="line"></span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line">@Mapper</span><br><span class="line">public interface FragmentMapper &#123;</span><br><span class="line">    //查询金句操作</span><br><span class="line">    //首先写一个能够查询所有金句的程序试水</span><br><span class="line">    List&lt;Fragment&gt; getAllFragments();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>前端jsp</strong></p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">&quot;java&quot;</span> contentType=<span class="string">&quot;text/html; charset=UTF-8&quot;</span></span><br><span class="line">         pageEncoding=<span class="string">&quot;UTF-8&quot;</span> %&gt;</span><br><span class="line">&lt;%<span class="meta">@include</span> file=<span class="string">&quot;/houtai/jsp/common/head.jsp&quot;</span> %&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;style type=<span class="string">&quot;text/css&quot;</span>&gt;</span><br><span class="line">        .head &#123;</span><br><span class="line">            margin-left: <span class="number">90</span>%;</span><br><span class="line">        &#125;</span><br><span class="line">        .main&#123;</span><br><span class="line">            align-self: center;</span><br><span class="line">            <span class="comment">/*background-color: #61CAD0;*/</span></span><br><span class="line">            <span class="comment">/*height: auto;*/</span></span><br><span class="line">            height: 160px;</span><br><span class="line">            width: <span class="number">60</span>%;</span><br><span class="line">            margin-left: <span class="number">20</span>%;</span><br><span class="line">            margin-bottom: 20px;</span><br><span class="line"></span><br><span class="line">            <span class="comment">/*设置一个边框*/</span></span><br><span class="line">            border:4px solid #eeab07;</span><br><span class="line">            border-radius: 10px;</span><br><span class="line">        &#125;</span><br><span class="line">        .body&#123;</span><br><span class="line">            <span class="comment">/*background-color: #0a5eb6;*/</span></span><br><span class="line">            height: <span class="number">70</span>%;</span><br><span class="line">        &#125;</span><br><span class="line">        .foot&#123;</span><br><span class="line">            <span class="comment">/*background-color: #2b4906;*/</span></span><br><span class="line">            height: <span class="number">30</span>%;</span><br><span class="line">            <span class="comment">/*横向布局*/</span></span><br><span class="line">            display: flex;</span><br><span class="line">            border:2px solid #eeab07;</span><br><span class="line">            border-top-color: #ab1e1e;</span><br><span class="line">        &#125;</span><br><span class="line">        .from&#123;</span><br><span class="line">            <span class="comment">/*background-color: #ab1e1e;*/</span></span><br><span class="line">            height: <span class="number">100</span>%;</span><br><span class="line">            width: <span class="number">40</span>%;</span><br><span class="line">            <span class="comment">/*float: left;*/</span></span><br><span class="line">        &#125;</span><br><span class="line">        .addBy&#123;</span><br><span class="line">            <span class="comment">/*background-color: #6A6AFF;*/</span></span><br><span class="line">            height: <span class="number">100</span>%;</span><br><span class="line">            width: <span class="number">20</span>%;</span><br><span class="line">            <span class="comment">/*float: left;*/</span></span><br><span class="line">            margin-left: <span class="number">5</span>%;</span><br><span class="line">            margin-right: <span class="number">5</span>%;</span><br><span class="line">        &#125;</span><br><span class="line">        .update&#123;</span><br><span class="line">            <span class="comment">/*background-color: #aaaaaa;*/</span></span><br><span class="line">            height: <span class="number">100</span>%;</span><br><span class="line">            width: <span class="number">10</span>%;</span><br><span class="line">            margin-left: <span class="number">5</span>%;</span><br><span class="line">            margin-right: <span class="number">5</span>%;</span><br><span class="line">            <span class="comment">/*float: right;*/</span></span><br><span class="line">            text-align: center;</span><br><span class="line">        &#125;</span><br><span class="line">        .delete&#123;</span><br><span class="line">            <span class="comment">/*background-color: #f6f7f9;*/</span></span><br><span class="line">            height: <span class="number">100</span>%;</span><br><span class="line">            width: <span class="number">10</span>%;</span><br><span class="line">            margin-left: <span class="number">5</span>%;</span><br><span class="line">            text-align: center;</span><br><span class="line">            <span class="comment">/*float: right;*/</span></span><br><span class="line">        &#125;</span><br><span class="line">        .p1&#123;</span><br><span class="line">            font-weight: bold;</span><br><span class="line">            font-family: 华文楷体;</span><br><span class="line">            font-size: large;</span><br><span class="line">        &#125;</span><br><span class="line">        .p2&#123;</span><br><span class="line">            font-weight: bold;</span><br><span class="line">            font-family: <span class="string">&quot;Microsoft Yahei&quot;</span>, <span class="string">&quot;Hiragino Sans GB&quot;</span>, <span class="string">&quot;Helvetica Neue&quot;</span>, Helvetica, tahoma, arial, Verdana, sans-serif, <span class="string">&quot;WenQuanYi Micro Hei&quot;</span>, <span class="string">&quot;\5B8B\4F53&quot;</span>;</span><br><span class="line">            font-size: large;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;right&quot;</span>&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;location&quot;</span>&gt;</span><br><span class="line">        &lt;strong&gt;你现在所在的位置是:&lt;/strong&gt;</span><br><span class="line">        &lt;span&gt;金句节选界面&lt;/span&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;head&quot;</span>&gt;</span><br><span class="line">        &lt;form  method=<span class="string">&quot;get&quot;</span> action=<span class="string">&quot;$&#123;pageContext.request.contextPath &#125;/houtai/jsp/bill.do&quot;</span>&gt;</span><br><span class="line">            &lt;input  value=<span class="string">&quot;添加金句&quot;</span> type=<span class="string">&quot;submit&quot;</span> id=<span class="string">&quot;searchbutton&quot;</span>&gt;</span><br><span class="line">        &lt;/form&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;!--文章块--&gt;</span><br><span class="line">    &lt;c:forEach <span class="keyword">var</span>=<span class="string">&quot;fragment&quot;</span> items=<span class="string">&quot;$&#123;fragments&#125;&quot;</span> varStatus=<span class="string">&quot;status&quot;</span>&gt;</span><br><span class="line">            &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;main&quot;</span>&gt;</span><br><span class="line">                &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;body&quot;</span>&gt;</span><br><span class="line">                    &lt;p <span class="class"><span class="keyword">class</span> </span>=<span class="string">&quot;p1&quot;</span>&gt;$&#123;fragment.content&#125;</span><br><span class="line">                    &lt;/p&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">                &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;foot&quot;</span>&gt;</span><br><span class="line">                    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;from&quot;</span>&gt;</span><br><span class="line">                        &lt;p <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;p2&quot;</span>&gt;节选自: $&#123;fragment.from&#125;&lt;/p&gt;</span><br><span class="line">                    &lt;/div&gt;</span><br><span class="line">                    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;addBy&quot;</span>&gt;</span><br><span class="line">                        &lt;p <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;p2&quot;</span>&gt;添加者: $&#123;fragment.addByID&#125;&lt;/p&gt;</span><br><span class="line">                    &lt;/div&gt;</span><br><span class="line">                    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;update&quot;</span>&gt;</span><br><span class="line">                        &lt;p <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;p2&quot;</span>&gt;&lt;a&gt;修改&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">                    &lt;/div&gt;</span><br><span class="line">                    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;delete&quot;</span>&gt;</span><br><span class="line">                        &lt;p <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;p2&quot;</span>&gt;&lt;a&gt;删除&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">                    &lt;/div&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">    &lt;/c:forEach&gt;</span><br><span class="line"></span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/section&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;%<span class="meta">@include</span> file=<span class="string">&quot;/houtai/jsp/common/foot.jsp&quot;</span> %&gt;</span><br><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span> src=<span class="string">&quot;$&#123;pageContext.request.contextPath &#125;/houtai/js/billlist.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>最简单的框架执行结束</strong></p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/z3eX9J"><img src="https://s1.ax1x.com/2022/11/22/z3eX9J.png" alt="z3eX9J.png"></a></p>
+<h4 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h4><p><strong>查询数据需要修改</strong></p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/z3exj1"><img src="https://s1.ax1x.com/2022/11/22/z3exj1.png" alt="z3exj1.png"></a></p>
+<p>这里应该是name，不是id，在service层进行一个修改即可。</p>
+<h4 id="编写添加金句程序"><a href="#编写添加金句程序" class="headerlink" title="编写添加金句程序"></a>编写添加金句程序</h4><p><strong>前端准备</strong></p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/z3m9HK"><img src="https://s1.ax1x.com/2022/11/22/z3m9HK.png" alt="z3m9HK.png"></a></p>
+<p>我的水平 写成这样已经是我的极限了</p>
+<p><strong>前端代码</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;</span><br><span class="line">         pageEncoding=&quot;UTF-8&quot; %&gt;</span><br><span class="line">&lt;%@include file=&quot;/houtai/jsp/common/head.jsp&quot; %&gt;</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css">        <span class="selector-class">.fragmentAddBody</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="attribute">height</span>: <span class="number">80%</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">width</span>: <span class="number">30%</span>;</span></span><br><span class="line"><span class="css">            <span class="comment">/*background-color: #eee304;*/</span></span></span><br><span class="line"><span class="css">            <span class="comment">/*居中*/</span></span></span><br><span class="line"><span class="css">            <span class="attribute">margin-left</span>: <span class="number">30%</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">margin-top</span>: <span class="number">20px</span>;</span></span><br><span class="line"><span class="css"></span></span><br><span class="line"><span class="css">            <span class="comment">/*添加边框*/</span></span></span><br><span class="line"><span class="css">            <span class="attribute">border-width</span>: <span class="number">6px</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">border-style</span>: solid;</span></span><br><span class="line"><span class="css">            <span class="attribute">border-color</span>: <span class="number">#a40505</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">border-radius</span>: <span class="number">10px</span>;</span></span><br><span class="line"><span class="css"></span></span><br><span class="line"><span class="css">        &#125;</span></span><br><span class="line"><span class="css"></span></span><br><span class="line"><span class="css">        <span class="selector-class">.fragmentAddContest</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="attribute">height</span>: <span class="number">240px</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">width</span>: <span class="number">90%</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">margin-top</span>: <span class="number">20px</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">margin-left</span>: <span class="number">5%</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">background-color</span>: <span class="number">#10c278</span>;</span></span><br><span class="line"><span class="css">        &#125;</span></span><br><span class="line"><span class="css"></span></span><br><span class="line"><span class="css">        <span class="selector-class">.fragmentAddFrom</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="attribute">height</span>: <span class="number">60px</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">width</span>: <span class="number">90%</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">margin-top</span>: <span class="number">8px</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">margin-left</span>: <span class="number">5%</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">background-color</span>: <span class="number">#f6bc04</span>;</span></span><br><span class="line"><span class="css">        &#125;</span></span><br><span class="line"><span class="css"></span></span><br><span class="line"><span class="css">        <span class="selector-class">.fragmentAddBtn</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="attribute">height</span>: <span class="number">60px</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">width</span>: <span class="number">90%</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">margin-top</span>: <span class="number">8px</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">margin-left</span>: <span class="number">5%</span>;</span></span><br><span class="line"><span class="css"></span></span><br><span class="line"><span class="css">            <span class="comment">/*background-color: #ab1e1e;*/</span></span></span><br><span class="line"><span class="css">            <span class="attribute">display</span>: flex;</span></span><br><span class="line"><span class="css"></span></span><br><span class="line"><span class="css">        &#125;</span></span><br><span class="line"><span class="css"></span></span><br><span class="line"><span class="css">        <span class="selector-class">.save</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="comment">/*background-color: #a2d866;*/</span></span></span><br><span class="line"><span class="css">            <span class="attribute">height</span>: <span class="number">60px</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">width</span>: <span class="number">40%</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">margin-right</span>: <span class="number">20%</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">margin-left</span>: <span class="number">5%</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">margin-top</span>: <span class="number">20px</span>;</span></span><br><span class="line"><span class="css">        &#125;</span></span><br><span class="line"><span class="css"></span></span><br><span class="line"><span class="css">        <span class="selector-class">.back</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="comment">/*background-color: #61CAD0;*/</span></span></span><br><span class="line"><span class="css">            <span class="attribute">height</span>: <span class="number">60px</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">width</span>: <span class="number">40%</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">margin-top</span>: <span class="number">20px</span>;</span></span><br><span class="line"><span class="css">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.contest</span>&#123;</span></span><br><span class="line"><span class="css"></span></span><br><span class="line"><span class="css"></span></span><br><span class="line"><span class="css">        &#125;</span></span><br><span class="line"><span class="css"></span></span><br><span class="line"><span class="css"></span></span><br><span class="line"><span class="css"></span></span><br><span class="line"><span class="css"></span></span><br><span class="line"><span class="css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;right&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;location&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">strong</span>&gt;</span>你现在所在的位置是:<span class="tag">&lt;/<span class="name">strong</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>金句管理页面 &gt;&gt; 金句添加页面<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;fragmentAddBody&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--操作按钮--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span> <span class="attr">action</span>=<span class="string">&quot;$&#123;pageContext.request.contextPath&#125;/fragmentAdd&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;fragmentAddContest&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">p</span>&gt;</span>金句片段:<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">cols</span>=<span class="string">&quot;46&quot;</span> <span class="attr">name</span>=<span class="string">&quot;fragmentContest&quot;</span> <span class="attr">rows</span>=<span class="string">&quot;16&quot;</span> <span class="attr">class</span>=<span class="string">&quot;contest&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;fragmentAddFrom&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">p</span>&gt;</span>选自: <span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">cols</span>=<span class="string">&quot;46&quot;</span> <span class="attr">name</span>=<span class="string">&quot;fragmentFrom&quot;</span> <span class="attr">rows</span>=<span class="string">&quot;3&quot;</span> <span class="attr">class</span>=<span class="string">&quot;from&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;fragmentAddBtn&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;save&quot;</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">input</span>  <span class="attr">style</span>=<span class="string">&quot;width: 100px&quot;</span>   <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>   <span class="attr">value</span>=<span class="string">&quot;保存&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;back&quot;</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">input</span>  <span class="attr">style</span>=<span class="string">&quot;width: 100px&quot;</span>   <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>   <span class="attr">value</span>=<span class="string">&quot;返回&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"></span><br><span class="line">&lt;%@include file=&quot;/houtai/jsp/common/foot.jsp&quot; %&gt;</span><br><span class="line">&lt;%--<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;$&#123;pageContext.request.contextPath &#125;/js/billmodify.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>--%&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>后端编写</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(&quot;/fragmentAdd&quot;)</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> String <span class="title">fragmentAdd</span><span class="params">(String fragmentContest, String fragmentFrom, String type, HttpServletRequest req, HttpServletResponse resp)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">      <span class="comment">//添加一个过滤器</span></span><br><span class="line">      UserUtil util = <span class="keyword">new</span> UserUtil();</span><br><span class="line">      <span class="keyword">boolean</span> b1 = <span class="keyword">false</span>;</span><br><span class="line">      <span class="keyword">try</span> &#123;</span><br><span class="line">          b1 = util.userExist(req, resp);</span><br><span class="line">      &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">          <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(e);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (!b1) &#123;</span><br><span class="line">          <span class="keyword">return</span> <span class="string">&quot;/error/index&quot;</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">//首先判断类型</span></span><br><span class="line">      System.out.println(<span class="string">&quot;该操作的类型为: &quot;</span> + type);</span><br><span class="line">      <span class="keyword">if</span> (type.equals(<span class="string">&quot;保存&quot;</span>)) &#123;</span><br><span class="line"></span><br><span class="line">          System.out.println(<span class="string">&quot;输入的金句内容是: &quot;</span> + fragmentContest);</span><br><span class="line">          System.out.println(<span class="string">&quot;输入的金句节选自: &quot;</span> + fragmentFrom);</span><br><span class="line">          <span class="comment">//从session里得到用户ID</span></span><br><span class="line">          HttpSession session = req.getSession();</span><br><span class="line">          User user = (User) session.getAttribute(<span class="string">&quot;userSession&quot;</span>);</span><br><span class="line">          System.out.println(<span class="string">&quot;添加者ID: &quot;</span> + user.getId());</span><br><span class="line"></span><br><span class="line">          <span class="keyword">if</span> (!fragmentContest.equals(<span class="string">&quot;&quot;</span>) &amp;&amp; !fragmentFrom.equals(<span class="string">&quot;&quot;</span>)) &#123;</span><br><span class="line">              <span class="comment">//如果都不为空 则进行添加程序</span></span><br><span class="line">              <span class="keyword">boolean</span> b = fragmentService.addFragment(fragmentContest, fragmentFrom, user.getId());</span><br><span class="line">              <span class="keyword">if</span> (b) &#123;</span><br><span class="line">                  System.out.println(<span class="string">&quot;添加金句成功&quot;</span>);</span><br><span class="line">              &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                  System.out.println(<span class="string">&quot;添加金句失败&quot;</span>);</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">return</span> <span class="string">&quot;/houtai/jsp/billadd&quot;</span>;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="comment">//执行一个查询程序</span></span><br><span class="line">          getALlFragments(req, resp);</span><br><span class="line">          <span class="keyword">return</span> <span class="string">&quot;/houtai/jsp/billlist&quot;</span>;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="编写删除程序"><a href="#编写删除程序" class="headerlink" title="编写删除程序"></a>编写删除程序</h4><p><a target="_blank" rel="noopener" href="https://imgse.com/i/z3miND"><img src="https://s1.ax1x.com/2022/11/22/z3miND.png" alt="z3miND.png"></a></p>
+<p>删除成功</p>
+<p><img src="/dwx-tx.github.io/2022/11/22/2.2%E7%89%88%E6%9C%AC%E5%88%86%E6%9E%90/Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20221122181527392.png" alt="image-20221122181527392"></p>
+<p><strong>后端代码</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//删除金句</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/fragmentDelete&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">fragmentDelete</span><span class="params">(String fragmentContent,HttpServletRequest req, HttpServletResponse resp)</span></span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;要删除金句的内容是:&quot;</span>+fragmentContent);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//添加一个过滤器</span></span><br><span class="line">        UserUtil util = <span class="keyword">new</span> UserUtil();</span><br><span class="line">        <span class="keyword">boolean</span> b1 = <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            b1 = util.userExist(req, resp);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(e);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (!b1) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;/error/index&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//进行一个判断看能不能删除</span></span><br><span class="line">        HttpSession session = req.getSession();</span><br><span class="line">        User user = (User) session.getAttribute(<span class="string">&quot;userSession&quot;</span>);</span><br><span class="line">        String id = user.getId();</span><br><span class="line">        System.out.println(id);</span><br><span class="line">        <span class="keyword">boolean</span> b = util.userRole(req, resp, id);</span><br><span class="line">        <span class="keyword">if</span> (b)&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;有资格，可以删除&quot;</span>);</span><br><span class="line">            fragmentService.deleteFragment(fragmentContent);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;没资格删除&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//再次更新一下fragmentList</span></span><br><span class="line">        getALlFragments(req, resp);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;/houtai/jsp/billlist&quot;</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="编写修改程序"><a href="#编写修改程序" class="headerlink" title="编写修改程序"></a>编写修改程序</h4><p>根据修改程序的逻辑，应该分为两块，</p>
+<p><strong>第一块，点击能够跳转到类似查看的页面:</strong></p>
+<p><strong>前端编写：</strong></p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/z3mVgA"><img src="https://s1.ax1x.com/2022/11/22/z3mVgA.png" alt="z3mVgA.png"></a></p>
+<p><strong>代码:</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;</span><br><span class="line">         pageEncoding=&quot;UTF-8&quot; %&gt;</span><br><span class="line">&lt;%@include file=&quot;/houtai/jsp/common/head.jsp&quot; %&gt;</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css">        <span class="selector-class">.fragmentAddBody</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="attribute">height</span>: <span class="number">80%</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">width</span>: <span class="number">30%</span>;</span></span><br><span class="line"><span class="css">            <span class="comment">/*background-color: #eee304;*/</span></span></span><br><span class="line"><span class="css">            <span class="comment">/*居中*/</span></span></span><br><span class="line"><span class="css">            <span class="attribute">margin-left</span>: <span class="number">30%</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">margin-top</span>: <span class="number">20px</span>;</span></span><br><span class="line"><span class="css"></span></span><br><span class="line"><span class="css">            <span class="comment">/*添加边框*/</span></span></span><br><span class="line"><span class="css">            <span class="attribute">border-width</span>: <span class="number">6px</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">border-style</span>: solid;</span></span><br><span class="line"><span class="css">            <span class="attribute">border-color</span>: <span class="number">#a40505</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">border-radius</span>: <span class="number">10px</span>;</span></span><br><span class="line"><span class="css"></span></span><br><span class="line"><span class="css">        &#125;</span></span><br><span class="line"><span class="css"></span></span><br><span class="line"><span class="css">        <span class="selector-class">.fragmentAddContest</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="attribute">height</span>: <span class="number">240px</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">width</span>: <span class="number">90%</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">margin-top</span>: <span class="number">20px</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">margin-left</span>: <span class="number">5%</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">background-color</span>: <span class="number">#10c278</span>;</span></span><br><span class="line"><span class="css">        &#125;</span></span><br><span class="line"><span class="css"></span></span><br><span class="line"><span class="css">        <span class="selector-class">.fragmentAddFrom</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="attribute">height</span>: <span class="number">60px</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">width</span>: <span class="number">90%</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">margin-top</span>: <span class="number">8px</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">margin-left</span>: <span class="number">5%</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">background-color</span>: <span class="number">#f6bc04</span>;</span></span><br><span class="line"><span class="css">        &#125;</span></span><br><span class="line"><span class="css"></span></span><br><span class="line"><span class="css">        <span class="selector-class">.fragmentAddBtn</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="attribute">height</span>: <span class="number">60px</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">width</span>: <span class="number">90%</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">margin-top</span>: <span class="number">8px</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">margin-left</span>: <span class="number">5%</span>;</span></span><br><span class="line"><span class="css"></span></span><br><span class="line"><span class="css">            <span class="comment">/*background-color: #ab1e1e;*/</span></span></span><br><span class="line"><span class="css">            <span class="attribute">display</span>: flex;</span></span><br><span class="line"><span class="css"></span></span><br><span class="line"><span class="css">        &#125;</span></span><br><span class="line"><span class="css"></span></span><br><span class="line"><span class="css">        <span class="selector-class">.save</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="comment">/*background-color: #a2d866;*/</span></span></span><br><span class="line"><span class="css">            <span class="attribute">height</span>: <span class="number">60px</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">width</span>: <span class="number">40%</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">margin-right</span>: <span class="number">20%</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">margin-left</span>: <span class="number">5%</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">margin-top</span>: <span class="number">20px</span>;</span></span><br><span class="line"><span class="css">        &#125;</span></span><br><span class="line"><span class="css"></span></span><br><span class="line"><span class="css">        <span class="selector-class">.back</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="comment">/*background-color: #61CAD0;*/</span></span></span><br><span class="line"><span class="css">            <span class="attribute">height</span>: <span class="number">60px</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">width</span>: <span class="number">40%</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">margin-top</span>: <span class="number">20px</span>;</span></span><br><span class="line"><span class="css">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.contest</span>&#123;</span></span><br><span class="line"><span class="css"></span></span><br><span class="line"><span class="css"></span></span><br><span class="line"><span class="css">        &#125;</span></span><br><span class="line"><span class="css"></span></span><br><span class="line"><span class="css"></span></span><br><span class="line"><span class="css"></span></span><br><span class="line"><span class="css"></span></span><br><span class="line"><span class="css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;right&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;location&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">strong</span>&gt;</span>你现在所在的位置是:<span class="tag">&lt;/<span class="name">strong</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>金句管理页面 &gt;&gt; 金句添加页面<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;fragmentAddBody&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--操作按钮--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span> <span class="attr">action</span>=<span class="string">&quot;$&#123;pageContext.request.contextPath&#125;&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;fragmentAddContest&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">p</span>&gt;</span>金句片段:<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">textarea</span>  <span class="attr">cols</span>=<span class="string">&quot;46&quot;</span> <span class="attr">name</span>=<span class="string">&quot;fragmentContest&quot;</span> <span class="attr">rows</span>=<span class="string">&quot;16&quot;</span> <span class="attr">class</span>=<span class="string">&quot;contest&quot;</span>&gt;</span>$&#123;fragment.content&#125;<span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;fragmentAddFrom&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">p</span>&gt;</span>选自: <span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">cols</span>=<span class="string">&quot;46&quot;</span> <span class="attr">name</span>=<span class="string">&quot;fragmentFrom&quot;</span> <span class="attr">rows</span>=<span class="string">&quot;3&quot;</span> <span class="attr">class</span>=<span class="string">&quot;from&quot;</span>&gt;</span>$&#123;fragment.from&#125;<span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;fragmentAddBtn&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;save&quot;</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">input</span>  <span class="attr">style</span>=<span class="string">&quot;width: 100px&quot;</span>   <span class="attr">name</span>=<span class="string">&quot;type&quot;</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>   <span class="attr">value</span>=<span class="string">&quot;保存&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;back&quot;</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">input</span>  <span class="attr">style</span>=<span class="string">&quot;width: 100px&quot;</span>   <span class="attr">name</span>=<span class="string">&quot;type&quot;</span>  <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>   <span class="attr">value</span>=<span class="string">&quot;返回&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"></span><br><span class="line">&lt;%@include file=&quot;/houtai/jsp/common/foot.jsp&quot; %&gt;</span><br><span class="line">&lt;%--<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;$&#123;pageContext.request.contextPath &#125;/js/billmodify.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>--%&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>后端代码:</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(&quot;/fragmentUpdateView&quot;)</span></span><br><span class="line"><span class="comment">//修改程序分为两个 第一个是一个查询程序</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">fragmentUpdateView</span><span class="params">(<span class="keyword">int</span> id,HttpServletRequest req, HttpServletResponse resp)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    System.out.println(<span class="string">&quot;要修改的金句的id为: &quot;</span>+id);</span><br><span class="line"></span><br><span class="line">    Fragment fragment = fragmentService.getFragmentByID(id);</span><br><span class="line"></span><br><span class="line">    req.getSession().setAttribute(<span class="string">&quot;fragment&quot;</span>,fragment);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;/houtai/jsp/billmodify&quot;</span>;</span><br><span class="line"></span><br><span class="line">&#125;    <span class="meta">@RequestMapping(&quot;/fragmentUpdateView&quot;)</span></span><br><span class="line"><span class="comment">//修改程序分为两个 第一个是一个查询程序</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">fragmentUpdateView</span><span class="params">(<span class="keyword">int</span> id,HttpServletRequest req, HttpServletResponse resp)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    System.out.println(<span class="string">&quot;要修改的金句的id为: &quot;</span>+id);</span><br><span class="line"></span><br><span class="line">    Fragment fragment = fragmentService.getFragmentByID(id);</span><br><span class="line"></span><br><span class="line">    req.getSession().setAttribute(<span class="string">&quot;fragment&quot;</span>,fragment);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;/houtai/jsp/billmodify&quot;</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>第二个程序是保存修改结果程序</strong></p>
+<p><strong>修改前：</strong></p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/z3muHf"><img src="https://s1.ax1x.com/2022/11/22/z3muHf.png" alt="z3muHf.png"></a></p>
+<p><strong>修改之后</strong></p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/z3mQUS"><img src="https://s1.ax1x.com/2022/11/22/z3mQUS.png" alt="z3mQUS.png"></a></p>
+<p><strong>后端代码</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//修改金句</span></span><br><span class="line">    <span class="comment">//修改程序</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/fragmentUpdate&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">fragmentUpdate</span><span class="params">(String content, String from, String type, HttpServletRequest req, HttpServletResponse resp)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//用session获得id</span></span><br><span class="line">        Fragment fragmentOld = (Fragment) req.getSession().getAttribute(<span class="string">&quot;fragment&quot;</span>);</span><br><span class="line">        <span class="keyword">int</span> id = fragmentOld.getId();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;要修改的金句: &quot;</span>+content);</span><br><span class="line">        System.out.println(<span class="string">&quot;选自: &quot;</span>+from);</span><br><span class="line">        System.out.println(<span class="string">&quot;操作内容: &quot;</span>+type);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (type.equals(<span class="string">&quot;保存&quot;</span>)) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//修改程序</span></span><br><span class="line">            fragmentService.updateFragment(content, from, id);</span><br><span class="line"></span><br><span class="line">            <span class="comment">//修改完更新一下程序</span></span><br><span class="line">            Fragment fragment = fragmentService.getFragmentByID(id);</span><br><span class="line">            req.getSession().setAttribute(<span class="string">&quot;fragment&quot;</span>, fragment);</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;/houtai/jsp/billmodify&quot;</span>;</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">//没有修改 直接跳转回原页面</span></span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;/houtai/jsp/billlist&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h2><p>一个简单的包含增删改查程序的一个模块就写好了，不过还有遗留问题</p>
+<ul>
+<li>没有分页查询</li>
+<li>分页查询需要大量的数据，但是我现在还没有这些数据</li>
+</ul>
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          Donate
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://dwx-tx/dwx-tx.github.io/2022/11/22/2.2%E7%89%88%E6%9C%AC%E5%88%86%E6%9E%90/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2022/12/31/%E6%95%99%E5%B8%88%E4%B8%93%E4%B8%9A%E5%8F%91%E5%B1%95%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            我的教师专业发展学习心得（自用）
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2022/11/16/%E7%AC%AC%E4%B8%89%E7%AB%A0%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%9C%E4%B8%9A/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">第三章数据库作业</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2022
+        <i class="ri-heart-fill heart_icon"></i> dwx
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="dwx-tx的小天地"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>

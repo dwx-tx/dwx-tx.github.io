@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>get文件form多重文件夹 |  dwx-tx的小天地</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"
+      />
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+       
+ 
+<script>
+var _hmt = _hmt || [];
+(function() {
+	var hm = document.createElement("script");
+	hm.src = "https://hm.baidu.com/hm.js?57bee4bd4703d5af3f9154ce72c6f85f";
+	var s = document.getElementsByTagName("script")[0]; 
+	s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    <link rel="alternate" href="/atom.xml" title="dwx-tx的小天地" type="application/atom+xml">
+</head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-getImg"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  get文件form多重文件夹
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/getImg/" class="article-date">
+  <time datetime="2021-12-16T14:52:13.331Z" itemprop="datePublished">2021-12-16</time>
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">2.4k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">10 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="图片抽取程序"><a href="#图片抽取程序" class="headerlink" title="图片抽取程序"></a>图片抽取程序</h1><h2 id="最基础的文件读写"><a href="#最基础的文件读写" class="headerlink" title="最基础的文件读写"></a>最基础的文件读写</h2><p><strong>最基础的文件读写是通过IO流来实现的，格式比较固定，只能实现文件到文件的程序处理</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">package com.dwx.getImage;</span><br><span class="line"></span><br><span class="line">import java.io.*;</span><br><span class="line">//这是一个简单的文件读写 只能实现文件到文件</span><br><span class="line">public class getImage &#123;</span><br><span class="line">    //获得文件是一个递归函数</span><br><span class="line">    public void getImage(File fileIn,File fileOut) throws IOException &#123;</span><br><span class="line">        //对于这个方法需要两个变量 一个是目标文件fileIn 一个是终点文件fileOut</span><br><span class="line">        //在java中 文件的存储方式是集合(list)</span><br><span class="line">        //通过InputStream来存储源文件 通过OutputStream来表示目标地址</span><br><span class="line">        FileInputStream fi = null;</span><br><span class="line">        FileOutputStream fo = null;</span><br><span class="line">        try &#123;</span><br><span class="line">            //为目标文件创建成一个流</span><br><span class="line">           fi = new FileInputStream(fileIn);</span><br><span class="line">           fo = new FileOutputStream(fileOut);</span><br><span class="line">           //创造一个数组来存取这个文件</span><br><span class="line">            byte[] buffer = new byte[1024];</span><br><span class="line">            int len;</span><br><span class="line">            while ((len = fi.read(buffer))!=-1)&#123;</span><br><span class="line">                fo.write(buffer,0,len);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125; catch (FileNotFoundException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;finally &#123;</span><br><span class="line">            //对于用完的资源要及时关闭</span><br><span class="line">            try &#123;</span><br><span class="line">                fi.close();</span><br><span class="line">            &#125; catch (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="实现对文件的遍历"><a href="#实现对文件的遍历" class="headerlink" title="实现对文件的遍历"></a>实现对文件的遍历</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">package com.dwx.getImage;</span><br><span class="line"></span><br><span class="line">import java.io.*;</span><br><span class="line"></span><br><span class="line">//这个类我们来测试一下从文件夹中得到文件，并指定输出到我们想到的位置</span><br><span class="line">public class getImageDemo02 &#123;</span><br><span class="line">    //这个方法已经实现了对文件的遍历</span><br><span class="line">    public void getImage(File fileIn,File fileOut)&#123;</span><br><span class="line">        //我们要知道 文件类型可能是文件，也可能是文件夹</span><br><span class="line">        //这里我们来判断是否是一个文件夹</span><br><span class="line">        //通过 fileIn.listFiles就能把一个文件夹转化成list</span><br><span class="line">        //通过递归来实现对整个文件夹的遍历</span><br><span class="line">//        System.out.println(fileIn.isDirectory());</span><br><span class="line">//        for (File f : fileIn.listFiles())&#123;</span><br><span class="line">//            System.out.println(f);</span><br><span class="line">//        &#125;</span><br><span class="line">        //对于文件遍历 若是文件夹 就在进入下一次 如果是文件 return</span><br><span class="line">        if (fileIn.isDirectory())&#123;</span><br><span class="line">            for(File fi:fileIn.listFiles())&#123;</span><br><span class="line">                System.out.println(fi);</span><br><span class="line">                getImage(fi,fileOut);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        //如果不是就直接返回</span><br><span class="line">        else&#123;</span><br><span class="line">            //System.out.println(fileIn.getAbsolutePath());</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        getImageDemo02 getImageDemo02 = new getImageDemo02();</span><br><span class="line">        File fi = new File(&quot;E:/get&quot;);</span><br><span class="line">        File fo = new File(&quot;E:/out&quot;);</span><br><span class="line">        getImageDemo02.getImage(fi,fo);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="对完整的实现文件遍历并且下载的实现"><a href="#对完整的实现文件遍历并且下载的实现" class="headerlink" title="对完整的实现文件遍历并且下载的实现"></a>对完整的实现文件遍历并且下载的实现</h2><h3 id="程序作用"><a href="#程序作用" class="headerlink" title="程序作用"></a>程序作用</h3><p>在得到一个多重文件夹时，提取文件夹中的文件会十分麻烦，因此，我编写了一个程序。程序能够遍历整个文件夹中的文件，并且把文件复制到我们的目标文件夹。</p>
+<h3 id="程序的基本思想"><a href="#程序的基本思想" class="headerlink" title="程序的基本思想"></a>程序的基本思想</h3><p>编写程序时的基础思想为：如果读入的是一个文件夹，就操作文件夹中的元素（文件通过file.listFiles( )将文件转换成list，通过for循环进行遍历）。如果读入的是一个文件，就copy这个文件到目标文件夹</p>
+<h3 id="程序的技术支持"><a href="#程序的技术支持" class="headerlink" title="程序的技术支持"></a>程序的技术支持</h3><ul>
+<li>I/O流 IO流的使用把文件读为一个流 对流的处理会比较简单</li>
+<li>递归的使用：程序的基本思想是递归的，因此，使用递归思想写程序更加方便，且易于理解</li>
+<li>文件名的获得：file.getName()就能获得文件的文件名 + 目标文件夹名 就能创造出一个新的文件 通过流对其进行操作</li>
+</ul>
+<h3 id="copy方法的实现"><a href="#copy方法的实现" class="headerlink" title="copy方法的实现"></a>copy方法的实现</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">package com.dwx.getImage;</span><br><span class="line"></span><br><span class="line">import java.io.*;</span><br><span class="line">//这是一个简单的文件读写 只能实现文件到文件</span><br><span class="line">public class getImage &#123;</span><br><span class="line">    //获得文件是一个递归函数</span><br><span class="line">    public void getImage(File fileIn,File fileOut) throws IOException &#123;</span><br><span class="line">        //对于这个方法需要两个变量 一个是目标文件fileIn 一个是终点文件fileOut</span><br><span class="line">        //在java中 文件的存储方式是集合(list)</span><br><span class="line">        //通过InputStream来存储源文件 通过OutputStream来表示目标地址</span><br><span class="line">        FileInputStream fi = null;</span><br><span class="line">        FileOutputStream fo = null;</span><br><span class="line">        try &#123;</span><br><span class="line">            //为目标文件创建成一个流</span><br><span class="line">           fi = new FileInputStream(fileIn);</span><br><span class="line">           fo = new FileOutputStream(fileOut);</span><br><span class="line">           //创造一个数组来存取这个文件</span><br><span class="line">            byte[] buffer = new byte[1024];</span><br><span class="line">            int len;</span><br><span class="line">            while ((len = fi.read(buffer))!=-1)&#123;</span><br><span class="line">                fo.write(buffer,0,len);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125; catch (FileNotFoundException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;finally &#123;</span><br><span class="line">            //对于用完的资源要及时关闭</span><br><span class="line">            try &#123;</span><br><span class="line">                fi.close();</span><br><span class="line">            &#125; catch (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="遍历-递归-方法的实现"><a href="#遍历-递归-方法的实现" class="headerlink" title="遍历(递归)方法的实现"></a>遍历(递归)方法的实现</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">package com.dwx.getImage;</span><br><span class="line"></span><br><span class="line">import java.io.*;</span><br><span class="line"></span><br><span class="line">//这个类我们来测试一下从文件夹中得到文件，并指定输出到我们想到的位置</span><br><span class="line">public class getImageDemo02 &#123;</span><br><span class="line">    //这个方法已经实现了对文件的遍历</span><br><span class="line">    public void getImage(File fileIn,File fileOut)&#123;</span><br><span class="line">        //我们要知道 文件类型可能是文件，也可能是文件夹</span><br><span class="line">        //这里我们来判断是否是一个文件夹</span><br><span class="line">        //通过 fileIn.listFiles就能把一个文件夹转化成list</span><br><span class="line">        //通过递归来实现对整个文件夹的遍历</span><br><span class="line">//        System.out.println(fileIn.isDirectory());</span><br><span class="line">//        for (File f : fileIn.listFiles())&#123;</span><br><span class="line">//            System.out.println(f);</span><br><span class="line">//        &#125;</span><br><span class="line">        //对于文件遍历 若是文件夹 就在进入下一次 如果是文件 return</span><br><span class="line">        if (fileIn.isDirectory())&#123;</span><br><span class="line">            for(File fi:fileIn.listFiles())&#123;</span><br><span class="line">                getImage(fi,fileOut);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        //如果不是就直接返回</span><br><span class="line">        else&#123;</span><br><span class="line">            getImage getImage = new getImage();</span><br><span class="line">            System.out.println(fileIn);</span><br><span class="line">            System.out.println(&quot;文件名字为&quot;+fileIn.getName());</span><br><span class="line">            File file = new File(fileOut+&quot;\\&quot;+ fileIn.getName());</span><br><span class="line">            System.out.println(&quot;写到了&quot;+file.getName());</span><br><span class="line">            try &#123;</span><br><span class="line">                getImage.getImage(fileIn,file);</span><br><span class="line">            &#125; catch (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">//    public static void main(String[] args) &#123;</span><br><span class="line">//        getImageDemo02 getImageDemo02 = new getImageDemo02();</span><br><span class="line">//        File fi = new File(&quot;E:/get&quot;);</span><br><span class="line">//        File fo = new File(&quot;E:/out&quot;);</span><br><span class="line">//        getImageDemo02.getImage(fi,fo);</span><br><span class="line">//    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="主方法-main-方法"><a href="#主方法-main-方法" class="headerlink" title="主方法(main)方法"></a>主方法(main)方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.dwx.test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.dwx.getImage.getImageDemo02;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"><span class="comment">//        getImage getImage = new getImage();</span></span><br><span class="line"><span class="comment">//        File fi = new File(&quot;E:\\get\\1.jpg&quot;);</span></span><br><span class="line"><span class="comment">//        File fo = new File(&quot;E:\\out\\1.jpg&quot;);</span></span><br><span class="line"><span class="comment">//        try &#123;</span></span><br><span class="line"><span class="comment">//            getImage.getImage(fi,fo);</span></span><br><span class="line"><span class="comment">//        &#125; catch (IOException e) &#123;</span></span><br><span class="line"><span class="comment">//            e.printStackTrace();</span></span><br><span class="line"><span class="comment">//        &#125;</span></span><br><span class="line">        String fileInName;</span><br><span class="line">        String fileOutName;</span><br><span class="line">        Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        System.out.print(<span class="string">&quot;请输入源文件夹:&quot;</span>);</span><br><span class="line">        fileInName = scanner.nextLine();</span><br><span class="line">        System.out.print(<span class="string">&quot;请输入目标文件夹:&quot;</span>);</span><br><span class="line">        fileOutName = scanner.nextLine();</span><br><span class="line">        File fileIn = <span class="keyword">new</span> File(fileInName);</span><br><span class="line">        File fileOut = <span class="keyword">new</span> File(fileOutName);</span><br><span class="line">        getImageDemo02 getImageDemo02 = <span class="keyword">new</span> getImageDemo02();</span><br><span class="line">        getImageDemo02.getImage(fileIn,fileOut);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="未来-已来"><a href="#未来-已来" class="headerlink" title="未来(已来)"></a>未来(已来)</h2><p>对于这个程序还有很多能够完善的</p>
+<h3 id="加上下载时间"><a href="#加上下载时间" class="headerlink" title="加上下载时间"></a>加上下载时间</h3><p><strong>已经加上了各个图片的下载时间 时间是以毫秒为单位的</strong></p>
+<h3 id="特定文件类型的获取"><a href="#特定文件类型的获取" class="headerlink" title="特定文件类型的获取"></a>特定文件类型的获取</h3><p><strong>我给出的解决方案：增加一个过滤器，当查询到文件后，让文件后缀跟过滤器比较，比较成功就进行操作</strong></p>
+<p><strong>已经实现</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.dwx.filter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"></span><br><span class="line"><span class="comment">//这是一个过滤器，用来特殊过滤文件</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Filter</span> </span>&#123;</span><br><span class="line">    <span class="comment">//对于一个过滤器，他有的属性就是文件后缀名</span></span><br><span class="line">    String  FileLastName;</span><br><span class="line">    <span class="comment">//在类被加载时就对这个属性进行初始化</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Filter</span><span class="params">(String fileLastName)</span> </span>&#123;</span><br><span class="line">        FileLastName = fileLastName;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//过滤器的方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">FileFilter</span><span class="params">(File fileIn)</span></span>&#123;</span><br><span class="line">        <span class="comment">//立一个布尔类型的标记 来判断是否是合适的后缀文件</span></span><br><span class="line">        <span class="keyword">boolean</span> flag = <span class="keyword">false</span>;</span><br><span class="line">        <span class="comment">//如果输入的是all 则操作所有的类型</span></span><br><span class="line">        <span class="keyword">if</span> (FileLastName.equals(<span class="string">&quot;all&quot;</span>))&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//获取文件的名字</span></span><br><span class="line">        String fileInName = fileIn.getName();</span><br><span class="line">        <span class="comment">//获取文件名字的后缀</span></span><br><span class="line">        <span class="comment">//字符串以.切割 然后存放到String数组中</span></span><br><span class="line">        String[] fileLastName = fileInName.split(<span class="string">&quot;\\.&quot;</span>);</span><br><span class="line">        <span class="comment">//通过这种方式 保证了获取到的一定是文件的后缀</span></span><br><span class="line">        <span class="keyword">int</span> length = fileLastName.length;</span><br><span class="line">        <span class="keyword">if</span> (fileLastName[length-<span class="number">1</span>].equals(FileLastName))&#123;</span><br><span class="line">            flag = <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> flag;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//    public static void main(String[] args) &#123;</span></span><br><span class="line"><span class="comment">//        Filter filter = new Filter(&quot;jpg&quot;);</span></span><br><span class="line"><span class="comment">//        filter.FileFilter(new File(&quot;E:\\get\\1.jpg&quot;));</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//    &#125;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="解决程序健壮性问题"><a href="#解决程序健壮性问题" class="headerlink" title="解决程序健壮性问题"></a>解决程序健壮性问题</h2><h3 id="目标文件重名问题"><a href="#目标文件重名问题" class="headerlink" title="目标文件重名问题"></a>目标文件重名问题</h3><p><strong>在原程序中 目标文件重名后是会被重写的，这不符合实际应用中的情况，因此需要进行判断是否目标文件会重名</strong></p>
+<p>我给出的解决方案是：在增加一个filter来过滤是否文件重名</p>
+<p><img src="/dwx-tx.github.io/2021/12/16/getImg/Users\Lenovo\AppData\Roaming\Typora\typora-user-images\1639579595262.png"></p>
+<p>已经较初级得解决了文件重名问题 即判断是否重名，对重名的文件重新命名</p>
+<p>加入的过滤器</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.dwx.filter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SameFileFilter</span> </span>&#123;</span><br><span class="line">    <span class="comment">//在实际的文件书写过程中 可能会存在</span></span><br><span class="line">    <span class="comment">//实际是对目标文件进行遍历</span></span><br><span class="line">    <span class="comment">//问题在于 这个目标文件是会一直改变的 不知道能否成功</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">SameFileFilter</span><span class="params">(File fileOut,File file)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">boolean</span> flag = <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">for</span> (File f : fileOut.listFiles())&#123;</span><br><span class="line">            <span class="keyword">if</span> (f.equals(file))&#123;</span><br><span class="line">                <span class="comment">//如果在类表中找到该文件 将flag改为true</span></span><br><span class="line">                flag = <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> flag;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SameFileFilter fileFilter = <span class="keyword">new</span> SameFileFilter();</span><br><span class="line">        <span class="keyword">boolean</span> b = fileFilter.SameFileFilter(<span class="keyword">new</span> File(<span class="string">&quot;E:/out&quot;</span>), <span class="keyword">new</span> File(<span class="string">&quot;E:/out/1.jpg&quot;</span>));</span><br><span class="line">        System.out.println(b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>发生改变的程序</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.dwx.getImage;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.dwx.filter.Filter;</span><br><span class="line"><span class="keyword">import</span> com.dwx.filter.SameFileFilter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">import</span> java.util.Objects;</span><br><span class="line"></span><br><span class="line"><span class="comment">//这个类我们来测试一下从文件夹中得到文件，并指定输出到我们想到的位置</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">getImageDemo02</span> </span>&#123;</span><br><span class="line">    <span class="comment">//这个方法已经实现了对文件的遍历</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getImage</span><span class="params">(File fileIn, File fileOut,String fileLastName)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//我们要知道 文件类型可能是文件，也可能是文件夹</span></span><br><span class="line">        <span class="comment">//这里我们来判断是否是一个文件夹</span></span><br><span class="line">        <span class="comment">//通过 fileIn.listFiles就能把一个文件夹转化成list</span></span><br><span class="line">        <span class="comment">//通过递归来实现对整个文件夹的遍历</span></span><br><span class="line"><span class="comment">//        System.out.println(fileIn.isDirectory());</span></span><br><span class="line"><span class="comment">//        for (File f : fileIn.listFiles())&#123;</span></span><br><span class="line"><span class="comment">//            System.out.println(f);</span></span><br><span class="line"><span class="comment">//        &#125;</span></span><br><span class="line">        <span class="comment">//对于文件遍历 若是文件夹 就在进入下一次 如果是文件 return</span></span><br><span class="line">        <span class="keyword">if</span> (fileIn.isDirectory()) &#123;</span><br><span class="line">            <span class="keyword">for</span> (File fi : Objects.requireNonNull(fileIn.listFiles())) &#123;</span><br><span class="line">                getImage(fi, fileOut,fileLastName);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//如果不是就直接返回</span></span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            Filter filter = <span class="keyword">new</span> Filter(fileLastName);</span><br><span class="line">            <span class="keyword">if</span> (filter.FileFilter(fileIn)) &#123;</span><br><span class="line">                getImage getImage = <span class="keyword">new</span> getImage();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                <span class="comment">//用目标文件夹＋源文件名就组成了目标文件名（全路径）</span></span><br><span class="line">                File file = <span class="keyword">new</span> File(fileOut + <span class="string">&quot;\\&quot;</span> + fileIn.getName());</span><br><span class="line"></span><br><span class="line">                <span class="comment">//插入一个过滤同名文件的过滤器</span></span><br><span class="line">                SameFileFilter sameFileFilter = <span class="keyword">new</span> SameFileFilter();</span><br><span class="line">                <span class="comment">//如果这个if成立 就说明有重名文件 就把文件名在加个(00)</span></span><br><span class="line">                <span class="keyword">if</span>(sameFileFilter.SameFileFilter(fileOut, file))&#123;</span><br><span class="line">                    file = <span class="keyword">new</span> File(fileOut+<span class="string">&quot;\\&quot;</span>+<span class="string">&quot;(same)&quot;</span>+fileIn.getName());</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">//如果条件不成立 文件名就不会发生改变</span></span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    getImage.MygetImage(fileIn, file);</span><br><span class="line">                &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          Donate
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://dwx-tx/dwx-tx.github.io/2021/12/16/getImg/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2021/12/16/%E6%A3%80%E7%B4%A2%E6%95%B0%E6%8D%AE/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            (no title)
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2021/12/16/JAVA%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title"></div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2022
+        <i class="ri-heart-fill heart_icon"></i> dwx
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="dwx-tx的小天地"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>

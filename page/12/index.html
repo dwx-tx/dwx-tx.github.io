@@ -1,0 +1,1571 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title> dwx-tx的小天地</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"
+      />
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+       
+ 
+<script>
+var _hmt = _hmt || [];
+(function() {
+	var hm = document.createElement("script");
+	hm.src = "https://hm.baidu.com/hm.js?57bee4bd4703d5af3f9154ce72c6f85f";
+	var s = document.getElementsByTagName("script")[0]; 
+	s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    <link rel="alternate" href="/atom.xml" title="dwx-tx的小天地" type="application/atom+xml">
+</head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      
+<section class="cover">
+    
+      
+      <a class="forkMe" href="https://github.com/Shen-Yu/hexo-theme-ayer"
+        target="_blank"><img width="149" height="149" src="/images/forkme.png"
+          class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+    
+  <div class="cover-frame">
+    <div class="bg-box">
+      <img src="/images/cover1.jpg" alt="image frame" />
+    </div>
+    <div class="cover-inner text-center text-white">
+      <h1><a href="/">dwx-tx的小天地</a></h1>
+      <div id="subtitle-box">
+        
+        <span id="subtitle"></span>
+        
+      </div>
+      <div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="cover-learn-more">
+    <a href="javascript:void(0)" class="anchor"><i class="ri-arrow-down-line"></i></a>
+  </div>
+</section>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script>
+
+
+<!-- Subtitle -->
+
+  <script>
+    try {
+      var typed = new Typed("#subtitle", {
+        strings: ['面朝大海，春暖花开', '愿你一生努力，一生被爱', '想要的都拥有，得不到的都释怀'],
+        startDelay: 0,
+        typeSpeed: 200,
+        loop: true,
+        backSpeed: 100,
+        showCursor: true
+      });
+    } catch (err) {
+      console.log(err)
+    }
+  </script>
+  
+<div id="main">
+  <section class="outer">
+  
+  
+  
+
+<div class="notice" style="margin-top:50px">
+    <i class="ri-heart-fill"></i>
+    <div class="notice-content" id="broad"></div>
+</div>
+<script type="text/javascript">
+    fetch('https://v1.hitokoto.cn')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("broad").innerHTML = data.hitokoto;
+        })
+        .catch(console.error)
+</script>
+
+<style>
+    .notice {
+        padding: 20px;
+        border: 1px dashed #e6e6e6;
+        color: #969696;
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        background: #fbfbfb50;
+        border-radius: 10px;
+    }
+
+    .notice i {
+        float: left;
+        color: #999;
+        font-size: 16px;
+        padding-right: 10px;
+        vertical-align: middle;
+        margin-top: -2px;
+    }
+
+    .notice-content {
+        display: initial;
+        vertical-align: middle;
+    }
+</style>
+  
+  <article class="articles">
+    
+    
+    
+    
+    <article
+  id="post-python数字类型"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/python%E6%95%B0%E5%AD%97%E7%B1%BB%E5%9E%8B/" class="article-date">
+  <time datetime="2021-12-16T15:00:16.841Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="python数字类型"><a href="#python数字类型" class="headerlink" title="python数字类型"></a>python数字类型</h1><h2 id="整数类型"><a href="#整数类型" class="headerlink" title="整数类型"></a>整数类型</h2><p>eg：1010,99，-217,0x9a，-0x89</p>
+<p><strong>整数类型共有四大类</strong>：十进制，八进制，二进制，十六进制</p>
+<p>二进制是以0b为索引，八进制是以0o为索引，十六进制是以0x为索引，大小写均可使用</p>
+<table>
+<thead>
+<tr>
+<th>进制种类</th>
+<th>索引符号</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>十进制</td>
+<td>无</td>
+<td>默认情况，例如，1010，-425</td>
+</tr>
+<tr>
+<td>二进制</td>
+<td>0b</td>
+<td>由字符0和1组成，例如，0b101</td>
+</tr>
+<tr>
+<td>八进制</td>
+<td>0o</td>
+<td>由字符0到7组成，例如，0o711</td>
+</tr>
+<tr>
+<td>十六进制</td>
+<td>0x</td>
+<td>由字符0到9，a到f，A到F组成，例如0xABC</td>
+</tr>
+</tbody></table>
+<p>  整数理论上是没有限制的，实际情况受限于运行python程序的计算机内存的大小</p>
+<h2 id="浮点数类型"><a href="#浮点数类型" class="headerlink" title="浮点数类型"></a>浮点数类型</h2><p>eg：0.0，-77.0，-2.17,3.1415926,96e4</p>
+<p><strong>科学计数法使用字母e或E作为幂的符号，以10为基数，含义为：&lt; a &gt;e&lt; b &gt; = a * 10^b</strong></p>
+<p>浮点数类型的取值范围在[2^-1023,2^1023]之间，运算精确度极高</p>
+<h2 id="复数类型"><a href="#复数类型" class="headerlink" title="复数类型"></a>复数类型</h2><p><strong>Python语言中，复数的虚数部分用后缀“J”或”j“来表示</strong></p>
+<p>eg：12.3+4j    -5.6+7j      12.3e-4+5.67e+89j</p>
+<p><strong>复数类型中实数部分和虚数部分的数值都是浮点数类型</strong>，对于复数Z,可以用z.real和z.imag分别获取它的实部和虚部</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;(<span class="number">1.23e-4</span>+<span class="number">5.67e+89j</span>).real</span><br><span class="line">&gt;&gt;&gt;(<span class="number">1.23e-4</span>+<span class="number">5.67e+89j</span>).imagr</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-python数字类型的操作"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/python%E6%95%B0%E5%AD%97%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%93%8D%E4%BD%9C/" class="article-date">
+  <time datetime="2021-12-16T15:00:16.841Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="python数字类型的操作"><a href="#python数字类型的操作" class="headerlink" title="python数字类型的操作"></a>python数字类型的操作</h1><h2 id="内置的数值运算操作符"><a href="#内置的数值运算操作符" class="headerlink" title="内置的数值运算操作符"></a>内置的数值运算操作符</h2><table>
+<thead>
+<tr>
+<th>操作符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>x+y</td>
+<td>x与y之和</td>
+</tr>
+<tr>
+<td>x-y</td>
+<td>x与y之差</td>
+</tr>
+<tr>
+<td>x*y</td>
+<td>x与y之积</td>
+</tr>
+<tr>
+<td>x/y</td>
+<td>x与y之商</td>
+</tr>
+<tr>
+<td>x//y</td>
+<td>x与y的整数商，即不大于x与y商的最大整数</td>
+</tr>
+<tr>
+<td>x%y</td>
+<td>x与y之商的余数，也称为模运算</td>
+</tr>
+<tr>
+<td>-x</td>
+<td>x的负值，即x*（-1）</td>
+</tr>
+<tr>
+<td>+x</td>
+<td>x本身</td>
+</tr>
+<tr>
+<td>x**y</td>
+<td>x的y次幂，即x^y</td>
+</tr>
+</tbody></table>
+<p>三种数字类型之间的逐渐拓展关系</p>
+<p>整数——&gt;浮点数——&gt;复数</p>
+<p>python数字类型转换的基本规则：</p>
+<ul>
+<li>整数之间运算，如果数学意义上的结果是小数，结果为浮点数</li>
+<li>整数之间运算，如果数学意义上的结果是整数，结果是整数</li>
+<li>整数与浮点数混合运算，输出的结果是浮点数</li>
+<li>整数或浮点数与复数运算，输出的结果是复数</li>
+</ul>
+<h2 id="增强赋值操作符"><a href="#增强赋值操作符" class="headerlink" title="增强赋值操作符"></a>增强赋值操作符</h2><p>所有的二元数学操作符（+，-，*，/，//，%，**）都有与之对应的增强赋值运算符（+=，-=，=，/=，//=，%=，=）</p>
+<p>设操作符为op</p>
+<p>x op= y&lt;=&gt;x = x op y</p>
+<h2 id="内置的数值运算函数"><a href="#内置的数值运算函数" class="headerlink" title="内置的数值运算函数"></a>内置的数值运算函数</h2><h3 id="内置的数值运算函数-1"><a href="#内置的数值运算函数-1" class="headerlink" title="内置的数值运算函数"></a>内置的数值运算函数</h3><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>abs(x)</td>
+<td>x的绝对值</td>
+</tr>
+<tr>
+<td>divmod(x,y)</td>
+<td>(x//y,x%y)，输出为二元组形式（也称为元组类型）</td>
+</tr>
+<tr>
+<td>pow(x,y[,z])</td>
+<td>（x**y）%z,[…]表示该参数可以忽略，即pow（x，y）</td>
+</tr>
+<tr>
+<td>round(x[,ndigits])</td>
+<td>对x进行四舍五入，保留ndigits位小数。round（x）返回四舍五入后的整数的值</td>
+</tr>
+<tr>
+<td>max(x1,x2,x3,…,xn)</td>
+<td>x1,x2,x3,…,xn的最大值</td>
+</tr>
+<tr>
+<td>min(x1,x2,x3,…,xn)</td>
+<td>x1,x2,x3,…,xn的最小值</td>
+</tr>
+</tbody></table>
+<h2 id="内置的数字类型转换函数"><a href="#内置的数字类型转换函数" class="headerlink" title="内置的数字类型转换函数"></a>内置的数字类型转换函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>int(x)</td>
+<td>将x转换为整数，x可以是浮点数或字符串</td>
+</tr>
+<tr>
+<td>float(x)</td>
+<td>返回浮点数x或者字符串x所对应的整数类型</td>
+</tr>
+<tr>
+<td>complex(re[,im])</td>
+<td>生成一个复数，实部为re，虚部为im，re可以是整数、浮点数或字符串，im可以是整数或浮点数但不能为字符串</td>
+</tr>
+</tbody></table>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-python字符串类型及其操作"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/12/16/python%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B%E5%8F%8A%E5%85%B6%E6%93%8D%E4%BD%9C/"
+    >python字符串类型及其操作</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/python%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B%E5%8F%8A%E5%85%B6%E6%93%8D%E4%BD%9C/" class="article-date">
+  <time datetime="2021-12-16T15:00:16.831Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="python字符串类型及其操作"><a href="#python字符串类型及其操作" class="headerlink" title="python字符串类型及其操作"></a>python字符串类型及其操作</h1><h2 id="字符串类型的表示"><a href="#字符串类型的表示" class="headerlink" title="字符串类型的表示"></a>字符串类型的表示</h2><p>python语言中字符串是字符的序列表示，可以由一对单引号（‘）,双引号（“），或三引号（”‘）构成</p>
+<ul>
+<li>单引号字符串：’单引号表示，可以使用“双引号”作为字符串的一部分‘</li>
+<li>双引号字符串：“双引号表示，可以使用’单引号‘作为字符串的一部分”</li>
+<li>三引号字符串：“’三引号表示可以使用”双引号“‘单引号’亦可以换行”‘</li>
+</ul>
+<p><img src="/dwx-tx.github.io/2021/12/16/python%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B%E5%8F%8A%E5%85%B6%E6%93%8D%E4%BD%9C/截屏\字符串中引号的使用.png" alt="字符串中引号的使用"></p>
+<p><strong>字符串中input和print函数的使用</strong></p>
+<ul>
+<li>input（）函数将用户输入的内容当作一个字符串类型，是获得用户输入的常用方式</li>
+<li>print（）函数可以直接打印字符串，这是输出字符串的常用方式</li>
+</ul>
+<h3 id="字符串的两种序号体系"><a href="#字符串的两种序号体系" class="headerlink" title="字符串的两种序号体系"></a>字符串的两种序号体系</h3><p>python语言的字符串有两种序号体系：</p>
+<p>正向递增序号：以最左侧字符序号为0，向右依次递增，最右侧的字符序号为L-1<br>反向递减序号：以最右侧字符序号为-1，向左依次递减最左侧的字符序号为-L<br>反向递减序号</p>
+<p>&lt;——————————————————</p>
+<p>-11-10 -9 -8 -7 -6 -5 -4 -3 -2 -1</p>
+<p>[H] [e] [l] [l] [o] [ ] [W] [o] [r] [l] [d]</p>
+<p>0 1 2 3 4 5 6 7 8 9 10</p>
+<p>——————————————————&gt;</p>
+<p>正向递增序号<br>————————————————<br>版权声明：本文为CSDN博主「省级干饭王」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_55016379/article/details/114675213">https://blog.csdn.net/qq_55016379/article/details/114675213</a></p>
+<p>（省级干饭王就是我自己）</p>
+<h3 id="python访问字符串的方法"><a href="#python访问字符串的方法" class="headerlink" title="python访问字符串的方法"></a>python访问字符串的方法</h3><p>python字符串也提供区间访问方式，采用**[N:M]**格式，表示字符串中从N到M（不包含M）的子字符串</p>
+<p>N和M为字符串的索引序号，<strong>可以混合使用</strong>正向递增序号和反向递减序号</p>
+<p><strong>如果表示中的M或者N索引缺失，则表示字符串把开始或结束索引值设为默认值。</strong></p>
+<h3 id="格式化控制符"><a href="#格式化控制符" class="headerlink" title="格式化控制符"></a>格式化控制符</h3><table>
+<thead>
+<tr>
+<th>控制符</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\a</td>
+<td>蜂鸣，响铃</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>回退，向后退一格</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>换页</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>换行，光标移动到下一行首行</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>回车，光标移动到本行首行</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>水平制表</td>
+</tr>
+<tr>
+<td>\v</td>
+<td>垂直制表</td>
+</tr>
+<tr>
+<td>\0</td>
+<td>NULL，什么都不做</td>
+</tr>
+</tbody></table>
+<h2 id="基本的字符串操作符"><a href="#基本的字符串操作符" class="headerlink" title="基本的字符串操作符"></a>基本的字符串操作符</h2><p>五个基本的字符串操作符</p>
+<table>
+<thead>
+<tr>
+<th>操作符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>x + y</td>
+<td>连接两个字符串x与y</td>
+</tr>
+<tr>
+<td>x * n 或 n * x</td>
+<td>复制n次字符串x</td>
+</tr>
+<tr>
+<td>x in s</td>
+<td>如果x是s的子串，返回True，否则返回False</td>
+</tr>
+<tr>
+<td>str[i]</td>
+<td>索引，返回第i个字符</td>
+</tr>
+<tr>
+<td>str[N：M]</td>
+<td>切片，返回索引第N到第M的子串，其中不包含M</td>
+</tr>
+</tbody></table>
+<p><img src="/dwx-tx.github.io/2021/12/16/python%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B%E5%8F%8A%E5%85%B6%E6%93%8D%E4%BD%9C/截屏\字符串操作.png" alt="字符串操作"></p>
+<p><strong>使用字符串作为查找表的缺点是，所剪切的子字符串长度必须相同</strong></p>
+<h2 id="内置的字符串处理函数"><a href="#内置的字符串处理函数" class="headerlink" title="内置的字符串处理函数"></a>内置的字符串处理函数</h2><p>python解释器中提供以一些内置函数，其中6个函数和字符串有关</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>len(x)</td>
+<td>返回字符串x的长度，也可返回其他组合数据类型元素个数</td>
+</tr>
+<tr>
+<td>str(x)</td>
+<td>返回任意类型x所对应的字符串形式</td>
+</tr>
+<tr>
+<td>chr(x)</td>
+<td>返回Unicode编码x对应的单字符</td>
+</tr>
+<tr>
+<td>ord(x)</td>
+<td>返回单字符表示的Unicode编码</td>
+</tr>
+<tr>
+<td>hex(x)</td>
+<td>返回整数x对应十六进制的小写形式的字符串</td>
+</tr>
+<tr>
+<td>oct(x)</td>
+<td>返回整数x对应的八进制小写形式字符串</td>
+</tr>
+</tbody></table>
+<p><strong>ASCLL和Unicode区别</strong></p>
+<p>目前计算机系统使用的编码是ASCLL，在C语言和JAVA语言中使用的都是ASCLL，ASCLL局限性在于，它只能表示英语字符，是为英语字符设计的，并没有包含其他的语言。所以它的覆盖面比较小</p>
+<p>而Unicode几乎支持所有书写语言的字符。</p>
+<h2 id="内置的字符串处理方法"><a href="#内置的字符串处理方法" class="headerlink" title="内置的字符串处理方法"></a>内置的字符串处理方法</h2><p>字符串类型共包含43个内置方法。但这里只介绍常用的16种方法</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>str.lower()</td>
+<td>返回字符串str的副本，全部小写</td>
+</tr>
+<tr>
+<td>str.upper()</td>
+<td>返回字符串str的副本，全部大写</td>
+</tr>
+<tr>
+<td>str.islower()</td>
+<td>当str的所有字符都是小写时，返回True，否则返回False</td>
+</tr>
+<tr>
+<td>str.isprintable()</td>
+<td>当str的所有字符都是可打印的，返回True，否则返回False</td>
+</tr>
+<tr>
+<td>str.isnumeric()</td>
+<td>当str的所有字符都是数字时，返回True，否则返回False</td>
+</tr>
+<tr>
+<td>str.isspace()</td>
+<td>当str所有的字符都是空格时，返回True，否则返回False</td>
+</tr>
+<tr>
+<td>str.endswith(suffix[,start,[,end]])</td>
+<td>str[start:end]以suffix结尾返回True，否则返回False</td>
+</tr>
+<tr>
+<td>str.starwith(prefix[,start,[,end]])</td>
+<td>str[start:end]以prefix开始返回True，否则返回False</td>
+</tr>
+<tr>
+<td>str.split(sep=None,maxsplit=-1)</td>
+<td>返回一个列表，由str根据sep被分割的部分构成</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>str.count（sub[,strat[,end]]）</td>
+<td>返回str[start:end]中sub子串出现的次数</td>
+</tr>
+<tr>
+<td>str.replace(old,new[,count])</td>
+<td>返回字符串str的副本，所有old子串全被new替换，如count给出，只替换前count相</td>
+</tr>
+<tr>
+<td>str.center(width[,fillchar])</td>
+<td>字符串居中函数</td>
+</tr>
+<tr>
+<td>str.strip([chars])</td>
+<td>返回字符串str的副本在其左侧和右侧去除chars给出的字符</td>
+</tr>
+<tr>
+<td>str.zfill(width)</td>
+<td>返回str的副本，长度为width不够在左侧填0</td>
+</tr>
+<tr>
+<td>str.format()</td>
+<td>返回字符串的一种排版格式</td>
+</tr>
+<tr>
+<td>str.join(iterable)</td>
+<td>返回一个新的字符串，由字符串iterable变量的每个元素组成，元素间隔用str隔开</td>
+</tr>
+</tbody></table>
+<ul>
+<li>str.split(sep=None,maxsplit=-1)返回一个列表，可以储存多个数据类型</li>
+<li>str.center(width[,fillchar])：返回长度为width的字符串，不够用fillchar补充，超了返回str</li>
+<li>str.zfill(width)  ：返回str的副本，长度为width不够在左侧填0,超了返回str</li>
+</ul>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-python字符串类型的格式化"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/12/16/python%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%A0%BC%E5%BC%8F%E5%8C%96/"
+    >字符串类型的格式化</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/python%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%A0%BC%E5%BC%8F%E5%8C%96/" class="article-date">
+  <time datetime="2021-12-16T15:00:16.831Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="字符串类型的格式化"><a href="#字符串类型的格式化" class="headerlink" title="字符串类型的格式化"></a>字符串类型的格式化</h1><p>python语言提供两种字符串格式化方法，一种类似C语言中printf（）函数的格式化方法；另一种是采用专门的str.format（）格式化方法</p>
+<h2 id="format（）方法的基本使用"><a href="#format（）方法的基本使用" class="headerlink" title="format（）方法的基本使用"></a>format（）方法的基本使用</h2><p>格式：&lt;模板字符串&gt;.format(&lt;逗号分隔的参数&gt;)</p>
+<p>模板字符串由一系列槽组成，用来控制修改字符串中嵌入值出现的位置，其基本思想是将format（）方法中<strong>逗号分隔的参数</strong>按照序号关系<strong>替换到模板字符串的槽</strong>中。</p>
+<p><strong>槽用大括号（{}）表示，如果大括号中没有序号，则按照出现顺序替换</strong></p>
+<h2 id="format（）方法的格式控制"><a href="#format（）方法的格式控制" class="headerlink" title="format（）方法的格式控制"></a>format（）方法的格式控制</h2><p>format（）方法格式为：{&lt;参数序号&gt;:&lt;格式控制标记&gt;}</p>
+<p>格式控制符</p>
+<table>
+<thead>
+<tr>
+<th>形式</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>:</td>
+<td>引号符号</td>
+</tr>
+<tr>
+<td>&lt;填充&gt;</td>
+<td>用于填充的单个字符</td>
+</tr>
+<tr>
+<td>&lt;对齐&gt;</td>
+<td>&lt;左对齐;&gt;右对齐;^居中对齐</td>
+</tr>
+<tr>
+<td>&lt;宽度&gt;</td>
+<td>槽的输出格式设定输出宽度</td>
+</tr>
+<tr>
+<td>&lt;,&gt;</td>
+<td>数字的千位分隔符适用于整数和浮点数</td>
+</tr>
+<tr>
+<td>&lt;.精度&gt;</td>
+<td>浮点数小数的部分的精度或是字符串的最大输出长度</td>
+</tr>
+<tr>
+<td>&lt;类型&gt;</td>
+<td>整数类型（b,c,o,x,X）浮点数类型(e,E,%,f)</td>
+</tr>
+</tbody></table>
+<p>**&lt;对齐&gt;**指的是分别使用&lt;,&gt;,^三种对齐方式，&lt;填充&gt;指的是除参数外，通过其他方式进行填充</p>
+<p><img src="/dwx-tx.github.io/2021/12/16/python%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%A0%BC%E5%BC%8F%E5%8C%96/截屏\format()函数使用.png"></p>
+<p><img src="/dwx-tx.github.io/2021/12/16/python%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%A0%BC%E5%BC%8F%E5%8C%96/截屏\format()函数使用2.png"></p>
+<h3 id="lt-类型-gt-的几种形式"><a href="#lt-类型-gt-的几种形式" class="headerlink" title="&lt;类型&gt;的几种形式"></a>&lt;类型&gt;的几种形式</h3><table>
+<thead>
+<tr>
+<th>形式</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>b</td>
+<td>输出整数的二进制方式</td>
+</tr>
+<tr>
+<td>c</td>
+<td>输出整数对应的Unicode</td>
+</tr>
+<tr>
+<td>d</td>
+<td>输出整数的十进制方式</td>
+</tr>
+<tr>
+<td>o</td>
+<td>输出整数的八进制方式</td>
+</tr>
+<tr>
+<td>x</td>
+<td>输出整数的小写十六进制方式</td>
+</tr>
+<tr>
+<td>X</td>
+<td>输出整数的大写十六进制方式</td>
+</tr>
+</tbody></table>
+<p><img src="/dwx-tx.github.io/2021/12/16/python%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%A0%BC%E5%BC%8F%E5%8C%96/截屏\format类型.png"></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-python文本进度条"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/python%E6%96%87%E6%9C%AC%E8%BF%9B%E5%BA%A6%E6%9D%A1/" class="article-date">
+  <time datetime="2021-12-16T15:00:16.831Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="文本进度条"><a href="#文本进度条" class="headerlink" title="文本进度条"></a>文本进度条</h1><p><strong>这是一个利用格式化输出和时间延迟实现控制台风格式文本进度条</strong></p>
+<h2 id="简单的开始"><a href="#简单的开始" class="headerlink" title="简单的开始"></a>简单的开始</h2><p><strong>print()函数在输出结尾处会自动生成一个‘\n’,即换行符，从而让光标移动到下一行行首</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time                    <span class="comment">#引入time函数库</span></span><br><span class="line">scale = <span class="number">10</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;------执行开始------&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(scale+<span class="number">1</span>):</span><br><span class="line">    a, b = <span class="string">&#x27;**&#x27;</span> * i,<span class="string">&#x27;..&#x27;</span> * (scale - i)</span><br><span class="line">    c = (i/scale)*<span class="number">100</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;%&#123;:^3.0f&#125;[&#123;&#125;-&gt;&#123;&#125;]&quot;</span>.<span class="built_in">format</span>(c, a, b))</span><br><span class="line">    time.sleep(<span class="number">0.1</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;------执行结束------&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src="/dwx-tx.github.io/2021/12/16/python%E6%96%87%E6%9C%AC%E8%BF%9B%E5%BA%A6%E6%9D%A1/截屏\简单的开始.png"></p>
+<h2 id="单行动态刷新"><a href="#单行动态刷新" class="headerlink" title="单行动态刷新"></a>单行动态刷新</h2><p><strong>单行动态刷新</strong>：每一次进度条的输出都固定在同一行，并不断地用新生成的字符串覆盖之前的输出</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">101</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;\r&#123;:3&#125;%&quot;</span>.<span class="built_in">format</span>(i), end = <span class="string">&#x27; &#x27;</span>)</span><br><span class="line">    time.sleep(<span class="number">0.05</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="带刷新的文本进度条"><a href="#带刷新的文本进度条" class="headerlink" title="带刷新的文本进度条"></a>带刷新的文本进度条</h2><p>这种方式是采用time库中的time.clock()函数。</p>
+<p><strong>第一次调用时计时开始，同一程序中第二次及后续调用时返回与第一次计时之间的时间差，单位为秒</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">scale = <span class="number">50</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;执行开始&quot;</span>.center(scale//<span class="number">2</span>,<span class="string">&#x27;-&#x27;</span>))</span><br><span class="line">t = time.clock()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(scale+<span class="number">1</span>):</span><br><span class="line">    a = <span class="string">&#x27;*&#x27;</span> * i</span><br><span class="line">    b = <span class="string">&#x27;.&#x27;</span> * (scale - i)</span><br><span class="line">    c = (i/scale)*<span class="number">100</span></span><br><span class="line">    t -= time.clock()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;\r&#123;:^3.0f&#125;%[&#123;&#125;-&gt;&#123;&#125;]&#123;:.2f&#125;s&quot;</span>.<span class="built_in">format</span>(c,a,b,-t),\</span><br><span class="line">          end=<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">    time.sleep(<span class="number">0.05</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\n&quot;</span>+<span class="string">&quot;执行结束&quot;</span>.center(scale//<span class="number">2</span>,<span class="string">&#x27;-&#x27;</span>))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h2><ul>
+<li>用户可以容忍最初的慢速增长</li>
+<li>用户难以忍受在在进程快要结束时进度条突然停滞不前</li>
+</ul>
+<p>上述研究实际上建议在设计进度条时，可以适当降低开始阶段的进展速度，然后适当加快末尾阶段的发展速度，这样的调整可以使用户感到更加舒适</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-pythonrandom函数库"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/pythonrandom%E5%87%BD%E6%95%B0%E5%BA%93/" class="article-date">
+  <time datetime="2021-12-16T15:00:16.821Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="python——-gt-random库"><a href="#python——-gt-random库" class="headerlink" title="python——&gt;random库"></a>python——&gt;random库</h1><h2 id="random库的概述"><a href="#random库的概述" class="headerlink" title="random库的概述"></a>random库的概述</h2><p>使用random库的主要目的是生成随机数</p>
+<p>函数库提供了很多函数，不过都是基于最基本random.random（）函数扩展得到的</p>
+<h2 id="random库解析"><a href="#random库解析" class="headerlink" title="random库解析"></a>random库解析</h2><p>random常用的9个函数</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>seed(a=None)</td>
+<td>初始化随机数种子，默认值为当前系统时间</td>
+</tr>
+<tr>
+<td>random()</td>
+<td>生成一个[0.0,1.0]之间的小数</td>
+</tr>
+<tr>
+<td>randint(a,b)</td>
+<td>生成一个[a,b]之间的整数</td>
+</tr>
+<tr>
+<td>getrandbits(k)</td>
+<td>生成一个k比特长度的随机整数</td>
+</tr>
+<tr>
+<td>randrange(start,stop[,step])</td>
+<td>生成一个[strat,stop)之间以step为步数的随机整数</td>
+</tr>
+<tr>
+<td>uniform(a,b)</td>
+<td>生成一个[a,b]之间的随机小数</td>
+</tr>
+<tr>
+<td>choice(seq)</td>
+<td>从序列类型，例如列表中随机返回一个元素</td>
+</tr>
+<tr>
+<td>shuffle(seq)</td>
+<td>将序列类型中的元素随机排序，返回打乱后的序列</td>
+</tr>
+<tr>
+<td>sample(pop,k)</td>
+<td>从pop类型中随机选取k个元素，以列表类型返回</td>
+</tr>
+</tbody></table>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-python程序的异常处理"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/python%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" class="article-date">
+  <time datetime="2021-12-16T15:00:16.821Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="python程序的异常处理"><a href="#python程序的异常处理" class="headerlink" title="python程序的异常处理"></a>python程序的异常处理</h1><h2 id="异常处理：try—except语句"><a href="#异常处理：try—except语句" class="headerlink" title="异常处理：try—except语句"></a>异常处理：try—except语句</h2><p>当用户输入的数据类型了python要求执行的类型不同时，python解释器会报错</p>
+<p><img src="/dwx-tx.github.io/2021/12/16/python%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/截屏\python异常1.png"></p>
+<p><strong>NameError</strong>就是此时的异常类型，数据类型出错</p>
+<p>Python使用try-except语句格式为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    &lt;语句块<span class="number">1</span>&gt;</span><br><span class="line"><span class="keyword">except</span>&lt;异常类型&gt;:</span><br><span class="line">    &lt;语句块<span class="number">2</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="异常的高级用法"><a href="#异常的高级用法" class="headerlink" title="异常的高级用法"></a>异常的高级用法</h2><p>try和except还可以与else和finally保留字配合使用</p>
+<p>格式如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    &lt;语句块<span class="number">1</span>&gt;</span><br><span class="line"><span class="keyword">except</span> &lt;异常类型<span class="number">1</span>&gt;:</span><br><span class="line">    &lt;语句块<span class="number">2</span>&gt;</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    &lt;语句块<span class="number">3</span>&gt;</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    &lt;语句块<span class="number">4</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<p>此处的else语句与for循环和while循环中的else一样，当try中的语句块1正常执行结束且没有发生异常时，else中的语句块3执行，看作是对try语句块正常执行后的一种追加处理。finally语句块则不同，无论try中的语句块1是否发生异常，finally下的语句块4都会执行。</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-python第三方库的安装"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/python%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E5%AE%89%E8%A3%85/" class="article-date">
+  <time datetime="2021-12-16T15:00:16.821Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="python第三方库的安装"><a href="#python第三方库的安装" class="headerlink" title="python第三方库的安装"></a>python第三方库的安装</h1><p><strong>python语言提供了三种安装第三方库的方法，希望观者能全部掌握</strong></p>
+<h2 id="pip工具安装"><a href="#pip工具安装" class="headerlink" title="pip工具安装"></a>pip工具安装</h2><p>pip是python内置命令，需要通过输入指令来执行命令</p>
+<p><strong>需要保持电脑处于通网状态</strong></p>
+<p>对于python3的用户，在安装python3时已经自动安装了pip，但对于python2的用户还需要在python官网下载pip</p>
+<p><strong>在此处我使用安装第三方库是在Windows的cmd上操作的</strong></p>
+<p><strong>请勿在IDLE环境下运行pip</strong></p>
+<p>第一步 打开cmd 输入命令D:使其进入D盘中（因为我的pip是在D盘中下载的）</p>
+<p><img src="/dwx-tx.github.io/2021/12/16/python%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E5%AE%89%E8%A3%85/截屏\pip1.png"></p>
+<p>第二步 输入指令 pip -h 可以检测说明pip可执行的命令</p>
+<p><img src="/dwx-tx.github.io/2021/12/16/python%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E5%AE%89%E8%A3%85/截屏\pip2.png"></p>
+<p>如图中所示，Commands就是pip可执行的命令</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>install</td>
+<td>安装</td>
+</tr>
+<tr>
+<td>download</td>
+<td>下载</td>
+</tr>
+<tr>
+<td>uninstall</td>
+<td>卸载</td>
+</tr>
+<tr>
+<td>list</td>
+<td>列表</td>
+</tr>
+<tr>
+<td>show</td>
+<td>查看</td>
+</tr>
+<tr>
+<td>search</td>
+<td>查找</td>
+</tr>
+</tbody></table>
+<h2 id="pip使用方法"><a href="#pip使用方法" class="headerlink" title="pip使用方法"></a>pip使用方法</h2><h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3><p>pip   &lt;命令&gt;   &lt;虚拟库名&gt;</p>
+<p><strong>这里我只演示了install和uninstall操作</strong>以tqdm为例</p>
+<h3 id="install"><a href="#install" class="headerlink" title="install"></a>install</h3><p>第一步：在命令行输入pip  install  tqdm</p>
+<p>第二步：等待，不要做任何操作，在进度条读取完后就代表库安装完成</p>
+<p><img src="/dwx-tx.github.io/2021/12/16/python%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E5%AE%89%E8%A3%85/截屏\pip3.png"></p>
+<h3 id="uninstall"><a href="#uninstall" class="headerlink" title="uninstall"></a>uninstall</h3><p>第一步：在命令行输入pip uninstall tqdm</p>
+<p>第二步：计算机会先找到tqdm的位置，并询问是否继续 输入y</p>
+<p>第三部：tqdm已经从电脑中被移除</p>
+<p><img src="/dwx-tx.github.io/2021/12/16/python%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E5%AE%89%E8%A3%85/截屏\pip4.png"></p>
+<h2 id="pycharm第三方库安装"><a href="#pycharm第三方库安装" class="headerlink" title="pycharm第三方库安装"></a>pycharm第三方库安装</h2><p>这里我使用的集成开发环境是pycharm，所以这里我介绍的是pycharm第三方库安装的方法</p>
+<p>第一步：选择File——&gt;setting</p>
+<p><img src="/dwx-tx.github.io/2021/12/16/python%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E5%AE%89%E8%A3%85/截屏\pycharm第三方函数库1.png"></p>
+<p>第二步：选择project——&gt;python interpreter</p>
+<p><strong>在此处也可以看到我们已经下载安装过的函数</strong></p>
+<p><img src="/dwx-tx.github.io/2021/12/16/python%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E5%AE%89%E8%A3%85/截屏\pycharm第三方函数库2.png"></p>
+<p>第三步: 点击下方的加号，在搜索列表中输入你要添加的函数库，等待函数库的安装</p>
+<p><img src="/dwx-tx.github.io/2021/12/16/python%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E5%AE%89%E8%A3%85/截屏\pycharm第三方函数库3.png"></p>
+<p>第四步：在安装完成后就可以正常使用了</p>
+<h2 id="自定义安装"><a href="#自定义安装" class="headerlink" title="自定义安装"></a>自定义安装</h2><p>这里是python安装第三方函数库的方法，可以在官方给与的维护库中自定义安装第三方函数</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://www.numpy.org/">www.numpy.org</a></p>
+</blockquote>
+<p>这是开发者维护的官网</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://www.scipy.org/">www.scipy.org</a></p>
+</blockquote>
+<p>这是浏览器下该网页的下载链接</p>
+<p>第一步：打卡网站,点解install（下载）</p>
+<p><img src="/dwx-tx.github.io/2021/12/16/python%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E5%AE%89%E8%A3%85/截屏\scipy01.png"></p>
+<p>第二步：点击pip，这里我还是选择pip下载</p>
+<p><img src="/dwx-tx.github.io/2021/12/16/python%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E5%AE%89%E8%A3%85/截屏\scipy02.png"></p>
+<p>第三步：复制箭头指向的指令复制到cmd上，等待下载</p>
+<p><img src="/dwx-tx.github.io/2021/12/16/python%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E5%AE%89%E8%A3%85/截屏\scipy03.png"></p>
+<p>第四步：在下载过程中保持网络开放状态</p>
+<p><img src="/dwx-tx.github.io/2021/12/16/python%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E5%AE%89%E8%A3%85/截屏\scipy04.png"></p>
+<p>这次的下载会加载好多第三方函数库，几乎包括了全部常用的</p>
+<p>第五步：检查</p>
+<p>在cmd命令行输入pip list来查看所下载的函数库</p>
+<p><img src="/dwx-tx.github.io/2021/12/16/python%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E5%AE%89%E8%A3%85/截屏\scipy05.png"></p>
+<p><strong>注意</strong>这种方式要求网络状态良好，热点亲测不行，因为服务器在国外的原因，网络状态不佳往往会引起失败</p>
+<h2 id="python-IDLE第三方函数库安装"><a href="#python-IDLE第三方函数库安装" class="headerlink" title="python IDLE第三方函数库安装"></a>python IDLE第三方函数库安装</h2><p>第一步：进入python官网，选择pypi</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://www.python.org/">www.python.org</a></p>
+</blockquote>
+<p><img src="/dwx-tx.github.io/2021/12/16/python%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E5%AE%89%E8%A3%85/截屏\python1.png"></p>
+<p>第二步：搜索第三方函数库名</p>
+<p><img src="/dwx-tx.github.io/2021/12/16/python%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E5%AE%89%E8%A3%85/截屏\python2.png"></p>
+<p>第三步：选择搜索到的第三方函数库(这里用tqdm做演示)</p>
+<p><img src="/dwx-tx.github.io/2021/12/16/python%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E5%AE%89%E8%A3%85/截屏\python3.png"></p>
+<p>第四步：安装第三方函数库，并解压</p>
+<p><img src="/dwx-tx.github.io/2021/12/16/python%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E5%AE%89%E8%A3%85/截屏\python4.png"></p>
+<p>第五步：解压结束后就安装成功了</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-python函数的参数传递"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/python%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92/" class="article-date">
+  <time datetime="2021-12-16T15:00:16.811Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="函数的参数传递"><a href="#函数的参数传递" class="headerlink" title="函数的参数传递"></a>函数的参数传递</h1><p><strong>要点</strong>：函数可以定义可选参数，使用参数的位置或名称传递参数的值，根据函数中变量的不同作用域有不同的函数返回值方式</p>
+<h2 id="可选参数和可变数量参数"><a href="#可选参数和可变数量参数" class="headerlink" title="可选参数和可变数量参数"></a>可选参数和可变数量参数</h2><p>  部分参数不一定需要调用程序输入，可以在定义函数时直接为这些参数指定默认值。当函数被调用是，如果没有传入对应的参数值，则使用函数定义时的默认值代替</p>
+<p>在函数定义时，也可以设计可变数量参数，通过在参数前增加星号（*）实现。带有星号的可变参数只能出现在参数列表的最后。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">def <span class="title">vfunc</span><span class="params">(a,*b)</span>:</span></span><br><span class="line"><span class="function">    </span></span><br></pre></td></tr></table></figure>
+
+<h2 id="参数的位置和名称传递"><a href="#参数的位置和名称传递" class="headerlink" title="参数的位置和名称传递"></a>参数的位置和名称传递</h2><p>  函数调用时，实参默认采用按照位置顺序的方式传递给函数。</p>
+<p>为了解决上述问题，python提供了按照参数名输入实参的方式，格式如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">result = func(x2=4, y2=5, z2=6, x1=1, y1=2, z1=3)</span><br></pre></td></tr></table></figure>
+
+<h2 id="函数返回值"><a href="#函数返回值" class="headerlink" title="函数返回值"></a>函数返回值</h2><p><strong>return</strong>语句用来<strong>推出函数</strong>并将程序返回到含糊被调用的位置继续执行。<strong>return</strong>语句可以同时将<strong>0个、1个或多个函数运算后的结果返回给函数被调用处的变量</strong></p>
+<h2 id="函数对变量的作用"><a href="#函数对变量的作用" class="headerlink" title="函数对变量的作用"></a>函数对变量的作用</h2><p>一个程序中的变量包括两类：<strong>全局变量</strong>和<strong>局部变量</strong></p>
+<ul>
+<li>全局变量：指在函数之外定义的变量，一般没有缩进，在程序执行全过程有效</li>
+<li>局部变量：指在函数的内部使用的变量，仅在函数内部有效，当函数推出时变量将不存在</li>
+</ul>
+<p>在想对函数的实参进行值得改变时，可以通过使用全局变量，<strong>用global作为数据类型</strong>，也可以通过<strong>列表</strong>来实现函数可以实现全局列表，而用采用global进行声明</p>
+<h2 id="python函数对变量的作用遵循如下原则："><a href="#python函数对变量的作用遵循如下原则：" class="headerlink" title="python函数对变量的作用遵循如下原则："></a>python函数对变量的作用遵循如下原则：</h2><ol>
+<li>简单数据类型变量无论是否与全局变量重名，仅在函数内部创建和使用，函数退出后变量被释放，如有全局同名，其值不变</li>
+<li>简单数据类型变量在用<strong>global保留字</strong>声明后，作为全局变量使用，函数退出后该变量保留且值被函数改变</li>
+<li>对于组合数据类型的全局变量，如果在函数内部没有被真实创建的同名变量，则函数内部可以直接使用并修改全局变量的值</li>
+<li>如果函数内部真实创建了组合数据类型变量，无论是否有同名全局变量，函数仅对局部变量进行操作，函数退出后局部变量被释放，全局变量值不变</li>
+</ol>
+<h3 id="拓展：指针和引用"><a href="#拓展：指针和引用" class="headerlink" title="拓展：指针和引用"></a><strong>拓展</strong>：指针和引用</h3><ul>
+<li>指针：是保存内存地址的变量，一般出现在比较底层的程序设计语言中，如C语言。</li>
+<li>引用：是某一变量的别名，用这个名字可以对变量进行操作，如Python列表类型的引用</li>
+</ul>
+<p><strong>两者的主要区别</strong>：指针直接指向内存，说明对象已经生成，而引用只是别名，需要真实创建对象才能操作对象。</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-python函数的基本使用"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/python%E5%87%BD%E6%95%B0%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="article-date">
+  <time datetime="2021-12-16T15:00:16.811Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="函数的基本使用"><a href="#函数的基本使用" class="headerlink" title="函数的基本使用"></a>函数的基本使用</h1><h2 id="函数的定义"><a href="#函数的定义" class="headerlink" title="函数的定义"></a>函数的定义</h2><p>函数是一段具有特点功能的，可重用的语句组，用函数名来表示并通过函数名进行函数调用。</p>
+<p>函数可以分为大致两类：</p>
+<p>第一类：用户自己写的函数，自定义函数</p>
+<p>第二类：Python内置的函数，Python安装包自带一些函数和方法</p>
+<p>使用函数主要有两种目的<strong>降低编译的难度</strong>和<strong>代码重用</strong></p>
+<h3 id="自定义函数"><a href="#自定义函数" class="headerlink" title="自定义函数"></a>自定义函数</h3><p>Python使用def保留字定义函数，语法格式：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> &lt;函数名&gt; (<span class="params">&lt;参数列表&gt;</span>):</span></span><br><span class="line">    &lt;函数体&gt;</span><br><span class="line">    <span class="keyword">return</span> &lt;返回值列表&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>函数名</strong>：函数名可以是任何有效的Python标识符；</p>
+<p><strong>参数列表</strong>：是调用该函数时，传递给它的值，可以有零个，一个或多个，当传递多个参数时，各参数由逗号隔开，当没有参数输入时，<em><strong>也要保留圆括号</strong></em></p>
+<p><strong>返回值</strong>：当需要返回值时，使用保留字return和返回列表，否则函数可以没有return语句，在函数体结束位置将控制权返回调用者</p>
+<hr>
+<h3 id="函数调用"><a href="#函数调用" class="headerlink" title="函数调用"></a>函数调用</h3><p><strong>函数调用</strong>的一般形式如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;函数名&gt;(&lt;参数列表&gt;)</span><br></pre></td></tr></table></figure>
+
+<p>程序调用一个函数需要执行一下四步：</p>
+<ul>
+<li>调用程序在调用处暂停执行</li>
+<li>在调用时将实参复制给函数的形参</li>
+<li>执行函数体语句</li>
+<li>函数调用结束给出返回值，程序回到调用前的暂停处继续执行</li>
+</ul>
+<p>所以，传递给函数的形参，只是实参的一个复印本，所以，形参的改变不会影响到实参的值</p>
+<h3 id="lambda函数"><a href="#lambda函数" class="headerlink" title="lambda函数"></a>lambda函数</h3><p>lambda是一个保留字，用lambda保留字定义一种特殊的函数——匿名函数，又称lambda函数</p>
+<p>基本语法格式如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;函数名&gt; = <span class="keyword">lambda</span> &lt;参数列表&gt; : &lt;表达式&gt;</span><br></pre></td></tr></table></figure>
+
+<p>这种书写形式等价于</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> &lt;函数名&gt;(<span class="params">&lt;参数列表&gt;</span>):</span></span><br><span class="line">    <span class="keyword">return</span> &lt;表达式&gt;</span><br></pre></td></tr></table></figure>
+
+<p>综上：lambda函数用于定义简单的、能够在一行内表示的函数，返回一个函数类型</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+  </article>
+  
+
+  
+  <nav class="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/11/">上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/13/">下一页</a>
+  </nav>
+  
+</section>
+</div>
+
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2022
+        <i class="ri-heart-fill heart_icon"></i> dwx
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="dwx-tx的小天地"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>

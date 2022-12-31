@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>网页调用摄像头技术 |  dwx-tx的小天地</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"
+      />
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+       
+ 
+<script>
+var _hmt = _hmt || [];
+(function() {
+	var hm = document.createElement("script");
+	hm.src = "https://hm.baidu.com/hm.js?57bee4bd4703d5af3f9154ce72c6f85f";
+	var s = document.getElementsByTagName("script")[0]; 
+	s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    <link rel="alternate" href="/atom.xml" title="dwx-tx的小天地" type="application/atom+xml">
+</head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-网页调用摄像头技术"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  网页调用摄像头技术
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/10/27/%E7%BD%91%E9%A1%B5%E8%B0%83%E7%94%A8%E6%91%84%E5%83%8F%E5%A4%B4%E6%8A%80%E6%9C%AF/" class="article-date">
+  <time datetime="2022-10-27T09:36:20.339Z" itemprop="datePublished">2022-10-27</time>
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">2.1k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">11 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="网页调用摄像头技术"><a href="#网页调用摄像头技术" class="headerlink" title="网页调用摄像头技术"></a>网页调用摄像头技术</h1><h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><p>[(182条消息) Html-网页调用摄像头并拍照效果_小狗蛋ing的博客-CSDN博客_网页调用摄像头](<a target="_blank" rel="noopener" href="https://blog.csdn.net/As_thin/article/details/118313591?ops_request_misc=&amp;request_id=&amp;biz_id=102&amp;utm_term=html">https://blog.csdn.net/As_thin/article/details/118313591?ops_request_misc=&amp;request_id=&amp;biz_id=102&amp;utm_term=html</a> 调用摄像头拍照&amp;utm_medium=distribute.pc_search_result.none-task-blog-2<del>all</del>sobaiduweb~default-0-118313591.142^v62^pc_search_tree,201^v3^control_2,213^v1^t3_esquery_v2&amp;spm=1018.2226.3001.4187)</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42393859/article/details/109472060">(182条消息) 前端网页打开摄像头并将图像传给后端_blog_1103的博客-CSDN博客</a></p>
+<p><strong>别人的代码</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">&quot;en&quot;</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=<span class="string">&quot;UTF-8&quot;</span>&gt;</span><br><span class="line">  &lt;meta name=<span class="string">&quot;viewport&quot;</span> content=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span><br><span class="line">  &lt;meta http-equiv=<span class="string">&quot;X-UA-Compatible&quot;</span> content=<span class="string">&quot;ie=edge&quot;</span>&gt;</span><br><span class="line">  &lt;title&gt;网页调取摄像头&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;script src=<span class="string">&quot;https://code.jquery.com/jquery-3.3.1.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">        #capture&#123;</span><br><span class="line">            position: absolute;</span><br><span class="line">            right: 190px;</span><br><span class="line">            bottom: -40px;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        #video&#123;</span><br><span class="line">            position: absolute;</span><br><span class="line">            right: <span class="number">0</span>;</span><br><span class="line">            top: <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        #img&#123;</span><br><span class="line">            position: absolute;</span><br><span class="line">            left: <span class="number">0</span>;</span><br><span class="line">            top: <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        .auto&#123;</span><br><span class="line">            position: absolute;</span><br><span class="line">            left: <span class="number">50</span>%;</span><br><span class="line">            top: <span class="number">50</span>%;</span><br><span class="line">            height: 320px;</span><br><span class="line">            margin-top: -160px;</span><br><span class="line">        &#125;</span><br><span class="line">        #sure&#123;</span><br><span class="line">            position: absolute;</span><br><span class="line">            left: 210px;</span><br><span class="line">            bottom: -40px;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        button&#123;</span><br><span class="line">            cursor: pointer;</span><br><span class="line">            margin: <span class="number">0</span> auto;</span><br><span class="line">            border: 1px solid #f0f0f0;</span><br><span class="line">            background: #5CACEE;</span><br><span class="line">            color: #FFF;</span><br><span class="line">            width: 100px;</span><br><span class="line">            height: 36px;</span><br><span class="line">            line-height: 36px;</span><br><span class="line">            border-radius: 8px;</span><br><span class="line">            text-align: center;</span><br><span class="line">            <span class="comment">/*禁止选择*/</span></span><br><span class="line">            -webkit-touch-callout: none; <span class="comment">/* iOS Safari */</span></span><br><span class="line">            -webkit-user-select: none; <span class="comment">/* Chrome/Safari/Opera */</span></span><br><span class="line">            -khtml-user-select: none; <span class="comment">/* Konqueror */</span></span><br><span class="line">            -moz-user-select: none; <span class="comment">/* Firefox */</span></span><br><span class="line">            -ms-user-select: none; <span class="comment">/* Internet Explorer/Edge */</span></span><br><span class="line">            user-select: none; <span class="comment">/* Non-prefixed version, currently not supported by any browser */</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;auto&quot;</span>&gt;</span><br><span class="line">            &lt;video id=<span class="string">&quot;video&quot;</span> width=<span class="string">&quot;480&quot;</span> height=<span class="string">&quot;320&quot;</span> autoplay&gt;&lt;/video&gt;</span><br><span class="line">            &lt;canvas id=<span class="string">&quot;canvas&quot;</span> width=<span class="string">&quot;480&quot;</span> height=<span class="string">&quot;320&quot;</span> style=<span class="string">&quot;display: none;&quot;</span>&gt;&lt;/canvas&gt;</span><br><span class="line">            &lt;img src=<span class="string">&quot;./body_default.png&quot;</span> id=<span class="string">&quot;img&quot;</span> width=<span class="string">&quot;480&quot;</span> height=<span class="string">&quot;320&quot;</span> style=<span class="string">&quot;margin-left: 20px;&quot;</span>&gt;</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &lt;button id=<span class="string">&quot;capture&quot;</span> title=<span class="string">&quot;点击进行拍照&quot;</span>&gt;拍照&lt;/button&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &lt;button id=<span class="string">&quot;sure&quot;</span> title=<span class="string">&quot;是否用这张图片进行验证&quot;</span>&gt;确认&lt;/button&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    <span class="keyword">var</span> file ,stream;</span><br><span class="line">    <span class="comment">//访问用户媒体设备的兼容方法</span></span><br><span class="line">    <span class="function">function <span class="title">getUserMedia</span><span class="params">(constraints, success, error)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (navigator.mediaDevices.getUserMedia) &#123;</span><br><span class="line">        <span class="comment">//最新的标准API</span></span><br><span class="line">        navigator.mediaDevices.getUserMedia(constraints).then(success).<span class="keyword">catch</span>(error);</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (navigator.webkitGetUserMedia) &#123;</span><br><span class="line">        <span class="comment">//webkit核心浏览器</span></span><br><span class="line">        navigator.webkitGetUserMedia(constraints,success, error)</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (navigator.mozGetUserMedia) &#123;</span><br><span class="line">        <span class="comment">//firfox浏览器</span></span><br><span class="line">        navigator.mozGetUserMedia(constraints, success, error);</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (navigator.getUserMedia) &#123;</span><br><span class="line">        <span class="comment">//旧版API</span></span><br><span class="line">        navigator.getUserMedia(constraints, success, error);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    let video = document.getElementById(<span class="string">&#x27;video&#x27;</span>);</span><br><span class="line">    let canvas = document.getElementById(<span class="string">&#x27;canvas&#x27;</span>);</span><br><span class="line">    let context = canvas.getContext(<span class="string">&#x27;2d&#x27;</span>);</span><br><span class="line"> </span><br><span class="line">    <span class="function">function <span class="title">success</span><span class="params">(stream)</span> </span>&#123;</span><br><span class="line">      <span class="comment">//兼容webkit核心浏览器</span></span><br><span class="line">      let CompatibleURL = window.URL || window.webkitURL;</span><br><span class="line">      <span class="comment">//将视频流设置为video元素的源</span></span><br><span class="line">      console.log(stream);</span><br><span class="line">      stream = stream;</span><br><span class="line">      <span class="comment">//video.src = CompatibleURL.createObjectURL(stream);</span></span><br><span class="line">      video.srcObject = stream;</span><br><span class="line">      video.play();</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="function">function <span class="title">error</span><span class="params">(error)</span> </span>&#123;</span><br><span class="line">      console.log(`访问用户媒体设备失败$&#123;error.name&#125;, $&#123;error.message&#125;`);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">if</span> (navigator.mediaDevices.getUserMedia || navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia) &#123;</span><br><span class="line">      <span class="comment">//调用用户媒体设备, 访问摄像头</span></span><br><span class="line">      getUserMedia(&#123;video : &#123;width: <span class="number">480</span>, height: <span class="number">320</span>&#125;&#125;, success, error);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      alert(<span class="string">&#x27;不支持访问用户媒体&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">        <span class="comment">// base64转文件</span></span><br><span class="line"></span><br><span class="line">    document.getElementById(<span class="string">&#x27;capture&#x27;</span>).addEventListener(<span class="string">&#x27;click&#x27;</span>, function () &#123;</span><br><span class="line">      context.drawImage(video, <span class="number">0</span>, <span class="number">0</span>, <span class="number">480</span>, <span class="number">320</span>);      </span><br><span class="line">        <span class="comment">// 获取图片base64链接</span></span><br><span class="line">        <span class="keyword">var</span> image = canvas.toDataURL(<span class="string">&#x27;image/png&#x27;</span>);</span><br><span class="line">        <span class="comment">// 定义一个img</span></span><br><span class="line">        <span class="keyword">var</span> img = document.getElementById(<span class="string">&quot;img&quot;</span>);</span><br><span class="line">        <span class="comment">//设置属性和src</span></span><br><span class="line">        <span class="comment">//img.id = &quot;imgBoxxx&quot;;</span></span><br><span class="line">        img.src = image;</span><br><span class="line">        <span class="comment">//将图片添加到页面中</span></span><br><span class="line">        <span class="comment">//document.body.appendChild(img);</span></span><br><span class="line">        <span class="function">function <span class="title">dataURLtoFile</span><span class="params">(dataurl, filename)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> arr = dataurl.split(<span class="string">&#x27;,&#x27;</span>), mime = arr[<span class="number">0</span>].match(/:(.*?);/)[<span class="number">1</span>],</span><br><span class="line">                bstr = atob(arr[<span class="number">1</span>]), n = bstr.length, u8arr = <span class="keyword">new</span> Uint8Array(n);</span><br><span class="line">            <span class="keyword">while</span> (n--) &#123;</span><br><span class="line">                u8arr[n] = bstr.charCodeAt(n);</span><br><span class="line">            &#125;</span><br><span class="line">            file = <span class="keyword">new</span> File([u8arr], filename, &#123;type: mime&#125;);</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> File([u8arr], filename, &#123;type: mime&#125;);</span><br><span class="line">        &#125;</span><br><span class="line">        console.log(dataURLtoFile(image, <span class="string">&#x27;aa.png&#x27;</span>));</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    document.getElementById(<span class="string">&#x27;sure&#x27;</span>).addEventListener(<span class="string">&#x27;click&#x27;</span>, function () &#123;</span><br><span class="line">        <span class="keyword">var</span> formData = <span class="keyword">new</span> FormData();</span><br><span class="line">        formData.append(<span class="string">&quot;file&quot;</span>,file);</span><br><span class="line">        $.ajax(&#123;</span><br><span class="line">            type: <span class="string">&quot;POST&quot;</span>, <span class="comment">// 数据提交类型</span></span><br><span class="line">            url: <span class="string">&quot;***********&quot;</span>, <span class="comment">// 发送地址</span></span><br><span class="line">            data: formData, <span class="comment">//发送数据</span></span><br><span class="line">            async: <span class="keyword">true</span>, <span class="comment">// 是否异步</span></span><br><span class="line">            processData: <span class="keyword">false</span>, <span class="comment">//processData 默认为false，当设置为true的时候,jquery ajax 提交的时候不会序列化 data，而是直接使用data</span></span><br><span class="line">            contentType: <span class="keyword">false</span>,</span><br><span class="line">            success:function(data)&#123;</span><br><span class="line">                <span class="keyword">if</span>(data.code === <span class="number">200</span>)&#123;</span><br><span class="line">                    console.log(`$&#123;data.message&#125;`);</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    console.log(`$&#123;data.message&#125;`);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            error:function(e)&#123;</span><br><span class="line">                self.$message.warning(`$&#123;e&#125;`);</span><br><span class="line">                <span class="comment">//console.log(&quot;不成功&quot;+e);</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        stream.getTracks()[<span class="number">0</span>].stop();<span class="comment">//结束关闭流</span></span><br><span class="line">    &#125;)</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="实际操作"><a href="#实际操作" class="headerlink" title="实际操作"></a>实际操作</h2><p>进过各种尝试，终于，写好了前端拍照端接收</p>
+<p><strong>结果</strong></p>
+<p><img src="https://pic1.imgdb.cn/item/635a515416f2c2beb109b304.png"></p>
+<p><strong>前端代码</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;ie=edge&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>网页调取摄像头<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://code.jquery.com/jquery-3.3.1.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css">        <span class="selector-id">#capture</span>&#123;</span></span><br><span class="line"><span class="css">            <span class="attribute">position</span>: absolute;</span></span><br><span class="line"><span class="css">            <span class="attribute">right</span>: <span class="number">190px</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">bottom</span>: -<span class="number">40px</span>;</span></span><br><span class="line"><span class="css"></span></span><br><span class="line"><span class="css">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-id">#video</span>&#123;</span></span><br><span class="line"><span class="css">            <span class="attribute">position</span>: absolute;</span></span><br><span class="line"><span class="css">            <span class="attribute">right</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">top</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="css">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-id">#img</span>&#123;</span></span><br><span class="line"><span class="css">            <span class="attribute">position</span>: absolute;</span></span><br><span class="line"><span class="css">            <span class="attribute">left</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">top</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="css">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.auto</span>&#123;</span></span><br><span class="line"><span class="css">            <span class="attribute">position</span>: absolute;</span></span><br><span class="line"><span class="css">            <span class="attribute">left</span>: <span class="number">50%</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">top</span>: <span class="number">50%</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">height</span>: <span class="number">320px</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">margin-top</span>: -<span class="number">160px</span>;</span></span><br><span class="line"><span class="css">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-id">#sure</span>&#123;</span></span><br><span class="line"><span class="css">            <span class="attribute">position</span>: absolute;</span></span><br><span class="line"><span class="css">            <span class="attribute">left</span>: <span class="number">210px</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">bottom</span>: -<span class="number">40px</span>;</span></span><br><span class="line"><span class="css"></span></span><br><span class="line"><span class="css">        &#125;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">button</span>&#123;</span></span><br><span class="line"><span class="css">            <span class="attribute">cursor</span>: pointer;</span></span><br><span class="line"><span class="css">            <span class="attribute">margin</span>: <span class="number">0</span> auto;</span></span><br><span class="line"><span class="css">            <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#f0f0f0</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">background</span>: <span class="number">#5CACEE</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">color</span>: <span class="number">#FFF</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">width</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">height</span>: <span class="number">36px</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">line-height</span>: <span class="number">36px</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">border-radius</span>: <span class="number">8px</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">text-align</span>: center;</span></span><br><span class="line"><span class="css">            <span class="comment">/*禁止选择*/</span></span></span><br><span class="line"><span class="css">            -webkit-touch-callout: none; <span class="comment">/* iOS Safari */</span></span></span><br><span class="line"><span class="css">            -webkit-user-select: none; <span class="comment">/* Chrome/Safari/Opera */</span></span></span><br><span class="line"><span class="css">            -khtml-user-select: none; <span class="comment">/* Konqueror */</span></span></span><br><span class="line"><span class="css">            -moz-user-select: none; <span class="comment">/* Firefox */</span></span></span><br><span class="line"><span class="css">            -ms-user-select: none; <span class="comment">/* Internet Explorer/Edge */</span></span></span><br><span class="line"><span class="css">            user-select: none; <span class="comment">/* Non-prefixed version, currently not supported by any browser */</span></span></span><br><span class="line"><span class="css">        &#125;</span></span><br><span class="line"><span class="css"></span></span><br><span class="line"><span class="css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;auto&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">video</span> <span class="attr">id</span>=<span class="string">&quot;video&quot;</span> <span class="attr">width</span>=<span class="string">&quot;480&quot;</span> <span class="attr">height</span>=<span class="string">&quot;320&quot;</span> <span class="attr">autoplay</span>&gt;</span><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">&quot;canvas&quot;</span> <span class="attr">width</span>=<span class="string">&quot;480&quot;</span> <span class="attr">height</span>=<span class="string">&quot;320&quot;</span> <span class="attr">style</span>=<span class="string">&quot;display: none;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;./body_default.png&quot;</span> <span class="attr">id</span>=<span class="string">&quot;img&quot;</span> <span class="attr">width</span>=<span class="string">&quot;480&quot;</span> <span class="attr">height</span>=<span class="string">&quot;320&quot;</span> <span class="attr">style</span>=<span class="string">&quot;margin-left: 20px;&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;capture&quot;</span> <span class="attr">title</span>=<span class="string">&quot;点击进行拍照&quot;</span>&gt;</span>拍照<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;sure&quot;</span> <span class="attr">title</span>=<span class="string">&quot;是否用这张图片进行验证&quot;</span>&gt;</span>确认<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> file ,stream;</span></span><br><span class="line"><span class="javascript">    <span class="comment">//访问用户媒体设备的兼容方法</span></span></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">getUserMedia</span>(<span class="params">constraints, success, error</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">if</span> (navigator.mediaDevices.getUserMedia) &#123;</span></span><br><span class="line"><span class="javascript">        <span class="comment">//最新的标准API</span></span></span><br><span class="line"><span class="javascript">        navigator.mediaDevices.getUserMedia(constraints).then(success).catch(error);</span></span><br><span class="line"><span class="javascript">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (navigator.webkitGetUserMedia) &#123;</span></span><br><span class="line"><span class="javascript">        <span class="comment">//webkit核心浏览器</span></span></span><br><span class="line"><span class="javascript">        navigator.webkitGetUserMedia(constraints,success, error)</span></span><br><span class="line"><span class="javascript">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (navigator.mozGetUserMedia) &#123;</span></span><br><span class="line"><span class="javascript">        <span class="comment">//firfox浏览器</span></span></span><br><span class="line"><span class="javascript">        navigator.mozGetUserMedia(constraints, success, error);</span></span><br><span class="line"><span class="javascript">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (navigator.getUserMedia) &#123;</span></span><br><span class="line"><span class="javascript">        <span class="comment">//旧版API</span></span></span><br><span class="line"><span class="javascript">        navigator.getUserMedia(constraints, success, error);</span></span><br><span class="line"><span class="javascript">      &#125;</span></span><br><span class="line"><span class="javascript">    &#125;</span></span><br><span class="line"><span class="javascript"> </span></span><br><span class="line"><span class="javascript">    <span class="keyword">let</span> video = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;video&#x27;</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">let</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;canvas&#x27;</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">let</span> context = canvas.getContext(<span class="string">&#x27;2d&#x27;</span>);</span></span><br><span class="line"><span class="javascript"> </span></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">success</span>(<span class="params">stream</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="comment">//兼容webkit核心浏览器</span></span></span><br><span class="line"><span class="javascript">      <span class="keyword">let</span> CompatibleURL = <span class="built_in">window</span>.URL || <span class="built_in">window</span>.webkitURL;</span></span><br><span class="line"><span class="javascript">      <span class="comment">//将视频流设置为video元素的源</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(stream);</span></span><br><span class="line"><span class="javascript">      stream = stream;</span></span><br><span class="line"><span class="javascript">      <span class="comment">//video.src = CompatibleURL.createObjectURL(stream);</span></span></span><br><span class="line"><span class="javascript">      video.srcObject = stream;</span></span><br><span class="line"><span class="javascript">      video.play();</span></span><br><span class="line"><span class="javascript">    &#125;</span></span><br><span class="line"><span class="javascript"> </span></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">error</span>(<span class="params">error</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">`访问用户媒体设备失败<span class="subst">$&#123;error.name&#125;</span>, <span class="subst">$&#123;error.message&#125;</span>`</span>);</span></span><br><span class="line"><span class="javascript">    &#125;</span></span><br><span class="line"><span class="javascript"> </span></span><br><span class="line"><span class="javascript">    <span class="keyword">if</span> (navigator.mediaDevices.getUserMedia || navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia) &#123;</span></span><br><span class="line"><span class="javascript">      <span class="comment">//调用用户媒体设备, 访问摄像头</span></span></span><br><span class="line"><span class="javascript">      getUserMedia(&#123;<span class="attr">video</span> : &#123;<span class="attr">width</span>: <span class="number">480</span>, <span class="attr">height</span>: <span class="number">320</span>&#125;&#125;, success, error);</span></span><br><span class="line"><span class="javascript">    &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="javascript">      alert(<span class="string">&#x27;不支持访问用户媒体&#x27;</span>);</span></span><br><span class="line"><span class="javascript">    &#125;</span></span><br><span class="line"><span class="javascript">        <span class="comment">// base64转文件</span></span></span><br><span class="line"><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="built_in">document</span>.getElementById(<span class="string">&#x27;capture&#x27;</span>).addEventListener(<span class="string">&#x27;click&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      context.drawImage(video, <span class="number">0</span>, <span class="number">0</span>, <span class="number">480</span>, <span class="number">320</span>);      </span></span><br><span class="line"><span class="javascript">        <span class="comment">// 获取图片base64链接</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> image = canvas.toDataURL(<span class="string">&#x27;image/png&#x27;</span>);</span></span><br><span class="line"><span class="javascript">        <span class="comment">// 定义一个img</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> img = <span class="built_in">document</span>.getElementById(<span class="string">&quot;img&quot;</span>);</span></span><br><span class="line"><span class="javascript">        <span class="comment">//设置属性和src</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">//img.id = &quot;imgBoxxx&quot;;</span></span></span><br><span class="line"><span class="javascript">        img.src = image;</span></span><br><span class="line"><span class="javascript">        <span class="comment">//将图片添加到页面中</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">//document.body.appendChild(img);</span></span></span><br><span class="line"><span class="javascript">        <span class="function"><span class="keyword">function</span> <span class="title">dataURLtoFile</span>(<span class="params">dataurl, filename</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> arr = dataurl.split(<span class="string">&#x27;,&#x27;</span>), mime = arr[<span class="number">0</span>].match(<span class="regexp">/:(.*?);/</span>)[<span class="number">1</span>],</span></span><br><span class="line"><span class="javascript">                bstr = atob(arr[<span class="number">1</span>]), n = bstr.length, u8arr = <span class="keyword">new</span> <span class="built_in">Uint8Array</span>(n);</span></span><br><span class="line"><span class="javascript">            <span class="keyword">while</span> (n--) &#123;</span></span><br><span class="line"><span class="javascript">                u8arr[n] = bstr.charCodeAt(n);</span></span><br><span class="line"><span class="javascript">            &#125;</span></span><br><span class="line"><span class="javascript">            file = <span class="keyword">new</span> File([u8arr], filename, &#123;<span class="attr">type</span>: mime&#125;);</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(file)</span></span><br><span class="line"><span class="javascript">            <span class="keyword">return</span> <span class="keyword">new</span> File([u8arr], filename, &#123;<span class="attr">type</span>: mime&#125;);</span></span><br><span class="line"><span class="javascript">        &#125;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(dataURLtoFile(image, <span class="string">&quot;aa.png&quot;</span>));</span></span><br><span class="line"><span class="javascript">    &#125;)</span></span><br><span class="line"><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="built_in">document</span>.getElementById(<span class="string">&quot;sure&quot;</span>).addEventListener(<span class="string">&quot;click&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> formData = <span class="keyword">new</span> FormData();</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(file)</span></span><br><span class="line"><span class="javascript">        formData.append(<span class="string">&quot;file&quot;</span>,file);</span></span><br><span class="line"><span class="javascript">        $.ajax(&#123;</span></span><br><span class="line"><span class="javascript">            <span class="attr">type</span>: <span class="string">&quot;post&quot;</span>,</span></span><br><span class="line"><span class="javascript">            <span class="comment">//后端需要调用的地址</span></span></span><br><span class="line"><span class="javascript">            <span class="attr">url</span>:<span class="string">&quot;http://localhost:8089/plotform/areFace.do&quot;</span>,</span></span><br><span class="line"><span class="javascript">            <span class="attr">data</span>:formData, <span class="comment">//发送数据</span></span></span><br><span class="line"><span class="javascript">            <span class="attr">async</span>: <span class="literal">true</span>, <span class="comment">// 是否异步</span></span></span><br><span class="line"><span class="javascript">            <span class="attr">processData</span>: <span class="literal">false</span>, <span class="comment">//processData 默认为false，当设置为true的时候,jquery ajax 提交的时候不会序列化 data，而是直接使用data</span></span></span><br><span class="line"><span class="javascript">            <span class="attr">contentType</span>: <span class="literal">false</span>,</span></span><br><span class="line"><span class="javascript">            <span class="attr">success</span>:<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">if</span>(data.code === <span class="number">200</span>)&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;data.message&#125;</span>`</span>);</span></span><br><span class="line"><span class="javascript">                &#125;<span class="keyword">else</span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;data.message&#125;</span>`</span>);</span></span><br><span class="line"><span class="javascript">                &#125;</span></span><br><span class="line"><span class="javascript">            &#125;,</span></span><br><span class="line"><span class="javascript">            <span class="attr">error</span>:<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                self.$message.warning(<span class="string">`<span class="subst">$&#123;e&#125;</span>`</span>);</span></span><br><span class="line"><span class="javascript">                <span class="comment">//console.log(&quot;不成功&quot;+e);</span></span></span><br><span class="line"><span class="javascript">            &#125;</span></span><br><span class="line"><span class="javascript">        &#125;);</span></span><br><span class="line"><span class="javascript">        stream.getTracks()[<span class="number">0</span>].stop();<span class="comment">//结束关闭流</span></span></span><br><span class="line"><span class="javascript">    &#125;)</span></span><br><span class="line"><span class="javascript">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>后端代码</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.dwx.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.ResponseBody;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.multipart.MultipartHttpServletRequest;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpSession;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">areFaceController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping(value = &quot;/areFace.do&quot;)</span></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">areFaceTest</span><span class="params">(HttpServletRequest request,HttpServletRequest response,HttpSession session)</span> </span>&#123;</span><br><span class="line">        MultipartHttpServletRequest multipartRequest=(MultipartHttpServletRequest) request;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;sxt&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>注意，这里需要在springmvc.xml中添加一个bean配置否则会出错</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--在SpringMvc.xml文件中增加Spring文件上传的解析器--&gt;</span><br><span class="line">   &lt;bean id=&quot;multipartResolver&quot;</span><br><span class="line">         class=&quot;org.springframework.web.multipart.commons.CommonsMultipartResolver&quot;&gt;</span><br><span class="line">       &lt;property name=&quot;maxUploadSize&quot; value=&quot;10485760&quot; /&gt;</span><br><span class="line">       &lt;!-- resolveLazily属性启用是为了推迟文件解析，以便在Action 中捕获文件大小异常 --&gt;</span><br><span class="line">       &lt;property name=&quot;resolveLazily&quot; value=&quot;true&quot; /&gt;</span><br><span class="line">       &lt;property name=&quot;defaultEncoding&quot; value=&quot;UTF-8&quot; /&gt;</span><br><span class="line">   &lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+
+
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          Donate
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://dwx-tx/dwx-tx.github.io/2022/10/27/%E7%BD%91%E9%A1%B5%E8%B0%83%E7%94%A8%E6%91%84%E5%83%8F%E5%A4%B4%E6%8A%80%E6%9C%AF/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2022/10/27/%E5%85%B3%E4%BA%8E%E6%98%AF%E5%90%A6%E8%AF%A5%E5%81%9A/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            某件事是否该做应该由常识决定
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2022/10/26/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E7%B3%BB%E7%BB%9F%E5%86%8D%E8%AE%A4%E8%AF%86/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">人脸识别深入认识</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2022
+        <i class="ri-heart-fill heart_icon"></i> dwx
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="dwx-tx的小天地"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>

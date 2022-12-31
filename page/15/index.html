@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title> dwx-tx的小天地</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"
+      />
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+       
+ 
+<script>
+var _hmt = _hmt || [];
+(function() {
+	var hm = document.createElement("script");
+	hm.src = "https://hm.baidu.com/hm.js?57bee4bd4703d5af3f9154ce72c6f85f";
+	var s = document.getElementsByTagName("script")[0]; 
+	s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    <link rel="alternate" href="/atom.xml" title="dwx-tx的小天地" type="application/atom+xml">
+</head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      
+<section class="cover">
+    
+      
+      <a class="forkMe" href="https://github.com/Shen-Yu/hexo-theme-ayer"
+        target="_blank"><img width="149" height="149" src="/images/forkme.png"
+          class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+    
+  <div class="cover-frame">
+    <div class="bg-box">
+      <img src="/images/cover1.jpg" alt="image frame" />
+    </div>
+    <div class="cover-inner text-center text-white">
+      <h1><a href="/">dwx-tx的小天地</a></h1>
+      <div id="subtitle-box">
+        
+        <span id="subtitle"></span>
+        
+      </div>
+      <div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="cover-learn-more">
+    <a href="javascript:void(0)" class="anchor"><i class="ri-arrow-down-line"></i></a>
+  </div>
+</section>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script>
+
+
+<!-- Subtitle -->
+
+  <script>
+    try {
+      var typed = new Typed("#subtitle", {
+        strings: ['面朝大海，春暖花开', '愿你一生努力，一生被爱', '想要的都拥有，得不到的都释怀'],
+        startDelay: 0,
+        typeSpeed: 200,
+        loop: true,
+        backSpeed: 100,
+        showCursor: true
+      });
+    } catch (err) {
+      console.log(err)
+    }
+  </script>
+  
+<div id="main">
+  <section class="outer">
+  
+  
+  
+
+<div class="notice" style="margin-top:50px">
+    <i class="ri-heart-fill"></i>
+    <div class="notice-content" id="broad"></div>
+</div>
+<script type="text/javascript">
+    fetch('https://v1.hitokoto.cn')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("broad").innerHTML = data.hitokoto;
+        })
+        .catch(console.error)
+</script>
+
+<style>
+    .notice {
+        padding: 20px;
+        border: 1px dashed #e6e6e6;
+        color: #969696;
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        background: #fbfbfb50;
+        border-radius: 10px;
+    }
+
+    .notice i {
+        float: left;
+        color: #999;
+        font-size: 16px;
+        padding-right: 10px;
+        vertical-align: middle;
+        margin-top: -2px;
+    }
+
+    .notice-content {
+        display: initial;
+        vertical-align: middle;
+    }
+</style>
+  
+  <article class="articles">
+    
+    
+    
+    
+    <article
+  id="post-数据库的建立"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/12/16/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%BB%BA%E7%AB%8B/"
+    >数据库的建立</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%BB%BA%E7%AB%8B/" class="article-date">
+  <time datetime="2021-12-16T14:54:34.289Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="数据库的建立"><a href="#数据库的建立" class="headerlink" title="数据库的建立"></a>数据库的建立</h1><p>初学MySQL数据库，还不会使用cmd创建数据库。因此我通过可是化的软件在实现数据库的建立</p>
+<h2 id="SQLyog的使用"><a href="#SQLyog的使用" class="headerlink" title="SQLyog的使用"></a>SQLyog的使用</h2><p>我们下载号SQLyog后，可以再对MySQL链接一下，通过可视化的操作建立数据库</p>
+<p><img src="/dwx-tx.github.io/2021/12/16/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%BB%BA%E7%AB%8B/截屏\数据库创建01.jpg"></p>
+<p><img src="/dwx-tx.github.io/2021/12/16/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%BB%BA%E7%AB%8B/截屏\数据库创建02.jpg"></p>
+<p>注意 在创建时一定要使用UTF-8字符集</p>
+<p>在核对时一定要选择utf-8_general_ei</p>
+<p>这样的选择可以对中文融合</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-检索数据"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/%E6%A3%80%E7%B4%A2%E6%95%B0%E6%8D%AE/" class="article-date">
+  <time datetime="2021-12-16T14:54:34.289Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="检索数据"><a href="#检索数据" class="headerlink" title="检索数据"></a>检索数据</h1><h2 id="SELECT语句"><a href="#SELECT语句" class="headerlink" title="SELECT语句"></a>SELECT语句</h2><p>我们检索数据 重要使用的是SQL语句，SQL语句中最经常使用的是SELECT语句</p>
+<h2 id="在SQL语句中的大小写"><a href="#在SQL语句中的大小写" class="headerlink" title="在SQL语句中的大小写"></a>在SQL语句中的大小写</h2><p><strong>SQL语句不区分大小写，因此SELECT和select是相同的</strong></p>
+<ul>
+<li>我们将SQL中的关键字使用大写</li>
+<li>我们将列和表名使用小写</li>
+</ul>
+<h2 id="检索单个列"><a href="#检索单个列" class="headerlink" title="检索单个列"></a>检索单个列</h2><p><strong>语法结构</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT 列名</span><br><span class="line">FROM 表名;</span><br></pre></td></tr></table></figure>
+
+<p>这是最简单的检索，既没有过滤数据，也没有排序</p>
+<h2 id="检索多个列"><a href="#检索多个列" class="headerlink" title="检索多个列"></a>检索多个列</h2><p><strong>语法结构：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT 第一个列名,第二个列名,第n个列名</span><br><span class="line">FROM 表名;</span><br></pre></td></tr></table></figure>
+
+<p>在选择多个列时，一定要在列名之间加上逗号，最后一个列名不加，否则会出现错误</p>
+<h2 id="检索所有的列"><a href="#检索所有的列" class="headerlink" title="检索所有的列"></a>检索所有的列</h2><p>SELECT语句可以检索所有的列而不必逐个列出列名，只需要在列名位置用（*）代替即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT *</span><br><span class="line">FROM 表名;</span><br></pre></td></tr></table></figure>
+
+<h2 id="检索不同的行"><a href="#检索不同的行" class="headerlink" title="检索不同的行"></a>检索不同的行</h2><p><strong>意义为：将一列中相同的元素剔除，只留下一个。输出列值都不同</strong></p>
+<p><strong>语法结构</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT DISTINCT 列名</span><br><span class="line">FROM 表名;</span><br></pre></td></tr></table></figure>
+
+<h2 id="限制效果"><a href="#限制效果" class="headerlink" title="限制效果"></a>限制效果</h2><p><strong>通过使用限制效果，我们可以返回第一行或前几行</strong></p>
+<p><strong>语法结构</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT 列名</span><br><span class="line">FROM 表名</span><br><span class="line">LIMIT 阿拉伯数字;</span><br></pre></td></tr></table></figure>
+
+<p>在上述的阿拉伯数字有两种形式：</p>
+<ul>
+<li>单一的阿拉伯数字：表示前n行数据</li>
+<li>n,m ：表示从行n取到行m </li>
+</ul>
+<p><strong>注意</strong>：在MySQL中，行是从行0开始的</p>
+<p>（n，m）这种形式也可以写为 (m OFFSET n)表达的意思一样</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-getImg"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/12/16/getImg/"
+    >get文件form多重文件夹</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/getImg/" class="article-date">
+  <time datetime="2021-12-16T14:52:13.331Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="图片抽取程序"><a href="#图片抽取程序" class="headerlink" title="图片抽取程序"></a>图片抽取程序</h1><h2 id="最基础的文件读写"><a href="#最基础的文件读写" class="headerlink" title="最基础的文件读写"></a>最基础的文件读写</h2><p><strong>最基础的文件读写是通过IO流来实现的，格式比较固定，只能实现文件到文件的程序处理</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">package com.dwx.getImage;</span><br><span class="line"></span><br><span class="line">import java.io.*;</span><br><span class="line">//这是一个简单的文件读写 只能实现文件到文件</span><br><span class="line">public class getImage &#123;</span><br><span class="line">    //获得文件是一个递归函数</span><br><span class="line">    public void getImage(File fileIn,File fileOut) throws IOException &#123;</span><br><span class="line">        //对于这个方法需要两个变量 一个是目标文件fileIn 一个是终点文件fileOut</span><br><span class="line">        //在java中 文件的存储方式是集合(list)</span><br><span class="line">        //通过InputStream来存储源文件 通过OutputStream来表示目标地址</span><br><span class="line">        FileInputStream fi = null;</span><br><span class="line">        FileOutputStream fo = null;</span><br><span class="line">        try &#123;</span><br><span class="line">            //为目标文件创建成一个流</span><br><span class="line">           fi = new FileInputStream(fileIn);</span><br><span class="line">           fo = new FileOutputStream(fileOut);</span><br><span class="line">           //创造一个数组来存取这个文件</span><br><span class="line">            byte[] buffer = new byte[1024];</span><br><span class="line">            int len;</span><br><span class="line">            while ((len = fi.read(buffer))!=-1)&#123;</span><br><span class="line">                fo.write(buffer,0,len);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125; catch (FileNotFoundException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;finally &#123;</span><br><span class="line">            //对于用完的资源要及时关闭</span><br><span class="line">            try &#123;</span><br><span class="line">                fi.close();</span><br><span class="line">            &#125; catch (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="实现对文件的遍历"><a href="#实现对文件的遍历" class="headerlink" title="实现对文件的遍历"></a>实现对文件的遍历</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">package com.dwx.getImage;</span><br><span class="line"></span><br><span class="line">import java.io.*;</span><br><span class="line"></span><br><span class="line">//这个类我们来测试一下从文件夹中得到文件，并指定输出到我们想到的位置</span><br><span class="line">public class getImageDemo02 &#123;</span><br><span class="line">    //这个方法已经实现了对文件的遍历</span><br><span class="line">    public void getImage(File fileIn,File fileOut)&#123;</span><br><span class="line">        //我们要知道 文件类型可能是文件，也可能是文件夹</span><br><span class="line">        //这里我们来判断是否是一个文件夹</span><br><span class="line">        //通过 fileIn.listFiles就能把一个文件夹转化成list</span><br><span class="line">        //通过递归来实现对整个文件夹的遍历</span><br><span class="line">//        System.out.println(fileIn.isDirectory());</span><br><span class="line">//        for (File f : fileIn.listFiles())&#123;</span><br><span class="line">//            System.out.println(f);</span><br><span class="line">//        &#125;</span><br><span class="line">        //对于文件遍历 若是文件夹 就在进入下一次 如果是文件 return</span><br><span class="line">        if (fileIn.isDirectory())&#123;</span><br><span class="line">            for(File fi:fileIn.listFiles())&#123;</span><br><span class="line">                System.out.println(fi);</span><br><span class="line">                getImage(fi,fileOut);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        //如果不是就直接返回</span><br><span class="line">        else&#123;</span><br><span class="line">            //System.out.println(fileIn.getAbsolutePath());</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        getImageDemo02 getImageDemo02 = new getImageDemo02();</span><br><span class="line">        File fi = new File(&quot;E:/get&quot;);</span><br><span class="line">        File fo = new File(&quot;E:/out&quot;);</span><br><span class="line">        getImageDemo02.getImage(fi,fo);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="对完整的实现文件遍历并且下载的实现"><a href="#对完整的实现文件遍历并且下载的实现" class="headerlink" title="对完整的实现文件遍历并且下载的实现"></a>对完整的实现文件遍历并且下载的实现</h2><h3 id="程序作用"><a href="#程序作用" class="headerlink" title="程序作用"></a>程序作用</h3><p>在得到一个多重文件夹时，提取文件夹中的文件会十分麻烦，因此，我编写了一个程序。程序能够遍历整个文件夹中的文件，并且把文件复制到我们的目标文件夹。</p>
+<h3 id="程序的基本思想"><a href="#程序的基本思想" class="headerlink" title="程序的基本思想"></a>程序的基本思想</h3><p>编写程序时的基础思想为：如果读入的是一个文件夹，就操作文件夹中的元素（文件通过file.listFiles( )将文件转换成list，通过for循环进行遍历）。如果读入的是一个文件，就copy这个文件到目标文件夹</p>
+<h3 id="程序的技术支持"><a href="#程序的技术支持" class="headerlink" title="程序的技术支持"></a>程序的技术支持</h3><ul>
+<li>I/O流 IO流的使用把文件读为一个流 对流的处理会比较简单</li>
+<li>递归的使用：程序的基本思想是递归的，因此，使用递归思想写程序更加方便，且易于理解</li>
+<li>文件名的获得：file.getName()就能获得文件的文件名 + 目标文件夹名 就能创造出一个新的文件 通过流对其进行操作</li>
+</ul>
+<h3 id="copy方法的实现"><a href="#copy方法的实现" class="headerlink" title="copy方法的实现"></a>copy方法的实现</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">package com.dwx.getImage;</span><br><span class="line"></span><br><span class="line">import java.io.*;</span><br><span class="line">//这是一个简单的文件读写 只能实现文件到文件</span><br><span class="line">public class getImage &#123;</span><br><span class="line">    //获得文件是一个递归函数</span><br><span class="line">    public void getImage(File fileIn,File fileOut) throws IOException &#123;</span><br><span class="line">        //对于这个方法需要两个变量 一个是目标文件fileIn 一个是终点文件fileOut</span><br><span class="line">        //在java中 文件的存储方式是集合(list)</span><br><span class="line">        //通过InputStream来存储源文件 通过OutputStream来表示目标地址</span><br><span class="line">        FileInputStream fi = null;</span><br><span class="line">        FileOutputStream fo = null;</span><br><span class="line">        try &#123;</span><br><span class="line">            //为目标文件创建成一个流</span><br><span class="line">           fi = new FileInputStream(fileIn);</span><br><span class="line">           fo = new FileOutputStream(fileOut);</span><br><span class="line">           //创造一个数组来存取这个文件</span><br><span class="line">            byte[] buffer = new byte[1024];</span><br><span class="line">            int len;</span><br><span class="line">            while ((len = fi.read(buffer))!=-1)&#123;</span><br><span class="line">                fo.write(buffer,0,len);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125; catch (FileNotFoundException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;finally &#123;</span><br><span class="line">            //对于用完的资源要及时关闭</span><br><span class="line">            try &#123;</span><br><span class="line">                fi.close();</span><br><span class="line">            &#125; catch (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="遍历-递归-方法的实现"><a href="#遍历-递归-方法的实现" class="headerlink" title="遍历(递归)方法的实现"></a>遍历(递归)方法的实现</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">package com.dwx.getImage;</span><br><span class="line"></span><br><span class="line">import java.io.*;</span><br><span class="line"></span><br><span class="line">//这个类我们来测试一下从文件夹中得到文件，并指定输出到我们想到的位置</span><br><span class="line">public class getImageDemo02 &#123;</span><br><span class="line">    //这个方法已经实现了对文件的遍历</span><br><span class="line">    public void getImage(File fileIn,File fileOut)&#123;</span><br><span class="line">        //我们要知道 文件类型可能是文件，也可能是文件夹</span><br><span class="line">        //这里我们来判断是否是一个文件夹</span><br><span class="line">        //通过 fileIn.listFiles就能把一个文件夹转化成list</span><br><span class="line">        //通过递归来实现对整个文件夹的遍历</span><br><span class="line">//        System.out.println(fileIn.isDirectory());</span><br><span class="line">//        for (File f : fileIn.listFiles())&#123;</span><br><span class="line">//            System.out.println(f);</span><br><span class="line">//        &#125;</span><br><span class="line">        //对于文件遍历 若是文件夹 就在进入下一次 如果是文件 return</span><br><span class="line">        if (fileIn.isDirectory())&#123;</span><br><span class="line">            for(File fi:fileIn.listFiles())&#123;</span><br><span class="line">                getImage(fi,fileOut);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        //如果不是就直接返回</span><br><span class="line">        else&#123;</span><br><span class="line">            getImage getImage = new getImage();</span><br><span class="line">            System.out.println(fileIn);</span><br><span class="line">            System.out.println(&quot;文件名字为&quot;+fileIn.getName());</span><br><span class="line">            File file = new File(fileOut+&quot;\\&quot;+ fileIn.getName());</span><br><span class="line">            System.out.println(&quot;写到了&quot;+file.getName());</span><br><span class="line">            try &#123;</span><br><span class="line">                getImage.getImage(fileIn,file);</span><br><span class="line">            &#125; catch (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">//    public static void main(String[] args) &#123;</span><br><span class="line">//        getImageDemo02 getImageDemo02 = new getImageDemo02();</span><br><span class="line">//        File fi = new File(&quot;E:/get&quot;);</span><br><span class="line">//        File fo = new File(&quot;E:/out&quot;);</span><br><span class="line">//        getImageDemo02.getImage(fi,fo);</span><br><span class="line">//    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="主方法-main-方法"><a href="#主方法-main-方法" class="headerlink" title="主方法(main)方法"></a>主方法(main)方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.dwx.test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.dwx.getImage.getImageDemo02;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"><span class="comment">//        getImage getImage = new getImage();</span></span><br><span class="line"><span class="comment">//        File fi = new File(&quot;E:\\get\\1.jpg&quot;);</span></span><br><span class="line"><span class="comment">//        File fo = new File(&quot;E:\\out\\1.jpg&quot;);</span></span><br><span class="line"><span class="comment">//        try &#123;</span></span><br><span class="line"><span class="comment">//            getImage.getImage(fi,fo);</span></span><br><span class="line"><span class="comment">//        &#125; catch (IOException e) &#123;</span></span><br><span class="line"><span class="comment">//            e.printStackTrace();</span></span><br><span class="line"><span class="comment">//        &#125;</span></span><br><span class="line">        String fileInName;</span><br><span class="line">        String fileOutName;</span><br><span class="line">        Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        System.out.print(<span class="string">&quot;请输入源文件夹:&quot;</span>);</span><br><span class="line">        fileInName = scanner.nextLine();</span><br><span class="line">        System.out.print(<span class="string">&quot;请输入目标文件夹:&quot;</span>);</span><br><span class="line">        fileOutName = scanner.nextLine();</span><br><span class="line">        File fileIn = <span class="keyword">new</span> File(fileInName);</span><br><span class="line">        File fileOut = <span class="keyword">new</span> File(fileOutName);</span><br><span class="line">        getImageDemo02 getImageDemo02 = <span class="keyword">new</span> getImageDemo02();</span><br><span class="line">        getImageDemo02.getImage(fileIn,fileOut);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="未来-已来"><a href="#未来-已来" class="headerlink" title="未来(已来)"></a>未来(已来)</h2><p>对于这个程序还有很多能够完善的</p>
+<h3 id="加上下载时间"><a href="#加上下载时间" class="headerlink" title="加上下载时间"></a>加上下载时间</h3><p><strong>已经加上了各个图片的下载时间 时间是以毫秒为单位的</strong></p>
+<h3 id="特定文件类型的获取"><a href="#特定文件类型的获取" class="headerlink" title="特定文件类型的获取"></a>特定文件类型的获取</h3><p><strong>我给出的解决方案：增加一个过滤器，当查询到文件后，让文件后缀跟过滤器比较，比较成功就进行操作</strong></p>
+<p><strong>已经实现</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.dwx.filter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"></span><br><span class="line"><span class="comment">//这是一个过滤器，用来特殊过滤文件</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Filter</span> </span>&#123;</span><br><span class="line">    <span class="comment">//对于一个过滤器，他有的属性就是文件后缀名</span></span><br><span class="line">    String  FileLastName;</span><br><span class="line">    <span class="comment">//在类被加载时就对这个属性进行初始化</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Filter</span><span class="params">(String fileLastName)</span> </span>&#123;</span><br><span class="line">        FileLastName = fileLastName;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//过滤器的方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">FileFilter</span><span class="params">(File fileIn)</span></span>&#123;</span><br><span class="line">        <span class="comment">//立一个布尔类型的标记 来判断是否是合适的后缀文件</span></span><br><span class="line">        <span class="keyword">boolean</span> flag = <span class="keyword">false</span>;</span><br><span class="line">        <span class="comment">//如果输入的是all 则操作所有的类型</span></span><br><span class="line">        <span class="keyword">if</span> (FileLastName.equals(<span class="string">&quot;all&quot;</span>))&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//获取文件的名字</span></span><br><span class="line">        String fileInName = fileIn.getName();</span><br><span class="line">        <span class="comment">//获取文件名字的后缀</span></span><br><span class="line">        <span class="comment">//字符串以.切割 然后存放到String数组中</span></span><br><span class="line">        String[] fileLastName = fileInName.split(<span class="string">&quot;\\.&quot;</span>);</span><br><span class="line">        <span class="comment">//通过这种方式 保证了获取到的一定是文件的后缀</span></span><br><span class="line">        <span class="keyword">int</span> length = fileLastName.length;</span><br><span class="line">        <span class="keyword">if</span> (fileLastName[length-<span class="number">1</span>].equals(FileLastName))&#123;</span><br><span class="line">            flag = <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> flag;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//    public static void main(String[] args) &#123;</span></span><br><span class="line"><span class="comment">//        Filter filter = new Filter(&quot;jpg&quot;);</span></span><br><span class="line"><span class="comment">//        filter.FileFilter(new File(&quot;E:\\get\\1.jpg&quot;));</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//    &#125;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="解决程序健壮性问题"><a href="#解决程序健壮性问题" class="headerlink" title="解决程序健壮性问题"></a>解决程序健壮性问题</h2><h3 id="目标文件重名问题"><a href="#目标文件重名问题" class="headerlink" title="目标文件重名问题"></a>目标文件重名问题</h3><p><strong>在原程序中 目标文件重名后是会被重写的，这不符合实际应用中的情况，因此需要进行判断是否目标文件会重名</strong></p>
+<p>我给出的解决方案是：在增加一个filter来过滤是否文件重名</p>
+<p><img src="/dwx-tx.github.io/2021/12/16/getImg/Users\Lenovo\AppData\Roaming\Typora\typora-user-images\1639579595262.png"></p>
+<p>已经较初级得解决了文件重名问题 即判断是否重名，对重名的文件重新命名</p>
+<p>加入的过滤器</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.dwx.filter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SameFileFilter</span> </span>&#123;</span><br><span class="line">    <span class="comment">//在实际的文件书写过程中 可能会存在</span></span><br><span class="line">    <span class="comment">//实际是对目标文件进行遍历</span></span><br><span class="line">    <span class="comment">//问题在于 这个目标文件是会一直改变的 不知道能否成功</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">SameFileFilter</span><span class="params">(File fileOut,File file)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">boolean</span> flag = <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">for</span> (File f : fileOut.listFiles())&#123;</span><br><span class="line">            <span class="keyword">if</span> (f.equals(file))&#123;</span><br><span class="line">                <span class="comment">//如果在类表中找到该文件 将flag改为true</span></span><br><span class="line">                flag = <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> flag;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SameFileFilter fileFilter = <span class="keyword">new</span> SameFileFilter();</span><br><span class="line">        <span class="keyword">boolean</span> b = fileFilter.SameFileFilter(<span class="keyword">new</span> File(<span class="string">&quot;E:/out&quot;</span>), <span class="keyword">new</span> File(<span class="string">&quot;E:/out/1.jpg&quot;</span>));</span><br><span class="line">        System.out.println(b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>发生改变的程序</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.dwx.getImage;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.dwx.filter.Filter;</span><br><span class="line"><span class="keyword">import</span> com.dwx.filter.SameFileFilter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">import</span> java.util.Objects;</span><br><span class="line"></span><br><span class="line"><span class="comment">//这个类我们来测试一下从文件夹中得到文件，并指定输出到我们想到的位置</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">getImageDemo02</span> </span>&#123;</span><br><span class="line">    <span class="comment">//这个方法已经实现了对文件的遍历</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getImage</span><span class="params">(File fileIn, File fileOut,String fileLastName)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//我们要知道 文件类型可能是文件，也可能是文件夹</span></span><br><span class="line">        <span class="comment">//这里我们来判断是否是一个文件夹</span></span><br><span class="line">        <span class="comment">//通过 fileIn.listFiles就能把一个文件夹转化成list</span></span><br><span class="line">        <span class="comment">//通过递归来实现对整个文件夹的遍历</span></span><br><span class="line"><span class="comment">//        System.out.println(fileIn.isDirectory());</span></span><br><span class="line"><span class="comment">//        for (File f : fileIn.listFiles())&#123;</span></span><br><span class="line"><span class="comment">//            System.out.println(f);</span></span><br><span class="line"><span class="comment">//        &#125;</span></span><br><span class="line">        <span class="comment">//对于文件遍历 若是文件夹 就在进入下一次 如果是文件 return</span></span><br><span class="line">        <span class="keyword">if</span> (fileIn.isDirectory()) &#123;</span><br><span class="line">            <span class="keyword">for</span> (File fi : Objects.requireNonNull(fileIn.listFiles())) &#123;</span><br><span class="line">                getImage(fi, fileOut,fileLastName);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//如果不是就直接返回</span></span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            Filter filter = <span class="keyword">new</span> Filter(fileLastName);</span><br><span class="line">            <span class="keyword">if</span> (filter.FileFilter(fileIn)) &#123;</span><br><span class="line">                getImage getImage = <span class="keyword">new</span> getImage();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                <span class="comment">//用目标文件夹＋源文件名就组成了目标文件名（全路径）</span></span><br><span class="line">                File file = <span class="keyword">new</span> File(fileOut + <span class="string">&quot;\\&quot;</span> + fileIn.getName());</span><br><span class="line"></span><br><span class="line">                <span class="comment">//插入一个过滤同名文件的过滤器</span></span><br><span class="line">                SameFileFilter sameFileFilter = <span class="keyword">new</span> SameFileFilter();</span><br><span class="line">                <span class="comment">//如果这个if成立 就说明有重名文件 就把文件名在加个(00)</span></span><br><span class="line">                <span class="keyword">if</span>(sameFileFilter.SameFileFilter(fileOut, file))&#123;</span><br><span class="line">                    file = <span class="keyword">new</span> File(fileOut+<span class="string">&quot;\\&quot;</span>+<span class="string">&quot;(same)&quot;</span>+fileIn.getName());</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">//如果条件不成立 文件名就不会发生改变</span></span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    getImage.MygetImage(fileIn, file);</span><br><span class="line">                &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-JAVA流程控制"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/JAVA%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/" class="article-date">
+  <time datetime="2021-12-16T14:42:43.964Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="JAVA流程控制"><a href="#JAVA流程控制" class="headerlink" title="JAVA流程控制"></a>JAVA流程控制</h1><h2 id="用户交互Scanner类——-gt-输入字符串"><a href="#用户交互Scanner类——-gt-输入字符串" class="headerlink" title="用户交互Scanner类——&gt;输入字符串"></a>用户交互Scanner类——&gt;输入字符串</h2><p>通过运用Scanner类，我们可以实现人机交互，通过scanner来获取用户输入的数据</p>
+<h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Scanner s = newScanner(System.in);</span><br></pre></td></tr></table></figure>
+
+<p><strong>使用方法</strong>：我们一般通过Scanner类的next（）和nextLine（）方法获取输入的字符串，可以直接使用，亦可以通过判断语句结合hasNext（）或hasNextLine（）来判断是否有数据的输入</p>
+<p><strong>使用步奏</strong></p>
+<ol>
+<li>在main类中new Scanner (System.in)，系统自动导入Scanner类</li>
+<li>在刚输入的代码后通过Alt+Enter系统自动封装</li>
+<li>在使用scanner后如果不再使用，一定通过scanner.close()将其关闭</li>
+</ol>
+<p> <img src="/dwx-tx.github.io/2021/12/16/JAVA%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/截屏\scanner.next1.png" alt="scanner.next1"></p>
+<p><img src="/dwx-tx.github.io/2021/12/16/JAVA%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/截屏\scanner.next2.png" alt="scanner.next2"></p>
+<p>我们可以看到，scanner.next可以直接使用，亦可异通过和判断语句结合使用</p>
+<p>而在第二次输入的时候可以发现，输入的是hell0 world但输出的是hello，因此，这里引出next（）使用的方法</p>
+<p>next：</p>
+<ul>
+<li>一定要读取到有效字符后才可以结束输入</li>
+<li>对输入有效字符之前遇到空白，next()方法会自动去掉</li>
+<li>只有输入有效字符后才将其后面的输入的空白作为分隔符或者结束符</li>
+<li>next()不能得到带空格的字符串</li>
+</ul>
+<p><strong>如果我们需要输入带空格的字符串时给怎么做呐</strong></p>
+<p><em><strong>使用nextLine（）</strong></em></p>
+<p>nextLine():</p>
+<ul>
+<li>以Enter作为结束符，也就是说nextLine方法返回输入回车之前的所有字符</li>
+<li>可以获取空白</li>
+</ul>
+<p><img src="/dwx-tx.github.io/2021/12/16/JAVA%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/截屏\scanner.nextLine1.png"></p>
+<p><img src="/dwx-tx.github.io/2021/12/16/JAVA%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/截屏\scanner.nextLine2.png"></p>
+<h2 id="Scanner输入数字类型"><a href="#Scanner输入数字类型" class="headerlink" title="Scanner输入数字类型"></a>Scanner输入数字类型</h2><p>基本步奏和输入字符串时一样，只不过在调用next（）时使用的是nextInt（）和nextFloat（）</p>
+<p><img src="/dwx-tx.github.io/2021/12/16/JAVA%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/截屏\scanner.nextint.png"></p>
+<p><img src="/dwx-tx.github.io/2021/12/16/JAVA%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/截屏\scanner.nextInt2.png"></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-java流程结构"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/12/16/java%E6%B5%81%E7%A8%8B%E7%BB%93%E6%9E%84/"
+    >java流程结构</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/java%E6%B5%81%E7%A8%8B%E7%BB%93%E6%9E%84/" class="article-date">
+  <time datetime="2021-12-16T14:42:43.964Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="顺序结构"><a href="#顺序结构" class="headerlink" title="顺序结构"></a>顺序结构</h2><p>顺序结构是java的基本结构，除非特别指明，否则会按照从上到下的顺序依次执行代码。</p>
+<p><img src="/dwx-tx.github.io/2021/12/16/java%E6%B5%81%E7%A8%8B%E7%BB%93%E6%9E%84/截屏\顺序结构01.png"></p>
+<p><img src="/dwx-tx.github.io/2021/12/16/java%E6%B5%81%E7%A8%8B%E7%BB%93%E6%9E%84/截屏\顺序结构02.png"></p>
+<h2 id="选择结构"><a href="#选择结构" class="headerlink" title="选择结构"></a>选择结构</h2><h3 id="if选择结构"><a href="#if选择结构" class="headerlink" title="if选择结构"></a>if选择结构</h3><h4 id="if单选择结构"><a href="#if单选择结构" class="headerlink" title="if单选择结构"></a>if单选择结构</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(布尔表达式)&#123;</span><br><span class="line">    语句块；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>和C语言中的if选择结构一样，当布尔值表达式的结果为True时，输出语句块，否则跳过语句块，执行if（）后边的程序。</p>
+<h4 id="if双选择结构"><a href="#if双选择结构" class="headerlink" title="if双选择结构"></a>if双选择结构</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(布尔表达式)&#123;</span><br><span class="line">    语句块<span class="number">1</span>；</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    语句块<span class="number">2</span>；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当布尔表达式的结果为true时，输出语句块1;否则将执行语句块2。</p>
+<h3 id="if三选择结构"><a href="#if三选择结构" class="headerlink" title="if三选择结构"></a>if三选择结构</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(布尔表达式<span class="number">1</span>)&#123;</span><br><span class="line">    语句块<span class="number">1</span>；</span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>(布尔表达式<span class="number">2</span>)&#123;</span><br><span class="line">    语句块<span class="number">2</span>；</span><br><span class="line">    </span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>(布尔表达式<span class="number">3</span>)&#123;</span><br><span class="line">    语句块<span class="number">3</span>；</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    语句块<span class="number">4</span>；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>编译器会从上到下依次读取布尔表达式，谁的表达式结果为true，则执行该表达式对应的语句块，执行结束后就会跳出该结构，即使下边的布尔表达式理论上也可以为真，也不会表达。</p>
+<p><strong>注意</strong>：在else-else if-else结构中，至少有一个else*语句，切else语句在结构的最后一句。如果某个else if检查语句为true，程序直接跳出结构，不会再继续执行，</p>
+<h3 id="switch选择结构"><a href="#switch选择结构" class="headerlink" title="switch选择结构"></a>switch选择结构</h3><p>switch-case语句判断一个变量与一系类值中的某个值是否相等，每个值称为一个分支.</p>
+<p><strong>switch语句中的变量类型可以是</strong>：</p>
+<ul>
+<li>byte，short,int 或者char</li>
+<li>String从java SE 7也可以使用</li>
+<li>case标签必须为字符串常量或字面量</li>
+</ul>
+<p>switch-case语句格式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span>(表达式)&#123;</span><br><span class="line">    <span class="keyword">case</span> value:</span><br><span class="line">        &lt;语句&gt;;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> value:</span><br><span class="line">        &lt;语句&gt;;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> value:</span><br><span class="line">        &lt;语句&gt;;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>：    #可选可不选</span><br><span class="line">        &lt;语句&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当表达式与某个value相同时，执行其对应的语句，然后借助break跳出循环，不然就会继续向下执行，知道找到break或者default为止。</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-java方法详解"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/java%E6%96%B9%E6%B3%95%E8%AF%A6%E8%A7%A3/" class="article-date">
+  <time datetime="2021-12-16T14:42:43.954Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="Java方法详解"><a href="#Java方法详解" class="headerlink" title="Java方法详解"></a>Java方法详解</h1><h2 id="什么是方法"><a href="#什么是方法" class="headerlink" title="什么是方法"></a>什么是方法</h2><p>这边我以System.out.println();为例</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">System.out.println();<span class="comment">/*调用System类中的out对象中的println方法*/</span></span><br><span class="line"><span class="comment">/*类*/</span><span class="comment">/*对象*/</span><span class="comment">/*方法*/</span></span><br><span class="line"><span class="comment">//整体的使用方法的原理就是，调用类中的对象中的方法</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="Java方法的大致内容"><a href="#Java方法的大致内容" class="headerlink" title="Java方法的大致内容"></a>Java方法的大致内容</h3><p><strong>Java方法是语句的集合，它们在一起执行一个功能</strong></p>
+<ul>
+<li>方法是解决一类问题的步奏和有序组合</li>
+<li>方法包含于类或对象中</li>
+<li>方法在程序中被创建，在其他地方被调用</li>
+</ul>
+<h3 id="设计方法的原则"><a href="#设计方法的原则" class="headerlink" title="设计方法的原则"></a>设计方法的原则</h3><p>方法的本意是功能快，就是实现某个功能的语句块的集合。我们设计方法的时候应当保持方法的原子性，即<strong>一个方法只用于实现一个功能</strong>，这样有利于我们的后期拓展</p>
+<h3 id="方法的命名规则"><a href="#方法的命名规则" class="headerlink" title="方法的命名规则"></a>方法的命名规则</h3><p>方法的命名规则基本上和变量的命名规则相同，<strong>高级要求</strong>需要首字母小写的驼峰原则</p>
+<h3 id="自定义方法的实例"><a href="#自定义方法的实例" class="headerlink" title="自定义方法的实例"></a>自定义方法的实例</h3><p>这里我会以add方法作为实例</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> method;<span class="comment">//包名</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">method01</span> </span>&#123;<span class="comment">// 类名</span></span><br><span class="line">    <span class="comment">//main方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum = add(<span class="number">1</span>,<span class="number">2</span>);</span><br><span class="line">        System.out.println(sum);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//我们自己定义的方法是写在类里边，方法外边的</span></span><br><span class="line">    <span class="comment">//void 和C语言一样，表示没有返回值, int 有返回值</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> a+b;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>为了使自己定义的方法能够被合理的调用，我们使用<strong>public</strong>和<strong>static</strong>等修饰符来对方法进行修饰</p>
+<h2 id="方法的定义"><a href="#方法的定义" class="headerlink" title="方法的定义"></a>方法的定义</h2><p>   java的方法类似于其它语言的函数，是一段用来完成特定功能的代码片段，一般情况下，定义一个方法包含如下语法：</p>
+<h3 id="方法一般包含一个方法头和一个方法ti"><a href="#方法一般包含一个方法头和一个方法ti" class="headerlink" title="方法一般包含一个方法头和一个方法ti"></a>方法一般包含一个方法头和一个方法ti</h3><ul>
+<li>修饰符：修饰符是可选的，可以根据自己对方法的要求选择合适的修饰符，修饰符的作用就是告诉编译器这个方法是用来作什么的</li>
+<li>返回值类型：方法可能会有返回值。returnValueType是方法返回值的数据类型。有些方法执行所需的操作不需要返回值，这时候returValueType是关键字void</li>
+<li>方法名：是方法的实际名称，方法名和参数表共同构成方法签名</li>
+<li>参数类型：参数像是一个占位符。当方法被调用时，传递值给参数。这个值被称为实参或变量。参数列表是指方法的参数类型、顺序、参数个数、参数是可运的。方法可以不包括任何参数<ul>
+<li>形式参数：在方法被调用时用于接收外界的输入数据</li>
+<li>实参：调用方法时实际传递给方法的数据</li>
+</ul>
+</li>
+<li>方法体：方法体包含具体的语句，定义函数的功能</li>
+</ul>
+<h3 id="方法的格式为"><a href="#方法的格式为" class="headerlink" title="方法的格式为"></a>方法的格式为</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">修饰符  返回值类型   方法名（参数类型 参数）&#123;</span><br><span class="line">    ..........</span><br><span class="line">        方法体</span><br><span class="line">    ..........</span><br><span class="line">     <span class="keyword">return</span> 返回值</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="方法调用"><a href="#方法调用" class="headerlink" title="方法调用"></a>方法调用</h3><p>调用方法：对象名.方法名（实参列表）</p>
+<p><strong>注意</strong>：java只有按值传递</p>
+<p>java支持两种调用方法的方式：</p>
+<ul>
+<li><p>对于有返回值的方法，使用方法就当做是一个数值</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> lagger = max(a,b);</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>对于没有返回值的方法，一般调用是为了输出一段语句</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> method;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">compare</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> b = <span class="number">0</span>;</span><br><span class="line">        System.out.println(<span class="string">&quot;请输入两个整数:&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(scanner.hasNextInt())&#123;</span><br><span class="line">            a = scanner.nextInt();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(scanner.hasNextInt())&#123;</span><br><span class="line">            b = scanner.nextInt();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> max = max(a, b);</span><br><span class="line">        System.out.println(max);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">max</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(a &gt; b)&#123;</span><br><span class="line">            <span class="keyword">return</span> a;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(a==b)&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;相等&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">//这里的return 0说明return不仅可以返回值，亦可以作为方法结束符</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> b;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-java循环结构"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/12/16/java%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84/"
+    >for循环</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/java%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84/" class="article-date">
+  <time datetime="2021-12-16T14:42:43.954Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h2><p>while循环格式如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(表达式)&#123;</span><br><span class="line">    &lt;语句块&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>对于while循环必须注意一下几点：</p>
+<ul>
+<li>只要表达式的布尔值为true，循环就会一直持续下去</li>
+<li>但大多数情况下我们并不需要一直循环，也需要停止，就需要设计循环破坏条件</li>
+<li>一定要避免出现死循环</li>
+</ul>
+<h2 id="do-while循环"><a href="#do-while循环" class="headerlink" title="do-while循环"></a>do-while循环</h2><p>do-while循环格式如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span></span><br><span class="line">&#123;</span><br><span class="line">    &lt;语句块&gt;；</span><br><span class="line">&#125;<span class="keyword">while</span>(表达式)</span><br></pre></td></tr></table></figure>
+
+<p>do-while和while一样，使用的方式也一样。</p>
+<p>就是由于该程序把while移动到后边来，所以程序会先进行一次，再去判断表达式是否为true，是否继续执行</p>
+<h2 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h2><p>for循环的格式如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(表达式<span class="number">1</span>；判断式；表达式<span class="number">2</span>)</span><br><span class="line">&#123;</span><br><span class="line">    语句块；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>进入for循环，会先执行表达式1，其实是条件，然后进行判断，如果结果为真，进行执行语句块，然后进行表达式2，再次判断，就这样，一直到判断式为假为止。</p>
+<p>括号中的（；；）是断不可以丢的。</p>
+<p>其运用要点和C语言一样，不在过分赘述。</p>
+<h2 id="关键字break和continue"><a href="#关键字break和continue" class="headerlink" title="关键字break和continue"></a>关键字break和continue</h2><p>和C语言中break和continue关键字的作用一样</p>
+<p>continue：结束本次循环，仍在循环结构中</p>
+<p>break：结束整个循环，跳出循环结构</p>
+<p>而且，两者只能结束一层的循环，如果要对多层循环进行操作需要多次使用</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-java稀疏数组"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/12/16/java%E7%A8%80%E7%96%8F%E6%95%B0%E7%BB%84/"
+    >稀疏数组</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/java%E7%A8%80%E7%96%8F%E6%95%B0%E7%BB%84/" class="article-date">
+  <time datetime="2021-12-16T14:42:43.954Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="稀疏数组"><a href="#稀疏数组" class="headerlink" title="稀疏数组"></a>稀疏数组</h1><h2 id="稀疏数组的使用范围"><a href="#稀疏数组的使用范围" class="headerlink" title="稀疏数组的使用范围"></a>稀疏数组的使用范围</h2><p>当一个数组中大部分元素为0或者为同一值的数组时，可以使用稀疏数组来保存该数组</p>
+<h2 id="稀疏数组的处理方式"><a href="#稀疏数组的处理方式" class="headerlink" title="稀疏数组的处理方式"></a>稀疏数组的处理方式</h2><ul>
+<li>记录数组有几行几列，有多少个不同值</li>
+<li>把具有不同值得数组和行列值记录在一个小规模的数组中从而来降低数组规模</li>
+</ul>
+<p><strong>代码实例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">arry02</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> [][] array1;</span><br><span class="line">        array1 = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">11</span>][<span class="number">11</span>] ;</span><br><span class="line">        array1[<span class="number">1</span>][<span class="number">2</span>] = <span class="number">1</span>;</span><br><span class="line">        array1[<span class="number">2</span>][<span class="number">3</span>] = <span class="number">2</span>;</span><br><span class="line">        System.out.println(<span class="string">&quot;打印原始数组&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> [] ints :array1) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> anInt : ints)&#123;</span><br><span class="line">                System.out.print(anInt+<span class="string">&quot;\t&quot;</span>);</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//转换为稀疏数组保存</span></span><br><span class="line">        <span class="comment">//获取有效值的个数</span></span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">11</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">11</span>; j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(array1[i][j] != <span class="number">0</span>)&#123;</span><br><span class="line">                    sum++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> [][] array2;</span><br><span class="line">        array2 = <span class="keyword">new</span> <span class="keyword">int</span> [sum+<span class="number">1</span>][<span class="number">3</span>];</span><br><span class="line">        array2[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">11</span>;</span><br><span class="line">        array2[<span class="number">0</span>][<span class="number">1</span>] = <span class="number">11</span>;</span><br><span class="line">        array2[<span class="number">0</span>][<span class="number">2</span>] = sum;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">//遍历二维数组，将非0值定义在稀疏数组中</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; array1.length; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; array1[i].length; j++) &#123;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> (array1[i][j] != <span class="number">0</span>)&#123;</span><br><span class="line"></span><br><span class="line">                    count++;</span><br><span class="line">                    array2[count][<span class="number">0</span>] = i;</span><br><span class="line">                    array2[count][<span class="number">1</span>] = j;</span><br><span class="line">                    array2[count][<span class="number">2</span>] = array1[i][j] ;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line">                </span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//稀疏数组的输出</span></span><br><span class="line">        System.out.println(<span class="string">&quot;稀疏数组的输出&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; array2.length; i++) &#123;</span><br><span class="line">            System.out.println(array2[i][<span class="number">0</span>]+<span class="string">&quot;\t&quot;</span></span><br><span class="line">                    +array2[i][<span class="number">1</span>]+<span class="string">&quot;\t&quot;</span></span><br><span class="line">                    +array2[i][<span class="number">2</span>]+<span class="string">&quot;\t&quot;</span>);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//稀疏数组的还原</span></span><br><span class="line">        System.out.println(<span class="string">&quot;=======================================&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;稀疏数组的还原&quot;</span>);</span><br><span class="line">        <span class="comment">//1.读取稀疏数组的值</span></span><br><span class="line">        <span class="keyword">int</span> [][] array3;</span><br><span class="line">        <span class="comment">//这是在还原，通过稀疏数组array2[0][0]代表还原后的行数,array2[0][1]代表还原后的列数</span></span><br><span class="line">        array3 = <span class="keyword">new</span> <span class="keyword">int</span> [array2[<span class="number">0</span>][<span class="number">0</span>]][array2[<span class="number">0</span>][<span class="number">1</span>]];</span><br><span class="line">        <span class="comment">//2.给其中的元素还原值</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; array2.length; i++) &#123;</span><br><span class="line">            array3[array2[i][<span class="number">0</span>]][array2[i][<span class="number">1</span>]] = array2[i][<span class="number">2</span>];</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//3.打印</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> [] ints : array3) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> anInt: ints) &#123;</span><br><span class="line">                System.out.print(anInt+<span class="string">&quot;\t&quot;</span>);</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出结果:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">打印原始数组</span><br><span class="line"><span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	</span><br><span class="line"><span class="number">0</span>	<span class="number">0</span>	<span class="number">1</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	</span><br><span class="line"><span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">2</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	</span><br><span class="line"><span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	</span><br><span class="line"><span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	</span><br><span class="line"><span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	</span><br><span class="line"><span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	</span><br><span class="line"><span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	</span><br><span class="line"><span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	</span><br><span class="line"><span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	</span><br><span class="line"><span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	</span><br><span class="line">稀疏数组的输出</span><br><span class="line"><span class="number">11</span>	<span class="number">11</span>	<span class="number">2</span>	</span><br><span class="line"><span class="number">1</span>	<span class="number">2</span>	<span class="number">1</span>	</span><br><span class="line"><span class="number">2</span>	<span class="number">3</span>	<span class="number">2</span>	</span><br><span class="line">=======================================</span><br><span class="line">稀疏数组的还原</span><br><span class="line"><span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	</span><br><span class="line"><span class="number">0</span>	<span class="number">0</span>	<span class="number">1</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	</span><br><span class="line"><span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">2</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	</span><br><span class="line"><span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	</span><br><span class="line"><span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	</span><br><span class="line"><span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	</span><br><span class="line"><span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	</span><br><span class="line"><span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	</span><br><span class="line"><span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	</span><br><span class="line"><span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	</span><br><span class="line"><span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	<span class="number">0</span>	</span><br><span class="line"></span><br><span class="line">Process finished with exit code <span class="number">0</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-Java数组与字符串"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/12/16/Java%E6%95%B0%E7%BB%84%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2/"
+    >数组</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/Java%E6%95%B0%E7%BB%84%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="article-date">
+  <time datetime="2021-12-16T14:42:43.944Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="数组的基本概念"><a href="#数组的基本概念" class="headerlink" title="数组的基本概念"></a>数组的基本概念</h2><p>  所谓的数组就是若干个相同数据类型的元素按一定的顺序排列的集合。在java语言中，数组元素可以由基本数据类型的量组成，也可以由对象组成。</p>
+<h3 id="栈内存和堆内存"><a href="#栈内存和堆内存" class="headerlink" title="栈内存和堆内存"></a>栈内存和堆内存</h3><p> java语言把内存分为两种，栈内存和堆内存。</p>
+<ul>
+<li><p>堆内存：堆内存用来存放由new运算符创建的数组或对象，在堆中分配的内存，由java的垃圾回收器来自动管理。</p>
+</li>
+<li><p>栈内存：在堆中创建一个数组或对象后，同时还在栈中定义了一个特殊的变量，在栈中的这个变量的取值等于数组或对象在堆内存中的首地址。</p>
+<h3 id="数组的特点"><a href="#数组的特点" class="headerlink" title="数组的特点"></a>数组的特点</h3></li>
+<li><p>数组是相同数据类型元素的集合</p>
+</li>
+<li><p>数组中的各元素是哟先后顺序的，它们在内存中按照这个先后顺序连续存放在一起</p>
+</li>
+<li><p>数组元素用整个数组的名字和它自己在数字中的顺序位置来表示。</p>
+</li>
+</ul>
+<h2 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h2><p>一维数组是最简单的数组，其逻辑结构时线性表。使用一维数组需要经过<strong>定义</strong>、<strong>初始化</strong>、<strong>应用</strong>等过程</p>
+<h3 id="一维数组的定义"><a href="#一维数组的定义" class="headerlink" title="一维数组的定义"></a>一维数组的定义</h3><p>java一维数组的定义需要三个步奏：</p>
+<ol>
+<li>声明数组</li>
+<li>分配空间</li>
+<li>创建数组元素并赋值</li>
+</ol>
+<p>格式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">数据类型   数组名；</span><br><span class="line">数组名 = <span class="keyword">new</span>数据类型[个数]；</span><br><span class="line"><span class="comment">/*============或者写为==============*/</span></span><br><span class="line">数据类型[] 数组名 = <span class="keyword">new</span> 数据类型[个数]</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意</strong>“[]”指明变量是一个数组类型变量，java语言可以将“[]”放在数组名前，也可以像C一样，把“[]”放在数组名后边。但与C语言不同，java在定义数组变量时，不为数组元素分配空间，因此“[]”中不用给出数组长度，但必须在为其分配过内存空间后才能使用</p>
+<p><strong>说明</strong>：数组用new运算符分配内存空间的同时，数组的每个元素都会自动赋一个默认的值：整数为0，实数为0.0，字符为‘\0’，boolean型为false，引用型为null。</p>
+<h2 id="多维数组"><a href="#多维数组" class="headerlink" title="多维数组"></a>多维数组</h2><p> java语言中并没有真正的多维数组。所谓的多维数组，就是数组元素也是数组</p>
+<h3 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h3><p>  二维数组的声明方式与一维数组类似，内存的分配也一样是用<strong>new</strong>运算符。声明与分配内存的格式如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">数据类型[][]数组名；</span><br><span class="line">数组名 = <span class="keyword">new</span>数据类型[行数][列数]</span><br><span class="line"><span class="comment">/*==================================================================*/</span>    </span><br><span class="line">数据类型[][]数组名 = <span class="keyword">new</span> 数据类型[列数][行数]</span><br></pre></td></tr></table></figure>
+
+<p><strong>与C语言要求二维数组是一个矩阵不同，java语言的二维数组不一定是规则的矩阵</strong></p>
+<h4 id="二维数组的定义"><a href="#二维数组的定义" class="headerlink" title="二维数组的定义"></a>二维数组的定义</h4><p>如果要创建一个数组，而且该二维数组还是不是规则的矩阵，则需要先建立高层维数</p>
+<h5 id="获得二维数组长度的方法"><a href="#获得二维数组长度的方法" class="headerlink" title="获得二维数组长度的方法"></a>获得二维数组长度的方法</h5><p>  <strong>不仅仅是二维，对任意维度的数组</strong>若要获得其长度，只需在数组名后加.length属性即可；若要取得数组中某行元素的个数，则必须在数组名后加上下标，再加上.length</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x.length;    <span class="comment">//计算数组x的长度</span></span><br><span class="line">x[<span class="number">0</span>].length；<span class="comment">//计算数组x第一行的长度</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>注意</strong>：与一维数组相同，用new运算符来为数组申请内存空间时，很容易在数组各维数的指定中出现错误，二维数组必须要求指定高层维数</p>
+<p><strong>注意</strong>：和一维数组一样，ava在定义数组变量时，不为数组元素分配空间，因此“[]”中不用给出数组长度，但必须在为其分配过内存空间后才能使用</p>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><h3 id="字符串的定义"><a href="#字符串的定义" class="headerlink" title="字符串的定义"></a>字符串的定义</h3><p>字符串就是一系列字符的序列。在java语言中字符串是用一对双引号（” “）括起来的字符序列</p>
+<h3 id="字符串的分类"><a href="#字符串的分类" class="headerlink" title="字符串的分类"></a>字符串的分类</h3><p> 字符串分为两大类：第一种：在创建后就不能对其进行修改了；第二种：在创建后依然可以对其进行修改</p>
+<ul>
+<li>对于不可以进行修改的字符串，在java语言中用String类</li>
+<li>对于可以进行修改的字符串，在java语言中用StringBuilder类</li>
+</ul>
+<h3 id="字符串常量的建立"><a href="#字符串常量的建立" class="headerlink" title="字符串常量的建立"></a>字符串常量的建立</h3><ul>
+<li>字符常量是用（’ ‘）括起来的单个字符</li>
+<li>字符串常量是用（“ ”）括起来的字符序列</li>
+</ul>
+<h3 id="字符串定义时的格式"><a href="#字符串定义时的格式" class="headerlink" title="字符串定义时的格式"></a>字符串定义时的格式</h3><p><strong>第一种</strong>：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String 变量名；</span><br><span class="line">变量名 = <span class="keyword">new</span> String(<span class="string">&quot;字符串&quot;</span>);</span><br><span class="line"><span class="string">&quot;=================================================================================&quot;</span></span><br><span class="line">String 变量名 = <span class="keyword">new</span> String(<span class="string">&quot;字符串&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p><strong>第二种</strong>：</p>
+<p>由于字符串是引用型变量，所以其存储方式与数组的储存方式基本相同</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str = <span class="string">&quot;hello world&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="String类的常用方法"><a href="#String类的常用方法" class="headerlink" title="String类的常用方法"></a>String类的常用方法</h3><p>java语言使用String类方法的方法为</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">字符串变量名.方法名();</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>常用方法</th>
+<th>功能说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>public int length()</td>
+<td>返回字符串的长度</td>
+</tr>
+<tr>
+<td>public boolean equals(Object anObject)</td>
+<td>将给定字符串与当前字符串相比较，若两字符串相等，则返回true，否则返回false</td>
+</tr>
+<tr>
+<td>public String substring(int beginIndex)</td>
+<td>返回字符串中从beginIdex开始到字符串末尾的子串</td>
+</tr>
+<tr>
+<td>public String substring(int beginIndex,int endIndex)</td>
+<td>返回Index指定位置的字符</td>
+</tr>
+<tr>
+<td>public char charAt(int idex)</td>
+<td>返回index指定位置的字符</td>
+</tr>
+<tr>
+<td>public int idexOf(String str)</td>
+<td>返回str在字符串中第一次出现的位置</td>
+</tr>
+<tr>
+<td>public int compareTo(String anotherString)</td>
+<td>若调用该方法的字符串大于参数字符串，则返回大于0的值；若相等，则返回0；若小于，则返回小于0的数</td>
+</tr>
+<tr>
+<td>public String replace(char oldChar,char newChar)</td>
+<td>以newChar字符替换字符串中所有oldChar字符</td>
+</tr>
+<tr>
+<td>public String trim()</td>
+<td></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>常用方法</th>
+<th>功能说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>public String toLowerCase()</td>
+<td>将字符串中的所有字符都转换为小写字符</td>
+</tr>
+<tr>
+<td>public String toUpperCase()</td>
+<td>将字符串中的所有字符都转换为大写字符</td>
+</tr>
+</tbody></table>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-java类与对象"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/12/16/java%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/"
+    >类与对象</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/java%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/" class="article-date">
+  <time datetime="2021-12-16T14:42:43.944Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p>类（class）和对象（object）是面向对象程序设计方法中的最核心概念</p>
+<h2 id="类的基本概念"><a href="#类的基本概念" class="headerlink" title="类的基本概念"></a>类的基本概念</h2><p> <strong>类</strong>：是对某一类事物的描述，是抽象的、概念上的定义；</p>
+<p><strong>对象</strong>：是实际存在的属该类事物的具体个体，因而被称为实例</p>
+<p><strong>方法</strong>：封装在类中的函数，在java语言中函数被称为方法</p>
+<h2 id="定义类"><a href="#定义类" class="headerlink" title="定义类"></a>定义类</h2><p>定义类，实际上是定义类的属性与方法，在使用类之前，必需先定义它，然后才可利用定义的类来声明相应的变量，并创建对象。</p>
+<h3 id="类的一般结构："><a href="#类的一般结构：" class="headerlink" title="类的一般结构："></a>类的一般结构：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[类修饰符] <span class="class"><span class="keyword">class</span> 类名称</span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    [修饰符] 数据类型 成员变量名称；</span><br><span class="line">        .....</span><br><span class="line">    [修饰符] 返回值的数据类型 方法名(参数<span class="number">1</span> ，参数<span class="number">2</span>， ....， 参数n)</span><br><span class="line">    &#123;</span><br><span class="line">        语句序列;</span><br><span class="line">        <span class="keyword">return</span> [表达式];</span><br><span class="line">    &#125;</span><br><span class="line">    ..........</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>方括号[]中的修饰符是可选项，它是一组<strong>限定</strong>类，成员变量和成员方法是否可以被程序里的其他部分访问的调用的控制符。其中，类标识符可以分为<strong>公共访问控制符</strong>、<strong>抽象类说明符</strong>、<strong>最终类说明符</strong>和<strong>缺省访问控制符</strong>四种。</p>
+<table>
+<thead>
+<tr>
+<th>修饰符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>public</td>
+<td>将一个类声明为公共类，它可以被任何对象访问</td>
+</tr>
+<tr>
+<td>abstract</td>
+<td>将一个类声明为抽象类，没有实现方法，需要子类提供方法的实现，所以不能创建该类的实例</td>
+</tr>
+<tr>
+<td>final</td>
+<td>将一个类声明为最终类，即非继承类，表示它不能被其他类所继承</td>
+</tr>
+<tr>
+<td>缺省</td>
+<td>缺省修饰符时，则表示只有在相同包中的对象才能使用这样的类</td>
+</tr>
+</tbody></table>
+<p>一个类可以有多个修饰符，但abstract和final相互对立，所以不能同时应用在一个类的定义中</p>
+<h3 id="成员变量"><a href="#成员变量" class="headerlink" title="成员变量"></a>成员变量</h3><p>/<em>因为我自己有些C语言基础，所以在理解java语言元素时爱用C语言中的相似元素来类比</em>/</p>
+<p><strong>成员变量就好像C语言中的全局变量</strong></p>
+<p>格式如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[修饰符] 变量类型 变量名[ = 初值]</span><br></pre></td></tr></table></figure>
+
+<p>成员变量的修饰符有<strong>访问控制符</strong>、<strong>静态修饰符</strong>、<strong>最终修饰符</strong>、<strong>过渡修饰符</strong>、<strong>易失修饰符</strong>等</p>
+<table>
+<thead>
+<tr>
+<th>修饰符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>public</td>
+<td>公共访问控制符。指定该变量为为公共的，它可以被任何对象的方法访问</td>
+</tr>
+<tr>
+<td>private</td>
+<td>私有访问控制符。指定该变量只允许知己的类的方法访问，其他任何类(包括子类)中的方法均不能访问此变量</td>
+</tr>
+<tr>
+<td>protected</td>
+<td>保护访问控制符。指定该变量只可以被它自己的类及其子类或同一包中的其他类访问</td>
+</tr>
+<tr>
+<td>缺省</td>
+<td>缺省访问控制符时，则表示在同一个包中的类可以访问此成员变量，而其他包中的类不能访问该成员变量</td>
+</tr>
+<tr>
+<td>final</td>
+<td>最终修饰符。指定此变量的值不能改变</td>
+</tr>
+<tr>
+<td>static</td>
+<td>静态修饰符。指定该变变量被所有对象共享，即所有的实例都可以使用该对象</td>
+</tr>
+<tr>
+<td>transient</td>
+<td>过度修饰符。指定该变量是一个系统保留、暂无特别作用的临时性变量</td>
+</tr>
+<tr>
+<td>volatile</td>
+<td>易失修饰符。指定该变量可以同时被几个线成控制和修改</td>
+</tr>
+</tbody></table>
+<p><strong>修饰符的要求</strong>：除了访问控制修饰符有多个以外，其他的修饰符只有一个。一个成员变量可以被两个以上的修饰符同时修饰。</p>
+<h3 id="成员方法"><a href="#成员方法" class="headerlink" title="成员方法"></a>成员方法</h3><p><strong>声明方法的语法格式如下：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[修饰符] 返回值的数据类型 方法名(参数<span class="number">1</span>，参数<span class="number">2</span>，...，参数n)</span><br><span class="line">&#123;</span><br><span class="line">    语句序列；</span><br><span class="line">    <span class="keyword">return</span> [表达式]；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果不需要传递参数到方法中，只需要将方法名后的圆括号写出即可，不必填入任何内容，另外，若方法没有返回值，则返回值的数据类型应该是void，且return语句可以省略。</p>
+<table>
+<thead>
+<tr>
+<th>修饰符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>public</td>
+<td>公共访问控制符。指定该方法为公共的，它可以被任何对象的方法访问</td>
+</tr>
+<tr>
+<td>private</td>
+<td>私有访问控制符。指定该方法只允许自己类的方法访问，其他任何类（包括子类）中的方法均不能访问此方法</td>
+</tr>
+<tr>
+<td>protected</td>
+<td>保护访问控制符。指定该方法只可以被它的类及其子类或同一包中的其他类访问</td>
+</tr>
+<tr>
+<td>缺省</td>
+<td>缺省访问控制符时，则表示在同一个包中的类可以访问此成员方法，而其他包中的类不能访问该成员方法</td>
+</tr>
+<tr>
+<td>final</td>
+<td>最终修饰符。指定该方法不能被覆盖</td>
+</tr>
+<tr>
+<td>static</td>
+<td>静态修饰符。指定不需要实例化一个对象就可以调用的方法</td>
+</tr>
+<tr>
+<td>abstract</td>
+<td>抽象修饰符。指定该方法只声明方法头，而没有方法体，抽象方法需在子类中被实现</td>
+</tr>
+<tr>
+<td>synchronized</td>
+<td>同步修饰符。在多线程程序中，该修饰符用于对同步资源加锁，以防止其他线程访问，运行结束后解锁</td>
+</tr>
+<tr>
+<td>native</td>
+<td>本地修饰符。指定此方法的方法体是用其他语言（如C语言）在程序外编写的</td>
+</tr>
+</tbody></table>
+<h3 id="成员变量与局部变量的区别"><a href="#成员变量与局部变量的区别" class="headerlink" title="成员变量与局部变量的区别"></a>成员变量与局部变量的区别</h3><p>类额成员变量和方法中的局部变量，其区别和C语言中全局变量和局部变量的区别是一样的。</p>
+<h2 id="对象的建立与使用"><a href="#对象的建立与使用" class="headerlink" title="对象的建立与使用"></a>对象的建立与使用</h2><p>一个对象的生命周期为：创建-&gt;使用-&gt;销毁</p>
+<h3 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h3><p>创建步奏只需要两步：</p>
+<ol>
+<li>声明指向“由类所创建的对象”的变量</li>
+<li>利用new运算符创建新的对象，并指派给前面所创建的变量</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Scanner scanner;</span><br><span class="line">scanner = <span class="keyword">new</span> Scanner;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="对象的使用"><a href="#对象的使用" class="headerlink" title="对象的使用"></a>对象的使用</h3><p>  创建对象后，就可以对对象的成员进行访问，通过对象来引用对象成员的格式：</p>
+<p>  <strong>对象名 . 对象成员</strong></p>
+<p>eg：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> way;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cylinder</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> radius;</span><br><span class="line">    <span class="keyword">int</span> height;</span><br><span class="line">    <span class="keyword">double</span> pi = <span class="number">3.14</span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">area</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;底面积=&quot;</span>+ pi*radius*radius);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">volume</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (pi *radius *radius)* height;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">way01</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Cylinder volu;</span><br><span class="line">        volu = <span class="keyword">new</span> Cylinder();</span><br><span class="line">        volu.radius = <span class="number">2.8</span>;</span><br><span class="line">        volu.height = <span class="number">5</span>;</span><br><span class="line">        System.out.println(<span class="string">&quot;底圆半径 = &quot;</span>+volu.radius);</span><br><span class="line">        System.out.println(<span class="string">&quot;圆柱的高 = &quot;</span>+volu.height);</span><br><span class="line">        System.out.print(<span class="string">&quot;圆柱&quot;</span>);</span><br><span class="line">        volu.area();</span><br><span class="line">        System.out.println(<span class="string">&quot;圆柱体积 = &quot;</span> +volu.volume());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>eg2：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> way;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">student</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> age;</span><br><span class="line">    String name;</span><br><span class="line">    <span class="keyword">char</span> sex;</span><br><span class="line">    <span class="keyword">long</span> number;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">people</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.print(<span class="string">&quot;学生姓名:%s  性别:%c  年龄:%d  学号:%d&quot;</span>.formatted(name,sex,age,number));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">way02</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        student std;</span><br><span class="line">        std = <span class="keyword">new</span> student();</span><br><span class="line">        std.name =<span class="string">&quot;dasd&quot;</span>;</span><br><span class="line">        std.age = <span class="number">19</span>;</span><br><span class="line">        std.number = <span class="number">202545131L</span>;</span><br><span class="line">        std.sex = <span class="string">&#x27;M&#x27;</span>;</span><br><span class="line">        std.people();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>由上边的两个例子可以看成，在主方法main()内如果需要访问类的成员，是通过格式</p>
+<p>对象名.成员名 </p>
+<p>进行的。</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+  </article>
+  
+
+  
+  <nav class="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/14/">上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/16/">下一页</a>
+  </nav>
+  
+</section>
+</div>
+
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2022
+        <i class="ri-heart-fill heart_icon"></i> dwx
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="dwx-tx的小天地"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>

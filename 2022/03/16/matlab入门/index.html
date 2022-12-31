@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>matlab入门 |  dwx-tx的小天地</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"
+      />
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+       
+ 
+<script>
+var _hmt = _hmt || [];
+(function() {
+	var hm = document.createElement("script");
+	hm.src = "https://hm.baidu.com/hm.js?57bee4bd4703d5af3f9154ce72c6f85f";
+	var s = document.getElementsByTagName("script")[0]; 
+	s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    <link rel="alternate" href="/atom.xml" title="dwx-tx的小天地" type="application/atom+xml">
+</head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-matlab入门"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  matlab入门
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/03/16/matlab%E5%85%A5%E9%97%A8/" class="article-date">
+  <time datetime="2022-03-16T00:05:47.185Z" itemprop="datePublished">2022-03-16</time>
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">1.3k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">4 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="matlab入门"><a href="#matlab入门" class="headerlink" title="matlab入门"></a>matlab入门</h1><h2 id="变量与函数"><a href="#变量与函数" class="headerlink" title="变量与函数"></a>变量与函数</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p><strong>matlab中变量的命名规则是：</strong></p>
+<ul>
+<li>变量名必须是不含空格的单个词；</li>
+<li>变量名区分大小写；</li>
+<li>变量名最多不超过19个字符；</li>
+<li>变量名必须是字母打头，后边可以是任意字母、数字或下划线，变量名中不允许出现标点符号</li>
+</ul>
+<p>MATLAB还有几个特殊变量</p>
+<table>
+<thead>
+<tr>
+<th>特殊变量</th>
+<th>取值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ans</td>
+<td>用于结果的缺省变量名</td>
+</tr>
+<tr>
+<td>pi</td>
+<td>圆周率</td>
+</tr>
+<tr>
+<td>eps</td>
+<td>计算机的最小数，和1相加就产生了一个比1大的数</td>
+</tr>
+<tr>
+<td>flops</td>
+<td>浮点运算数</td>
+</tr>
+<tr>
+<td>inf</td>
+<td>无穷大</td>
+</tr>
+<tr>
+<td>NaN</td>
+<td>不定量</td>
+</tr>
+<tr>
+<td>i,j</td>
+<td>i = j =根号下-1</td>
+</tr>
+<tr>
+<td>realmin</td>
+<td>最小可用的正实数</td>
+</tr>
+<tr>
+<td>realmax</td>
+<td>最大可用的负实数</td>
+</tr>
+</tbody></table>
+<h3 id="数学运算符号及标点符号"><a href="#数学运算符号及标点符号" class="headerlink" title="数学运算符号及标点符号"></a>数学运算符号及标点符号</h3><p><strong>数学运算符号表</strong></p>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>+</td>
+<td>加法运算，适用于两个数或两个同阶矩阵相加</td>
+</tr>
+<tr>
+<td>-</td>
+<td>减法运算</td>
+</tr>
+<tr>
+<td>*</td>
+<td>乘法运算</td>
+</tr>
+<tr>
+<td>.*</td>
+<td>点乘运算</td>
+</tr>
+<tr>
+<td>./</td>
+<td>点除运算</td>
+</tr>
+<tr>
+<td>^</td>
+<td>乘幂运算</td>
+</tr>
+<tr>
+<td>\</td>
+<td>反斜线表示左除</td>
+</tr>
+</tbody></table>
+<p><strong>MATLAB中标点符号的含义：</strong></p>
+<ul>
+<li>MATLAB的每条命令后，若为逗号或无标点符号，则显示命令的结果；若为分号，这禁止显示结果。</li>
+<li>“%”后面所有的文字为注释</li>
+<li>“…”表示续行</li>
+</ul>
+<h3 id="数学函数"><a href="#数学函数" class="headerlink" title="数学函数"></a>数学函数</h3><p><strong>常用基本函数</strong></p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>名称</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>sin</td>
+<td>正弦函数</td>
+</tr>
+<tr>
+<td>cos</td>
+<td>余弦函数</td>
+</tr>
+<tr>
+<td>tan</td>
+<td>正切函数</td>
+</tr>
+<tr>
+<td>abs</td>
+<td>绝对值(模)</td>
+</tr>
+<tr>
+<td>min</td>
+<td>最小值</td>
+</tr>
+<tr>
+<td>sqrt</td>
+<td>开平方</td>
+</tr>
+<tr>
+<td>log</td>
+<td>自然对数</td>
+</tr>
+<tr>
+<td>sign</td>
+<td>符号函数</td>
+</tr>
+<tr>
+<td>asin</td>
+<td>反正弦函数</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>名称</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>acos</td>
+<td>反余弦函数</td>
+</tr>
+<tr>
+<td>atan</td>
+<td>反正弦函数</td>
+</tr>
+<tr>
+<td>max</td>
+<td>最大值</td>
+</tr>
+<tr>
+<td>sum</td>
+<td>元素的总和</td>
+</tr>
+<tr>
+<td>exp</td>
+<td>以e为底的指数</td>
+</tr>
+<tr>
+<td>log10</td>
+<td>以10为底的对数</td>
+</tr>
+<tr>
+<td>fix</td>
+<td>取整</td>
+</tr>
+</tbody></table>
+<h3 id="函数M文件"><a href="#函数M文件" class="headerlink" title="函数M文件"></a>函数M文件</h3><p><strong>MATLAB定义新函数，必须编写函数M文件</strong></p>
+<p>函数M文件是文件后缀为m的文件，这类文件的第一行必须是以一特殊字符function开始，格式为：</p>
+<p><strong>function 因变量名 = 函数名(自变量名)</strong></p>
+<p><strong>函数M文件的文件名必须与函数名完全一致</strong></p>
+<h2 id="数组与矩阵"><a href="#数组与矩阵" class="headerlink" title="数组与矩阵"></a>数组与矩阵</h2><h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p><strong>数组的建立：</strong></p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>x = [ a b c d e f ]</td>
+<td>创建包含指定元素的行向量</td>
+</tr>
+<tr>
+<td>x = first : last</td>
+<td>创建从first开始，加1计数，到last结束的行向量</td>
+</tr>
+<tr>
+<td>x =first : increment : last</td>
+<td>创建从first开始，加increment计数，到last结束的行向量</td>
+</tr>
+<tr>
+<td>linspace( first , last , n )</td>
+<td>创建从first开始，到last结束。有n个元素的行向量</td>
+</tr>
+</tbody></table>
+<p><strong>数组元素的访问：</strong></p>
+<p>为了访问数组元素（分量），可对数组元素进行编扯</p>
+<p>（1）访问一个元素：数组元素可以用下标访问，如x（i）表示数组x的第i个元素</p>
+<p>（2）访问一块元素：访问矩阵的某些元素或子块.x(a : b : c)表示访问数组x的从第a个元素开始，以步长为b到第c个元素（但不超过c），b可以为负数，b缺省时为1</p>
+<p>（3）直接使用元素编址序号.x([ a b c d ])表示提取数组x的第a，b，c，d个元素构成一个新的数组[x(a) x(b) x(c) x(d)].</p>
+<p><strong>数组的方向：</strong></p>
+<p><strong>数组的运算：</strong></p>
+<p>（1）标量-数组运算</p>
+<p>数组对标量的加、减、乘、除、乘方是数组的每个元素对该标量施加相应的加、减、乘、除、乘方运算</p>
+<p>（2）数组-数组运算</p>
+<p>当两个数组有相同维数时，加、减、乘、除、幂运算可按元素对元素方式进行，不同大小或维数的数组是不能进行运算的</p>
+<h3 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h3><p><strong>矩阵的建立</strong></p>
+<p><strong>逗号或空格用于分隔某一行的元素，分号用于区分不同的行</strong></p>
+<p><strong>MATLAB提供了几个建立特殊矩阵的命令：</strong></p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>a = []</td>
+<td>产生一个空矩阵，当对一项操作无结果是=时，返回空矩阵，空矩阵的大小为0</td>
+</tr>
+<tr>
+<td>b = zeros(m,n)</td>
+<td>产生一个m行n列的零矩阵</td>
+</tr>
+<tr>
+<td>c = ones(m,n)</td>
+<td>产生一个m行n列的元素全为1的矩阵</td>
+</tr>
+<tr>
+<td>d = eye(m,n)</td>
+<td>产生一个m行n列的单位矩阵</td>
+</tr>
+</tbody></table>
+<p><strong>矩阵中元素的操作：</strong></p>
+<ul>
+<li>矩阵A的第r行：A（r，：）；</li>
+<li>矩阵A的第r列:A(:,r);</li>
+<li>依次提取矩阵A的每一列，将A拉伸为一个列向量：A(:);</li>
+<li>取矩阵A的第i1<del>i2行、第j1</del>j2列，构成新矩阵：A(i1:i2,j1:j2);</li>
+<li>以逆序列提取矩阵A的第i1~i2列，构成新矩阵：A(i2 : -1 :i1,:);</li>
+<li>以逆序列提取矩阵A的第j1~j2列，构成新矩阵: A(:,j2: -1 :j1);</li>
+<li>删除A的第i1~i2行，构成新的矩阵：A(i1:i2,:)=[];</li>
+<li>删除A的第j1~j2列，构成新的矩阵：A(:,j1:j2)=[];</li>
+<li>将矩阵A和B拼接成新矩阵:[ A B ]或[ A ; B ].</li>
+</ul>
+<p><strong>矩阵中的运算</strong>:</p>
+<ul>
+<li>标量-矩阵运算:与标量-数组运算类似.</li>
+<li>矩阵-矩阵运算:矩阵的元素对元素的运算，与数组的数组-数组运算类似</li>
+</ul>
+<p><strong>线性代数中定义矩阵运算的命令如下：</strong></p>
+<ul>
+<li><p>矩阵加法:A + B;</p>
+</li>
+<li><p>矩阵乘法: A * B;</p>
+</li>
+<li><p>方阵的行列式：det(A);</p>
+</li>
+<li><p>方阵的逆：inv(A);</p>
+</li>
+<li><p>方阵的特征值与特征向量:[ V, D] = eig( A )</p>
+</li>
+</ul>
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          Donate
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://dwx-tx/dwx-tx.github.io/2022/03/16/matlab%E5%85%A5%E9%97%A8/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2022/03/16/matlab%E4%BD%9C%E5%9B%BE/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            MATLAB作图
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2022/03/16/matlab%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">线性规划</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2022
+        <i class="ri-heart-fill heart_icon"></i> dwx
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="dwx-tx的小天地"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>

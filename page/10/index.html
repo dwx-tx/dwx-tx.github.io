@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title> dwx-tx的小天地</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"
+      />
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+       
+ 
+<script>
+var _hmt = _hmt || [];
+(function() {
+	var hm = document.createElement("script");
+	hm.src = "https://hm.baidu.com/hm.js?57bee4bd4703d5af3f9154ce72c6f85f";
+	var s = document.getElementsByTagName("script")[0]; 
+	s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    <link rel="alternate" href="/atom.xml" title="dwx-tx的小天地" type="application/atom+xml">
+</head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      
+<section class="cover">
+    
+      
+      <a class="forkMe" href="https://github.com/Shen-Yu/hexo-theme-ayer"
+        target="_blank"><img width="149" height="149" src="/images/forkme.png"
+          class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+    
+  <div class="cover-frame">
+    <div class="bg-box">
+      <img src="/images/cover1.jpg" alt="image frame" />
+    </div>
+    <div class="cover-inner text-center text-white">
+      <h1><a href="/">dwx-tx的小天地</a></h1>
+      <div id="subtitle-box">
+        
+        <span id="subtitle"></span>
+        
+      </div>
+      <div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="cover-learn-more">
+    <a href="javascript:void(0)" class="anchor"><i class="ri-arrow-down-line"></i></a>
+  </div>
+</section>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script>
+
+
+<!-- Subtitle -->
+
+  <script>
+    try {
+      var typed = new Typed("#subtitle", {
+        strings: ['面朝大海，春暖花开', '愿你一生努力，一生被爱', '想要的都拥有，得不到的都释怀'],
+        startDelay: 0,
+        typeSpeed: 200,
+        loop: true,
+        backSpeed: 100,
+        showCursor: true
+      });
+    } catch (err) {
+      console.log(err)
+    }
+  </script>
+  
+<div id="main">
+  <section class="outer">
+  
+  
+  
+
+<div class="notice" style="margin-top:50px">
+    <i class="ri-heart-fill"></i>
+    <div class="notice-content" id="broad"></div>
+</div>
+<script type="text/javascript">
+    fetch('https://v1.hitokoto.cn')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("broad").innerHTML = data.hitokoto;
+        })
+        .catch(console.error)
+</script>
+
+<style>
+    .notice {
+        padding: 20px;
+        border: 1px dashed #e6e6e6;
+        color: #969696;
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        background: #fbfbfb50;
+        border-radius: 10px;
+    }
+
+    .notice i {
+        float: left;
+        color: #999;
+        font-size: 16px;
+        padding-right: 10px;
+        vertical-align: middle;
+        margin-top: -2px;
+    }
+
+    .notice-content {
+        display: initial;
+        vertical-align: middle;
+    }
+</style>
+  
+  <article class="articles">
+    
+    
+    
+    
+    <article
+  id="post-C语言指针"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/C%E8%AF%AD%E8%A8%80%E6%8C%87%E9%92%88/" class="article-date">
+  <time datetime="2021-12-16T15:10:57.001Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h1><h2 id="变量的内存地址"><a href="#变量的内存地址" class="headerlink" title="变量的内存地址"></a>变量的内存地址</h2><p>在C语言中，要获得变量的地址，需要用到**取地址运算符（Address Operator），即&amp;.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%p&quot;</span>,&amp;a);</span><br></pre></td></tr></table></figure>
+
+<p><strong>%p格式符，表示输出变量a，b，c的地址值</strong></p>
+<p><strong>地址值是用一个十六进制的无符号整数表示的，其字长一般与主机字长相同</strong></p>
+<p><strong>变量的地址</strong>：变量在内存中所占内存空间的首地址</p>
+<p><strong>变量的值</strong>：变量在存储空间中存放的数据</p>
+<p><strong>变量的名字</strong></p>
+<h2 id="指针的变量的定义和初始化"><a href="#指针的变量的定义和初始化" class="headerlink" title="指针的变量的定义和初始化"></a>指针的变量的定义和初始化</h2><p><strong>指针</strong>：存放变量的一种特殊类型的变量。</p>
+<p><strong>指针变量</strong>：具有指针类型的变量，是专门用于存储变量的地址值的变量</p>
+<p>定义变量的形式：</p>
+<p>​                    <strong>类型关键字 * 指针变量名</strong></p>
+<p><strong>指针变量的基类型</strong>：类型关键字代表变量要指向的变量的数据类型，</p>
+<h3 id="指针的初始化"><a href="#指针的初始化" class="headerlink" title="指针的初始化"></a>指针的初始化</h3><p>指针变量未初始化意味着指针变量的值为一个随机值。</p>
+<p>为了避免忘记指针初始化带给系统带来的潜在危险，为了防止指针乱指一气，习惯上在定义指针变量的同时将其初始化为NULL（在stdio.h中定义为零值得宏）</p>
+<p><strong>指向某变量的指针变量，通常简称为某变量的指针</strong></p>
+<p>虽然指针变量中存在的是变量的地址值，二者在数值上相等，但在概念上变量的指针不等同于变量的地址。</p>
+<p>变量的地址是一个常数，不能对其赋值，二变量是一个变量，其值是可以改变的.</p>
+<p><em><strong>指针变量只能指向同一基类型的变量</strong></em></p>
+<h3 id="对指针初始化的方法"><a href="#对指针初始化的方法" class="headerlink" title="对指针初始化的方法"></a>对指针初始化的方法</h3><ul>
+<li>直接初始化</li>
+<li>间接初始化</li>
+</ul>
+<h4 id="直接初始化"><a href="#直接初始化" class="headerlink" title="直接初始化"></a>直接初始化</h4><p>类型：int *pa = &amp;a；</p>
+<h4 id="间接初始化"><a href="#间接初始化" class="headerlink" title="间接初始化"></a>间接初始化</h4><p>类型：int *pa；</p>
+<p>​            pa = &amp;a；</p>
+<h2 id="间接寻址运算符"><a href="#间接寻址运算符" class="headerlink" title="间接寻址运算符"></a>间接寻址运算符</h2><p><strong>直接寻址</strong>：直接按变量名或者变量的地址存取变量内容的访问方式</p>
+<p>scanf(“%d”,&amp;a);</p>
+<p>printf(“%d”,a);</p>
+<p><strong>间接寻址</strong>：用过指针变量间接存取它所指向的变量的访问方式</p>
+<p><strong>指针运算符，也称间接寻址运算符</strong>即为 * 。间接寻址运算符 * 用来访问指针变量指向的变量的值</p>
+<p>通过 * 可以对指针变量实现解引用，即访问指针变量</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-C语言指针和数组"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/12/16/C%E8%AF%AD%E8%A8%80%E6%8C%87%E9%92%88%E5%92%8C%E6%95%B0%E7%BB%84/"
+    >C语言指针和数组</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/C%E8%AF%AD%E8%A8%80%E6%8C%87%E9%92%88%E5%92%8C%E6%95%B0%E7%BB%84/" class="article-date">
+  <time datetime="2021-12-16T15:10:57.001Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="指针和数组"><a href="#指针和数组" class="headerlink" title="指针和数组"></a>指针和数组</h1><p>C语言其高效性就在于其有指针这一利器，所以我们要好好弄懂指针和数组的区别</p>
+<h2 id="指针和一维数组的关系"><a href="#指针和一维数组的关系" class="headerlink" title="指针和一维数组的关系"></a>指针和一维数组的关系</h2><h3 id="数组名的意义及其访问一维数组的方法"><a href="#数组名的意义及其访问一维数组的方法" class="headerlink" title="数组名的意义及其访问一维数组的方法"></a>数组名的意义及其访问一维数组的方法</h3><p><strong>数组名</strong>：数组名代表了存放数组的连续空间的首地址</p>
+<p>对数组的访问可以通过两种方式：下标法和指针</p>
+<p>第一种：下标法</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">5</span>],i;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Input five numbers&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a[i]);   <span class="comment">/*下标法写入数组元素*/</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a[i]);   <span class="comment">/*下标法读出数组元素*/</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>第二种：指针</p>
+<p>因为数组名a代表数组的首地址，即元素a[0]的地址（&amp;a[0]）</p>
+<p>因此，可以通过*a（此处 *为解引用符）来获得首地址a所指的储存单元中储存的内容</p>
+<p><strong>原因</strong>数组元素之所以能够通过这种方法来引用，是因为数组的下标运算符[]实际上就是以指针作为操作数的</p>
+<p>类型 ： *(a+i)意义为引用数组首地址后第i个元素</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">5</span>],i;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Input five numbers&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,a+i);                   <span class="comment">/*这里的a+i等于a[i]*/</span></span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">     <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,*(a+i);                   <span class="comment">/*这里的a+i等于a[i]*/</span></span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="指针与二维数组的关系"><a href="#指针与二维数组的关系" class="headerlink" title="指针与二维数组的关系"></a>指针与二维数组的关系</h2> 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-C语言运算符和表达式"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/C%E8%AF%AD%E8%A8%80%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="article-date">
+  <time datetime="2021-12-16T15:10:57.001Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="运算符和表达式"><a href="#运算符和表达式" class="headerlink" title="运算符和表达式"></a>运算符和表达式</h1><h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><ul>
+<li>一个操作数的运算符是一元运算符</li>
+<li>两个操作数的运算符是二元运算符</li>
+<li>三个操作数的运算符是三元运算符</li>
+</ul>
+<p><em><strong>条件运算符是C语言唯一的一个三元运算符，除此之外都是二元运算符</strong></em></p>
+<h3 id="C运算符"><a href="#C运算符" class="headerlink" title="C运算符"></a>C运算符</h3><p>C语言提供一下运算符：</p>
+<ol>
+<li><p>算数运算符                             （+ - * / % ++ –）</p>
+</li>
+<li><p>关系运算符                             （&gt; &lt; == &gt;= &lt;= !=）</p>
+</li>
+<li><p>逻辑运算符                              （！ &amp;&amp; ||）</p>
+</li>
+<li><p>位运算符                                  （&lt;&lt; &gt;&gt; ~ | ^ &amp;）</p>
+<hr>
+</li>
+<li><p>赋值运算符                               （= 及其扩展形式）</p>
+</li>
+<li><p>条件运算符                                （？：）</p>
+</li>
+<li><p>逗号运算符                                 （，）</p>
+</li>
+<li><p>指针运算符                                  （*和&amp;）</p>
+</li>
+<li><p>求字节数运算符                           （sizeof）</p>
+</li>
+<li><p>强制类型转换运算符                   （（类型））</p>
+</li>
+<li><p>成员运算符                                   （.-&gt;）</p>
+</li>
+<li><p>下标运算符                                   （[]）</p>
+</li>
+<li><p>其他                                                （如函数调用运算符（））</p>
+</li>
+</ol>
+<h3 id="基本的算数运算符"><a href="#基本的算数运算符" class="headerlink" title="基本的算数运算符"></a>基本的算数运算符</h3><p>最常用的算术运算符</p>
+<table>
+<thead>
+<tr>
+<th align="center">运算符</th>
+<th align="center">含义</th>
+<th align="center">举例</th>
+<th align="center">结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">+</td>
+<td align="center">正号运算符（单目运算符）</td>
+<td align="center">+a</td>
+<td align="center">a的值</td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="center">负号运算符（单目运算符）</td>
+<td align="center">-a</td>
+<td align="center">a的算数负数</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td align="center">乘法运算符</td>
+<td align="center">a * b</td>
+<td align="center">a和b的乘积</td>
+</tr>
+<tr>
+<td align="center">/</td>
+<td align="center">除法运算符</td>
+<td align="center">a / b</td>
+<td align="center">a除以b的商</td>
+</tr>
+<tr>
+<td align="center">%</td>
+<td align="center">求余运算符</td>
+<td align="center">a % b</td>
+<td align="center">a除以b的余数</td>
+</tr>
+<tr>
+<td align="center">+</td>
+<td align="center">加法运算符</td>
+<td align="center">a + b</td>
+<td align="center">a和b的和</td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="center">减法运算法</td>
+<td align="center">a - b</td>
+<td align="center">a和b的差</td>
+</tr>
+</tbody></table>
+<p><strong>说明：</strong></p>
+<ul>
+<li>由于键盘无×号，运算符×以*代替</li>
+<li>由于键盘无÷号，运算符÷以/代替。两个实数相除的结果是双精度实数，两个整数相除的结果为整数。但是，如果除数或被除数中有一个负数，则舍入的方向是不固定的。</li>
+<li>%运算符要求参加运算的运算对象（即操作数）为整数，结果也是整数</li>
+<li>除%以外的运算符的操作数都可以是任何算术类型</li>
+</ul>
+<h3 id="自增（-），自减（–）运算符"><a href="#自增（-），自减（–）运算符" class="headerlink" title="自增（++），自减（–）运算符"></a>自增（++），自减（–）运算符</h3><p>自增，自减运算符的作用是使变量的值加1或减1，例如：</p>
+<p>++i，–i  （在使用i之前，先使i的值加（减）1）</p>
+<p>i++，i–  （在使用i之后，使i的值加（减）1）</p>
+<h3 id="算术表达式和运算符的优先级与结合性"><a href="#算术表达式和运算符的优先级与结合性" class="headerlink" title="算术表达式和运算符的优先级与结合性"></a>算术表达式和运算符的优先级与结合性</h3><p>用算术运算符和括号将运算对象（也称操作数）连接起来的、符合C语法规则的式子成为<strong>C算术表达式</strong></p>
+<p><em><strong>C语言规定了运算数的优先级，还规定了运算符的结合性</strong></em></p>
+<hr>
+<p>算术运算符——&gt;自左至右</p>
+<p>赋值运算——&gt;自右向左</p>
+<h3 id="不同类型数据间的混合运算"><a href="#不同类型数据间的混合运算" class="headerlink" title="不同类型数据间的混合运算"></a>不同类型数据间的混合运算</h3><p><em><strong>如果一个运算符两侧的数据类型不同，则先自动进行类型转换，是两者成为同一类型，然后进行运算。</strong></em></p>
+<hr>
+<p>低——————————————————————————————&gt;高</p>
+<p>int（char，short)–&gt;unsigned int–&gt;long–&gt;unsigned long–&gt;double(float)–&gt;long double</p>
+<hr>
+<p>按照从高到低的顺序给各种数据类型分等级，依次为：long double, double, float, unsigned long long, long long, unsigned long, long, unsigned int 和 int。这里有一个小小的例外，如果 long 和 int 大小相同，则 unsigned int 的等级应位于 long 之上。char 和 short 并没有出现于这个等级列表，是因为它们应该已经被升级成了 int 或者 unsigned int。  </p>
+<hr>
+<p>当是从低级转换为高级时，是自动转换</p>
+<p>从高级转换为低级时，需要进行强制转换</p>
+<hr>
+<h4 id="强制转换"><a href="#强制转换" class="headerlink" title="强制转换"></a>强制转换</h4><p>类型：</p>
+<p>（类型名）（表达式）</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-C语言数组"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/C%E8%AF%AD%E8%A8%80%E6%95%B0%E7%BB%84/" class="article-date">
+  <time datetime="2021-12-16T15:10:56.991Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><h2 id="一维数组的定义和初始化"><a href="#一维数组的定义和初始化" class="headerlink" title="一维数组的定义和初始化"></a>一维数组的定义和初始化</h2><p><strong>数组</strong>：是一组具有相同类型的变量的集合</p>
+<p><strong>数组名</strong>：用以识别该组相同类型数据的名字</p>
+<p><strong>数组元素</strong>：构成数组的每个数据项</p>
+<p><strong>数组下标</strong></p>
+<p><strong>数组的基类型</strong>：数组中元素的类型</p>
+<p><strong>数组的维数</strong>：下标的个数</p>
+<p>一维数组的格式：类型    数组名[元素个数]；</p>
+<hr>
+<p><em><strong>注意，C语言中的下标都是从0开始的</strong></em></p>
+<p>为了访问数组中的每个元素，可以通过数组名加上标值得形式，在数组名的右侧添加方括号，然后将下标值写在其中。</p>
+<hr>
+<p><strong>在定义数组时不能使用变量定义数组的大小</strong></p>
+<h3 id="一维数组的初始化"><a href="#一维数组的初始化" class="headerlink" title="一维数组的初始化"></a>一维数组的初始化</h3><p>定义但未进行初始化的数组元素的值仍然是随机数。</p>
+<p><strong>初始化方法</strong></p>
+<p>将元素初值放在=后面用一对花括号括起来的初始化列表中。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> score[<span class="number">5</span>] = &#123;<span class="number">90</span>,<span class="number">80</span>,<span class="number">70</span>,<span class="number">100</span>,<span class="number">95</span>&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>初始化的值不能多于数组元素个数，也可以不规定数组元素个数，机器会自动识别；</p>
+<p>当初始化的值不够数组元素个数时，机器会自动将其他的补位0</p>
+<h2 id="二维数组的定义和初始化"><a href="#二维数组的定义和初始化" class="headerlink" title="二维数组的定义和初始化"></a>二维数组的定义和初始化</h2><p><strong>定义一般格式</strong></p>
+<p>类型     数组名[第一维长度] [第二维长度]</p>
+<p>第一维长度代表数组的行数，第二维长度代表数组的列数</p>
+<h3 id="计算机中数组计算所占内存的方法"><a href="#计算机中数组计算所占内存的方法" class="headerlink" title="计算机中数组计算所占内存的方法"></a>计算机中数组计算所占内存的方法</h3><ul>
+<li>一维数组在内存中占用的字节数为：数组长度 * sizeof（基类型）</li>
+<li>二维数组在内存中占用的字节数为：第一维长度 * 第二维长度 * sizeof（基类型）</li>
+</ul>
+<h3 id="相数组输入和输出数据"><a href="#相数组输入和输出数据" class="headerlink" title="相数组输入和输出数据"></a>相数组输入和输出数据</h3><p><strong>原理</strong>：由于C语言中不带下标的数组名具有特殊的含义，它代表数组的首地址，因此不能整体引用一个数组，每次只能引用指定下标值得数组元素</p>
+<h4 id="输入数据"><a href="#输入数据" class="headerlink" title="输入数据"></a>输入数据</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(j = <span class="number">0</span>; j &lt; <span class="number">4</span>; j++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;matrix[i][j]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="输出数据"><a href="#输出数据" class="headerlink" title="输出数据"></a>输出数据</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(j = <span class="number">0</span>; j &lt; <span class="number">4</span>; j++)</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">&quot;%4d&quot;</span>, &amp;matrix[i][j]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意</strong>：</p>
+<p>当对数组的全部元素进行初始化时，第一维的长度声明可以忽略</p>
+<p>数组的第二维的长度声明永远不能省略</p>
+<h2 id="向函数传递一维数组"><a href="#向函数传递一维数组" class="headerlink" title="向函数传递一维数组"></a>向函数传递一维数组</h2><p>数组元素和基本型变量一样，既可以出现在任何合法的C表达式中，也可用作函数参数</p>
+<h3 id="数组作为参数的方式"><a href="#数组作为参数的方式" class="headerlink" title="数组作为参数的方式"></a>数组作为参数的方式</h3><p>若要把一个数组传递给一个函数，那么只要使用<strong>不带方括号</strong>的数组名作为函数实参调用函数即可</p>
+<p><em><strong>注意，仅仅是数组名，不带方括号和下标</strong></em></p>
+<h3 id="按值传递"><a href="#按值传递" class="headerlink" title="按值传递"></a>按值传递</h3><p>由于<strong>数组名代表数组第一个元素的地址</strong>，因此<strong>用数组名作函数实参实际上是将数组的首地址传给被调函数</strong></p>
+<p><strong>注意：数组作为函数形参时，数组的长度可以不出现在数组名后面的方括号内，通常用另一个整型形参来指定数组的长度</strong></p>
+<h2 id="向函数传递二维数组"><a href="#向函数传递二维数组" class="headerlink" title="向函数传递二维数组"></a>向函数传递二维数组</h2><p><strong>当形参被声明为二维数组时，可以省略数组的第一维长度声明，但不能忽略数组的第二维的长度声明</strong></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-C语言文件拓展"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/C%E8%AF%AD%E8%A8%80%E6%96%87%E4%BB%B6%E6%8B%93%E5%B1%95/" class="article-date">
+  <time datetime="2021-12-16T15:10:56.991Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="文件内容拓展"><a href="#文件内容拓展" class="headerlink" title="文件内容拓展"></a>文件内容拓展</h1><h2 id="文件的随机读写"><a href="#文件的随机读写" class="headerlink" title="文件的随机读写"></a>文件的随机读写</h2><p><strong>顺序文件处理</strong>：在顺序文件处理过程中，数据项是一个接着一个进行读取或者读写。</p>
+<p><strong>随机访问</strong>：允许在文件中随机定位，并在文件的任何位置直接读写数据</p>
+<p><strong>方法</strong>：为了实现文件的定位，在每一次打开的文件中，都有一个<strong>文件位置指针</strong>也称<strong>文件位置标记</strong>，用来指向当前读写文件的位置，它保存了文件中的位置信息。</p>
+<p>eg 这里给出两个函数来定义的文件位置指针。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fseek</span><span class="params">(FILE *fp, <span class="keyword">long</span> offset, <span class="keyword">int</span> fromwhere)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">rewind</span><span class="params">(FILE *fp)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="fseek-函数"><a href="#fseek-函数" class="headerlink" title="fseek()函数"></a>fseek()函数</h3><p><strong>功能</strong>：函数fseek（）的功能是将fp的文件位置指针从fromwhere开始移到offset个字节，指示下一个要读取数据的位置</p>
+<p><strong>参数的意义</strong>：<strong>offset</strong>是一个偏移量，它告诉文件位置指针要跳多少个字节。offect为正时，向后移动，为负时，向前移动。AXSI C要求位移量<strong>offset</strong>是长整型数据（常量后加L）。<strong>fromwhere</strong>用于确定偏移量计算的起始位置，它的情况可能有三种：</p>
+<ul>
+<li>SEEK_SET或0，表示文件开始处</li>
+<li>SEEK_CUR或1，代表文件当前的位置</li>
+<li>SEEK_END或2，代表文件结尾处</li>
+</ul>
+<h3 id="rewind（）函数"><a href="#rewind（）函数" class="headerlink" title="rewind（）函数"></a>rewind（）函数</h3><p><strong>功能</strong>：将文件位置指针指向文件首字节，即重置位置指针到文件首部</p>
+<p><strong>如果函数fseek（）调用成功，则返回0值，否则返回非0值</strong></p>
+<h3 id="ftell（）函数"><a href="#ftell（）函数" class="headerlink" title="ftell（）函数"></a>ftell（）函数</h3><p><strong>功能</strong>：用于读取当前文件位置指针的函数，用于相对于文件起始位置的字节偏移量来表示返回的当前文件位置指针</p>
+<p><strong>原型</strong>：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">long</span> <span class="title">ftell</span><span class="params">(FILE *fp)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="fflush（）函数"><a href="#fflush（）函数" class="headerlink" title="fflush（）函数"></a>fflush（）函数</h3><p><strong>功能</strong>：fflush（）函数的功能是无条件地把缓冲区中的所有数据写入物理设备</p>
+<p><strong>通过下列的这个程序实例，可以实现对文件中的数据的搜索</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">date</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> year;</span><br><span class="line">    <span class="keyword">int</span> month;</span><br><span class="line">    <span class="keyword">int</span> day;</span><br><span class="line">&#125;DATE;</span><br><span class="line"><span class="keyword">typedef</span>  <span class="class"><span class="keyword">struct</span>  <span class="title">student</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">long</span> studentID;</span><br><span class="line">    <span class="keyword">char</span> studentName[<span class="number">10</span>];</span><br><span class="line">    <span class="keyword">char</span> studentSex;</span><br><span class="line">    DATE birthday;</span><br><span class="line">    <span class="keyword">int</span> score[<span class="number">4</span>];</span><br><span class="line">    <span class="keyword">float</span> aver;</span><br><span class="line">&#125;STUDENT;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SearchinFile</span><span class="params">(<span class="keyword">char</span> fileName[],<span class="keyword">long</span> k)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">long</span> k;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Input the searching record number:&quot;</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%ld&quot;</span>,&amp;k);</span><br><span class="line">    SearchinFile(<span class="string">&quot;D:\\student.txt&quot;</span>,k);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SearchinFile</span><span class="params">(<span class="keyword">char</span> fileName[],<span class="keyword">long</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    FILE *fp;</span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    STUDENT stu;</span><br><span class="line">    <span class="keyword">if</span>((fp = fopen(fileName,<span class="string">&quot;r&quot;</span>)) == <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Faliure to open %s!\n&quot;</span>,fileName);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    fseek(fp,(k<span class="number">-1</span>)* <span class="keyword">sizeof</span> (STUDENT), SEEK_SET);</span><br><span class="line">    fread(&amp;stu, <span class="keyword">sizeof</span>(STUDENT),<span class="number">1</span>,fp);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%10ld%8s%3c%6d/%02d/%02d&quot;</span>,stu.studentID,stu.studentName,stu.studentSex,</span><br><span class="line">           stu.birthday.year,stu.birthday.month,stu.birthday.day);</span><br><span class="line">    <span class="keyword">for</span>(j = <span class="number">0</span>; j &lt; <span class="number">4</span>; j++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%4d&quot;</span>,stu.score[j]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%6.1f\n&quot;</span>,stu.aver);</span><br><span class="line">    fclose(fp);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-C语言文件操作"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/C%E8%AF%AD%E8%A8%80%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" class="article-date">
+  <time datetime="2021-12-16T15:10:56.991Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h1><h2 id="二进制文件和文本文件"><a href="#二进制文件和文本文件" class="headerlink" title="二进制文件和文本文件"></a>二进制文件和文本文件</h2><p><strong>文件</strong>：是由文件名来识别，因此只要声明了文件名，就可以读出或写入数据。只要文件名不同，就不会发生冲突。</p>
+<p>C语言提供了两种文件类型：文本文件和二进制文件</p>
+<h3 id="文本文件"><a href="#文本文件" class="headerlink" title="文本文件"></a>文本文件</h3><p>文本文件又名（ASCLL码文件）</p>
+<p><strong>特点</strong>：文本文件中的每一位数字都单独占用一个字节的存储空间。</p>
+<p><strong>优点</strong>：文本文件可以很方便地被其他程序读取，包括文本编译器、Office办公软件等，且其输出与字符一一对应，一个字节代表一个字符，便于对字符进行逐个处理，便于输入字符，但一般占据的空间比较大，且需环肥ASCLL码与字符键的转换时间。</p>
+<h3 id="二进制文件"><a href="#二进制文件" class="headerlink" title="二进制文件"></a>二进制文件</h3><p><strong>特点</strong>：把整个数字作为一个二进制数来储存，并非数值的每一位数字都占用单独的储存空间</p>
+<p><strong>优点</strong>：以二进制文本输出数据，可以节省额外的空间和转换时间，但因为一个字节并非对应一个字符，不能直接输出其对应的字符形式</p>
+<h3 id="字节流"><a href="#字节流" class="headerlink" title="字节流"></a>字节流</h3><p><strong>定义</strong>：无论一个C语言文件内容是什么，它一律把数据看成是由字节构成的序列，即字节流。</p>
+<p>因此C语言文件又被称为<strong>流式文件</strong>。</p>
+<h2 id="两种文件储存系统"><a href="#两种文件储存系统" class="headerlink" title="两种文件储存系统"></a>两种文件储存系统</h2><p>C语言有<strong>缓冲型</strong>和<strong>非缓冲型</strong>两种文件系统</p>
+<h3 id="第一种，缓冲型"><a href="#第一种，缓冲型" class="headerlink" title="第一种，缓冲型"></a>第一种，缓冲型</h3><p>缓冲型文件缓冲系统是指系统自动在内存中为每一个正在使用的文件开辟一个缓冲区，作为程序与文件之间数据交换的中间媒介。也就是在读写文件时，数据先送到缓冲区，再传递给C语言程序或外存上。缓冲文件系统利用文件指针标识文件。</p>
+<p><strong>缓冲型文件系统痛的文件操作</strong>，也称为高级文件操作，高级文件操作函数是ANSIC定义的可移植的文件操作函数，具有跨平台和可移植的能力，可解决大多数文件操作问题。</p>
+<h3 id="第二种，非缓冲型"><a href="#第二种，非缓冲型" class="headerlink" title="第二种，非缓冲型"></a>第二种，非缓冲型</h3><p>非缓冲文件系统是不会自动设置文件缓冲区的，缓冲区必须由程序员自己设定。非缓冲文件系统没有文件指针，它使用称为文件号的整数来标识文件</p>
+<h2 id="文件的打开与关闭"><a href="#文件的打开与关闭" class="headerlink" title="文件的打开与关闭"></a>文件的打开与关闭</h2><p>在使用文件之前必须先打开文件。函数fopen()用来打开文件：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FILE *fopen(<span class="keyword">const</span> <span class="keyword">char</span> *filename, <span class="keyword">const</span> <span class="keyword">char</span> *mode)</span><br></pre></td></tr></table></figure>
+
+<p><strong>返回值类型</strong>：fopen()的返回值是一个<strong>文件指针</strong></p>
+<p><strong>FILE</strong>是stdio.h中定义的<strong>结构体类型</strong>，封装了与文件有关的信息，如文件句柄、位置指针及缓冲区等。缓冲文件系统的每个被使用的文件在内存中开辟一个缓冲区，用来存放文件有关的信息，这些现在被保存在一个<strong>FILE</strong>结构类型的变量中。</p>
+<p><strong>fopen()的两个形参</strong>：第一个形参<strong>filename</strong>表示文件名，可包含<strong>路径</strong>和<strong>文件名</strong>两部分。第二个形参<strong>mode</strong>表示文件的打开方式，其取值如下表：</p>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>“r”</td>
+<td>以只读的方式，打开文本文件。以“r”方式打开的文件，只能读出，而不能向该文件写入数据。该文件必须是已经存在的，若文件不存在，则会出错</td>
+</tr>
+<tr>
+<td>“w”</td>
+<td>以只写方式，创建并打开文本文件，已存在的文件将被覆盖。以“w”方式打开文件时，无论文件是否存在，都需创建一个新的文件，只能写入数据</td>
+</tr>
+<tr>
+<td>“a”</td>
+<td>以只写方式，打开文本文件，位置指针移到文件末尾，向文件尾部添加数据，原文件数据保留。若文件不存在，则会出错</td>
+</tr>
+<tr>
+<td>“+”</td>
+<td>与上面的字符串组合，表示以读写方式打开文本文件。即可向文件中写入数据，也可从文件中读出数据</td>
+</tr>
+<tr>
+<td>“b”</td>
+<td>与上面的字符串组合，表示打开二进制文件</td>
+</tr>
+</tbody></table>
+<p>以向在D盘中的demo.text读写为例</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fp = fopen(<span class="string">&quot;D:\\demo.text&quot;</span>,<span class="string">&quot;a+&quot;</span>);<span class="comment">//已读写方式打开demo</span></span><br><span class="line">fp = fopen(<span class="string">&quot;D:\\demo.bin&quot;</span>,<span class="string">&quot;ab+&quot;</span>);<span class="comment">//以二进制方式打开demo.bin</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>文件指针fp是指向FILE结构类型的指针变量定义如下</strong>：</p>
+<p>FILE *fp；</p>
+<p>因为操作系统对于同时打开的文件数目是有限制的，所以在文件使用结束后必须关键文件，否则会出现意想不到的错误。在C语言中，函数fclose（）用来关闭一个由函数fopen（）打开的文件</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fclose</span><span class="params">(FILE *fp)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p>函数fclose（）返回一个整型数。当文件关闭成功时，返回0值，否则返回一个非0值。</p>
+<p>因此可以根据函数的返回值判断文件是否关闭成功。</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-C语言排序和查找"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/C%E8%AF%AD%E8%A8%80%E6%8E%92%E5%BA%8F%E5%92%8C%E6%9F%A5%E6%89%BE/" class="article-date">
+  <time datetime="2021-12-16T15:10:56.981Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="排序和查找"><a href="#排序和查找" class="headerlink" title="排序和查找"></a>排序和查找</h1><h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><p><strong>排序</strong>：是把一系列无序的数据按照特定的顺序重新排列为有序序列的过程</p>
+<h3 id="交换法排序"><a href="#交换法排序" class="headerlink" title="交换法排序"></a>交换法排序</h3><p><strong>特点</strong>：性能比较低，但是易于理解，是选择法的基础</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; n<span class="number">-1</span>; i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(j = i+<span class="number">1</span>; j &lt; n; j++)</span><br><span class="line">    &#123;</span><br><span class="line">        若score[j] &gt; score[i]</span><br><span class="line">        则交换 score[j] 和 score[i] 的值    </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="选择排序法"><a href="#选择排序法" class="headerlink" title="选择排序法"></a>选择排序法</h3><p><strong>特点</strong>：执行次数少，不过较难理解</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">void DateSort(int score[], int n)</span><br><span class="line">&#123;</span><br><span class="line">    int i, j, k, temp;</span><br><span class="line">    for(i = 0; i &lt; n-1; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        k = i;</span><br><span class="line">        for(j = i + 1; j &lt; n; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            if(score[j] &gt; score[k])</span><br><span class="line">            &#123;</span><br><span class="line">                k = j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if(k != i)</span><br><span class="line">        &#123;</span><br><span class="line">            temp = score[k];</span><br><span class="line">            score[k] = score[i];</span><br><span class="line">            score[i] = temp;</span><br><span class="line">        &#125;</span><br><span class="line">                </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>对信息进行排序时，通常只使用信息的一个子项作为<strong>键值（Key Value）</strong>，由键值决定信息的全部子项的排列顺序</p>
+<h2 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h2><p><strong>查找</strong>：在数组中搜索一个特定元素的处理过程</p>
+<h3 id="线性查找（Linear-Search）"><a href="#线性查找（Linear-Search）" class="headerlink" title="线性查找（Linear Search）"></a>线性查找（Linear Search）</h3><p><strong>特点</strong>：算法简单直观，但效率较低</p>
+<p><strong>查找键</strong>：查找的基本过程是利用循环顺序扫描整个数组，依次将每个元素与待查找值进行比较；若找到就停止循环</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i;</span><br><span class="line"><span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(number == X)</span><br><span class="line">        <span class="keyword">return</span> i;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="折半查找（Binary-Search）"><a href="#折半查找（Binary-Search）" class="headerlink" title="折半查找（Binary Search）"></a>折半查找（Binary Search）</h3><p><strong>特点</strong>：稍微复杂，但效率很高</p>
+<p><strong>注意</strong>：折半查找只能在已经排好序的数值中查找</p>
+<p><strong>折半查找基本思想</strong>：首先选取位于数组中间的元素，将其与查找键进行比较。如果它们的值相等，则查找建以被找到，返回数组中间元素的下标。否则，将查找的区间缩小为原来区间的一半，即在一半的数组元素中查找</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> low = <span class="number">0</span>, high = n<span class="number">-1</span>,mid;</span><br><span class="line"><span class="keyword">while</span>(low &lt;= high)</span><br><span class="line">&#123;</span><br><span class="line">    mid = (high + low) / <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span>(x &gt; num[mid])</span><br><span class="line">        low = mid + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (x &lt; num[mid])</span><br><span class="line">        high = mid + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> mid;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-C语言数据类型"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/C%E8%AF%AD%E8%A8%80%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="article-date">
+  <time datetime="2021-12-16T15:10:56.981Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="C语言数据类型"><a href="#C语言数据类型" class="headerlink" title="C语言数据类型"></a>C语言数据类型</h1><p><em><strong>C语言程序处理的数据类型有常量（Constant）和变量（Variable）两种形式</strong></em></p>
+<h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h2><hr>
+<table>
+<thead>
+<tr>
+<th>常量类型</th>
+<th>实例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>整型常量</td>
+<td>10，-30,0</td>
+<td>包括正整数，负整数和零在内的所有整数</td>
+</tr>
+<tr>
+<td>实型常量</td>
+<td>3.14 -0.56</td>
+<td>由于计算机的实型数是以浮点类型表示，实型常量也可以称为浮点数</td>
+</tr>
+<tr>
+<td>字符常量</td>
+<td>‘x’，‘X’，‘0’</td>
+<td>用一对单引号括起来的任意字符</td>
+</tr>
+<tr>
+<td>字符串常量</td>
+<td>”Hello！“</td>
+<td>用一对双引号括起来的零个或多个字符</td>
+</tr>
+</tbody></table>
+<p><em>补充</em></p>
+<ul>
+<li>整数(有符号) ——&gt;int</li>
+<li>无符号整数常量——&gt;int + 整数 + U或u</li>
+<li>长整型 ——&gt;int + 整数 + L或l</li>
+<li>无符号长整型——&gt;int + 整数 + Lu</li>
+<li>十进制小数——&gt;必须带小数点</li>
+<li>指数形式——&gt;eg：1e-10 用e或E代表以10位底的指数</li>
+<li>单精度（float）——&gt;常数值后加F或f</li>
+<li>双精度（double）——&gt;实型常量没有明确表明类型都是双精度</li>
+<li>长双精度（long double）——&gt;12.5L 常数值后跟L或l来表示</li>
+</ul>
+<h4 id="字符常量"><a href="#字符常量" class="headerlink" title="字符常量"></a>字符常量</h4><p>字符常量有两种：普通字符和转义字符</p>
+<p>常见的以“\”开头的特殊字符</p>
+<table>
+<thead>
+<tr>
+<th>转义字符</th>
+<th>字符值</th>
+<th>输出结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\ ‘</td>
+<td>一个单撇号（‘）</td>
+<td>输出单撇号字符’</td>
+</tr>
+<tr>
+<td>\ ‘’</td>
+<td>一个双撇号（“）</td>
+<td>输出双撇号字符”</td>
+</tr>
+<tr>
+<td>\ ?</td>
+<td>一个问号（？）</td>
+<td>输出问号字符？</td>
+</tr>
+<tr>
+<td>\ \</td>
+<td>一个反斜线（\）</td>
+<td>输出反斜线字符\</td>
+</tr>
+<tr>
+<td>\ a</td>
+<td>警告（alert）</td>
+<td>产生声音或视觉信号</td>
+</tr>
+<tr>
+<td>\ b</td>
+<td>退格（backspace）</td>
+<td>将光标当前位置后退一个字符</td>
+</tr>
+<tr>
+<td>\ f</td>
+<td>换页（form feed）</td>
+<td>将光标当前位置移到下一页的开头</td>
+</tr>
+<tr>
+<td>\ n</td>
+<td>换行</td>
+<td>将光标当前位置移到下一行的开头</td>
+</tr>
+<tr>
+<td>\ r</td>
+<td>回车（carriage return）</td>
+<td>将光标当前位置移到本行的开头</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>\t</th>
+<th>水平制表符</th>
+<th>将光标当前位置移到下一个Tab位置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\ v</td>
+<td>垂直制表符</td>
+<td>将光标当前位置移到下一个垂直制表对齐点</td>
+</tr>
+<tr>
+<td>\ 0,\00或\000其中o代表一个八进制数字</td>
+<td>与该八进制码对应的ASCLL字符</td>
+<td>与该八进制码对应的字符</td>
+</tr>
+<tr>
+<td>\xh[h…]其中h代表一个十六进制数字</td>
+<td>与该十六进制码对应的ASCLL字符</td>
+<td>与该十六进制码对应的字符</td>
+</tr>
+</tbody></table>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><h3 id="变量名的命名规则"><a href="#变量名的命名规则" class="headerlink" title="变量名的命名规则"></a>变量名的命名规则</h3><hr>
+<p><strong>变量的名字就是标识符</strong></p>
+<ul>
+<li>标识符只能由英文字母，数字和下划线_组成</li>
+<li>标识符必须以字母或下划线开头</li>
+<li>不允许使用C关键字作为标识符命名</li>
+<li>标识符可以包含任意多个字符，但一般会有最大限制</li>
+</ul>
+<p><em><strong>标识符是区分大小写的即大小写敏感的</strong></em></p>
+<ol>
+<li>标准C规定所有的变量必须在第一条执行语句之前定义</li>
+<li>在为变量赋值时，等号两边的空格不是必须的，增加程序的可读性</li>
+<li>C语言允许在定义变量时对变量进行初始化（为其赋值）</li>
+</ol>
+<h3 id="整型变量的符号属性"><a href="#整型变量的符号属性" class="headerlink" title="整型变量的符号属性"></a>整型变量的符号属性</h3><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>字节数</th>
+<th>取值范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>int</td>
+<td>4</td>
+<td>-2 147 483 648~2 147 483 647</td>
+</tr>
+<tr>
+<td>unsigned int</td>
+<td>4</td>
+<td>0 ~ 4 294 967 295</td>
+</tr>
+<tr>
+<td>short</td>
+<td>2</td>
+<td>-32 768 ~ 32 767</td>
+</tr>
+<tr>
+<td>unsigned short</td>
+<td>2</td>
+<td>0 ~ 65 535</td>
+</tr>
+<tr>
+<td>long</td>
+<td>4</td>
+<td>-2 147 483 648 ~ 2 147 483 647</td>
+</tr>
+<tr>
+<td>unsigned long</td>
+<td>4</td>
+<td>0 ~ 4 294 967 295</td>
+</tr>
+<tr>
+<td>long long</td>
+<td>8</td>
+<td>-9 223 372 036 854 775 808 ~ 9 223 372 036 854 775 807</td>
+</tr>
+<tr>
+<td>unsigned long long</td>
+<td>8</td>
+<td>0 ~ 18 446 744 073 709 551 615</td>
+</tr>
+</tbody></table>
+<h3 id="字符变量"><a href="#字符变量" class="headerlink" title="字符变量"></a>字符变量</h3><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>字节数</th>
+<th>取值范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>signed char</td>
+<td>1</td>
+<td>-128~127</td>
+</tr>
+<tr>
+<td>unsigned char</td>
+<td>1</td>
+<td>0~255</td>
+</tr>
+</tbody></table>
+<h3 id="实型变量"><a href="#实型变量" class="headerlink" title="实型变量"></a>实型变量</h3><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>字节数</th>
+<th>有效数字</th>
+<th>数值范围（绝对值）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>float</td>
+<td>4</td>
+<td>6</td>
+<td>0以及1.2*10^-38 ~ 3.4 *  10^38</td>
+</tr>
+<tr>
+<td>double</td>
+<td>8</td>
+<td>15</td>
+<td>0以及2.3*10^-308 ~ 1.7 * 10^308</td>
+</tr>
+<tr>
+<td>long double</td>
+<td>8</td>
+<td>15</td>
+<td>0以及2.3*10^-308 ~ 1.7 * 10^308</td>
+</tr>
+<tr>
+<td>long double</td>
+<td>16</td>
+<td>19</td>
+<td>0以及3.4 * 10^-4932 ~ 1.1 * 10^4982</td>
+</tr>
+</tbody></table>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-C语言结构体和公用体"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/C%E8%AF%AD%E8%A8%80%E7%BB%93%E6%9E%84%E4%BD%93%E5%92%8C%E5%85%AC%E7%94%A8%E4%BD%93/" class="article-date">
+  <time datetime="2021-12-16T15:10:56.981Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h1><p>结构体和共用体就是C语言提供的用于处理复杂数据类型的方式<strong>允许用户自定义数据类型</strong>在C语言中为<strong>构造数据类型</strong>（也称<strong>复合数据类型</strong>）</p>
+<p>它允许用户根据自己的需要利用已有的基本数据类型在制造出自己所需的数据类型。用于表示链表，树，堆栈等复杂的数据对象。</p>
+<h2 id="结构体的定义"><a href="#结构体的定义" class="headerlink" title="结构体的定义"></a>结构体的定义</h2><p><strong>数组</strong>：是由同类型的数据构成的一种数据结构，适合于对具有相同属性的数据进行批处理</p>
+<p><strong>结构体</strong>：是将不同类型的数据成员组织到统一的名字之下，适合于对关系密切、逻辑相关、具有相同或者不同属性的数据进行处理</p>
+<p><strong>共用体</strong>：虽然也能表示逻辑相关的不同类型的数据集合，但其数据成员是情形互斥的，每一刻只有一个数据成员起作用</p>
+<h3 id="结构体变量的定义"><a href="#结构体变量的定义" class="headerlink" title="结构体变量的定义"></a>结构体变量的定义</h3><p><strong>结构体模板</strong>的标准格式：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> 结构体名</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    数据类型 成员<span class="number">1</span>的名字；</span><br><span class="line">    数据类型 成员<span class="number">2</span>的名字；</span><br><span class="line">    数据类型 成员<span class="number">3</span>的名字；</span><br><span class="line">    ……</span><br><span class="line">    数据类型 成员n的名字；</span><br><span class="line">    </span><br><span class="line">&#125;；<span class="comment">/*注意，这里的分号不能忘了写*/</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>结构体标签</strong>：结构体的名字，作为用户自定义的结构体类型的标志，用于与其他结构体类型相区别。</p>
+<p>结构体的各种信息是在{}中声明的</p>
+<p><strong>结构体成员</strong>：构成结构体的变量，每个结构体成员都有一个名字和相应的数据类型，其命名必须遵循变量的命名规则</p>
+<p><strong>注意，结构体模板只是声明了一种数据类型，定义了数据的组织形式，并未声明结构体类型的变量</strong></p>
+<hr>
+<p>C语言允许一下两种方法定义结构体变量：</p>
+<p>第一种：先声明结构体模板，再定义结构体变量</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> 结构体名</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    数据类型 成员<span class="number">1</span>的名字；</span><br><span class="line">    数据类型 成员<span class="number">2</span>的名字；</span><br><span class="line">    数据类型 成员<span class="number">3</span>的名字；</span><br><span class="line">    ……</span><br><span class="line">    数据类型 成员n的名字；</span><br><span class="line">    </span><br><span class="line">&#125;；</span><br><span class="line"> <span class="class"><span class="keyword">struct</span> <span class="title">student</span> <span class="title">stu1</span>；</span></span><br><span class="line"><span class="class"></span></span><br></pre></td></tr></table></figure>
+
+<p>第二种：在声明结构体模板的同时定义结构体变量</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> 结构体名</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    数据类型 成员<span class="number">1</span>的名字；</span><br><span class="line">    数据类型 成员<span class="number">2</span>的名字；</span><br><span class="line">    数据类型 成员<span class="number">3</span>的名字；</span><br><span class="line">    ……</span><br><span class="line">    数据类型 成员n的名字；</span><br><span class="line">    </span><br><span class="line">&#125;stu1；</span><br></pre></td></tr></table></figure>
+
+<h3 id="用typedef（关键字）定义数据类型"><a href="#用typedef（关键字）定义数据类型" class="headerlink" title="用typedef（关键字）定义数据类型"></a>用typedef（关键字）定义数据类型</h3><p>  关键字typedef用于为系统固有的或程序员自定义的数据类型定义一个别名。</p>
+<p><strong>通常数据类型的别名都是全英文大写的</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> INTEGER; <span class="comment">/*将int重新命名为INTEGER*/</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">student</span> <span class="title">STUDENT</span>;</span><span class="comment">/*将自己制造的student类型重命名为STUDENT*/</span></span><br><span class="line"><span class="keyword">or</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">student</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    数据类型 成员<span class="number">1</span>的名字；</span><br><span class="line">    数据类型 成员<span class="number">2</span>的名字；</span><br><span class="line">    数据类型 成员<span class="number">3</span>的名字；</span><br><span class="line">    ……</span><br><span class="line">    数据类型 成员n的名字；</span><br><span class="line">    </span><br><span class="line">&#125;STUDENT；</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+
+<p>上述的定义STUDENT的两个代码是等价的；</p>
+<p><strong>typedef只是为一种已存在的类型定义一个名字而已，并未定义一种新的数据类型</strong></p>
+<h3 id="嵌套的结构体"><a href="#嵌套的结构体" class="headerlink" title="嵌套的结构体"></a>嵌套的结构体</h3><p><strong>嵌套的结构体</strong>就是在一个结构体内包含了另一个结构体作为其成员</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">date</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> year;</span><br><span class="line">    <span class="keyword">int</span> month;</span><br><span class="line">    <span class="keyword">int</span> day;</span><br><span class="line">&#125;DATE;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">student</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">char</span> name[];</span><br><span class="line">    <span class="keyword">int</span> ID;</span><br><span class="line">    DATE birthday;</span><br><span class="line">&#125;STUDENT</span><br></pre></td></tr></table></figure>
+
+<h3 id="结构体变量的引用"><a href="#结构体变量的引用" class="headerlink" title="结构体变量的引用"></a>结构体变量的引用</h3><hr>
+<p>C语言规定，不能将一个结构体变量作为一个整体进行输入，输出操作，只能对每个具体的成员进行输入，输出操作</p>
+<hr>
+<p><strong>访问格式</strong>： 结构体变量名 . 成员名</p>
+<p>当引用嵌套体时，必须一级一级地通过访问格式找到最底层的成员后再引用</p>
+<p>eg：stu1.birthday.day</p>
+<hr>
+<p>C语言允许对具有相同结构体类型的变量进行整体赋值。</p>
+<p>stu1 = stu2；</p>
+<p>这样是非法的；</p>
+<p><em><strong>并非所有的结构体成员都可以使用赋值运算符来赋值，对字符数组类型成员进行赋值时，必须使用字符串处理函数strcpy（）</strong></em></p>
+<p>结构体变量也和基本的变量一样有作用域，在函数外定义的结构体变量是全局声明，在函数内部定义的结构体变量是局部声明</p>
+<p><strong>结构体变量的地址是结构体变量所占内存空间的首地址，而结构体成员的地址值与结构体成员在结构体中所处的位置及其该成员所占内存的字节数有关</strong></p>
+<h3 id="结构体所占内存的字节数"><a href="#结构体所占内存的字节数" class="headerlink" title="结构体所占内存的字节数"></a>结构体所占内存的字节数</h3><p>有四字节对齐原则</p>
+<h2 id="结构体数组的定义和初始化"><a href="#结构体数组的定义和初始化" class="headerlink" title="结构体数组的定义和初始化"></a>结构体数组的定义和初始化</h2><h3 id="结构体数组的定义"><a href="#结构体数组的定义" class="headerlink" title="结构体数组的定义"></a>结构体数组的定义</h3><p>与基本的数据类型相同，结构体也是有其对应的数组的，是代表有与结构体中每个元素相同的一系类结构体的集合</p>
+<h3 id="结构体数组的初始化"><a href="#结构体数组的初始化" class="headerlink" title="结构体数组的初始化"></a>结构体数组的初始化</h3><p>可以在定义结构体数组时就对其进行初始化，和字符数组一样</p>
+<p>也可以通过scanf（）函数进行初始化，不过要注意每个结构体元素对应的数据类型</p>
+<h3 id="指向结构体的指针"><a href="#指向结构体的指针" class="headerlink" title="指向结构体的指针"></a>指向结构体的指针</h3><p>结构一也是有指针的，定义结构体指针的方法如下：</p>
+<p>第一种：STUDENT *pt = stu；</p>
+<p>第二种：STUDENT *pt = &amp;stu[0]；</p>
+<p>第三种：STUDENT *pt；</p>
+<p>​            pt = stu；</p>
+<p>以上三种定义的方法都是等价的</p>
+<h2 id="向函数传递结构体"><a href="#向函数传递结构体" class="headerlink" title="向函数传递结构体"></a>向函数传递结构体</h2><p>第一种：用结构体的单个成员作为函数参数，向函数传递结构体的单个成员</p>
+<p>第二种：用结构体变量作为函数参数，向函数传递结构体的完整结构</p>
+<p>第三种：通过结构体指针或结构体数组作为函数参数，向函数传递结构体的地址</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>0</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-C语言常用工具"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2021/12/16/C%E8%AF%AD%E8%A8%80%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" class="article-date">
+  <time datetime="2021-12-16T15:10:56.971Z" itemprop="datePublished">2021-12-16</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="C语言常用工具"><a href="#C语言常用工具" class="headerlink" title="C语言常用工具"></a>C语言常用工具</h1><h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><ul>
+<li>用/ * 和 * /包含起来的内容成为注释</li>
+<li>在/ 和 * 之间不能有空格</li>
+</ul>
+<p>C++风格的注释则是以//开始，只能注释一行</p>
+<p>注释不可以嵌套，即不能在一个注释中嵌套另一个注释</p>
+<h2 id="sizeof"><a href="#sizeof" class="headerlink" title="sizeof"></a>sizeof</h2><p><em><strong>sizeof是C语言的关键字，不是函数名。sizeof（）是C语言提供的专门用于计算制定数据类型字节的运算型。</strong></em><br>使用方法</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;xx %d&quot;</span>,size of (xx));</span><br></pre></td></tr></table></figure>
+
+<h2 id="宏常量"><a href="#宏常量" class="headerlink" title="宏常量"></a>宏常量</h2><ul>
+<li>在程序中直接使用的常数，成为幻数</li>
+<li>为了保护良好的程序设计风格，可把幻术定义为宏常量或const常量</li>
+</ul>
+<p>eg ：#define PI 3.14159</p>
+<ul>
+<li>宏定义的一般形式为#define 标识符 字符串</li>
+<li>在用#define定义一个标识符和一个字符串，程序进行时遇到标识符时会被识别为字符串</li>
+<li>宏定义中标识符被称为<strong>宏名</strong> ，习惯用字母全部大写的单词命名宏常量。将程序中出现字符串代替标识符的过程称为宏替换</li>
+</ul>
+<p><em><strong>宏定义中的宏名与字符串之间可有多个空白符，但无需加等号，且字符串后一般不以分号结尾，，因此宏定义不是C语句，而是一种编译预处理命令</strong></em></p>
+<p><em><strong>如果字符串加分号，在替换时会连同“；”一起替换</strong></em></p>
+<h2 id="常用的标准数学函数"><a href="#常用的标准数学函数" class="headerlink" title="常用的标准数学函数"></a>常用的标准数学函数</h2><table>
+<thead>
+<tr>
+<th align="center">函数名</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">sqrt(x)</td>
+<td align="center">计算x的平方根，x应大于等于0</td>
+</tr>
+<tr>
+<td align="center">fabs(x)</td>
+<td align="center">计算x的绝对值</td>
+</tr>
+<tr>
+<td align="center">log(x)</td>
+<td align="center">计算lnx的值，x应大于0</td>
+</tr>
+<tr>
+<td align="center">log10(x)</td>
+<td align="center">计算lgx的值，x应大于0</td>
+</tr>
+<tr>
+<td align="center">exp(x)</td>
+<td align="center">计算e^x的值</td>
+</tr>
+<tr>
+<td align="center">pow(x,y)</td>
+<td align="center">计算x^y的值</td>
+</tr>
+<tr>
+<td align="center">sin(x)</td>
+<td align="center">计算sinx的值，x的弧度值，而非角度值</td>
+</tr>
+<tr>
+<td align="center">cos(x)</td>
+<td align="center">计算cosx的值，x的弧度值，而非角度值</td>
+</tr>
+</tbody></table>
+<h2 id="域宽m"><a href="#域宽m" class="headerlink" title="域宽m"></a>域宽m</h2><p>输出域宽m（m为整数）</p>
+<p>作用：指定输出项输出十所占的列数</p>
+<table>
+<thead>
+<tr>
+<th align="center">类型</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">%md</td>
+<td align="center">若m为正整数，当输出数据的域宽小于m时在域内内向右靠齐，左边多余位补空格；当输出数据的域宽大于m时，按实际宽度全部输出</td>
+</tr>
+<tr>
+<td align="center">%0md</td>
+<td align="center">若m前有前导号0，则在左边多余位补0</td>
+</tr>
+<tr>
+<td align="center">%-md</td>
+<td align="center">若m为负整数，则输出数据在域内向左靠齐</td>
+</tr>
+</tbody></table>
+<p><em><strong>显示精度.n</strong></em></p>
+<table>
+<thead>
+<tr>
+<th align="center">类型</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">%.nf</td>
+<td align="center">用于指定输出浮点数的小数位数</td>
+</tr>
+<tr>
+<td align="center">%.ns</td>
+<td align="center">用于指定从字符串左侧开始截取的子串字符的个数</td>
+</tr>
+</tbody></table>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+  </article>
+  
+
+  
+  <nav class="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/9/">上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/11/">下一页</a>
+  </nav>
+  
+</section>
+</div>
+
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2022
+        <i class="ri-heart-fill heart_icon"></i> dwx
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="dwx-tx的小天地"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>

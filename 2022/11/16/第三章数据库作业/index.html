@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>第三章数据库作业 |  dwx-tx的小天地</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"
+      />
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+       
+ 
+<script>
+var _hmt = _hmt || [];
+(function() {
+	var hm = document.createElement("script");
+	hm.src = "https://hm.baidu.com/hm.js?57bee4bd4703d5af3f9154ce72c6f85f";
+	var s = document.getElementsByTagName("script")[0]; 
+	s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    <link rel="alternate" href="/atom.xml" title="dwx-tx的小天地" type="application/atom+xml">
+</head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-第三章数据库作业"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  第三章数据库作业
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/11/16/%E7%AC%AC%E4%B8%89%E7%AB%A0%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%9C%E4%B8%9A/" class="article-date">
+  <time datetime="2022-11-16T12:25:23.324Z" itemprop="datePublished">2022-11-16</time>
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">2.7k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">12 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="第三章数据库作业"><a href="#第三章数据库作业" class="headerlink" title="第三章数据库作业"></a>第三章数据库作业</h1><h2 id="作业要求"><a href="#作业要求" class="headerlink" title="作业要求"></a>作业要求</h2><p>根据SPJ数据库，给出下列各题的命令语句，将执行的语句及结果复制到word文档中，（查询结果可复制，选中查询结果后，点击右键，在快捷菜单中选择相应选项）：</p>
+<p>针对SPJ数据库，查询S表中供应商所在城市为天津的SNO，SNAME， CITY 。</p>
+<p>\1.   查询工程项目所在城市有哪些？</p>
+<p>\2.   查询SPJ表中供应数量大于200的记录的SNO，PNO，JNO，QTY，分别以供应商代码，零件代码，工程项目代码，供应数量显示</p>
+<p>\3.   查询工程项目所在城市为北京、天津、南京的工程项目信息。</p>
+<p>\4.   查询所有名称第一个字为“螺”的零件的信息</p>
+<p>\5.   查询第二个字为“轮”的零件的信息</p>
+<p>\6.   查询红色且重量大于20的零件的信息</p>
+<p>\7.   查询红色或重量大于20的零件的信息</p>
+<p>\8.   查询工程项目所在地不为北京和天津的工程项目信息</p>
+<p>\9.   从SPJ表中查询工程项目代码为J1的记录信息，并按照供应数量递增排序。</p>
+<p>\10.  统计SPJ表中使用P3零件的总数量，最小数量、最多数量、平均数量</p>
+<p>13．统计SPJ表中使用各种零件的总数量，最小数量、最多数量、平均数量</p>
+<p>14．统计SPJ表中各工程项目分别使用了几种零件</p>
+<p>15．统计SPJ表中各工程项目分别使用各种零件的总数量</p>
+<p>16．查询SPJ表中使用零件种类超过两种的工程项目。</p>
+<p>17．查询SPJ表中各供应商分别给几个项目供应零件</p>
+<p>18．查询SPJ表中各供应商分别供应每种零件给几个项目，及供应每种零件的总数量</p>
+<p>19．查询SPJ表中所有供应商代码，供应商姓名，零件名，工程项目名，供应数量，且供应数量&gt;200的项目信息</p>
+<p>20.查询所有工程项目代码，工程项目名，所在城市，及使用的各零件代码，和数量</p>
+<p>以下使用嵌套查询实现</p>
+<p>21．查询S1供应商供应的工程项目代码，工程项目名，所在城市</p>
+<p>\22. 查询使用蓝色零件的项目的工程项目代码，工程项目名，所在城市</p>
+<p>23．查询SPJ表中使用数量超过200的零件代码，零件名，颜色，</p>
+<p>24．查询和s1在同一个城市的供应商代码，供应商名称</p>
+<p>\25. 查询所有使用了p1零件项目代码，名称,城市（用exists查询实现）</p>
+<p>26．查询没有使用p1零件的项目代码，名称,城市(用not exists查询)</p>
+<p> <strong>作业分析</strong></p>
+<p>是简单的数据库操作的考察，sql语句的考察，题目中的SPJ表在数的课后题里，需要自己创建。</p>
+<h2 id="创建SPJ数据库"><a href="#创建SPJ数据库" class="headerlink" title="创建SPJ数据库"></a>创建SPJ数据库</h2><p><strong>创建数据库代码，用的是mysql数据库 不知道sql是否和其他的数据库通用</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">SQLyog Professional v12.09 (64 bit)</span></span><br><span class="line"><span class="comment">MySQL - 8.0.26 : Database - spj</span></span><br><span class="line"><span class="comment">*********************************************************************</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/*!40101 SET NAMES utf8 */</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*!40101 SET SQL_MODE=&#x27;&#x27;*/</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */</span>;</span><br><span class="line"><span class="comment">/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */</span>;</span><br><span class="line"><span class="comment">/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE=&#x27;NO_AUTO_VALUE_ON_ZERO&#x27; */</span>;</span><br><span class="line"><span class="comment">/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */</span>;</span><br><span class="line"><span class="keyword">CREATE</span> DATABASE <span class="comment">/*!32312 IF NOT EXISTS*/</span>`spj` <span class="comment">/*!40100 DEFAULT CHARACTER SET utf8 */</span> <span class="comment">/*!80016 DEFAULT ENCRYPTION=&#x27;N&#x27; */</span>;</span><br><span class="line"></span><br><span class="line">USE `spj`;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*Table structure for table `j` */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> IF <span class="keyword">EXISTS</span> `j`;</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> `j` (</span><br><span class="line">  `JNO` <span class="type">varchar</span>(<span class="number">4</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;项目代码&#x27;</span>,</span><br><span class="line">  `JNAME` <span class="type">varchar</span>(<span class="number">10</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;工程项目名&#x27;</span>,</span><br><span class="line">  `CITY` <span class="type">varchar</span>(<span class="number">10</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;工程项目所在城市&#x27;</span></span><br><span class="line">) ENGINE<span class="operator">=</span>InnoDB <span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>utf8mb3;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*Data for the table `j` */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span>  <span class="keyword">into</span> `j`(`JNO`,`JNAME`,`CITY`) <span class="keyword">values</span> (<span class="string">&#x27;J1&#x27;</span>,<span class="string">&#x27;三建&#x27;</span>,<span class="string">&#x27;北京&#x27;</span>),(<span class="string">&#x27;J2&#x27;</span>,<span class="string">&#x27;一汽&#x27;</span>,<span class="string">&#x27;长春&#x27;</span>),(<span class="string">&#x27;J3&#x27;</span>,<span class="string">&#x27;弹簧厂&#x27;</span>,<span class="string">&#x27;天津&#x27;</span>),(<span class="string">&#x27;J4&#x27;</span>,<span class="string">&#x27;造船厂&#x27;</span>,<span class="string">&#x27;天津&#x27;</span>),(<span class="string">&#x27;J5&#x27;</span>,<span class="string">&#x27;机车厂&#x27;</span>,<span class="string">&#x27;唐山&#x27;</span>),(<span class="string">&#x27;J6&#x27;</span>,<span class="string">&#x27;无线电厂&#x27;</span>,<span class="string">&#x27;常州&#x27;</span>),(<span class="string">&#x27;J7&#x27;</span>,<span class="string">&#x27;半导体厂&#x27;</span>,<span class="string">&#x27;南京&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*Table structure for table `p` */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> IF <span class="keyword">EXISTS</span> `p`;</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> `p` (</span><br><span class="line">  `PNO` <span class="type">varchar</span>(<span class="number">4</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;零件代码&#x27;</span>,</span><br><span class="line">  `PNAME` <span class="type">varchar</span>(<span class="number">10</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;零件名&#x27;</span>,</span><br><span class="line">  `COLOR` <span class="type">varchar</span>(<span class="number">10</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;颜色&#x27;</span>,</span><br><span class="line">  `WEIGHT` <span class="type">int</span> <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;重量&#x27;</span></span><br><span class="line">) ENGINE<span class="operator">=</span>InnoDB <span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>utf8mb3;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*Data for the table `p` */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span>  <span class="keyword">into</span> `p`(`PNO`,`PNAME`,`COLOR`,`WEIGHT`) <span class="keyword">values</span> (<span class="string">&#x27;P1&#x27;</span>,<span class="string">&#x27;螺母&#x27;</span>,<span class="string">&#x27;红&#x27;</span>,<span class="number">12</span>),(<span class="string">&#x27;P2&#x27;</span>,<span class="string">&#x27;螺栓&#x27;</span>,<span class="string">&#x27;绿&#x27;</span>,<span class="number">17</span>),(<span class="string">&#x27;P3&#x27;</span>,<span class="string">&#x27;螺丝刀&#x27;</span>,<span class="string">&#x27;蓝&#x27;</span>,<span class="number">14</span>),(<span class="string">&#x27;P4&#x27;</span>,<span class="string">&#x27;螺丝刀&#x27;</span>,<span class="string">&#x27;红&#x27;</span>,<span class="number">14</span>),(<span class="string">&#x27;P5&#x27;</span>,<span class="string">&#x27;凸轮&#x27;</span>,<span class="string">&#x27;蓝&#x27;</span>,<span class="number">40</span>),(<span class="string">&#x27;P6&#x27;</span>,<span class="string">&#x27;齿轮&#x27;</span>,<span class="string">&#x27;红&#x27;</span>,<span class="number">30</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*Table structure for table `s` */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> IF <span class="keyword">EXISTS</span> `s`;</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> `s` (</span><br><span class="line">  `SNO` <span class="type">varchar</span>(<span class="number">4</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;供应商代码&#x27;</span>,</span><br><span class="line">  `SNAME` <span class="type">varchar</span>(<span class="number">10</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;供应商姓名&#x27;</span>,</span><br><span class="line">  `STATUS` <span class="type">int</span> <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;供应商状态&#x27;</span>,</span><br><span class="line">  `CITY` <span class="type">varchar</span>(<span class="number">3</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;城市&#x27;</span></span><br><span class="line">) ENGINE<span class="operator">=</span>InnoDB <span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>utf8mb3;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*Data for the table `s` */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span>  <span class="keyword">into</span> `s`(`SNO`,`SNAME`,`STATUS`,`CITY`) <span class="keyword">values</span> (<span class="string">&#x27;S1&#x27;</span>,<span class="string">&#x27;精益&#x27;</span>,<span class="number">20</span>,<span class="string">&#x27;天津&#x27;</span>),(<span class="string">&#x27;S2&#x27;</span>,<span class="string">&#x27;盛锡&#x27;</span>,<span class="number">10</span>,<span class="string">&#x27;北京&#x27;</span>),(<span class="string">&#x27;S3&#x27;</span>,<span class="string">&#x27;东方红&#x27;</span>,<span class="number">30</span>,<span class="string">&#x27;北京&#x27;</span>),(<span class="string">&#x27;S4&#x27;</span>,<span class="string">&#x27;丰泰盛&#x27;</span>,<span class="number">20</span>,<span class="string">&#x27;天津&#x27;</span>),(<span class="string">&#x27;S5&#x27;</span>,<span class="string">&#x27;为民&#x27;</span>,<span class="number">30</span>,<span class="string">&#x27;上海&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*Table structure for table `spj` */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> IF <span class="keyword">EXISTS</span> `spj`;</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> `spj` (</span><br><span class="line">  `SNO` <span class="type">varchar</span>(<span class="number">4</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;供应商代码&#x27;</span>,</span><br><span class="line">  `PNO` <span class="type">varchar</span>(<span class="number">4</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;零件代码&#x27;</span>,</span><br><span class="line">  `JNO` <span class="type">varchar</span>(<span class="number">4</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;工程项目代码&#x27;</span>,</span><br><span class="line">  `QTY` <span class="type">int</span> <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;供应数量&#x27;</span></span><br><span class="line">) ENGINE<span class="operator">=</span>InnoDB <span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>utf8mb3;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*Data for the table `spj` */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span>  <span class="keyword">into</span> `spj`(`SNO`,`PNO`,`JNO`,`QTY`) <span class="keyword">values</span> (<span class="string">&#x27;S1&#x27;</span>,<span class="string">&#x27;P1&#x27;</span>,<span class="string">&#x27;J1&#x27;</span>,<span class="number">200</span>),(<span class="string">&#x27;S1&#x27;</span>,<span class="string">&#x27;P1&#x27;</span>,<span class="string">&#x27;J3&#x27;</span>,<span class="number">100</span>),(<span class="string">&#x27;S1&#x27;</span>,<span class="string">&#x27;P1&#x27;</span>,<span class="string">&#x27;J4&#x27;</span>,<span class="number">700</span>),(<span class="string">&#x27;S1&#x27;</span>,<span class="string">&#x27;p2&#x27;</span>,<span class="string">&#x27;J2&#x27;</span>,<span class="number">100</span>),(<span class="string">&#x27;S2&#x27;</span>,<span class="string">&#x27;P3&#x27;</span>,<span class="string">&#x27;J1&#x27;</span>,<span class="number">400</span>),(<span class="string">&#x27;S2&#x27;</span>,<span class="string">&#x27;P3&#x27;</span>,<span class="string">&#x27;J2&#x27;</span>,<span class="number">200</span>),(<span class="string">&#x27;S2&#x27;</span>,<span class="string">&#x27;P3&#x27;</span>,<span class="string">&#x27;J5&#x27;</span>,<span class="number">400</span>),(<span class="string">&#x27;S2&#x27;</span>,<span class="string">&#x27;P5&#x27;</span>,<span class="string">&#x27;J2&#x27;</span>,<span class="number">100</span>),(<span class="string">&#x27;S2&#x27;</span>,<span class="string">&#x27;P3&#x27;</span>,<span class="string">&#x27;J4&#x27;</span>,<span class="number">500</span>),(<span class="string">&#x27;S2&#x27;</span>,<span class="string">&#x27;P5&#x27;</span>,<span class="string">&#x27;J1&#x27;</span>,<span class="number">400</span>),(<span class="string">&#x27;S3&#x27;</span>,<span class="string">&#x27;P3&#x27;</span>,<span class="string">&#x27;J1&#x27;</span>,<span class="number">200</span>),(<span class="string">&#x27;S3&#x27;</span>,<span class="string">&#x27;P1&#x27;</span>,<span class="string">&#x27;J1&#x27;</span>,<span class="number">200</span>),(<span class="string">&#x27;S4&#x27;</span>,<span class="string">&#x27;P6&#x27;</span>,<span class="string">&#x27;J3&#x27;</span>,<span class="number">300</span>),(<span class="string">&#x27;S4&#x27;</span>,<span class="string">&#x27;P6&#x27;</span>,<span class="string">&#x27;J4&#x27;</span>,<span class="number">200</span>),(<span class="string">&#x27;S4&#x27;</span>,<span class="string">&#x27;P5&#x27;</span>,<span class="string">&#x27;J1&#x27;</span>,<span class="number">100</span>),(<span class="string">&#x27;S5&#x27;</span>,<span class="string">&#x27;P3&#x27;</span>,<span class="string">&#x27;J1&#x27;</span>,<span class="number">200</span>),(<span class="string">&#x27;S5&#x27;</span>,<span class="string">&#x27;P6&#x27;</span>,<span class="string">&#x27;J2&#x27;</span>,<span class="number">200</span>),(<span class="string">&#x27;S5&#x27;</span>,<span class="string">&#x27;P6&#x27;</span>,<span class="string">&#x27;J4&#x27;</span>,<span class="number">500</span>),(<span class="string">&#x27;S5&#x27;</span>,<span class="string">&#x27;P2&#x27;</span>,<span class="string">&#x27;J4&#x27;</span>,<span class="number">100</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*!40101 SET SQL_MODE=@OLD_SQL_MODE */</span>;</span><br><span class="line"><span class="comment">/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */</span>;</span><br><span class="line"><span class="comment">/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */</span>;</span><br><span class="line"><span class="comment">/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h2><p><strong>1.针对SPJ数据库，查询S表中供应商所在城市为天津的SNO，SNAME， CITY</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> SNO,SNAME,CITY</span><br><span class="line"><span class="keyword">FROM</span> S</span><br><span class="line"><span class="keyword">WHERE</span> CITY <span class="operator">=</span> <span class="string">&#x27;天津&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zZoNZV"><img src="https://s1.ax1x.com/2022/11/16/zZoNZV.png" alt="zZoNZV.png"></a></p>
+<p> <strong>2.查询工程项目所在城市有哪些</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> CITY</span><br><span class="line"><span class="keyword">FROM</span> j;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zZo2dK"><img src="https://s1.ax1x.com/2022/11/16/zZo2dK.png" alt="zZo2dK.png"></a></p>
+<p><strong>3. 查询SPJ表中供应数量大于200的记录的SNO，PNO，JNO，QTY，分别以供应商代码，零件代码，工程项目代码，供应数量显示</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> SNO <span class="keyword">AS</span> `供应商代码`,PNO <span class="keyword">AS</span> `零件代码`,JNO <span class="keyword">AS</span> `工程项目代码`,QTY <span class="keyword">AS</span> `供应数量显示`</span><br><span class="line"><span class="keyword">FROM</span> spj</span><br><span class="line"><span class="keyword">WHERE</span> QTY <span class="operator">&gt;</span> <span class="number">200</span>;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zZo4RH"><img src="https://s1.ax1x.com/2022/11/16/zZo4RH.png" alt="zZo4RH.png"></a></p>
+<p><strong>4.查询工程项目所在城市为北京、天津、南京的工程项目信息</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> </span><br><span class="line"><span class="keyword">FROM</span> j</span><br><span class="line"><span class="keyword">WHERE</span> CITY <span class="operator">=</span> <span class="string">&#x27;北京&#x27;</span> <span class="keyword">OR</span> CITY <span class="operator">=</span> <span class="string">&#x27;天津&#x27;</span> <span class="keyword">OR</span> CITY <span class="operator">=</span> <span class="string">&#x27;南京&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zZooQA"><img src="https://s1.ax1x.com/2022/11/16/zZooQA.png" alt="zZooQA.png"></a></p>
+<p><strong>5.查询所有名称第一个字为“螺”的零件的信息</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> p</span><br><span class="line"><span class="keyword">WHERE</span> PNAME <span class="keyword">LIKE</span> <span class="string">&#x27;螺%&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zZoTsI"><img src="https://s1.ax1x.com/2022/11/16/zZoTsI.png" alt="zZoTsI.png"></a></p>
+<p><strong>6.查询第二个字为“轮”的零件的信息</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> p</span><br><span class="line"><span class="keyword">WHERE</span> PNAME <span class="keyword">LIKE</span> <span class="string">&#x27;_轮%&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zZTpyn"><img src="https://s1.ax1x.com/2022/11/16/zZTpyn.png" alt="zZTpyn.png"></a></p>
+<p><strong>7. 查询红色且重量大于20的零件的信息</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> p</span><br><span class="line"><span class="keyword">WHERE</span> COLOR <span class="operator">=</span> <span class="string">&#x27;红&#x27;</span> <span class="keyword">AND</span> WEIGHT <span class="operator">&gt;</span> <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zZTFoT"><img src="https://s1.ax1x.com/2022/11/16/zZTFoT.png" alt="zZTFoT.png"></a></p>
+<p><strong>8. 查询红色或重量大于20的零件的信息</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> p</span><br><span class="line"><span class="keyword">WHERE</span> COLOR <span class="operator">=</span> <span class="string">&#x27;红&#x27;</span> <span class="keyword">OR</span> WEIGHT <span class="operator">&gt;</span> <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zZTnyR"><img src="https://s1.ax1x.com/2022/11/16/zZTnyR.png" alt="zZTnyR.png"></a></p>
+<p><strong>9.查询工程项目所在地不为北京和天津的工程项目信息</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> j</span><br><span class="line"><span class="keyword">WHERE</span> CITY <span class="operator">&lt;&gt;</span> <span class="string">&#x27;北京&#x27;</span> <span class="keyword">AND</span> CITY <span class="operator">&lt;&gt;</span> <span class="string">&#x27;天津&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zZT3FO"><img src="https://s1.ax1x.com/2022/11/16/zZT3FO.png" alt="zZT3FO.png"></a></p>
+<p><strong>10.从SPJ表中查询工程项目代码为J1的记录信息，并按照供应数量递增排序。</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> </span><br><span class="line"><span class="keyword">FROM</span> spj</span><br><span class="line"><span class="keyword">WHERE</span> JNO <span class="operator">=</span> <span class="string">&#x27;J1&#x27;</span></span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> QTY <span class="keyword">ASC</span>;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zZTtld"><img src="https://s1.ax1x.com/2022/11/16/zZTtld.png" alt="zZTtld.png"></a></p>
+<p><strong>11. 统计SPJ表中使用P3零件的总数量，最小数量、最多数量、平均数量</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">SUM</span>(QTY) <span class="keyword">AS</span> `总数量`,<span class="built_in">MIN</span>(QTY) <span class="keyword">AS</span> `最小数量`,<span class="built_in">MAX</span>(QTY) <span class="keyword">AS</span> `最大数量`,<span class="built_in">AVG</span>(QTY) <span class="keyword">AS</span> `平均数量`</span><br><span class="line"><span class="keyword">FROM</span> spj</span><br><span class="line"><span class="keyword">WHERE</span> PNO <span class="operator">=</span> <span class="string">&#x27;P3&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zZTDk8"><img src="https://s1.ax1x.com/2022/11/16/zZTDk8.png" alt="zZTDk8.png"></a></p>
+<p><strong>12.统计SPJ表中使用各种零件的总数量，最小数量、最多数量、平均数量</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> spj.SNO <span class="keyword">AS</span> `供应商代码`,<span class="built_in">SUM</span>(QTY) <span class="keyword">AS</span> `总数量`,<span class="built_in">MIN</span>(QTY) <span class="keyword">AS</span> `最小数量`,<span class="built_in">MAX</span>(QTY) <span class="keyword">AS</span> `最大数量`,<span class="built_in">AVG</span>(QTY) <span class="keyword">AS</span> `平均数量`</span><br><span class="line"><span class="keyword">FROM</span> spj</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> spj.SNO </span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zZTg6s"><img src="https://s1.ax1x.com/2022/11/16/zZTg6s.png" alt="zZTg6s.png"></a></p>
+<p><strong>13.统计SPJ表中各工程项目分别使用了几种零件</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> spj.`JNO`,<span class="built_in">COUNT</span>(PNO)</span><br><span class="line"><span class="keyword">FROM</span> spj</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> JNO;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zZTh7V"><img src="https://s1.ax1x.com/2022/11/16/zZTh7V.png" alt="zZTh7V.png"></a></p>
+<p><strong>14.统计SPJ表中各工程项目分别使用各种零件的总数量</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> spj.`JNO`,spj.`PNO`,<span class="built_in">SUM</span>(QTY)</span><br><span class="line"><span class="keyword">FROM</span> spj</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> JNO,PNO</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> JNO;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zZTohF"><img src="https://s1.ax1x.com/2022/11/16/zZTohF.png" alt="zZTohF.png"></a></p>
+<p><strong>15.查询SPJ表中使用零件种类超过两种的工程项目</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> spj.`JNO`,<span class="built_in">COUNT</span>(PNO)</span><br><span class="line"><span class="keyword">FROM</span> spj</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> JNO </span><br><span class="line"><span class="keyword">HAVING</span> <span class="built_in">COUNT</span>(PNO) <span class="operator">&gt;</span> <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zZTxAK"><img src="https://s1.ax1x.com/2022/11/16/zZTxAK.png" alt="zZTxAK.png"></a></p>
+<p><strong>16.查询SPJ表中各供应商分别给几个项目供应零件</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> SNO ,<span class="built_in">COUNT</span>(JNO)</span><br><span class="line"><span class="keyword">FROM</span> spj</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> SNO;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zZ799e"><img src="https://s1.ax1x.com/2022/11/16/zZ799e.png" alt="zZ799e.png"></a></p>
+<p><strong>17.查询SPJ表中各供应商分别供应每种零件给几个项目，及供应每种零件的总数量</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> SNO ,JNO,<span class="built_in">SUM</span>(QTY)</span><br><span class="line"><span class="keyword">FROM</span> spj</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> SNO,JNO;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zZ7ZAf"><img src="https://s1.ax1x.com/2022/11/16/zZ7ZAf.png" alt="zZ7ZAf.png"></a></p>
+<p><strong>18.查询SPJ表中所有供应商代码，供应商姓名，零件名，工程项目名，供应数量，且供应数量&gt;200的项目信息</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> spj.`SNO` <span class="keyword">AS</span> `供应商代码`,s.`SNAME` <span class="keyword">AS</span> `供应商名`</span><br><span class="line">,p.`PNAME` <span class="keyword">AS</span> `零件名`,j.`JNAME` <span class="keyword">AS</span> `项目名`</span><br><span class="line">,spj.`QTY` <span class="keyword">AS</span> 供应数量</span><br><span class="line"><span class="keyword">FROM</span> spj,s,p,j</span><br><span class="line"><span class="keyword">WHERE</span> spj.`SNO` <span class="operator">=</span> s.`SNO` <span class="keyword">AND</span> spj.`JNO` <span class="operator">=</span> j.`JNO`</span><br><span class="line"><span class="keyword">AND</span> spj.`PNO` <span class="operator">=</span> p.`PNO` <span class="keyword">AND</span> QTY <span class="operator">&gt;</span> <span class="number">200</span>;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zZ73Bq"><img src="https://s1.ax1x.com/2022/11/16/zZ73Bq.png" alt="zZ73Bq.png"></a></p>
+<p><strong>19. 查询所有工程项目代码，工程项目名，所在城市，及使用的各零件代码，和数量</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">spj.`JNO` <span class="keyword">AS</span> `工程项目代码`</span><br><span class="line">,j.`JNAME` <span class="keyword">AS</span> `工程项目名`</span><br><span class="line">,j.`CITY` <span class="keyword">AS</span> `所在城市`</span><br><span class="line">,spj.`PNO` <span class="keyword">AS</span> `零件代码`</span><br><span class="line">,spj.`QTY` <span class="keyword">AS</span> `数量`</span><br><span class="line"><span class="keyword">FROM</span> spj,j</span><br><span class="line"><span class="keyword">WHERE</span> spj.`JNO` <span class="operator">=</span> j.`JNO`;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zZ7c4O"><img src="https://s1.ax1x.com/2022/11/16/zZ7c4O.png" alt="zZ7c4O.png"></a></p>
+<p>==以下使用嵌套查询实现==</p>
+<p><strong>20.查询S1供应商供应的工程项目代码，工程项目名，所在城市</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> j.`JNO`,j.`JNAME`,j.`CITY`</span><br><span class="line"><span class="keyword">FROM</span> j</span><br><span class="line"><span class="keyword">WHERE</span> j.`JNO` <span class="keyword">IN</span> (</span><br><span class="line">	<span class="keyword">SELECT</span> spj.`JNO`</span><br><span class="line">	<span class="keyword">FROM</span> spj</span><br><span class="line">	<span class="keyword">WHERE</span> spj.`SNO` <span class="operator">=</span> <span class="string">&#x27;S1&#x27;</span>	</span><br><span class="line">	);</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zZ75DI"><img src="https://s1.ax1x.com/2022/11/16/zZ75DI.png" alt="zZ75DI.png"></a></p>
+<p><strong>21.查询使用蓝色零件的项目的工程项目代码，工程项目名，所在城市</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">SELECT j.`JNO`,j.`JNAME`,j.`CITY`</span><br><span class="line">FROM j</span><br><span class="line">WHERE j.`JNO` IN(</span><br><span class="line">	SELECT j.`JNO`</span><br><span class="line">	FROM spj</span><br><span class="line">	WHERE spj.`PNO` IN(</span><br><span class="line">		SELECT p.`PNO`</span><br><span class="line">		FROM p</span><br><span class="line">		WHERE p.`COLOR` = <span class="string">&#x27;蓝&#x27;</span></span><br><span class="line">		</span><br><span class="line">		)</span><br><span class="line">	);</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zZ7Xvj"><img src="https://s1.ax1x.com/2022/11/16/zZ7Xvj.png" alt="zZ7Xvj.png"></a></p>
+<p><strong>22.查询SPJ表中使用数量超过200的零件代码，零件名，颜色</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> p.`PNO`,p.`PNAME`,p.`COLOR`</span><br><span class="line"><span class="keyword">FROM</span> p</span><br><span class="line"><span class="keyword">WHERE</span> p.`PNO` <span class="keyword">IN</span>(</span><br><span class="line">	<span class="keyword">SELECT</span> spj.`PNO`</span><br><span class="line">	<span class="keyword">FROM</span> spj</span><br><span class="line">	<span class="keyword">WHERE</span> spj.`QTY` <span class="operator">&gt;</span> <span class="number">200</span></span><br><span class="line">	</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zZHpV0"><img src="https://s1.ax1x.com/2022/11/16/zZHpV0.png" alt="zZHpV0.png"></a></p>
+<p><strong>23.查询和s1在同一个城市的供应商代码，供应商名称</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">SELECT X.`SNO`,X.`SNAME`</span><br><span class="line">FROM s X</span><br><span class="line">WHERE X.`CITY` IN (</span><br><span class="line">	SELECT Y.`city`</span><br><span class="line">	FROM s Y</span><br><span class="line">	WHERE Y.`SNO` = <span class="string">&#x27;S1&#x27;</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zZHVM9"><img src="https://s1.ax1x.com/2022/11/16/zZHVM9.png" alt="zZHVM9.png"></a></p>
+<p><strong>24.查询所有使用了p1零件项目代码，名称,城市（用exists查询实现）</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> j.`JNO`,j.`JNAME`,j.`CITY`</span><br><span class="line"><span class="keyword">FROM</span> j</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">EXISTS</span></span><br><span class="line">(</span><br><span class="line">	<span class="keyword">SELECT</span> spj.`JNO`</span><br><span class="line">	<span class="keyword">FROM</span> spj</span><br><span class="line">	<span class="keyword">WHERE</span> j.`JNO` <span class="operator">=</span> spj.`JNO` <span class="keyword">AND</span> spj.`PNO` <span class="operator">=</span> <span class="string">&#x27;p1&#x27;</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zZHnVx"><img src="https://s1.ax1x.com/2022/11/16/zZHnVx.png" alt="zZHnVx.png"></a></p>
+<p><strong>25.查询没有使用p1零件的项目代码，名称,城市(用not exists查询)</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> j.`JNO`,j.`JNAME`,j.`CITY`</span><br><span class="line"><span class="keyword">FROM</span> j</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span></span><br><span class="line">(</span><br><span class="line">	<span class="keyword">SELECT</span> spj.`JNO`</span><br><span class="line">	<span class="keyword">FROM</span> spj</span><br><span class="line">	<span class="keyword">WHERE</span> j.`JNO` <span class="operator">=</span> spj.`JNO` <span class="keyword">AND</span> spj.`PNO` <span class="operator">=</span> <span class="string">&#x27;p1&#x27;</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/zZHlGD"><img src="https://s1.ax1x.com/2022/11/16/zZHlGD.png" alt="zZHlGD.png"></a></p>
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          Donate
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://dwx-tx/dwx-tx.github.io/2022/11/16/%E7%AC%AC%E4%B8%89%E7%AB%A0%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%9C%E4%B8%9A/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2022/11/22/2.2%E7%89%88%E6%9C%AC%E5%88%86%E6%9E%90/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            2.2版本分析
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2022/11/06/java%E5%AE%9E%E7%8E%B0%E5%BE%AE%E4%BF%A1%E4%BF%A1%E6%81%AF%E5%8F%91%E9%80%81/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">java实现微信信息定时发送</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2022
+        <i class="ri-heart-fill heart_icon"></i> dwx
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="dwx-tx的小天地"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>人脸识别尝试 |  dwx-tx的小天地</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"
+      />
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+       
+ 
+<script>
+var _hmt = _hmt || [];
+(function() {
+	var hm = document.createElement("script");
+	hm.src = "https://hm.baidu.com/hm.js?57bee4bd4703d5af3f9154ce72c6f85f";
+	var s = document.getElementsByTagName("script")[0]; 
+	s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    <link rel="alternate" href="/atom.xml" title="dwx-tx的小天地" type="application/atom+xml">
+</head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-人脸识别尝试"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  人脸识别尝试
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/10/25/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%B0%9D%E8%AF%95/" class="article-date">
+  <time datetime="2022-10-25T14:02:50.990Z" itemprop="datePublished">2022-10-25</time>
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">2.8k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">13 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="人脸识别尝试"><a href="#人脸识别尝试" class="headerlink" title="人脸识别尝试"></a>人脸识别尝试</h1><p><strong>参考材料</strong></p>
+<p>[(181条消息) Java实现人脸识别(各项目结构都有案例说明)_高冷小伙的博客-CSDN博客_java实现人脸识别](<a target="_blank" rel="noopener" href="https://blog.csdn.net/alpha_xia/article/details/121755220?ops_request_misc=&amp;request_id=&amp;biz_id=102&amp;utm_term=java">https://blog.csdn.net/alpha_xia/article/details/121755220?ops_request_misc=&amp;request_id=&amp;biz_id=102&amp;utm_term=java</a> 人脸识别&amp;utm_medium=distribute.pc_search_result.none-task-blog-2<del>all</del>sobaiduweb~default-0-121755220.nonecase&amp;spm=1018.2226.3001.4187)</p>
+<h2 id="下次SDK"><a href="#下次SDK" class="headerlink" title="下次SDK"></a>下次SDK</h2><p>人脸识别核心部分是蚕蛹蓝虹公司免费的SDK</p>
+<p><strong>下载地址：</strong></p>
+<p><a target="_blank" rel="noopener" href="https://ai.arcsoft.com.cn/ucenter/resource/build/index.html#/application/259124">开发者中心 (arcsoft.com.cn)</a></p>
+<h2 id="测试阶段"><a href="#测试阶段" class="headerlink" title="测试阶段"></a>测试阶段</h2><p><strong>官方给的程序</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> samplecode;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.arcsoft.face.*;</span><br><span class="line"><span class="keyword">import</span> com.arcsoft.face.enums.*;</span><br><span class="line"><span class="keyword">import</span> com.arcsoft.face.toolkit.ImageInfo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.arcsoft.face.toolkit.ImageInfoEx;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> com.arcsoft.face.toolkit.ImageFactory.getGrayData;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> com.arcsoft.face.toolkit.ImageFactory.getRGBData;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FaceEngineTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        String appId = <span class="string">&quot;7K7KG9zfBVrtyhgdfdfg&quot;</span>;</span><br><span class="line">        String sdkKey = <span class="string">&quot;AuyJsdgsdfhsf&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        FaceEngine faceEngine = <span class="keyword">new</span> FaceEngine(<span class="string">&quot;D:\\AreFace\\libs\\WIN64&quot;</span>);</span><br><span class="line">        <span class="comment">//激活引擎，只需要一次</span></span><br><span class="line">        <span class="keyword">int</span> errorCode = faceEngine.activeOnline(appId, sdkKey);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (errorCode != ErrorInfo.MOK.getValue() &amp;&amp; errorCode != ErrorInfo.MERR_ASF_ALREADY_ACTIVATED.getValue()) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;引擎激活失败&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        ActiveFileInfo activeFileInfo=<span class="keyword">new</span> ActiveFileInfo();</span><br><span class="line">        errorCode = faceEngine.getActiveFileInfo(activeFileInfo);</span><br><span class="line">        <span class="keyword">if</span> (errorCode != ErrorInfo.MOK.getValue() &amp;&amp; errorCode != ErrorInfo.MERR_ASF_ALREADY_ACTIVATED.getValue()) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;获取激活文件信息失败&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//引擎配置，保存默认即可</span></span><br><span class="line">        EngineConfiguration engineConfiguration = <span class="keyword">new</span> EngineConfiguration();</span><br><span class="line">        engineConfiguration.setDetectMode(DetectMode.ASF_DETECT_MODE_IMAGE);</span><br><span class="line">        engineConfiguration.setDetectFaceOrientPriority(DetectOrient.ASF_OP_ALL_OUT);</span><br><span class="line">        engineConfiguration.setDetectFaceMaxNum(<span class="number">10</span>);</span><br><span class="line">        engineConfiguration.setDetectFaceScaleVal(<span class="number">16</span>);</span><br><span class="line">        <span class="comment">//功能配置，可以设置面容识别时是否分析年龄、性别、3d等。</span></span><br><span class="line">        FunctionConfiguration functionConfiguration = <span class="keyword">new</span> FunctionConfiguration();</span><br><span class="line">        functionConfiguration.setSupportAge(<span class="keyword">true</span>);</span><br><span class="line">        functionConfiguration.setSupportFace3dAngle(<span class="keyword">true</span>);</span><br><span class="line">        functionConfiguration.setSupportFaceDetect(<span class="keyword">true</span>);</span><br><span class="line">        functionConfiguration.setSupportFaceRecognition(<span class="keyword">true</span>);</span><br><span class="line">        functionConfiguration.setSupportGender(<span class="keyword">true</span>);</span><br><span class="line">        functionConfiguration.setSupportLiveness(<span class="keyword">true</span>);</span><br><span class="line">        functionConfiguration.setSupportIRLiveness(<span class="keyword">true</span>);</span><br><span class="line">        engineConfiguration.setFunctionConfiguration(functionConfiguration);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//初始化引擎</span></span><br><span class="line">        errorCode = faceEngine.init(engineConfiguration);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (errorCode != ErrorInfo.MOK.getValue()) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;初始化引擎失败&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//人脸检测</span></span><br><span class="line">        ImageInfo imageInfo = getRGBData(<span class="keyword">new</span> File(<span class="string">&quot;d:\\aaa.jpg&quot;</span>));</span><br><span class="line">        List&lt;FaceInfo&gt; faceInfoList = <span class="keyword">new</span> ArrayList&lt;FaceInfo&gt;();</span><br><span class="line">        errorCode = faceEngine.detectFaces(imageInfo.getImageData(), imageInfo.getWidth(), imageInfo.getHeight(), imageInfo.getImageFormat(), faceInfoList);</span><br><span class="line">        System.out.println(faceInfoList);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//特征提取</span></span><br><span class="line">        FaceFeature faceFeature = <span class="keyword">new</span> FaceFeature();</span><br><span class="line">        errorCode = faceEngine.extractFaceFeature(imageInfo.getImageData(), imageInfo.getWidth(), imageInfo.getHeight(), imageInfo.getImageFormat(), faceInfoList.get(<span class="number">0</span>), faceFeature);</span><br><span class="line">        System.out.println(<span class="string">&quot;特征值大小：&quot;</span> + faceFeature.getFeatureData().length);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//人脸检测2</span></span><br><span class="line">        ImageInfo imageInfo2 = getRGBData(<span class="keyword">new</span> File(<span class="string">&quot;d:\\ccc.jpg&quot;</span>));</span><br><span class="line">        List&lt;FaceInfo&gt; faceInfoList2 = <span class="keyword">new</span> ArrayList&lt;FaceInfo&gt;();</span><br><span class="line">        errorCode = faceEngine.detectFaces(imageInfo2.getImageData(), imageInfo2.getWidth(), imageInfo2.getHeight(),imageInfo.getImageFormat(), faceInfoList2);</span><br><span class="line">        System.out.println(faceInfoList);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//特征提取2</span></span><br><span class="line">        FaceFeature faceFeature2 = <span class="keyword">new</span> FaceFeature();</span><br><span class="line">        errorCode = faceEngine.extractFaceFeature(imageInfo2.getImageData(), imageInfo2.getWidth(), imageInfo2.getHeight(), imageInfo.getImageFormat(), faceInfoList2.get(<span class="number">0</span>), faceFeature2);</span><br><span class="line">        System.out.println(<span class="string">&quot;特征值大小：&quot;</span> + faceFeature.getFeatureData().length);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//特征比对</span></span><br><span class="line">        FaceFeature targetFaceFeature = <span class="keyword">new</span> FaceFeature();</span><br><span class="line">        targetFaceFeature.setFeatureData(faceFeature.getFeatureData());</span><br><span class="line">        FaceFeature sourceFaceFeature = <span class="keyword">new</span> FaceFeature();</span><br><span class="line">        sourceFaceFeature.setFeatureData(faceFeature2.getFeatureData());</span><br><span class="line">        FaceSimilar faceSimilar = <span class="keyword">new</span> FaceSimilar();</span><br><span class="line"></span><br><span class="line">        errorCode = faceEngine.compareFaceFeature(targetFaceFeature, sourceFaceFeature, faceSimilar);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;相似度：&quot;</span> + faceSimilar.getScore());</span><br><span class="line"></span><br><span class="line">        <span class="comment">//设置活体测试</span></span><br><span class="line">        errorCode = faceEngine.setLivenessParam(<span class="number">0.5f</span>, <span class="number">0.7f</span>);</span><br><span class="line">        <span class="comment">//人脸属性检测，如果上面功能配置没有的话，这里就不可用</span></span><br><span class="line">        FunctionConfiguration configuration = <span class="keyword">new</span> FunctionConfiguration();</span><br><span class="line">        configuration.setSupportAge(<span class="keyword">true</span>);</span><br><span class="line">        configuration.setSupportFace3dAngle(<span class="keyword">true</span>);</span><br><span class="line">        configuration.setSupportGender(<span class="keyword">true</span>);</span><br><span class="line">        configuration.setSupportLiveness(<span class="keyword">true</span>);</span><br><span class="line">        errorCode = faceEngine.process(imageInfo.getImageData(), imageInfo.getWidth(), imageInfo.getHeight(), imageInfo.getImageFormat(), faceInfoList, configuration);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//性别检测，如果上面功能配置没有的话，这里就不可用</span></span><br><span class="line">        List&lt;GenderInfo&gt; genderInfoList = <span class="keyword">new</span> ArrayList&lt;GenderInfo&gt;();</span><br><span class="line">        errorCode = faceEngine.getGender(genderInfoList);</span><br><span class="line">        System.out.println(<span class="string">&quot;性别：&quot;</span> + genderInfoList.get(<span class="number">0</span>).getGender());</span><br><span class="line"></span><br><span class="line">        <span class="comment">//年龄检测，如果上面功能配置没有的话，这里就不可用</span></span><br><span class="line">        List&lt;AgeInfo&gt; ageInfoList = <span class="keyword">new</span> ArrayList&lt;AgeInfo&gt;();</span><br><span class="line">        errorCode = faceEngine.getAge(ageInfoList);</span><br><span class="line">        System.out.println(<span class="string">&quot;年龄：&quot;</span> + ageInfoList.get(<span class="number">0</span>).getAge());</span><br><span class="line"></span><br><span class="line">        <span class="comment">//3D信息检测，如果上面功能配置没有的话，这里就不可用</span></span><br><span class="line">        List&lt;Face3DAngle&gt; face3DAngleList = <span class="keyword">new</span> ArrayList&lt;Face3DAngle&gt;();</span><br><span class="line">        errorCode = faceEngine.getFace3DAngle(face3DAngleList);</span><br><span class="line">        System.out.println(<span class="string">&quot;3D角度：&quot;</span> + face3DAngleList.get(<span class="number">0</span>).getPitch() + <span class="string">&quot;,&quot;</span> + face3DAngleList.get(<span class="number">0</span>).getRoll() + <span class="string">&quot;,&quot;</span> + face3DAngleList.get(<span class="number">0</span>).getYaw());</span><br><span class="line"></span><br><span class="line">        <span class="comment">//活体检测，如果上面功能配置没有的话，这里就不可用</span></span><br><span class="line">        List&lt;LivenessInfo&gt; livenessInfoList = <span class="keyword">new</span> ArrayList&lt;LivenessInfo&gt;();</span><br><span class="line">        errorCode = faceEngine.getLiveness(livenessInfoList);</span><br><span class="line">        System.out.println(<span class="string">&quot;活体：&quot;</span> + livenessInfoList.get(<span class="number">0</span>).getLiveness());</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//IR属性处理，如果上面功能配置没有的话，这里就不可用</span></span><br><span class="line">        ImageInfo imageInfoGray = getGrayData(<span class="keyword">new</span> File(<span class="string">&quot;d:\\IR_480p.jpg&quot;</span>));</span><br><span class="line">        List&lt;FaceInfo&gt; faceInfoListGray = <span class="keyword">new</span> ArrayList&lt;FaceInfo&gt;();</span><br><span class="line">        errorCode = faceEngine.detectFaces(imageInfoGray.getImageData(), imageInfoGray.getWidth(), imageInfoGray.getHeight(), imageInfoGray.getImageFormat(), faceInfoListGray);</span><br><span class="line"></span><br><span class="line">        FunctionConfiguration configuration2 = <span class="keyword">new</span> FunctionConfiguration();</span><br><span class="line">        configuration2.setSupportIRLiveness(<span class="keyword">true</span>);</span><br><span class="line">        errorCode = faceEngine.processIr(imageInfoGray.getImageData(), imageInfoGray.getWidth(), imageInfoGray.getHeight(), imageInfoGray.getImageFormat(), faceInfoListGray, configuration2);</span><br><span class="line">        <span class="comment">//IR活体检测，如果上面功能配置没有的话，这里就不可用</span></span><br><span class="line">        List&lt;IrLivenessInfo&gt; irLivenessInfo = <span class="keyword">new</span> ArrayList&lt;IrLivenessInfo&gt;();</span><br><span class="line">        errorCode = faceEngine.getLivenessIr(irLivenessInfo);</span><br><span class="line">        System.out.println(<span class="string">&quot;IR活体：&quot;</span> + irLivenessInfo.get(<span class="number">0</span>).getLiveness());</span><br><span class="line"></span><br><span class="line">        ImageInfoEx imageInfoEx = <span class="keyword">new</span> ImageInfoEx();</span><br><span class="line">        imageInfoEx.setHeight(imageInfo.getHeight());</span><br><span class="line">        imageInfoEx.setWidth(imageInfo.getWidth());</span><br><span class="line">        imageInfoEx.setImageFormat(imageInfo.getImageFormat());</span><br><span class="line">        imageInfoEx.setImageDataPlanes(<span class="keyword">new</span> <span class="keyword">byte</span>[][]&#123;imageInfo.getImageData()&#125;);</span><br><span class="line">        imageInfoEx.setImageStrides(<span class="keyword">new</span> <span class="keyword">int</span>[]&#123;imageInfo.getWidth() * <span class="number">3</span>&#125;);</span><br><span class="line">        List&lt;FaceInfo&gt; faceInfoList1 = <span class="keyword">new</span> ArrayList&lt;FaceInfo&gt;();</span><br><span class="line">        errorCode = faceEngine.detectFaces(imageInfoEx, DetectModel.ASF_DETECT_MODEL_RGB, faceInfoList1);</span><br><span class="line"></span><br><span class="line">        FunctionConfiguration fun = <span class="keyword">new</span> FunctionConfiguration();</span><br><span class="line">        fun.setSupportAge(<span class="keyword">true</span>);</span><br><span class="line">        errorCode = faceEngine.process(imageInfoEx, faceInfoList1, functionConfiguration);</span><br><span class="line">        List&lt;AgeInfo&gt; ageInfoList1 = <span class="keyword">new</span> ArrayList&lt;AgeInfo&gt;();</span><br><span class="line">        <span class="keyword">int</span> age = faceEngine.getAge(ageInfoList1);</span><br><span class="line">        System.out.println(<span class="string">&quot;年龄：&quot;</span> + ageInfoList1.get(<span class="number">0</span>).getAge());</span><br><span class="line"></span><br><span class="line">        FaceFeature feature = <span class="keyword">new</span> FaceFeature();</span><br><span class="line">        errorCode = faceEngine.extractFaceFeature(imageInfoEx, faceInfoList1.get(<span class="number">0</span>), feature);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//引擎卸载</span></span><br><span class="line">        errorCode = faceEngine.unInit();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>注意 这里需要导包 吧需要的包导到maven里边</strong></p>
+<h2 id="学习阶段"><a href="#学习阶段" class="headerlink" title="学习阶段"></a>学习阶段</h2><p>分析官方给的pdf，来分析又什么用法，学会阅读官方文档也是一种能力</p>
+<h2 id="使用步奏第一阶段-配置引擎"><a href="#使用步奏第一阶段-配置引擎" class="headerlink" title="使用步奏第一阶段 配置引擎"></a>使用步奏第一阶段 配置引擎</h2><h3 id="获得引擎"><a href="#获得引擎" class="headerlink" title="获得引擎"></a>获得引擎</h3><p>==代码中出现的数组都是乱码，具体值需要自己到官网拷贝==</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">String appId = <span class="string">&quot;7asdasfG3cxqKmpF1DwijXxJ73s75v7uZqxoT&quot;</span>;</span><br><span class="line">String sdkKey = <span class="string">&quot;AuyJJasdqwafgadgBnD5wXzSEPtXs5C&quot;</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      FaceEngine faceEngine = <span class="keyword">new</span> FaceEngine(<span class="string">&quot;D:\\AreFace\\libs\\WIN64&quot;</span>);</span><br><span class="line">      <span class="comment">//激活引擎，只需要一次</span></span><br><span class="line">      <span class="keyword">int</span> errorCode = faceEngine.activeOnline(appId, sdkKey);</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (errorCode != ErrorInfo.MOK.getValue() &amp;&amp; errorCode != ErrorInfo.MERR_ASF_ALREADY_ACTIVATED.getValue()) &#123;</span><br><span class="line">          System.out.println(<span class="string">&quot;引擎激活失败&quot;</span>);</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>C:\Users\Lenovo\Desktop\人脸识别尝试\libs\WIN64该文件名是从官网拷贝下来的压缩包解压后 xx.dll文件所在的位置</strong></p>
+<p><img src="/dwx-tx.github.io/2022/10/25/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%B0%9D%E8%AF%95/Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20221025162958075.png" alt="image-20221025162958075"></p>
+<h3 id="第二步-获得激活文件"><a href="#第二步-获得激活文件" class="headerlink" title="第二步 获得激活文件"></a>第二步 获得激活文件</h3><p>激活文件是可以直接new 生成 没有对其的配置</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建激活文件</span></span><br><span class="line">ActiveFileInfo activeFileInfo = <span class="keyword">new</span> ActiveFileInfo();</span><br><span class="line">errorCode = faceEngine.getActiveFileInfo(activeFileInfo);</span><br><span class="line"></span><br><span class="line"><span class="comment">//判断激活文件是否获取成功</span></span><br><span class="line"><span class="keyword">if</span> (errorCode != ErrorInfo.MOK.getValue() &amp;&amp; errorCode != ErrorInfo.MERR_ASF_ALREADY_ACTIVATED.getValue()) &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;获取激活文件信息失败&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="第三步-配置引擎"><a href="#第三步-配置引擎" class="headerlink" title="第三步 配置引擎"></a>第三步 配置引擎</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//设置配置引擎对象</span><br><span class="line">EngineConfiguration engineConfiguration = new EngineConfiguration();</span><br><span class="line"></span><br><span class="line">//几个比较重要的配置设置</span><br><span class="line"></span><br><span class="line">//检测模式设置</span><br><span class="line">//这里因为我们是对图片进行人脸识别，因此这里我们使用一个IMAGE模式</span><br><span class="line">engineConfiguration.setDetectMode(DetectMode.ASF_DETECT_MODE_IMAGE);</span><br><span class="line"></span><br><span class="line">//可检测图片人脸方向设置</span><br><span class="line">engineConfiguration.setDetectFaceOrientPriority(DetectOrient.ASF_OP_ALL_OUT);//这里我设置的是全方位角设置</span><br></pre></td></tr></table></figure>
+
+<p><strong>具体功能 请参考文档 文档在下载下来的压缩包里有</strong></p>
+<h3 id="第四步-配置引擎功能"><a href="#第四步-配置引擎功能" class="headerlink" title="第四步 配置引擎功能"></a>第四步 配置引擎功能</h3><p>引擎功能 即引擎能够干什么；</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//功能配置，可以设置面容识别时是否分析年龄、性别、3d等。</span></span><br><span class="line">FunctionConfiguration functionConfiguration = <span class="keyword">new</span> FunctionConfiguration();</span><br><span class="line">functionConfiguration.setSupportAge(<span class="keyword">true</span>);</span><br><span class="line">functionConfiguration.setSupportFace3dAngle(<span class="keyword">true</span>);</span><br><span class="line">functionConfiguration.setSupportFaceDetect(<span class="keyword">true</span>);</span><br><span class="line">functionConfiguration.setSupportFaceRecognition(<span class="keyword">true</span>);</span><br><span class="line">functionConfiguration.setSupportGender(<span class="keyword">true</span>);</span><br><span class="line">functionConfiguration.setSupportLiveness(<span class="keyword">true</span>);</span><br><span class="line">functionConfiguration.setSupportIRLiveness(<span class="keyword">true</span>);</span><br><span class="line">       </span><br><span class="line">engineConfiguration.setFunctionConfiguration(functionConfiguration);</span><br></pre></td></tr></table></figure>
+
+<h3 id="第五步-初始化引擎"><a href="#第五步-初始化引擎" class="headerlink" title="第五步 初始化引擎"></a>第五步 初始化引擎</h3><p>将配置好的引擎和引擎功能的对象都放到引擎里</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//初始化引擎 (将配置设置到引擎中)</span><br><span class="line">     errorCode = faceEngine.init(engineConfiguration);</span><br><span class="line"></span><br><span class="line">     if (errorCode!=ErrorInfo.MOK.getValue())&#123;</span><br><span class="line">         System.out.println(&quot;引擎初始化失败&quot;);</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+
+<p>引擎准备阶段就到此结束，下边就是引擎能进行的操作了</p>
+<p><strong>再次强调</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">EngineConfiguration engineConfiguration = <span class="keyword">new</span> EngineConfiguration();</span><br><span class="line">engineConfiguration.setDetectMode(DetectMode.ASF_DETECT_MODE_IMAGE);</span><br><span class="line">engineConfiguration.setDetectFaceOrientPriority(DetectOrient.ASF_OP_ALL_OUT);</span><br><span class="line">engineConfiguration.setDetectFaceMaxNum(<span class="number">10</span>);</span><br><span class="line">engineConfiguration.setDetectFaceScaleVal(<span class="number">16</span>);</span><br></pre></td></tr></table></figure>
+
+<p>配置引擎时，这里个配置比较重要</p>
+<p>从上到下分别是</p>
+<ul>
+<li>引擎识别模式，是识别静态图片还是视频流</li>
+<li>引擎可以识别的头像角度，这里设置的是都可以识别</li>
+<li>引擎识别来拿的最大数量</li>
+<li>以及引擎识别等级</li>
+</ul>
+<h2 id="使用步奏第二部分-使用引擎"><a href="#使用步奏第二部分-使用引擎" class="headerlink" title="使用步奏第二部分 使用引擎"></a>使用步奏第二部分 使用引擎</h2><p><strong>准备图像</strong></p>
+<h3 id="人脸特征获取"><a href="#人脸特征获取" class="headerlink" title="人脸特征获取"></a>人脸特征获取</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//准备文件</span></span><br><span class="line">      File file = <span class="keyword">new</span> File(<span class="string">&quot;D:\\aaa.jpg&quot;</span>);</span><br><span class="line"></span><br><span class="line">      <span class="comment">//这里使用detectFaces方法来对图片进行分析 detectFaces需要很多参数 这里使用getRGBData方法来获得这些参数</span></span><br><span class="line">      ImageInfo imageInfo = getRGBData(file);</span><br><span class="line">      <span class="comment">//分析得到的数据保存在faceInfoList列表中</span></span><br><span class="line">      List&lt;FaceInfo&gt; faceInfoList = <span class="keyword">new</span> ArrayList&lt;FaceInfo&gt;();</span><br><span class="line">      faceEngine.detectFaces(imageInfo.getImageData(), imageInfo.getWidth(), imageInfo.getHeight(), imageInfo.getImageFormat(), faceInfoList);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      System.out.println(faceInfoList);</span><br></pre></td></tr></table></figure>
+
+<p><strong>结果：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[com.arcsoft.face.Rect(<span class="number">245</span>, <span class="number">397</span> - <span class="number">937</span>, <span class="number">1089</span>),<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+
+<p><strong>如果一个图中有多个人脸也是能够识别的</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">com.arcsoft.face.Rect(<span class="number">1974</span>, <span class="number">213</span> - <span class="number">2749</span>, <span class="number">987</span>),<span class="number">1</span></span><br><span class="line">com.arcsoft.face.Rect(<span class="number">1352</span>, <span class="number">769</span> - <span class="number">1839</span>, <span class="number">1256</span>),<span class="number">1</span></span><br><span class="line">com.arcsoft.face.Rect(<span class="number">1112</span>, <span class="number">550</span> - <span class="number">1417</span>, <span class="number">854</span>),<span class="number">1</span></span><br><span class="line">com.arcsoft.face.Rect(<span class="number">327</span>, <span class="number">692</span> - <span class="number">571</span>, <span class="number">936</span>),<span class="number">1</span></span><br><span class="line">com.arcsoft.face.Rect(<span class="number">950</span>, <span class="number">249</span> - <span class="number">1200</span>, <span class="number">498</span>),<span class="number">1</span></span><br><span class="line">com.arcsoft.face.Rect(<span class="number">961</span>, <span class="number">708</span> - <span class="number">1186</span>, <span class="number">933</span>),<span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="人脸特征提取"><a href="#人脸特征提取" class="headerlink" title="人脸特征提取"></a>人脸特征提取</h3><p><code>extractFaceFeature</code>方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//人脸特征提取</span></span><br><span class="line"></span><br><span class="line">       <span class="comment">//在输入一个图片</span></span><br><span class="line">       File file1 = <span class="keyword">new</span> File(<span class="string">&quot;D:\\aaa.jpg&quot;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">       ImageInfo imageInfo1 = getRGBData(file1);</span><br><span class="line">       <span class="comment">//分析得到的数据保存在faceInfoList列表中</span></span><br><span class="line">       List&lt;FaceInfo&gt; faceInfoList1 = <span class="keyword">new</span> ArrayList&lt;FaceInfo&gt;();</span><br><span class="line">       faceEngine.detectFaces(imageInfo1.getImageData(), imageInfo1.getWidth(), imageInfo1.getHeight(), imageInfo1.getImageFormat(), faceInfoList1);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">       <span class="keyword">for</span> (FaceInfo faceInfo : faceInfoList1) &#123;</span><br><span class="line">           System.out.println(faceInfo);</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">       <span class="comment">//人脸信息都存放在这个对象里</span></span><br><span class="line">       FaceFeature faceFeature = <span class="keyword">new</span> FaceFeature();</span><br><span class="line">       faceEngine.extractFaceFeature(imageInfo1.getImageData(),imageInfo1.getWidth(), imageInfo1.getHeight(), imageInfo1.getImageFormat(),faceInfoList1.get(<span class="number">0</span>),faceFeature);</span><br><span class="line"></span><br><span class="line">       System.out.println(<span class="string">&quot;图片AAA.jpg的特征是大小为:&quot;</span>+faceFeature.getFeatureData().length);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="人脸相似度对比"><a href="#人脸相似度对比" class="headerlink" title="人脸相似度对比"></a>人脸相似度对比</h3><p><strong>准备两张图片，按照上述的方法，获得两个feature 来进行比较</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//在输入一个图片</span></span><br><span class="line">File file1 = <span class="keyword">new</span> File(<span class="string">&quot;D:\\fff.jpg&quot;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ImageInfo imageInfo1 = getRGBData(file1);</span><br><span class="line"><span class="comment">//分析得到的数据保存在faceInfoList列表中</span></span><br><span class="line">List&lt;FaceInfo&gt; faceInfoList1 = <span class="keyword">new</span> ArrayList&lt;FaceInfo&gt;();</span><br><span class="line">faceEngine.detectFaces(imageInfo1.getImageData(), imageInfo1.getWidth(), imageInfo1.getHeight(), imageInfo1.getImageFormat(), faceInfoList1);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (FaceInfo faceInfo : faceInfoList1) &#123;</span><br><span class="line">    System.out.print(<span class="string">&quot;第一张图片获得的数据:&quot;</span>);</span><br><span class="line">    System.out.println(faceInfo);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//人脸信息都存放在这个对象里</span></span><br><span class="line">FaceFeature faceFeature = <span class="keyword">new</span> FaceFeature();</span><br><span class="line">faceEngine.extractFaceFeature(imageInfo1.getImageData(),imageInfo1.getWidth(), imageInfo1.getHeight(), imageInfo1.getImageFormat(),faceInfoList1.get(<span class="number">0</span>),faceFeature);</span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">&quot;图片fff.jpg的特征值大小为:&quot;</span>+faceFeature.getFeatureData().length);</span><br><span class="line"></span><br><span class="line"><span class="comment">//第二个图片</span></span><br><span class="line">File file2 = <span class="keyword">new</span> File(<span class="string">&quot;D:\\eee.jpg&quot;</span>);</span><br><span class="line">ImageInfo imageInfo2 = getRGBData(file2);</span><br><span class="line">ArrayList&lt;FaceInfo&gt; faceInfoList2 = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">faceEngine.detectFaces(imageInfo2.getImageData(),imageInfo2.getWidth(),imageInfo2.getHeight(),imageInfo2.getImageFormat(),faceInfoList2);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (FaceInfo faceInfo : faceInfoList2) &#123;</span><br><span class="line">    System.out.print(<span class="string">&quot;第二张图片获得的数据:&quot;</span>);</span><br><span class="line">    System.out.println(faceInfo);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//获得脸部信息</span></span><br><span class="line">FaceFeature faceFeature1 = <span class="keyword">new</span> FaceFeature();</span><br><span class="line">faceEngine.extractFaceFeature(imageInfo2.getImageData(),imageInfo2.getWidth(),imageInfo2.getHeight(),imageInfo2.getImageFormat(),faceInfoList2.get(<span class="number">0</span>),faceFeature1);</span><br><span class="line">System.out.println(<span class="string">&quot;图片eee.jpg的特征值大小为:&quot;</span>+faceFeature1.getFeatureData().length);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* @Param faceFeature</span></span><br><span class="line"><span class="comment">* @Param faceFeature1</span></span><br><span class="line"><span class="comment">* */</span></span><br><span class="line">FaceSimilar faceSimilar = <span class="keyword">new</span> FaceSimilar();</span><br><span class="line"><span class="comment">//进行图片对比</span></span><br><span class="line">faceEngine.compareFaceFeature(faceFeature,faceFeature1, CompareModel.ID_PHOTO,faceSimilar);</span><br><span class="line">System.out.println(<span class="string">&quot;两张图片的相似度为:&quot;</span>+faceSimilar.getScore());</span><br></pre></td></tr></table></figure>
+
+<p>通过两个面部特征对象 调用方法进行比较 最后获得值</p>
+<h3 id="获得可以获得的数据"><a href="#获得可以获得的数据" class="headerlink" title="获得可以获得的数据"></a>获得可以获得的数据</h3><p><strong>可以获得的数据包括</strong></p>
+<ul>
+<li>年龄 getAge</li>
+<li>性别 getGender</li>
+<li>人脸三维角度信息 getFace#DAngle</li>
+<li>是否为活物 getLiveness</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获得 年龄 性别</span></span><br><span class="line"></span><br><span class="line">        faceEngine.process(imageInfo2.getImageData(),imageInfo2.getWidth(),imageInfo2.getHeight(),imageInfo2.getImageFormat(),faceInfoList2,functionConfiguration);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        ImageInfoEx infoEx = <span class="keyword">new</span> ImageInfoEx();</span><br><span class="line">        infoEx.setHeight(imageInfo2.getHeight());</span><br><span class="line">        infoEx.setWidth(imageInfo2.getWidth());</span><br><span class="line">        infoEx.setImageFormat(imageInfo2.getImageFormat());</span><br><span class="line">        infoEx.setImageDataPlanes(<span class="keyword">new</span> <span class="keyword">byte</span>[][]&#123;imageInfo2.getImageData()&#125;);</span><br><span class="line">        infoEx.setImageStrides(<span class="keyword">new</span> <span class="keyword">int</span>[]&#123;imageInfo2.getWidth() * <span class="number">3</span>&#125;);</span><br><span class="line">        List&lt;FaceInfo&gt; faceInfoList3 = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        faceEngine.detectFaces(infoEx, DetectModel.ASF_DETECT_MODEL_RGB,faceInfoList3);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//这里又设置了一个引擎功能 不知道为何</span></span><br><span class="line">        FunctionConfiguration configuration = <span class="keyword">new</span> FunctionConfiguration();</span><br><span class="line">        configuration.setSupportAge(<span class="keyword">true</span>);</span><br><span class="line">        configuration.setSupportFace3dAngle(<span class="keyword">true</span>);</span><br><span class="line">        configuration.setSupportGender(<span class="keyword">true</span>);</span><br><span class="line">        configuration.setSupportLiveness(<span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line">        faceEngine.process(infoEx,faceInfoList3,configuration);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        ArrayList&lt;AgeInfo&gt; ageInfos = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> age = faceEngine.getAge(ageInfos);</span><br><span class="line">        System.out.println(<span class="string">&quot;图片eee.jpg中人物的大致年龄为:&quot;</span>+ageInfos.get(<span class="number">0</span>).getAge());</span><br><span class="line"></span><br><span class="line">        ArrayList&lt;GenderInfo&gt; genderInfos = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        faceEngine.getGender(genderInfos);</span><br><span class="line">        System.out.println(<span class="string">&quot;图片eee.jpg中的人物的性别为:&quot;</span>+genderInfos.get(<span class="number">0</span>).getGender());</span><br></pre></td></tr></table></figure>
+
+<p><strong>中间有一个新建立的FunctionConfiguration()的对象configure，但是我不明白为什么要新建一个 因为之前的程序中已经存在这个对象了，而且设置的配置也是相同的，日后继续学习</strong></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>使用别人的包，固然是一个快速入门的方法，但是具象性太多，只能获得面部数据，年龄，性别，是否为活物，等等等。</p>
+<p>做一个人脸识别功能，是能够实现的，但是无法生成标志着红框框的图片，生产那种高大上的好像在追踪分析的图片。（或许是我自己不会）</p>
+<p>学完这个包的使用，增加了自己阅读各种依赖官方文档的能力，人工智能涉足，后续会继续向更深处学习，争取能够手搓出一个程序</p>
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          Donate
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://dwx-tx/dwx-tx.github.io/2022/10/25/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%B0%9D%E8%AF%95/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2022/10/26/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E7%B3%BB%E7%BB%9F%E5%86%8D%E8%AE%A4%E8%AF%86/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            人脸识别深入认识
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2022/10/24/%E5%AE%89%E5%85%A8%E6%80%A7%E7%AE%97%E6%B3%95/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">操作系统银行家算法下的安全性算法</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2022
+        <i class="ri-heart-fill heart_icon"></i> dwx
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="dwx-tx的小天地"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>
